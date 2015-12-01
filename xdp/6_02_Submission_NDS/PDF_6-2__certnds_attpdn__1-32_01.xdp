@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xfa generator="AdobeLiveCycleDesignerES_V10.0.2.20120224.1.869952" APIVersion="3.5.12002.0"?>
-<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2015-11-26T19:01:05Z" uuid="7c6027fc-41f1-4f24-8202-76f558a70660">
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2015-12-01T18:31:35Z" uuid="23d1153d-7d74-48cd-ae7a-0b3a5cd60cdd">
 <template xmlns="http://www.xfa.org/schema/xfa-template/3.0/">
    <?formServer defaultPDFRenderFormat acrobat9.1dynamic?>
    <?formServer allowRenderCaching 0?>
@@ -328,7 +328,7 @@ catch(exception)
             <margin bottomInset="2.54mm"/>
             <bind match="none"/>
             <?templateDesigner expand 0?></subform>
-         <subform w="203.2mm" name="sfInstructions" layout="lr-tb">
+         <subform w="203.2mm" name="sfInstructions">
             <field name="btnViewInstructions" w="31.75mm" h="6.35mm" relevant="-print">
                <ui>
                   <button highlight="inverted"/>
@@ -370,14 +370,7 @@ catch(exception)
 </script>
                </event>
             </field>
-            <draw name="Text6" w="4.576mm" h="6.35mm">
-               <ui>
-                  <textEdit/>
-               </ui>
-               <font typeface="Myriad Pro"/>
-               <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
-               <?renderCache.bounds 10137 15166 0 0 1417 1417 0 0?></draw>
-            <field name="btnHideInstructions" w="31.75mm" h="6.35mm" relevant="-print">
+            <field name="btnHideInstructions" w="31.75mm" h="6.35mm" relevant="-print" x="36.326mm">
                <ui>
                   <button highlight="inverted"/>
                </ui>
@@ -467,7 +460,6 @@ catch(exception)
                      </border>
                   </draw>
                   <margin bottomInset="2.54mm" topInset="2.54mm"/>
-                  <assist role="LI"/>
                   <bind match="none"/>
                   <?templateDesigner expand 0?></subform>
                <subform w="203.199mm" name="sfInstruct2" layout="tb">
@@ -487,11 +479,10 @@ catch(exception)
                      </border>
                   </draw>
                   <margin topInset="0mm" bottomInset="0mm"/>
-                  <assist role="LI"/>
                   <bind match="none"/>
                   <?templateDesigner expand 0?></subform>
                <bind match="none"/>
-               <?templateDesigner expand 1?></subform>
+               <?templateDesigner expand 0?></subform>
             <border>
                <edge/>
                <corner thickness="0.175mm"/>
@@ -558,9 +549,9 @@ catch(exception)
                      </border>
                   </draw>
                   <?templateDesigner expand 1?></subform>
-               <margin bottomInset="7.62mm"/>
+               <margin bottomInset="5.08mm"/>
                <?templateDesigner expand 0?></subform>
-            <?templateDesigner expand 1?></subform>
+            <?templateDesigner expand 0?></subform>
          <subform y="241.091mm" w="203.199mm" minH="66.15mm" layout="lr-tb" name="sfSubContent">
             <subform w="203.199mm" layout="lr-tb" name="sfSubType">
                <field name="ddlSubmissionType" w="138.774mm" h="9mm">
@@ -1510,7 +1501,7 @@ catch(exception)
                      <date/>
                   </value>
                </field>
-               <?templateDesigner expand 0?>
+               <?templateDesigner expand 1?>
             </subform>
             <subform name="sfSignatureBlockSMO" layout="lr-tb" w="203.2mm">
                <border>
@@ -1821,19 +1812,19 @@ var content = {
 
 formType: 					"QIU",
 errorInd:					"+",
-formVersion: 				"2.00.25",
+formVersion: 				"2.00.30",
 CANADA:						"CA",
-USA:							"US",
+USA:						"US",
 DR_SALUT: 					"dr",
-LabelStart: 					"labelStart",
+LabelStart: 				"labelStart",
 LabelEnd:					"labelEnd",
-DIGITAL_SIG:					"DIG_SIG",
+DIGITAL_SIG:				"DIG_SIG",
 IMAGE_SIG:					"IMG_SIG",
 FRENCH:						"fr",
-ENGLISH:						"en",
-NDS_SUB:						"NDS",
-SEO:							"seo",
-SMO:							"smo",
+ENGLISH:					"en",
+NDS_SUB:					"NDS",
+SEO:						"seo",
+SMO:						"smo",
 
 //Overrides
 //NodeValidator_formatValidator: "",
@@ -2120,15 +2111,6 @@ function getCurrentLanguage(){
 }//end fn
 
 
-//bit of a hack,using the finalize button state. This only works if we automatically remember state, should be manual instaead
-function isFinalized(){
-
-	if(FINALIZE_BTN_FN.getNodeInstance().access!=="open"){
-		return true;
-	}
-	return false;
-}
-
 
 function validateForm(baseNode, nodeInstance){
 
@@ -2247,7 +2229,8 @@ function _initPositionTitles(){
 
 	SMO_DDL_FN.getNodeInstance().rawValue=SMO;
 	SEO_DDL_FN.getNodeInstance().rawValue=SEO;
-
+	SMO_DDL_FN.lock();
+	SEO_DDL_FN.lock();
 }
 </script>
                   <script contentType="application/x-javascript" name="SignatureBlockHandler">
@@ -2362,9 +2345,12 @@ function actionPerformed(anEvent)
 function initialiseHandler(){
 
 		 setSignatureBlockState();
-		// _setSMOSignatureChoice(SMO_SIGCHOICE_RDO_FN.getNodeInstance().rawValue);
-		// _setSEOSignatureChoice(SIGCHOICE_RDO_FN.getNodeInstance().rawValue);
-		 
+		if(!cFormHandler.isFinalized()){
+			cLog.trace("It isn't finalized "+cFormHandler.isFinalized())
+			_setSMOSignatureChoice(SMO_SIGCHOICE_RDO_FN.getNodeInstance().rawValue);
+			_setSEOSignatureChoice(SIGCHOICE_RDO_FN.getNodeInstance().rawValue);
+		}
+	 
 	
 }//end fn
 
@@ -2487,6 +2473,7 @@ function setSignatureBlockState(){
 	var a_sigBlock=SIG_SF_FN.getNodeInstance();
 	var a_smoSigBlock=SMO_SIG_SF_FN.getNodeInstance();
 	if(cFormHandler.isFinalized()){
+	cLog.trace("is finalized");
 		cUiUtil.show(a_sigBlock);
 		cUiUtil.show(a_smoSigBlock);
 		SIG_SF_FN.unLock();
@@ -2494,10 +2481,12 @@ function setSignatureBlockState(){
 		DATESIG_DTE_FN.lock();
 		SMO_DATESIG_DTE_FN.lock();
 	}else{
+	cLog.trace("clearing data "+a_sigBlock.somExpression);
 		cGeneralUtil.hideAndClearNodeInstance(a_sigBlock);
 		cGeneralUtil.hideAndClearNodeInstance(a_smoSigBlock);
-		_setSMOSignatureChoice(SMO_SIGCHOICE_RDO_FN.getNodeInstance().rawValue);
-		_setSEOSignatureChoice(SIGCHOICE_RDO_FN.getNodeInstance().rawValue);
+		cGeneralUtil.hideAndClearNodeInstance(a_sigBlock);
+		SMO_IMGSIG_IMG_FN.getNodeInstance().rawValue="";
+		IMGSIG_IMG_FN.getNodeInstance().rawValue="";
 	}
 
 }//fn
@@ -3013,7 +3002,7 @@ var content={
 </script>
                   <?templateDesigner expand 1?></variables>
                <bind match="none"/>
-               <?templateDesigner expand 1?></subform>
+               <?templateDesigner expand 0?></subform>
             <subform h="50mm" name="resources" w="100mm">
                <variables>
                   <script contentType="application/x-javascript" name="general_en">//nov2015
@@ -3276,12 +3265,12 @@ var content={
                <?templateDesigner expand 1?></subform>
             <subform h="50mm" name="util" w="100mm">
                <variables>
-                  <?templateDesigner expand 1?>
                   <script usehref="..\..\fragments\util\General.xdp#som($template.form1.#subform.#variables.General)"/>
+                  <?templateDesigner expand 1?>
                   <script usehref="..\..\fragments\Accessibility.xdp#som($template.form1.#subform.#variables.Accessibility)"/>
                </variables>
                <bind match="none"/>
-               <?templateDesigner expand 0?></subform>
+               <?templateDesigner expand 1?></subform>
             <bind match="none"/>
             <?templateDesigner expand 1?></subform>
          <?templateDesigner expand 1?></subform>
@@ -3341,9 +3330,8 @@ catch(exception)
       </event>
       <?templateDesigner Hyphenation excludeInitialCap:1, excludeAllCaps:1, wordCharCnt:7, remainCharCnt:3, pushCharCnt:3?>
       <?templateDesigner expand 1?>
-      <?renderCache.subset "Myriad Pro" 0 0 ISO-8859-1 4 284 72 000100030009000A000B000C000D000E000F0010001100120013001400150016001700180019001A001B001C00220023002400250026002700280029002A002B002C002D002E002F003000310033003400350038003A003D00420043004400450046004700480049004A004C004D004E004F0050005100520053005400550056005700580059005A005B006800CE "()*+,-./0123456789:;ABCDEFGHIJKLMNOPRSTWY\abcdefghiklmnopqrstuvwxyz'ç?>
-      <?renderCache.subset "Myriad Pro" 1 0 ISO-8859-1 4 64 16 0001002200240026002A002D002F003000330034003500360046004A004D0055 ACEILNORSTUeilt?>
-      <?renderCache.subset "Myriad Pro" 0 1 ISO-8859-1 4 4 1 0045d?>
+      <?renderCache.subset "Myriad Pro" 0 0 ISO-8859-1 4 224 57 000100030009000A000B000C000D000E000F00120013001B001C0022002400250026002700280029002A002E002F003000310033003400350038003A003D00420043004400450046004700480049004A004C004D004E004F005000510052005300540055005600570058005A005B00CE "()*+,-.12:;ACDEFGHIMNOPRSTWY\abcdefghiklmnopqrstuvwyzç?>
+      <?renderCache.subset "Myriad Pro" 1 0 ISO-8859-1 4 56 14 002200240026002A002F003000330034003500360046004A004D0055ACEINORSTUeilt?>
    </subform>
    <?templateDesigner DefaultPreviewDynamic 1?>
    <?originalXFAVersion http://www.xfa.org/schema/xfa-template/2.8/?>
@@ -3364,7 +3352,7 @@ catch(exception)
    <?templateDesigner DefaultValueFontSettings face:Myriad Pro;size:10;weight:normal;style:normal?>
    <?templateDesigner ValidationMessaging noMessages?>
    <?templateDesigner FormTargetVersion 30?>
-   <?templateDesigner Zoom 107?>
+   <?templateDesigner Zoom 97?>
    <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?>
    <?templateDesigner Guidelines h:7668320?>
    <?templateDesigner SaveTaggedPDF 0?>
@@ -3663,20 +3651,89 @@ catch(exception)
    <xsdConnection name="DataConnection" dataDescription="DRUG_SUBCERT">
       <uri>..\..\xml_schema\6_2_drug_cert_form.xsd</uri>
       <rootElement>DRUG_SUBCERT</rootElement>
-      <?templateDesigner fileDigest shaHash="g4XcBdpZK3WkeWIzNVfetf6GgJA="?></xsdConnection>
+      <?templateDesigner fileDigest shaHash="iK5t7nDKwlY8b7dAHLfehnEPsmA="?></xsdConnection>
 </connectionSet>
+<hpfb:schema xmlns:hpfb="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" id="XFASchemaXSD">
+   <hpfb:include schemaLocation="#XFAXSDReference"/>
+   <!-- ****************************** -->
+   <!-- ELEMENT DECLARATIONS -->
+   <!-- ****************************** -->
+   <hpfb:element name="DRUG_SUBCERT" type="new_drug_cert_content"/>
+   <hpfb:element name="form_lang"/>
+   <hpfb:element name="form_version"/>
+   <hpfb:element name="application_type"/>
+   <hpfb:element name="appl_pertaining"/>
+   <hpfb:element name="appl_submitted_by"/>
+   <hpfb:element name="attest_q1"/>
+   <hpfb:element name="attest_q2a"/>
+   <hpfb:element name="attest_q2b"/>
+   <hpfb:element name="attest_q2c"/>
+   <hpfb:element name="smo_attestation_info" type="attest_content"/>
+   <hpfb:element name="seo_attestation_info" type="attest_content"/>
+   <!--Main form structure-->
+   <hpfb:complexType name="new_drug_cert_content">
+      <hpfb:sequence>
+         <hpfb:element ref="form_lang"/>
+         <hpfb:element ref="form_version"/>
+         <hpfb:element ref="application_type"/>
+         <hpfb:element ref="appl_pertaining"/>
+         <hpfb:element ref="appl_submitted_by"/>
+         <hpfb:element ref="attest_q1"/>
+         <hpfb:element ref="attest_q2a"/>
+         <hpfb:element ref="attest_q2b"/>
+         <hpfb:element ref="attest_q2c"/>
+         <hpfb:element ref="smo_attestation_info"/>
+         <hpfb:element ref="seo_attestation_info"/>
+      </hpfb:sequence>
+   </hpfb:complexType>
+</hpfb:schema>
+<hpfb:schema xmlns:hpfb="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" id="XFAXSDReference">
+   <hpfb:include schemaLocation="#XFAXSDReference1"/>
+   <!-- ****************************** -->
+   <!-- ELEMENT DECLARATIONS -->
+   <!-- ****************************** -->
+   <hpfb:element name="attestation_salutation"/>
+   <hpfb:element name="attestation_given_name"/>
+   <hpfb:element name="attestation_surname"/>
+   <hpfb:element name="attestation_title"/>
+   <hpfb:element name="signature_type"/>
+   <hpfb:element name="signature_image"/>
+   <hpfb:element name="attestation_sign_date" type="yyyymmdd_date_content"/>
+   <!-- ****************************** -->
+   <!-- ELEMENT TYPE DECLARATIONS -->
+   <!-- ****************************** -->
+   <!-- main xml structure-->
+   <hpfb:complexType name="attest_content">
+      <hpfb:sequence>
+         <hpfb:element ref="attestation_salutation"/>
+         <hpfb:element ref="attestation_given_name"/>
+         <hpfb:element ref="attestation_surname"/>
+         <hpfb:element ref="attestation_title"/>
+         <hpfb:element ref="signature_type"/>
+         <hpfb:element ref="signature_image"/>
+         <hpfb:element ref="attestation_sign_date"/>
+      </hpfb:sequence>
+   </hpfb:complexType>
+</hpfb:schema>
+<hpfb:schema xmlns:hpfb="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" id="XFAXSDReference1">
+   <hpfb:simpleType name="yyyymmdd_date_content">
+      <hpfb:restriction base="hpfb:date">
+         <hpfb:pattern value="[0-9]{4}-[0-9]{2}-[0-9]{2}"/>
+      </hpfb:restriction>
+   </hpfb:simpleType>
+</hpfb:schema>
 <x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.2-c001 63.139439, 2011/06/07-10:39:26        ">
    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
       <rdf:Description xmlns:xmp="http://ns.adobe.com/xap/1.0/" rdf:about="">
-         <xmp:MetadataDate>2015-11-26T19:01:05Z</xmp:MetadataDate>
+         <xmp:MetadataDate>2015-12-01T18:31:35Z</xmp:MetadataDate>
          <xmp:CreatorTool>Adobe LiveCycle Designer ES 10.0</xmp:CreatorTool>
       </rdf:Description>
       <rdf:Description xmlns:pdf="http://ns.adobe.com/pdf/1.3/" rdf:about="">
          <pdf:Producer>Adobe LiveCycle Designer ES 10.0</pdf:Producer>
       </rdf:Description>
       <rdf:Description xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" rdf:about="">
-         <xmpMM:DocumentID>uuid:7c6027fc-41f1-4f24-8202-76f558a70660</xmpMM:DocumentID>
-         <xmpMM:InstanceID>uuid:5906201c-4a96-4402-9e24-fba4df61df04</xmpMM:InstanceID>
+         <xmpMM:DocumentID>uuid:23d1153d-7d74-48cd-ae7a-0b3a5cd60cdd</xmpMM:DocumentID>
+         <xmpMM:InstanceID>uuid:72d0dbf3-8693-4473-adf8-acd6b36713cf</xmpMM:InstanceID>
       </rdf:Description>
       <rdf:Description xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:about="">
          <dc:format>application/pdf</dc:format>
@@ -3717,74 +3774,4 @@ catch(exception)
 </x:xmpmeta>
 <xfdf xmlns="http://ns.adobe.com/xfdf/" xml:space="preserve">
    <annots/>
-</xfdf>
-<hpfb:schema xmlns:hpfb="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" id="XFASchemaXSD">
-   <hpfb:include schemaLocation="#XFAXSDReference"/>
-   <!-- ****************************** -->
-   <!-- ELEMENT DECLARATIONS -->
-   <!-- ****************************** -->
-   <hpfb:element name="DRUG_SUBCERT" type="new_drug_cert_content"/>
-   <hpfb:element name="form_lang"/>
-   <hpfb:element name="form_version"/>
-   <hpfb:element name="application_type"/>
-   <hpfb:element name="appl_pertaining"/>
-   <hpfb:element name="appl_submitted_by"/>
-   <hpfb:element name="attest_q1"/>
-   <hpfb:element name="attest_q2a"/>
-   <hpfb:element name="attest_q2b"/>
-   <hpfb:element name="attest_q2c"/>
-   <hpfb:element name="smo_attestation_info" type="attest_content"/>
-   <hpfb:element name="seo_attestation_info" type="attest_content"/>
-   <!--Main form structure-->
-   <hpfb:complexType name="new_drug_cert_content">
-      <hpfb:sequence>
-         <hpfb:element ref="form_lang"/>
-         <hpfb:element ref="form_version"/>
-         <hpfb:element ref="application_type"/>
-         <hpfb:element ref="appl_pertaining"/>
-         <hpfb:element ref="appl_submitted_by"/>
-         <hpfb:element ref="attest_q1"/>
-         <hpfb:element ref="attest_q2a"/>
-         <hpfb:element ref="attest_q2b"/>
-         <hpfb:element ref="attest_q2c"/>
-         <hpfb:element ref="smo_attestation_info"/>
-         <hpfb:element ref="seo_attestation_info"/>
-      </hpfb:sequence>
-   </hpfb:complexType>
-</hpfb:schema>
-<hpfb:schema xmlns:hpfb="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" id="XFAXSDReference">
-   <hpfb:include schemaLocation="#XFAXSDReference1"/>
-   <!-- ****************************** -->
-   <!-- ELEMENT DECLARATIONS -->
-   <!-- ****************************** -->
-   <hpfb:element name="attestation_info" type="attest_content"/>
-   <hpfb:element name="attestation_salutation"/>
-   <hpfb:element name="attestation_given_name"/>
-   <hpfb:element name="attestation_surname"/>
-   <hpfb:element name="attestation_title"/>
-   <hpfb:element name="signature_type"/>
-   <hpfb:element name="signature_image"/>
-   <hpfb:element name="attestation_sign_date" type="yyyymmdd_date_content"/>
-   <!-- ****************************** -->
-   <!-- ELEMENT TYPE DECLARATIONS -->
-   <!-- ****************************** -->
-   <!-- main xml structure-->
-   <hpfb:complexType name="attest_content">
-      <hpfb:sequence>
-         <hpfb:element ref="attestation_salutation"/>
-         <hpfb:element ref="attestation_given_name"/>
-         <hpfb:element ref="attestation_surname"/>
-         <hpfb:element ref="attestation_title"/>
-         <hpfb:element ref="signature_type"/>
-         <hpfb:element ref="signature_image"/>
-         <hpfb:element ref="attestation_sign_date"/>
-      </hpfb:sequence>
-   </hpfb:complexType>
-</hpfb:schema>
-<hpfb:schema xmlns:hpfb="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" id="XFAXSDReference1">
-   <hpfb:simpleType name="yyyymmdd_date_content">
-      <hpfb:restriction base="hpfb:date">
-         <hpfb:pattern value="[0-9]{4}-[0-9]{2}-[0-9]{2}"/>
-      </hpfb:restriction>
-   </hpfb:simpleType>
-</hpfb:schema></xdp:xdp>
+</xfdf></xdp:xdp>
