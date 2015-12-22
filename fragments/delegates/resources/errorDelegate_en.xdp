@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xfa generator="AdobeLiveCycleDesignerES_V10.0.2.20120224.1.869952" APIVersion="3.5.12002.0"?>
-<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2015-11-12T18:09:27Z" uuid="5b170d51-14fd-465c-aec9-7ed135fc7122">
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2015-12-21T20:15:21Z" uuid="6b9d4449-3481-4093-a3dc-4a7a70634fc9">
 <template xmlns="http://www.xfa.org/schema/xfa-template/3.0/">
    <?formServer defaultPDFRenderFormat acrobat9.1static?>
    <subform name="form1" locale="en_CA" layout="tb">
@@ -23,7 +23,25 @@ var content={
 	error_otherPhoneNumError:	" enter a valid phone number that is between 9 and 18 digits in length.",
 	error_usFaxNumError:			" the fax number format is incorrect. Use the general format of 1-888-888 8888.",
 	error_otherFaxNumError:		" enter a valid fax number that is between 9 and 18 digits in length.",
+	err_notDate:				"The date format is incorrect. Please use the format YYYY-MM-DD.",
+	err_dateInvalidMonth:		"The date month is incorrect. Valid values are between 01 and 12",
+	err_dateInvalidDay31:		"The date day is outside the range. The range is 1-31 for the selected month",
+	err_dateInvalidDay30:		"The date day is outside the range. The range is 1-30 for the selected month",
+	err_dateInvalidDay29:		"The date day is outside the range. The range is 1-29 for the selected month",
+	err_dateInvalidDay28:		"The date day is outside the range. The range is 1-28 for the selected month",
+	err_futureDate:				"The date cannot be greater than today's date",
+	err_pastDate:				" the date must be in the past.", 
+	
+	
 }
+
+               
+               
+               
+
+               
+               
+               
 
                
                
@@ -44,8 +62,8 @@ var content={
       </subform>
    </subform>
    <?templateDesigner FormTargetVersion 30?>
-   <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?>
-   <?templateDesigner Zoom 112?></template>
+   <?templateDesigner Zoom 120?>
+   <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?></template>
 <config xmlns="http://www.xfa.org/schema/xci/3.0/">
    <agent name="designer">
       <!--  [0..n]  -->
@@ -72,14 +90,14 @@ var content={
 <x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.2-c001 63.139439, 2011/06/07-10:39:26        ">
    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
       <rdf:Description xmlns:xmp="http://ns.adobe.com/xap/1.0/" rdf:about="">
-         <xmp:MetadataDate>2015-11-12T18:09:27Z</xmp:MetadataDate>
+         <xmp:MetadataDate>2015-12-21T20:15:21Z</xmp:MetadataDate>
          <xmp:CreatorTool>Adobe LiveCycle Designer ES 10.0</xmp:CreatorTool>
       </rdf:Description>
       <rdf:Description xmlns:pdf="http://ns.adobe.com/pdf/1.3/" rdf:about="">
          <pdf:Producer>Adobe LiveCycle Designer ES 10.0</pdf:Producer>
       </rdf:Description>
       <rdf:Description xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" rdf:about="">
-         <xmpMM:DocumentID>uuid:5b170d51-14fd-465c-aec9-7ed135fc7122</xmpMM:DocumentID>
+         <xmpMM:DocumentID>uuid:6b9d4449-3481-4093-a3dc-4a7a70634fc9</xmpMM:DocumentID>
       </rdf:Description>
       <rdf:Description xmlns:lcd="http://ns.adobe.com/livecycle/designer/" xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:about="">
          <lcd:fragmentCatalog>
