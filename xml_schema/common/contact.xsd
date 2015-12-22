@@ -34,4 +34,20 @@
 			<hpfb:element ref="email"/>
 		</hpfb:sequence>
 	</hpfb:complexType>
+	
+	<hpfb:complexType name="contact_nolang_content">
+		<hpfb:sequence>
+			<hpfb:element ref="salutation" />
+			<hpfb:element ref="given_name" />
+			<hpfb:element ref="initials" />
+			<hpfb:element ref="surname"/>
+			<hpfb:element ref="job_title"/>
+			<hpfb:element ref="phone_num"/>
+			<hpfb:element ref="phone_ext"/>
+			<hpfb:element ref="fax_num" />
+			<hpfb:element ref="email"/>
+		</hpfb:sequence>
+	</hpfb:complexType>
+
+	
 </hpfb:schema>
