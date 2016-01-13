@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xfa generator="AdobeLiveCycleDesignerES_V10.0.2.20120224.1.869952" APIVersion="3.5.12002.0"?>
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/">
+<template xmlns="http://www.xfa.org/schema/xfa-template/3.0/">
+   <subform name="form1" locale="en_CA" layout="tb">
+      <pageSet>
+         <pageArea>
+            <contentArea w="203.2mm" h="249.476mm" x="6.351mm" y="16.198mm" name="contentArea"/>
+            <medium stock="default" short="612pt" long="792pt"/>
+         </pageArea>
+      </pageSet>
+      <subform w="203.2mm" name="sfInstructions">
+         <field name="btnViewInstructions" w="31.75mm" h="6.35mm" relevant="-print">
+            <ui>
+               <button highlight="inverted"/>
+            </ui>
+            <font typeface="Myriad Pro"/>
+            <caption>
+               <value>
+                  <text>Show Instructions</text>
+               </value>
+               <para vAlign="middle" hAlign="center" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt"/>
+               <font typeface="Myriad Pro" baselineShift="0pt" size="8pt"/>
+            </caption>
+            <border hand="right">
+               <?templateDesigner StyleID apbx2?>
+               <edge stroke="raised"/>
+               <fill>
+                  <color value="212,208,200"/>
+               </fill>
+            </border>
+            <bind match="none"/>
+            <event activity="click" name="event__click">
+               <script contentType="application/x-javascript">
+var cFormHandler=	script.HCeForm.control.FormHandler;
+var cActionEvent = script.core.event.ActionEvent;
+var cLog = script.core.util.Log;
+try
+{
+		// set up event object
+		var actionName = cFormHandler.SHOW_INSTRUCTIONS;
+		var anActionEvent = cActionEvent.createInstance(actionName, this);
+		// deploy event to controller
+		cFormHandler.actionPerformed(anActionEvent);
+	
+}
+catch(exception)
+{
+	cLog.warn("Problem with show instructions ::click", exception);
+}
+</script>
+            </event>
+         </field>
+         <field name="btnHideInstructions" w="31.75mm" h="6.35mm" relevant="-print" x="36.326mm">
+            <ui>
+               <button highlight="inverted"/>
+            </ui>
+            <font typeface="Myriad Pro"/>
+            <caption>
+               <value>
+                  <text>Hide Instructions</text>
+               </value>
+               <para vAlign="middle" hAlign="center" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt"/>
+               <font typeface="Myriad Pro" baselineShift="0pt" size="8pt"/>
+            </caption>
+            <border hand="right">
+               <?templateDesigner StyleID apbx2?>
+               <edge stroke="raised"/>
+               <fill>
+                  <color value="212,208,200"/>
+               </fill>
+            </border>
+            <bind match="none"/>
+            <event activity="click" name="event__click">
+               <script contentType="application/x-javascript">var cFormHandler=	script.HCeForm.control.FormHandler;
+var cActionEvent = script.core.event.ActionEvent;
+var cLog = script.core.util.Log;
+try
+{
+		// set up event object
+		var actionName =  cFormHandler.HIDE_INSTRUCTIONS;
+		var anActionEvent = cActionEvent.createInstance(actionName, this);
+		// deploy event to controller
+		cFormHandler.actionPerformed(anActionEvent);
+	
+}
+catch(exception)
+{
+	cLog.warn("Problem with hide instructions ::click", exception);
+}
+
+</script>
+            </event>
+         </field>
+         <border>
+            <edge presence="hidden"/>
+            <corner presence="hidden" thickness="0.175mm"/>
+         </border>
+         <margin bottomInset="5.08mm"/>
+         <bind match="none"/>
+         <draw name="lblGuidance" w="48.533mm" h="5.2331mm" relevant="-print" x="68.707mm" y="1.638mm">
+            <ui>
+               <textEdit/>
+            </ui>
+            <value>
+               <exData contentType="text/html">
+                  <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"><p style="letter-spacing:0in"><a href="http://www.hc-sc.gc.ca/dhp-mps/prodpharma/applic-demande/guide-ld/patmedbrev/pmreg3_mbreg3-eng.php">Guidance Document</a></p></body>
+               </exData>
+            </value>
+            <font typeface="Myriad Pro" baselineShift="0pt" size="8pt"/>
+            <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
+            <para hAlign="center" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt"/>
+         </draw>
+         <?templateDesigner expand 1?>
+         <?templateDesigner isFragment yes?>
+         <?templateDesigner fragmentTitle sfInstructions?></subform>
+   </subform>
+</template>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.2-c001 63.139439, 2011/06/07-10:39:26        ">
+   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <rdf:Description xmlns:lcd="http://ns.adobe.com/livecycle/designer/" xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:about="">
+         <lcd:fragmentCatalog>
+            <rdf:Seq>
+               <rdf:li rdf:parseType="Resource">
+                  <dc:title>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default">sfInstructions</rdf:li>
+                     </rdf:Alt>
+                  </dc:title>
+                  <dc:description>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default"/>
+                     </rdf:Alt>
+                  </dc:description>
+                  <dc:identifier>$template.form1.sfInstructions</dc:identifier>
+                  <lcd:fragmentRole>Subform</lcd:fragmentRole>
+               </rdf:li>
+            </rdf:Seq>
+         </lcd:fragmentCatalog>
+      </rdf:Description>
+   </rdf:RDF>
+</x:xmpmeta></xdp:xdp>

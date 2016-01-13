@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xfa generator="AdobeLiveCycleDesignerES_V10.0.2.20120224.1.869952" APIVersion="3.5.12002.0"?>
-<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2015-12-22T21:00:44Z" uuid="3a7907a7-254c-4d44-a155-75292dc56b13">
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2016-01-13T18:17:33Z" uuid="1ffc1dd4-1827-480a-ac7d-70c325434141">
 <template xmlns="http://www.xfa.org/schema/xfa-template/3.0/">
    <?formServer defaultPDFRenderFormat acrobat9.1dynamic?>
    <?formServer allowRenderCaching 0?>
@@ -185,7 +185,7 @@ this.rawValue=textVal;
                <para vAlign="middle" hAlign="right"/>
                <?renderCache.bounds 239758 13006 0 0 1417 1417 0 0?>
                <?renderCache.textRun 5 Title 0 226783 9920 0 0 0 "Myriad Pro" 0 0 8000 ISO-8859-1?></draw>
-            <?templateDesigner expand 1?></pageArea>
+            <?templateDesigner expand 0?></pageArea>
          <?templateDesigner expand 0?></pageSet>
       <subform w="576pt" name="sfPage1" layout="lr-tb">
          <subform w="203.2mm" name="sfMainHeader" layout="lr-tb">
@@ -328,234 +328,12 @@ catch(exception)
             <margin bottomInset="2.54mm"/>
             <bind match="none"/>
             <?templateDesigner expand 0?></subform>
-         <subform w="202.184mm" layout="lr-tb" name="sfInstructionsContent">
-            <draw name="lblInstructionsHead" w="202.184mm" h="6.249mm">
-               <ui>
-                  <textEdit/>
-               </ui>
-               <value>
-                  <text>INSTRUCTIONS</text>
-               </value>
-               <font typeface="Myriad Pro" baselineShift="0pt" size="12pt" weight="bold"/>
-               <margin topInset="0.254mm" bottomInset="0.254mm" leftInset="0.5mm" rightInset="0.5mm"/>
-               <para spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt" vAlign="middle"/>
-               <border>
-                  <edge/>
-                  <corner thickness="0.175mm"/>
-                  <fill>
-                     <linear>
-                        <color value="255,255,255"/>
-                     </linear>
-                     <color value="255,255,153"/>
-                  </fill>
-                  <corner thickness="0.175mm" presence="hidden"/>
-                  <corner thickness="0.175mm" presence="hidden"/>
-                  <edge presence="hidden"/>
-                  <edge/>
-                  <edge presence="hidden"/>
-               </border>
-               <assist role="H2"/>
-               <?renderCache.bounds 570286 16274 0 0 1417 720 0 0?>
-               <?renderCache.textRun 12 INSTRUCTIONS 0 1417 11857 0 0 0 "Myriad Pro" 1 0 12000 ISO-8859-1?></draw>
-            <subform y="6.249mm" w="202.184mm" minH="59.561mm" layout="lr-tb" name="sfInstructList">
-               <subform w="202.184mm" name="sfInstruct1" layout="tb">
-                  <draw name="lblInstruct1" w="7.999958in" minH="5.116mm">
-                     <ui>
-                        <textEdit/>
-                     </ui>
-                     <value>
-                        <text>This form contains mandatory fields. In order to ensure you have completed all appropriate fields, please press the \"Finalize\" button at the bottom of the form before printing and signing. </text>
-                     </value>
-                     <font typeface="Myriad Pro" baselineShift="0pt" size="8pt"/>
-                     <margin topInset="0.5002mm" bottomInset="0.5002mm" leftInset="0.5mm" rightInset="0.5mm"/>
-                     <para spaceAbove="0.5pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt" vAlign="middle"/>
-                     <border>
-                        <edge presence="hidden"/>
-                        <corner thickness="0.175mm" presence="hidden"/>
-                     </border>
-                  </draw>
-                  <margin bottomInset="2.54mm" topInset="2.54mm"/>
-                  <bind match="none"/>
-                  <?templateDesigner expand 1?></subform>
-               <subform w="202.184mm" name="sfInstruct2" layout="tb">
-                  <draw name="lblInstruct2" w="7.999958in" minH="8.931mm">
-                     <ui>
-                        <textEdit/>
-                     </ui>
-                     <font typeface="Myriad Pro" baselineShift="0pt" size="8pt"/>
-                     <margin topInset="0.5002mm" bottomInset="0.5002mm" leftInset="0.5mm" rightInset="0.5mm"/>
-                     <para spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt" vAlign="middle"/>
-                     <border>
-                        <edge presence="hidden"/>
-                        <corner thickness="0.175mm" presence="hidden"/>
-                     </border>
-                     <value>
-                        <text>text</text>
-                     </value>
-                  </draw>
-                  <margin topInset="0mm" bottomInset="2.54mm"/>
-                  <bind match="none"/>
-                  <?templateDesigner expand 1?></subform>
-               <subform w="202.184mm" name="sfInstruct3" layout="tb">
-                  <draw name="lblInstruct3" w="7.999958in" h="11.866mm">
-                     <ui>
-                        <textEdit/>
-                     </ui>
-                     <font typeface="Myriad Pro" baselineShift="0pt" size="8pt"/>
-                     <margin topInset="0.5002mm" bottomInset="0.5002mm" leftInset="0.5mm" rightInset="0.5mm"/>
-                     <para spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt" vAlign="middle"/>
-                     <border>
-                        <edge presence="hidden"/>
-                        <corner thickness="0.175mm" presence="hidden"/>
-                     </border>
-                     <value>
-                        <text>text</text>
-                     </value>
-                     <?renderCache.bounds 573163 30800 0 0 1417 1418 0 0?>
-                     <?renderCache.textRun 4 text 0 1417 18818 0 0 0 "Myriad Pro" 0 0 8000 ISO-8859-1?></draw>
-                  <margin topInset="0mm" bottomInset="0mm"/>
-                  <bind match="none"/>
-                  <?templateDesigner expand 1?></subform>
-               <subform w="202.184mm" name="sfInstructHumanHeading" layout="tb">
-                  <draw name="lblHumanHeading" w="201.168mm" h="5.41mm">
-                     <ui>
-                        <textEdit/>
-                     </ui>
-                     <value>
-                        <text>WHERE TO SEND HUMAN DRUG SUBMISSION APPLICATIONS</text>
-                     </value>
-                     <font typeface="Myriad Pro" baselineShift="0pt" size="12pt" weight="bold"/>
-                     <margin topInset="0.5002mm" bottomInset="0.5002mm" leftInset="0.5mm" rightInset="0.5mm"/>
-                     <para spaceAbove="0.5pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt" vAlign="middle"/>
-                     <border>
-                        <edge presence="hidden"/>
-                        <corner thickness="0.175mm" presence="hidden"/>
-                        <fill>
-                           <color value="236,236,236"/>
-                        </fill>
-                     </border>
-                     <?renderCache.bounds 567406 12499 0 0 1417 1418 0 0?>
-                     <?renderCache.textRun 48 WHERE TO SEND HUMAN DRUG SUBMISSION APPLICATIONS 0 1417 10918 0 0 0 "Myriad Pro" 1 0 12000 ISO-8859-1?></draw>
-                  <margin topInset="0mm" bottomInset="0mm" leftInset="0.762mm"/>
-                  <bind match="none"/>
-                  <?templateDesigner expand 1?></subform>
-               <subform w="202.184mm" name="sfInstruct4" layout="tb">
-                  <draw name="lblInstruct4" w="7.999958in" h="12.395mm">
-                     <ui>
-                        <textEdit/>
-                     </ui>
-                     <font typeface="Myriad Pro" baselineShift="0pt" size="8pt"/>
-                     <margin topInset="0.5002mm" bottomInset="0.5002mm" leftInset="0.5mm" rightInset="0.5mm"/>
-                     <para spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt" vAlign="middle"/>
-                     <border>
-                        <edge presence="hidden"/>
-                        <corner thickness="0.175mm" presence="hidden"/>
-                     </border>
-                     <value>
-                        <text>text</text>
-                     </value>
-                     <?renderCache.bounds 573163 32299 0 0 1417 1418 0 0?>
-                     <?renderCache.textRun 4 text 0 1417 19567 0 0 0 "Myriad Pro" 0 0 8000 ISO-8859-1?></draw>
-                  <margin topInset="0mm" bottomInset="0mm"/>
-                  <bind match="none"/>
-                  <?templateDesigner expand 1?></subform>
-               <subform w="202.184mm" name="sfInstruct5" layout="tb">
-                  <draw name="lblInstruct5" w="7.999958in" h="27.953mm">
-                     <ui>
-                        <textEdit/>
-                     </ui>
-                     <font typeface="Myriad Pro" baselineShift="0pt" size="8pt"/>
-                     <margin topInset="0.5002mm" bottomInset="0.5002mm" leftInset="10.16mm" rightInset="0.5mm"/>
-                     <para spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt" vAlign="middle"/>
-                     <border>
-                        <edge presence="hidden"/>
-                        <corner thickness="0.175mm" presence="hidden"/>
-                     </border>
-                     <value>
-                        <text>text</text>
-                     </value>
-                     <?renderCache.bounds 545780 76401 0 0 28800 1418 0 0?>
-                     <?renderCache.textRun 4 text 0 28800 41618 0 0 0 "Myriad Pro" 0 0 8000 ISO-8859-1?></draw>
-                  <margin topInset="0mm" bottomInset="0mm"/>
-                  <bind match="none"/>
-                  <?templateDesigner expand 1?></subform>
-               <subform w="201.93mm" name="sfInstructVetHeading" layout="tb">
-                  <draw name="lblVetHeading" w="201.168mm" minH="4.367mm">
-                     <ui>
-                        <textEdit/>
-                     </ui>
-                     <value>
-                        <text>WHERE TO SEND VETERINARY DRUG SUBMISSION APPLICATIONS</text>
-                     </value>
-                     <font typeface="Myriad Pro" baselineShift="0pt" size="12pt" weight="bold"/>
-                     <margin topInset="0.5002mm" bottomInset="0.5002mm" leftInset="0.5mm" rightInset="0.5mm"/>
-                     <para spaceAbove="0.5pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt" vAlign="middle"/>
-                     <border>
-                        <edge presence="hidden"/>
-                        <corner thickness="0.175mm" presence="hidden"/>
-                        <fill>
-                           <color value="236,236,236"/>
-                        </fill>
-                     </border>
-                  </draw>
-                  <margin topInset="0mm" bottomInset="0mm" leftInset="0.762mm"/>
-                  <bind match="none"/>
-                  <?templateDesigner expand 1?></subform>
-               <subform w="202.184mm" name="sfInstruct6" layout="tb">
-                  <draw name="lblInstruct6" w="7.999958in" h="12.395mm">
-                     <ui>
-                        <textEdit/>
-                     </ui>
-                     <font typeface="Myriad Pro" baselineShift="0pt" size="8pt"/>
-                     <margin topInset="0.5002mm" bottomInset="0.5002mm" leftInset="0.5mm" rightInset="0.5mm"/>
-                     <para spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt" vAlign="middle"/>
-                     <border>
-                        <edge presence="hidden"/>
-                        <corner thickness="0.175mm" presence="hidden"/>
-                     </border>
-                     <value>
-                        <text>text</text>
-                     </value>
-                     <?renderCache.bounds 573163 32299 0 0 1417 1418 0 0?>
-                     <?renderCache.textRun 4 text 0 1417 19567 0 0 0 "Myriad Pro" 0 0 8000 ISO-8859-1?></draw>
-                  <margin topInset="0mm" bottomInset="0mm"/>
-                  <bind match="none"/>
-                  <?templateDesigner expand 1?></subform>
-               <subform w="202.184mm" name="sfInstruct7" layout="tb" y="3mm">
-                  <draw name="lblInstruct7" w="7.999958in" h="27.953mm">
-                     <ui>
-                        <textEdit/>
-                     </ui>
-                     <font typeface="Myriad Pro" baselineShift="0pt" size="8pt"/>
-                     <margin topInset="0.5002mm" bottomInset="0.5002mm" leftInset="10.16mm" rightInset="0.5mm"/>
-                     <para spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt" vAlign="middle"/>
-                     <border>
-                        <edge presence="hidden"/>
-                        <corner thickness="0.175mm" presence="hidden"/>
-                     </border>
-                     <value>
-                        <text>text</text>
-                     </value>
-                     <?renderCache.bounds 545780 76401 0 0 28800 1418 0 0?>
-                     <?renderCache.textRun 4 text 0 28800 41618 0 0 0 "Myriad Pro" 0 0 8000 ISO-8859-1?></draw>
-                  <margin topInset="0mm" bottomInset="0mm"/>
-                  <bind match="none"/>
-                  <?templateDesigner expand 1?></subform>
-               <bind match="none"/>
-               <?templateDesigner expand 0?></subform>
-            <border>
-               <edge/>
-               <corner thickness="0.175mm"/>
-               <edge presence="hidden"/>
-               <edge/>
-               <edge presence="hidden"/>
-               <corner thickness="0.175mm" presence="hidden"/>
-               <corner thickness="0.175mm"/>
-               <corner thickness="0.175mm" presence="hidden"/>
-            </border>
-            <margin topInset="0mm" bottomInset="2.54mm" leftInset="0mm"/>
-            <bind match="none"/>
-            <?templateDesigner expand 1?></subform>
+         <subform usehref=".\Fragments\sfInstructions.xdp#som($template.#subform.sfInstructions)">
+            <?templateDesigner expand 1?>
+         </subform>
+         <subform usehref=".\Fragments\sfInstructionsContent.xdp#som($template.#subform.sfInstructionsContent)">
+            <?templateDesigner expand 0?>
+         </subform>
          <subform w="203.213mm" name="sfPart1" layout="lr-tb">
             <subform w="203.2mm" name="sfPart1Heading" layout="tb">
                <draw name="lblPart1Heading" w="202.184mm" h="6.249mm">
@@ -703,7 +481,7 @@ catch(exception)
                <?templateDesigner expand 1?>
                <bind match="none"/>
             </subform>
-            <field name="ddlRelatedSub" w="84.299mm" h="13.707mm">
+            <field name="ddlRelatedSub" w="101.576mm" h="13.707mm">
                <ui>
                   <choiceList>
                      <border>
@@ -913,7 +691,7 @@ cSystem.setCurrentField(this);
                   <event activity="click" name="event__click">
                      <script contentType="application/x-javascript">
  
-var cHandler=script.HCeForm.control.Part1_5Handler;
+var cHandler=script.HCeForm.control.DrugHandler;
 var cActionEvent = script.core.event.ActionEvent;
 var cLog = script.core.util.Log;
 var cSystem = script.core.System;
@@ -937,411 +715,10 @@ catch(exception)
                <?templateDesigner expand 0?>
                <bind match="none"/>
             </subform>
-            <subform y="10.06mm" w="202.991mm" minH="14.976mm" layout="lr-tb" name="sfIngredientList">
-               <subform w="200.66mm" name="sfIngredient" layout="lr-tb">
-                  <occur max="-1"/>
-                  <field name="txtIngredient" w="158.183mm" minH="13.706mm">
-                     <ui>
-                        <textEdit multiLine="1">
-                           <border>
-                              <edge stroke="lowered"/>
-                           </border>
-                           <margin/>
-                        </textEdit>
-                     </ui>
-                     <font typeface="Myriad Pro"/>
-                     <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="3.81mm"/>
-                     <para vAlign="middle"/>
-                     <caption reserve="0.185306in" placement="top">
-                        <para vAlign="middle"/>
-                        <value>
-                           <text>Medicinal Ingedient</text>
-                        </value>
-                        <font typeface="Myriad Pro" size="8pt"/>
-                     </caption>
-                     <validate nullTest="error"/>
-                     <value>
-                        <text maxChars="255"/>
-                     </value>
-                     <keep intact="contentArea"/>
-                     <bind match="dataRef" ref="$.medicinal_ingredient"/>
-                  </field>
-                  <border>
-                     <edge stroke="dashed" presence="hidden"/>
-                     <corner stroke="dashed" presence="hidden" thickness="0.175mm"/>
-                  </border>
-                  <subform x="163.76mm" w="37.87mm" name="sfDeleteIngred" h="13.165mm">
-                     <keep intact="none"/>
-                     <field name="btnDeleteIng" w="37.87mm" h="6.35mm" x="0mm" y="6.258mm">
-                        <ui>
-                           <button highlight="inverted"/>
-                        </ui>
-                        <font typeface="Myriad Pro"/>
-                        <caption>
-                           <value>
-                              <text>Delete Ingredient</text>
-                           </value>
-                           <para vAlign="middle" hAlign="center"/>
-                        </caption>
-                        <border hand="right">
-                           <edge stroke="raised"/>
-                           <fill>
-                              <color value="212,208,200"/>
-                           </fill>
-                        </border>
-                        <bind match="none"/>
-                        <event activity="click" name="event__click">
-                           <script contentType="application/x-javascript">
-
-
-
-var cHandler=script.HCeForm.control.Part1_5Handler;
-var cActionEvent = script.core.event.ActionEvent;
-var cLog = script.core.util.Log;
-var cSystem = script.core.System;
-
-
-try{
-		// set up event object
-			var actionName = cHandler.REMOVE_MED_INGREDIENT;
-			var anActionEvent = cActionEvent.createInstance(actionName, this,this.parent.parent); //parent subform hack
-			// deploy event to controller
-			cHandler.actionPerformed(anActionEvent);
-		
-}
-catch(exception)
-{
-	cLog.warn("Problem with remove ingredient::click", exception);
-}
-</script>
-                        </event>
-                     </field>
-                     <bind match="none"/>
-                     <?templateDesigner expand 1?></subform>
-                  <margin leftInset="0mm" rightInset="0mm" bottomInset="1.27mm"/>
-                  <bind match="dataRef" ref="$.medicinal_ingredient_info[*]"/>
-                  <?templateDesigner expand 1?></subform>
-               <margin leftInset="1.27mm" rightInset="1.27mm"/>
-               <border>
-                  <edge stroke="dashed" presence="hidden"/>
-                  <edge presence="hidden"/>
-                  <edge presence="hidden"/>
-                  <edge presence="hidden"/>
-                  <corner stroke="dashed" presence="hidden"/>
-                  <corner/>
-                  <corner/>
-                  <corner/>
-               </border>
-               <bind match="none"/>
-               <?templateDesigner expand 1?></subform>
-            <subform w="202.409mm" minH="36mm" layout="lr-tb" name="sfDrugDetails">
-               <field name="txtBrandName" w="201.879mm" minH="13.707mm">
-                  <ui>
-                     <textEdit multiLine="1">
-                        <border>
-                           <edge stroke="lowered"/>
-                        </border>
-                        <margin/>
-                     </textEdit>
-                  </ui>
-                  <font typeface="Myriad Pro"/>
-                  <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
-                  <para vAlign="middle"/>
-                  <caption reserve="4.5mm" placement="top">
-                     <para vAlign="middle"/>
-                     <value>
-                        <text>Brand Name	</text>
-                     </value>
-                     <font typeface="Myriad Pro" size="8pt"/>
-                  </caption>
-                  <validate nullTest="error"/>
-                  <keep intact="contentArea"/>
-                  <value>
-                     <text maxChars="255"/>
-                  </value>
-                  <bind match="dataRef" ref="$.brand_name"/>
-               </field>
-               <field name="ddlDrugUse" w="45.265mm" h="13.707mm">
-                  <ui>
-                     <choiceList>
-                        <border>
-                           <edge stroke="lowered"/>
-                        </border>
-                        <margin/>
-                     </choiceList>
-                  </ui>
-                  <font typeface="Myriad Pro"/>
-                  <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
-                  <para vAlign="middle"/>
-                  <caption reserve="0.185306in" placement="top">
-                     <para vAlign="middle"/>
-                     <value>
-                        <text>Drug Use	</text>
-                     </value>
-                     <font typeface="Myriad Pro" size="8pt"/>
-                  </caption>
-                  <validate nullTest="error"/>
-                  <bind match="dataRef" ref="$.drug_use"/>
-               </field>
-               <field name="txtStrengthUnit" w="156.817mm" minH="13.707mm">
-                  <ui>
-                     <textEdit multiLine="1">
-                        <border>
-                           <edge stroke="lowered"/>
-                        </border>
-                        <margin/>
-                     </textEdit>
-                  </ui>
-                  <font typeface="Myriad Pro"/>
-                  <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
-                  <para vAlign="middle"/>
-                  <caption reserve="0.185306in" placement="top">
-                     <para vAlign="middle"/>
-                     <value>
-                        <text>Strength per Unit</text>
-                     </value>
-                     <font typeface="Myriad Pro" size="8pt"/>
-                  </caption>
-                  <validate nullTest="error"/>
-                  <value>
-                     <text maxChars="255"/>
-                  </value>
-                  <bind match="dataRef" ref="$.strength"/>
-               </field>
-               <field name="ddlDosageForm" w="65.254mm" h="13.707mm">
-                  <ui>
-                     <choiceList>
-                        <border>
-                           <edge stroke="lowered"/>
-                        </border>
-                        <margin/>
-                     </choiceList>
-                  </ui>
-                  <font typeface="Myriad Pro"/>
-                  <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
-                  <para vAlign="middle"/>
-                  <caption reserve="4.7068mm" placement="top">
-                     <para vAlign="middle"/>
-                     <value>
-                        <text>Dosage Form</text>
-                     </value>
-                     <font typeface="Myriad Pro" size="8pt"/>
-                  </caption>
-                  <validate nullTest="error"/>
-                  <event activity="exit" name="event__exit">
-                     <script contentType="application/x-javascript">
-var cHandler=script.HCeForm.control.Part1_5Handler;
-var cActionEvent = script.core.event.ActionEvent;
-var cLog = script.core.util.Log;
-var cSystem = script.core.System;
-
-
-try{
-		// set up event object
-		if(cSystem.hasCurrentFieldValueChanged(this)){
-			var actionName = cHandler.DOSAGE_FORM_CHANGE;
-			var anActionEvent = cActionEvent.createInstance(actionName, this);
-			// deploy event to controller
-			cHandler.actionPerformed(anActionEvent);
-		}
-}
-catch(exception)
-{
-	cLog.warn("Problem with dosage form::exit", exception);
-}
-</script>
-                  </event>
-                  <event activity="enter" name="event__enter">
-                     <script contentType="application/x-javascript">var cSystem = script.core.System;
-
-cSystem.setCurrentField(this);
-
-</script>
-                  </event>
-                  <bind match="dataRef" ref="$.dosage_form"/>
-               </field>
-               <field name="txtDosageDetails" w="136.885mm" minH="13.707mm">
-                  <ui>
-                     <textEdit multiLine="1">
-                        <border>
-                           <edge stroke="lowered"/>
-                        </border>
-                        <margin/>
-                     </textEdit>
-                  </ui>
-                  <font typeface="Myriad Pro"/>
-                  <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
-                  <para vAlign="middle"/>
-                  <caption reserve="0.185306in" placement="top">
-                     <para vAlign="middle"/>
-                     <value>
-                        <text>Dosage Form Details</text>
-                     </value>
-                     <font typeface="Myriad Pro" size="8pt"/>
-                  </caption>
-                  <value>
-                     <text maxChars="255"/>
-                  </value>
-                  <validate nullTest="error"/>
-                  <bind match="dataRef" ref="$.dosage_form_other"/>
-               </field>
-               <field name="ddlRoute" w="46.098mm" h="13.707mm">
-                  <ui>
-                     <choiceList>
-                        <border>
-                           <edge stroke="lowered"/>
-                        </border>
-                        <margin/>
-                     </choiceList>
-                  </ui>
-                  <font typeface="Myriad Pro"/>
-                  <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
-                  <para vAlign="middle"/>
-                  <caption reserve="0.185306in" placement="top">
-                     <para vAlign="middle"/>
-                     <value>
-                        <text>Route of Administration</text>
-                     </value>
-                     <font typeface="Myriad Pro" size="8pt"/>
-                  </caption>
-                  <validate nullTest="error"/>
-                  <event activity="exit" name="event__exit">
-                     <script contentType="application/x-javascript">
-var cHandler=script.HCeForm.control.Part1_5Handler;
-var cActionEvent = script.core.event.ActionEvent;
-var cLog = script.core.util.Log;
-var cSystem = script.core.System;
-
-
-try{
-		// set up event object
-		if(cSystem.hasCurrentFieldValueChanged(this)){
-			var actionName = cHandler.ROUTE_ADMIN_CHANGE;
-			var anActionEvent = cActionEvent.createInstance(actionName, this);
-			// deploy event to controller
-			cHandler.actionPerformed(anActionEvent);
-		}
-}
-catch(exception)
-{
-	cLog.warn("Problem with dosage form::exit", exception);
-}
-</script>
-                  </event>
-                  <event activity="enter" name="event__enter">
-                     <script contentType="application/x-javascript">var cSystem = script.core.System;
-
-cSystem.setCurrentField(this);
-
-</script>
-                  </event>
-                  <bind match="dataRef" ref="$.route"/>
-               </field>
-               <field name="txtRouteDetails" w="90.527mm" minH="13.707mm">
-                  <ui>
-                     <textEdit multiLine="1">
-                        <border>
-                           <edge stroke="lowered"/>
-                        </border>
-                        <margin/>
-                     </textEdit>
-                  </ui>
-                  <font typeface="Myriad Pro"/>
-                  <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
-                  <para vAlign="middle"/>
-                  <caption reserve="0.185306in" placement="top">
-                     <para vAlign="middle"/>
-                     <value>
-                        <text>Route Details</text>
-                     </value>
-                     <font typeface="Myriad Pro" size="8pt"/>
-                  </caption>
-                  <value>
-                     <text maxChars="255"/>
-                  </value>
-                  <validate nullTest="error"/>
-                  <bind match="dataRef" ref="$.route_other"/>
-               </field>
-               <margin topInset="5.08mm" bottomInset="0.762mm"/>
-               <field name="txtDIN" w="58.017mm" h="13.706mm">
-                  <ui>
-                     <textEdit hScrollPolicy="off">
-                        <border hand="right">
-                           <edge/>
-                        </border>
-                        <margin/>
-                        <comb numberOfCells="8"/>
-                     </textEdit>
-                  </ui>
-                  <font typeface="Myriad Pro"/>
-                  <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
-                  <para vAlign="middle"/>
-                  <caption reserve="4.7068mm" placement="top">
-                     <para vAlign="middle"/>
-                     <value>
-                        <text>Drug Identification Number (DIN)</text>
-                     </value>
-                     <font typeface="Myriad Pro" size="8pt"/>
-                  </caption>
-                  <keep intact="contentArea"/>
-                  <event activity="change" name="event__change">
-                     <script contentType="application/x-javascript">
-
-var cActionEvent = script.core.event.ActionEvent;
-var cLog = script.core.util.Log;
-var cHandler = script.HCeForm.control.Part1_5Handler;
-var cSystem = script.core.System;
-
-try{
-		// set up event object
-		var actionName = cHandler.NUMBER_EIGHT_DIG_ACTION;
-		var anActionEvent = cActionEvent.createInstance(actionName, this,xfa.event);
-		// deploy event to controller
-		cHandler.actionPerformed(anActionEvent);
-}
-catch(exception)
-{
-	cLog.warn("Problem with sub type::change", exception);
-}
-</script>
-                  </event>
-                  <bind match="dataRef" ref="$.din"/>
-               </field>
-               <field name="txtMedUse" w="201.199mm" minH="25.809mm">
-                  <ui>
-                     <textEdit multiLine="1">
-                        <border>
-                           <edge stroke="lowered"/>
-                        </border>
-                        <margin/>
-                     </textEdit>
-                  </ui>
-                  <font typeface="Myriad Pro"/>
-                  <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
-                  <caption reserve="5.3648mm" placement="top">
-                     <value>
-                        <text>Uses of Medicinal Ingredients </text>
-                     </value>
-                     <font typeface="Myriad Pro" size="8pt"/>
-                  </caption>
-                  <validate nullTest="error"/>
-                  <keep intact="contentArea"/>
-                  <bind match="dataRef" ref="$.ingredient_uses"/>
-               </field>
-               <border>
-                  <edge stroke="dashed" presence="hidden"/>
-                  <edge presence="hidden"/>
-                  <edge presence="hidden"/>
-                  <edge presence="hidden"/>
-                  <corner stroke="dashed" presence="hidden"/>
-                  <corner/>
-                  <corner/>
-                  <corner/>
-               </border>
-               <bind match="none"/>
-               <?templateDesigner expand 0?></subform>
+            <subform usehref=".\Fragments\sfIngredientList.xdp#som($template.#subform.sfIngredientList)"/>
+            <subform usehref=".\Fragments\sfDrugDetails.xdp#som($template.#subform.sfDrugDetails)"/>
             <bind match="dataRef" ref="$.drug_info"/>
-            <?templateDesigner expand 0?></subform>
+            <?templateDesigner expand 1?></subform>
          <subform w="203.199mm" name="sfPart3" layout="lr-tb">
             <subform name="sfPart3Heading" w="202.184mm">
                <margin topInset="1.27mm" bottomInset="2.54mm"/>
@@ -3446,13 +2823,13 @@ if (this.rawValue != null) {
                      <edge/>
                      <corner thickness="0.175mm"/>
                   </border>
-                  <validate>
-                     <picture>num.integer{}</picture>
-                  </validate>
                   <format>
                      <picture>num{zzzzzzzzzzzz9}</picture>
                   </format>
                   <bind match="dataRef" ref="$.hcoonly_info.subform_id"/>
+                  <value>
+                     <integer/>
+                  </value>
                </field>
                <field name="numFormId" w="35.56mm" h="19.05mm">
                   <ui>
@@ -3538,8 +2915,8 @@ if (this.rawValue != null) {
             <edge/>
             <corner thickness="0.175mm"/>
          </border>
-         <?templateDesigner expand 0?>
          <bind match="none"/>
+         <?templateDesigner expand 1?>
       </subform>
       <subform w="100mm" name="script" layout="tb" presence="hidden">
          <bind match="none"/>
@@ -3559,7 +2936,7 @@ var content = {
 
 formType: 					"PATENT_LIST",
 errorInd:					"+",
-formVersion: 				"2.00.10",
+formVersion: 				"2.00.11",
 CANADA:						"CA",
 USA:						"US",
 DR_SALUT: 					"dr",
@@ -3956,11 +3333,11 @@ function initialise(){
 	var sameAsValue=MANUFACT_SAMEAS_CHK_FN.getNodeInstance().rawValue;
 	
 	_setManufactAddress(sameAsValue);
-	if(!sameAsValue){
+	/*if(!sameAsValue){
 		cAddressUtil.setProvinceUIState(MANUFACT_COUNTRY_DDL_FN.getNodeInstance().rawValue,MANUFACT_PROVINCE_FN.getNodeInstance(),MANUFACT_PROVINCE_TXT_FN.getNodeInstance());
 		var contactHeadingLabel= cResourceManager.get("lbFor")+cResourceManager.get("lbManufacturer");
 		cAddressUtil.updateAllFieldTooltips(MANUFACT_DETAILS_SF_FN.getNodeInstance(),contactHeadingLabel,LABEL_END);
-	}
+	}*/
 	_setFieldReadonly(CANADA,SERVICE_COUNTRY_DDL_FN.getNodeInstance()); //call first affects province
 	cAddressUtil.countryChanged(SERVICE_PROVINCE_FN,SERVICE_POSTAL_CODE_FN);
 	//set the province UI visibility based on the country value
@@ -4012,6 +3389,9 @@ function _setManufactAddress(sameAsValue){
 
 	if(sameAsValue==0){
 			_addManufactDetails();
+			cAddressUtil.setProvinceUIState(MANUFACT_COUNTRY_DDL_FN.getNodeInstance().rawValue,MANUFACT_PROVINCE_FN.getNodeInstance(),MANUFACT_PROVINCE_TXT_FN.getNodeInstance());
+			var contactHeadingLabel=cResourceManager.get("lbManufacturer");
+			cAddressUtil.updateAllFieldTooltips(MANUFACT_DETAILS_SF_FN.getNodeInstance(),contactHeadingLabel,LABEL_END);		
 	}else{
 			_removeManufactDetails();
 	}
@@ -4498,8 +3878,226 @@ function _updateCodeUI(codeValue){
 
 
 </script>
+                  <?templateDesigner expand 1?>
                   <script usehref="..\..\fragments\signature\SignatureBlockHandler.xdp#som($template.form1.#subform.#variables.SignatureBlockHandler)"/>
-                  <?templateDesigner expand 1?></variables>
+                  <script contentType="application/x-javascript" name="DrugHandler">
+/** Global Variables **/
+
+var cFormNodeManager = 		script.core.model.FormNodeManager;
+var cResourceManager = 		script.core.lang.ResourceManager;
+var cConfigManager			=script.core.util.ConfigurationManager;
+var cException = 			script.core.util.Exception;
+var cLog = 					script.core.util.Log;
+var cUiUtil=				script.core.util.UiUtil;
+
+var cGeneralUtil=			script.HCeForm.util.General;
+var cNumberUtil=			script.HCeForm.util.Number;
+
+//SCRIPT NAME
+var SCRIPT_OBJECT_NAME="FormHandler";
+
+
+var FRENCH=						cConfigManager.get("FRENCH");
+var ENGLISH=					cConfigManager.get("ENGLISH");
+var OTHER=						cConfigManager.get("OTHER");
+var LABEL_END=					cConfigManager.get("LabelEnd");
+	
+//action Global
+var ADD_MED_INGREDIENT=	 	"add_med_ingred";
+var ROUTE_ADMIN_CHANGE= 	"roaChange";
+var DOSAGE_FORM_CHANGE=		"dosageFormChange";
+var NUMBER_EIGHT_DIG_ACTION="eight_digits";
+var REMOVE_MED_INGREDIENT=	"remove_med_ingred";
+
+
+var INGREDIENT_SF_FN=		cFormNodeManager.getFormNodeForKey("sfIngredient");	
+var INGREDIENT_TXT_FN=		cFormNodeManager.getFormNodeForKey("txtIngredient");
+var INGRED_DELETE_BTN_FN=	cFormNodeManager.getFormNodeForKey("btnDeleteIng");
+var ROUTE_DDL_FN=			cFormNodeManager.getFormNodeForKey("ddlRoute");
+var ROUTE_DETAIL_TXT_FN=	cFormNodeManager.getFormNodeForKey("txtRouteDetails");
+var DOSAGE_DDL_FN=			cFormNodeManager.getFormNodeForKey("ddlDosageForm");
+var DOSAGE_DETAIL_TXT_FN=	cFormNodeManager.getFormNodeForKey("txtDosageDetails");
+
+	
+/*
+* actionPerformed- central event handler for the overall form functionality
+*
+*
+*/
+function actionPerformed(anEvent)
+{
+	switch(anEvent.getActionCommand())
+	{
+			 				
+		case ADD_MED_INGREDIENT:
+				_addMedicinalIngredient(anEvent.getValue()); //using value to get the subform
+			break;	
+			
+		case REMOVE_MED_INGREDIENT:	
+			_removeMedicinalIngredient(anEvent.getValue());
+			cUiUtil.moveFocus();
+			break;
+		case ROUTE_ADMIN_CHANGE:	
+				_routeAdminChange(anEvent.getSource().rawValue)			 
+			break;
+		
+		case DOSAGE_FORM_CHANGE:	
+				_dosageFormChange(anEvent.getSource().rawValue)			 
+			break;	
+		
+		case NUMBER_EIGHT_DIG_ACTION:
+				cNumberUtil.digitTestYX(anEvent.getValue(),8,0);	
+			break;				
+		default:
+			throw cException.createInstance(SCRIPT_OBJECT_NAME
+				  + ".actionPerformed() - initialize Form '" 
+				  + anEvent.getActionCommand() + "'.", "UnsupportedAction");
+	}
+}
+
+function initializeHandler(){
+
+	 _routeAdminChange(ROUTE_DDL_FN.getNodeInstance().rawValue);
+	 _dosageFormChange(DOSAGE_DDL_FN.getNodeInstance().rawValue);
+
+	 updateAllCaptionsToolTips();
+	  setIngredientDeleteButtonUI();	
+}
+
+
+function updateAllCaptionsToolTips(){
+
+	 updateAllIngredientCaptions();
+		
+}
+
+
+
+
+/********* Private functions *****/
+
+function _initializeFormNodes(){
+
+	try{
+		cControllerUtil.checkFormNode(INGREDIENT_SF_FN,SCRIPT_OBJECT_NAME,"INGREDIENT_SF_FN");
+		cControllerUtil.checkFormNode(INGREDIENT_TXT_FN,SCRIPT_OBJECT_NAME,"INGREDIENT_TXT_FN");	
+		cControllerUtil.checkFormNode(INGRED_DELETE_BTN_FN,SCRIPT_OBJECT_NAME,"INGRED_DELETE_BTN_FN");
+		cControllerUtil.checkFormNode(ROUTE_DETAIL_TXT_FN,SCRIPT_OBJECT_NAME,"ROUTE_DETAIL_TXT_FN");
+		cControllerUtil.checkFormNode(ROUTE_DDL_FN,SCRIPT_OBJECT_NAME,"ROUTE_DDL_FN");
+		cControllerUtil.checkFormNode(DOSAGE_DDL_FN,SCRIPT_OBJECT_NAME,"DOSAGE_DDL_FN");
+		cControllerUtil.checkFormNode(DOSAGE_DETAIL_TXT_FN,SCRIPT_OBJECT_NAME,"DOSAGE_DETAIL_TXT_FN");	
+				 		
+	 }
+	 catch (exception)
+	{
+		cLog.critical(cResourceManager.get("error_application", SCRIPT_OBJECT_NAME+".initializeFormNodes()"), exception);
+	}
+
+}//end fn
+
+
+
+function _addMedicinalIngredient(){
+
+	var instanceMgr=INGREDIENT_SF_FN.getInstanceManager();
+	var newInstance=cGeneralUtil.addSubformInstance(instanceMgr);
+	if(newInstance){	
+		_setIngredientCaption(newInstance);
+		 setIngredientDeleteButtonUI()
+		  updateAllCaptionsToolTips();
+	}
+
+}
+
+function _removeMedicinalIngredient(sfInstance){
+
+	if(sfInstance){
+		setMedIngredCursor(sfInstance);
+		cGeneralUtil.removeSubformInstance(sfInstance);
+		 setIngredientDeleteButtonUI()
+		  updateAllCaptionsToolTips();
+	}else{
+		cLog.Warn("no subform with _removeMedicinalIngredient");
+	}
+}
+
+function setMedIngredCursor(toDeleteSfInstance){
+
+	var formNode=cFormNodeManager.getFormNodeForSom(toDeleteSfInstance.somExpression);
+	var instanceList=formNode.getNodeInstances();
+	var currIndex=toDeleteSfInstance.index;
+	if(instanceList.length&lt;2) return;
+	
+	if(instanceList.length==2){
+		//set the cursor to the previous field
+		cUiUtil.setFocus(INGREDIENT_TXT_FN.getNodeInstance(instanceList.item(0)));
+
+	}else{
+		cUiUtil.setFocus(INGRED_DELETE_BTN_FN.getNodeInstance(instanceList.item((currIndex-1))));
+		
+		//set cursor to previous delete button
+	}
+}
+
+
+function _setIngredientCaption(subFormInstance){
+    var ingredientInstance=INGREDIENT_TXT_FN.getNodeInstance(subFormInstance);
+    var deleteBtnInstance=INGRED_DELETE_BTN_FN.getNodeInstance(subFormInstance);
+    var indexText=" "+(subFormInstance.index+1);    
+    
+    var ingredMsg= INGREDIENT_TXT_FN.getLabel(ingredientInstance)+ indexText;
+      var deleteMsg=INGRED_DELETE_BTN_FN.getLabel(deleteBtnInstance) + indexText;             
+      cUiUtil.setCaption(ingredientInstance, ingredMsg);
+       cUiUtil.setCaption(deleteBtnInstance, deleteMsg);
+}
+
+function updateAllIngredientCaptions(){
+
+	var instanceList=INGREDIENT_SF_FN.getNodeInstances();
+	for(var i=0;i&lt;instanceList.length;i++){
+			_setIngredientCaption(instanceList.item(i));	
+	}
+}
+function setIngredientDeleteButtonUI(){
+		var instanceList=INGREDIENT_SF_FN.getNodeInstances();
+		if(instanceList.length===1){		
+			cUiUtil.hide(INGRED_DELETE_BTN_FN.getNodeInstance(instanceList.item(0)))
+		}else{
+		
+			cUiUtil.show(INGRED_DELETE_BTN_FN.getNodeInstance(instanceList.item(0)))
+		}
+}
+
+
+function _routeAdminChange(routeValue){
+
+	
+	var routeOtherInstance=ROUTE_DETAIL_TXT_FN.getNodeInstance();	
+	if(OTHER===routeValue){
+
+		cUiUtil.show(routeOtherInstance);
+		
+	}else{
+		 cGeneralUtil.hideAndClearNodeInstance(routeOtherInstance);
+	}
+	
+}
+function _dosageFormChange(dosageValue){
+
+	
+	var dosageOtherInstance=DOSAGE_DETAIL_TXT_FN.getNodeInstance();	
+	if(OTHER===dosageValue){
+
+		cUiUtil.show(dosageOtherInstance);
+		
+	}else{
+		 cGeneralUtil.hideAndClearNodeInstance(dosageOtherInstance);
+	}		
+}
+
+
+</script>
+               </variables>
                <bind match="none"/>
                <?templateDesigner expand 1?></subform>
             <subform h="50mm" name="model" w="100mm">
@@ -7215,7 +6813,7 @@ var content={
 </script>
                   <?templateDesigner expand 1?></variables>
                <bind match="none"/>
-               <?templateDesigner expand 1?></subform>
+               <?templateDesigner expand 0?></subform>
             <subform h="50mm" name="resources" w="100mm">
                <variables>
                   <script contentType="application/x-javascript" name="general_en">//nov2015
@@ -7270,35 +6868,8 @@ var content={
 	lbSigDate:			"Date de la signature",
 }
 </script>
-                  <script contentType="application/x-javascript" name="instruct_en">
-
-var content={
-
-	lbInstruct1:		"This form contains mandatory fields. In order to ensure you have completed all appropriate fields, please press the \"Finalize\" button at the bottom of the form before printing and signing.",
-	lbInstruct2:		"Once finalized, the fields in the form become 'locked' (i.e. fields cannot be modified). In order to modify fields after finalizing, you must press the 'Modify' button at the bottom of the form. Following modifications to the desired fields and before printing and signing, please press the 'Finalize' button again to re-validate entries.",  
-	lbInstruct3:		"The Guidance Document: Patented Medicines (Notice of Compliance) Regulations provides instructions on each field of the form. Please read it in its entirety prior to completing the form. Information for a submission already filed need only be accompanied by a copy of the letter from Health Canada requesting additional information", 
-	lbInstruct4:		"Clinical Trial Applications and Amendments must be sent directly to the applicable Directorate (see Guidance for Industry: Management of Drug Submissions for addresses). All other drug submission types are to be sent to:", 
-	lbInstruct5:		"Office of Submissions and Intellectual Property, Therapeutic Products Directorate\nHealth Canada\nFinance Building\n101 Tunney's Pasture Driveway\nAddress Locator: 0201A1\nOttawa, Ontario, Canada K1A 0K9\nFax: (613) 941-0825", 
- 	lbInstruct6:		"Clinical Trial Applications and Amendments must be sent directly to the applicable Directorate (see Guidance for Industry: Management of Drug Submissions for addresses). All other drug submission types are to be sent to:",
-	lbInstruct7:		"Office of Submissions and Intellectual Property, Therapeutic Products Directorate\nHealth Canada\nFinance Building\n101 Tunney's Pasture Driveway\nAddress Locator: 0201A1\nOttawa, Ontario, Canada K1A 0K9\nFax: (613) 941-0825",
-	lbGuidance:			" &lt;body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\"&gt;&lt;p style=\"letter-spacing:0in\"&gt;&lt;a href=\"http://www.hc-sc.gc.ca/dhp-mps/prodpharma/applic-demande/guide-ld/patmedbrev/pmreg3_mbreg3-eng.php\" style=\"font-size:8pt\"&gt;Guidance Document&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;",
-
-}
-</script>
-                  <script contentType="application/x-javascript" name="instruct_fr">
-var content={
-
-	lbInstruct1:		"Ce formulaire contient des champs obligatoires. Pour vous assurer que vous avez rempli les champs appropriés, cliquez sur le bouton 'Finalisation' au bas du formulaire avant de l'imprimer et de le signer",
-	lbInstruct2:		"Une fois finalisé, les champs seront verrouiller (les champs ne peuvent plus être modifié). Pour pouvoir modifier les champs après la finalisation, vous devez cliquer sur le bouton 'Modification' au bas du formulaire. Après avoir modifié les champs désirés et avant d'imprimer et de signer, cliquez sur le bouton 'Finalisation' à nouveau afin de valider les entrées.",  
-	
-	lbInstruct3:		"La ligne directrice : Règlement sur les médicaments brevetés (avis de conformité) contient des directives relatives à chaque champ du formulaire. Veuillez le lire en entier avant de remplir le formulaire. Les renseignements relatifs à une présentation déjà déposée ne doivent être accompagnées que d'une lettre de Santé Canada demandant des renseignements supplémentaires", 
-	lbInstruct4:		"es demandes et modifications d'essais cliniques doivent être envoyées directement à la Direction applicable (voir le Guide pour l'industrie: Gestion des présentations de drogues pour les adresses). Tous les autres types de présentations de médicaments doivent être envoyés à:", 
-	lbInstruct5:		"Bureau des présentations et de la propriété intellectuelle (BPPI), Direction des produits thérapeutiques\nSanté Canada\nImmeuble des finances\n101, promenade du pré Tunney\nIndice de l’adresse : 0201A1\nOttawa, Ontario, Canada K1A 0K9\nTélécopieur : 613-941-0825",	
- 	lbInstruct6:		"Toutes les présentations de médicaments pour usage vétérinaire (y compris les présentations de drogues nouvelles de recherche pour usage vétérinaire et modifications) doivent être envoyées à l'adresse :",	
-	lbInstruct7:		"Direction des médicaments vétérinaires\nSanté Canada\nComplexe Holland Cross\n11, avenue Holland, bureau 14\nIndice de l'adresse : 3000A\nOttawa, Ontario, Canada K1A 0K9\nTélécopieur : 613-946-1125",
-	lbGuidance:			"&lt;body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\"&gt;&lt;p style=\"text-align:center;text-decoration:none;letter-spacing:0in\"&gt;&lt;a href=\"http://www.hc-sc.gc.ca/dhp-mps/prodpharma/applic-demande/guide-ld/patmedbrev/pmreg3_mbreg3-fra.php\"&gt;Ligne directrice &lt;/a&gt;&lt;/p&gt;&lt;/body&gt;",
-}
-</script>
+                  <script usehref=".\Fragments\instruct_en.xdp#som($template.#subform.#subform.#variables.instruct_en)"/>
+                  <script usehref=".\Fragments\instruct_fr.xdp#som($template.#subform.#subform.#variables.instruct_fr)"/>
                   <script contentType="application/x-javascript" name="heading_en">
 
 var content={
@@ -7308,7 +6879,7 @@ var content={
 		lbPart1Heading:				"PART 1: PATENT FILING INFORMATION",
 		lbPart2Heading:				"PART 2: DRUG INFORMATION",
 		lbPart3Heading:				"PART 3: PATENT INFORMATION",
-		lbPart4Heading:				"PART 4: NAME &amp; ADDRESS FOR SERVICE IN CANADA",
+		lbPart4Heading:				"PART 4: NAME AND ADDRESS FOR SERVICE IN CANADA",
 		lbPart5Heading:				"PART 5: MANUFACTURER INFORMATION AND CERTIFICATION",
 		lbManufactContactHeading:	"MANUFACTURER CONTACT",
 		lbCertificationHeading:		"CERTIFICATION",
@@ -7419,7 +6990,7 @@ var content={
 	    lbCodeInstruct:		"Select at least one of the following codes:",
 	    lbAttest1:			"In accordance with paragraph 4(4)(f), I certify that the information included in this Patent List is accurate and that the patent on the list meets the eligibility requirements of subsection 4(2) or 4(3) of the Patented Medicines (Notice of Compliance) Regulations.",
 		lbSameService:		"Same Company Name and Address as Service in Canada",
-		lbManufacturer:		"for the manufacturer address",
+		lbManufacturer:		" for the manufacturer address",
 		lbOfCertifier:		"of the certifier",
 		lbSelectCode:		"Select at least one of the following codes:",
 		lbCodeA:			"A- Applicant is the owner of the patent",
@@ -7461,7 +7032,7 @@ var content={
     	lbUses:				"Utilisation de l'ingrédient médicinal ou des ingrédients médicinaux",
  		lbDeleteIngred:		"Effacer Ingrédient",
  		lbDIN:				"Numéro d'identification du médicament (DIN)",
- 		lbPatentNo:         "Numéro de brevet*",
+ 		lbPatentNo:         "Numéro de brevet",
 	    lbCode:             "Code",
 	    lbFiling:           "Date du dépôt de la demande de brevet au Canda (AAAA-MM-JJ)",
 	    lbGranted:          "Date d'obtention\n(AAAA-MM-JJ)",
@@ -7471,7 +7042,7 @@ var content={
 	   	lbDosageDetails:	"Détails de la forme posologique",
 	   	lbAttest1:			"En vertu de l'alinéa 4(4)(f), j'atteste que les renseignements inclus dans la Liste de brevets sont exacts et que le brevet décrit est admissible et conforme aux paragraphes 4(2) et 4(3) du Règlement sur les médicaments brevetés (avis de conformité).",			
 		lbSameService:		"fr_Same Company Name and Address as Service in Canada",
-		lbManufacturer:		"l'adresse du fabricant",
+		lbManufacturer:		" pour l'adresse du fabricant",
 		lbOfCertifier:		"du certificateur",	
 		lbSelectCode:		"fr_Select at least one of the following codes:",
 		lbCodeA:			"A - Le requérant est le propriétaire du brevet",
@@ -8127,8 +7698,8 @@ catch(exception)
    <?templateDesigner DefaultCaptionFontSettings face:Myriad Pro;size:10;weight:normal;style:normal?>
    <?templateDesigner DefaultValueFontSettings face:Myriad Pro;size:10;weight:normal;style:normal?>
    <?templateDesigner ValidationMessaging noMessages?>
-   <?templateDesigner Zoom 100?>
    <?templateDesigner FormTargetVersion 30?>
+   <?templateDesigner Zoom 121?>
    <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?>
    <?templateDesigner Guidelines h:990726?>
    <?templateDesigner SaveTaggedPDF 0?>
@@ -8173,6 +7744,7 @@ catch(exception)
       <xdp>
          <packets>*</packets>
       </xdp>
+      <output/>
    </present>
    <psMap>
       <font typeface="Calibri" psName="Calibri" weight="normal" posture="normal"/>
@@ -8468,7 +8040,7 @@ catch(exception)
             <signature_image/>
             <attestation_sign_date/>
          </attestation_info>
-         <hcoonly_info>
+         <hcoonly_info dd:minOccur="0">
             <internal_sub_number/>
             <filed_date/>
             <noc_date/>
@@ -8483,64 +8055,11 @@ catch(exception)
       </PATENT_LIST>
    </dd:dataDescription>
 </xfa:datasets>
-<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.2-c001 63.139439, 2011/06/07-10:39:26        ">
-   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-      <rdf:Description xmlns:xmp="http://ns.adobe.com/xap/1.0/" rdf:about="">
-         <xmp:MetadataDate>2015-12-22T21:00:44Z</xmp:MetadataDate>
-         <xmp:CreatorTool>Adobe LiveCycle Designer ES 10.0</xmp:CreatorTool>
-      </rdf:Description>
-      <rdf:Description xmlns:pdf="http://ns.adobe.com/pdf/1.3/" rdf:about="">
-         <pdf:Producer>Adobe LiveCycle Designer ES 10.0</pdf:Producer>
-      </rdf:Description>
-      <rdf:Description xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" rdf:about="">
-         <xmpMM:DocumentID>uuid:3a7907a7-254c-4d44-a155-75292dc56b13</xmpMM:DocumentID>
-         <xmpMM:InstanceID>uuid:2c06e0c0-144a-4bd5-83f8-a1c07717b7ce</xmpMM:InstanceID>
-      </rdf:Description>
-      <rdf:Description xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:about="">
-         <dc:format>application/pdf</dc:format>
-         <dc:date>
-            <rdf:Seq>
-               <rdf:li rdf:parseType="Resource">
-                  <rdf:value>2015-07-21</rdf:value>
-                  <dc:element-refinement>dc:created</dc:element-refinement>
-               </rdf:li>
-               <rdf:li rdf:parseType="Resource">
-                  <rdf:value>2015</rdf:value>
-                  <dc:element-refinement>dc:issued</dc:element-refinement>
-               </rdf:li>
-            </rdf:Seq>
-         </dc:date>
-         <dc:creator>
-            <rdf:Seq>
-               <rdf:li>Health Canada</rdf:li>
-            </rdf:Seq>
-         </dc:creator>
-         <dc:title>
-            <rdf:Alt>
-               <rdf:li xml:lang="x-default">FORM TITLE</rdf:li>
-            </rdf:Alt>
-         </dc:title>
-      </rdf:Description>
-      <rdf:Description xmlns:desc="http://ns.adobe.com/xfa/promoted-desc/" rdf:about="">
-         <desc:version rdf:parseType="Resource">
-            <rdf:value> 2.00</rdf:value>
-            <desc:ref>/template/subform[1]</desc:ref>
-         </desc:version>
-         <desc:department rdf:parseType="Resource">
-            <rdf:value>Health Canada</rdf:value>
-            <desc:ref>/template/subform[1]</desc:ref>
-         </desc:department>
-      </rdf:Description>
-   </rdf:RDF>
-</x:xmpmeta>
-<xfdf xmlns="http://ns.adobe.com/xfdf/" xml:space="preserve">
-   <annots/>
-</xfdf>
 <connectionSet xmlns="http://www.xfa.org/schema/xfa-connection-set/2.8/">
    <xsdConnection name="DataConnection" dataDescription="PATENT_LIST">
       <uri>..\..\xml_schema\1_3_qualified_formIV_patentList.xsd</uri>
       <rootElement>PATENT_LIST</rootElement>
-      <?templateDesigner fileDigest shaHash="PlgFkOM8QVOZAwFMsD+tA2exlS4="?></xsdConnection>
+      <?templateDesigner fileDigest shaHash="utfLl1hU46JsEWhHZWbG0QrGg78="?></xsdConnection>
 </connectionSet>
 <hpfb:schema xmlns:hpfb="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" id="XFASchemaXSD">
    <hpfb:include schemaLocation="#XFAXSDReference"/>
@@ -8612,7 +8131,7 @@ catch(exception)
          <hpfb:element ref="manufact_address_info" minOccurs="0" maxOccurs="1"/>
          <hpfb:element ref="manufact_contact_info"/>
          <hpfb:element ref="attestation_info"/>
-         <hpfb:element ref="hcoonly_info"/>
+         <hpfb:element ref="hcoonly_info" minOccurs="0" maxOccurs="1"/>
       </hpfb:sequence>
    </hpfb:complexType>
    <hpfb:complexType name="patent_filing_content">
@@ -8770,7 +8289,6 @@ catch(exception)
    <!-- ****************************** -->
    <hpfb:element name="attestation_salutation"/>
    <hpfb:element name="attestation_given_name"/>
-   <hpfb:element name="attestation_initials"/>
    <hpfb:element name="attestation_surname"/>
    <hpfb:element name="attestation_title"/>
    <hpfb:element name="signature_type"/>
@@ -8798,4 +8316,57 @@ catch(exception)
          <hpfb:pattern value="[0-9]{4}-[0-9]{2}-[0-9]{2}"/>
       </hpfb:restriction>
    </hpfb:simpleType>
-</hpfb:schema></xdp:xdp>
+</hpfb:schema>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.2-c001 63.139439, 2011/06/07-10:39:26        ">
+   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <rdf:Description xmlns:xmp="http://ns.adobe.com/xap/1.0/" rdf:about="">
+         <xmp:MetadataDate>2016-01-13T18:17:33Z</xmp:MetadataDate>
+         <xmp:CreatorTool>Adobe LiveCycle Designer ES 10.0</xmp:CreatorTool>
+      </rdf:Description>
+      <rdf:Description xmlns:pdf="http://ns.adobe.com/pdf/1.3/" rdf:about="">
+         <pdf:Producer>Adobe LiveCycle Designer ES 10.0</pdf:Producer>
+      </rdf:Description>
+      <rdf:Description xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" rdf:about="">
+         <xmpMM:DocumentID>uuid:1ffc1dd4-1827-480a-ac7d-70c325434141</xmpMM:DocumentID>
+         <xmpMM:InstanceID>uuid:bc74352d-3ebe-4367-828d-401516ac48d2</xmpMM:InstanceID>
+      </rdf:Description>
+      <rdf:Description xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:about="">
+         <dc:format>application/pdf</dc:format>
+         <dc:date>
+            <rdf:Seq>
+               <rdf:li rdf:parseType="Resource">
+                  <rdf:value>2015-07-21</rdf:value>
+                  <dc:element-refinement>dc:created</dc:element-refinement>
+               </rdf:li>
+               <rdf:li rdf:parseType="Resource">
+                  <rdf:value>2015</rdf:value>
+                  <dc:element-refinement>dc:issued</dc:element-refinement>
+               </rdf:li>
+            </rdf:Seq>
+         </dc:date>
+         <dc:creator>
+            <rdf:Seq>
+               <rdf:li>Health Canada</rdf:li>
+            </rdf:Seq>
+         </dc:creator>
+         <dc:title>
+            <rdf:Alt>
+               <rdf:li xml:lang="x-default">FORM TITLE</rdf:li>
+            </rdf:Alt>
+         </dc:title>
+      </rdf:Description>
+      <rdf:Description xmlns:desc="http://ns.adobe.com/xfa/promoted-desc/" rdf:about="">
+         <desc:version rdf:parseType="Resource">
+            <rdf:value> 2.00</rdf:value>
+            <desc:ref>/template/subform[1]</desc:ref>
+         </desc:version>
+         <desc:department rdf:parseType="Resource">
+            <rdf:value>Health Canada</rdf:value>
+            <desc:ref>/template/subform[1]</desc:ref>
+         </desc:department>
+      </rdf:Description>
+   </rdf:RDF>
+</x:xmpmeta>
+<xfdf xmlns="http://ns.adobe.com/xfdf/" xml:space="preserve">
+   <annots/>
+</xfdf></xdp:xdp>
