@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xfa generator="AdobeLiveCycleDesignerES_V10.0.2.20120224.1.869952" APIVersion="3.5.12002.0"?>
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/">
+<template xmlns="http://www.xfa.org/schema/xfa-template/3.0/">
+   <subform name="form1" locale="en_CA" layout="tb">
+      <pageSet>
+         <pageArea>
+            <contentArea w="203.2mm" h="249.476mm" x="6.351mm" y="16.198mm" name="contentArea"/>
+            <medium stock="default" short="612pt" long="792pt"/>
+         </pageArea>
+      </pageSet>
+      <subform>
+         <variables>
+            <script contentType="application/x-javascript" name="DrugHandler">
+/** Global Variables **/
+
+var cFormNodeManager = 		script.core.model.FormNodeManager;
+var cResourceManager = 		script.core.lang.ResourceManager;
+var cConfigManager			=script.core.util.ConfigurationManager;
+var cException = 			script.core.util.Exception;
+var cLog = 					script.core.util.Log;
+var cUiUtil=				script.core.util.UiUtil;
+
+var cGeneralUtil=			script.HCeForm.util.General;
+var cNumberUtil=			script.HCeForm.util.Number;
+
+//SCRIPT NAME
+var SCRIPT_OBJECT_NAME="FormHandler";
+
+
+var FRENCH=						cConfigManager.get("FRENCH");
+var ENGLISH=					cConfigManager.get("ENGLISH");
+var OTHER=						cConfigManager.get("OTHER");
+var LABEL_END=					cConfigManager.get("LabelEnd");
+	
+//action Global
+var ADD_MED_INGREDIENT=	 	"add_med_ingred";
+var ROUTE_ADMIN_CHANGE= 	"roaChange";
+var DOSAGE_FORM_CHANGE=		"dosageFormChange";
+var NUMBER_EIGHT_DIG_ACTION="eight_digits";
+var REMOVE_MED_INGREDIENT=	"remove_med_ingred";
+
+
+var INGREDIENT_SF_FN=		cFormNodeManager.getFormNodeForKey("sfIngredient");	
+var INGREDIENT_TXT_FN=		cFormNodeManager.getFormNodeForKey("txtIngredient");
+var INGRED_DELETE_BTN_FN=	cFormNodeManager.getFormNodeForKey("btnDeleteIng");
+var ROUTE_DDL_FN=			cFormNodeManager.getFormNodeForKey("ddlRoute");
+var ROUTE_DETAIL_TXT_FN=	cFormNodeManager.getFormNodeForKey("txtRouteDetails");
+var DOSAGE_DDL_FN=			cFormNodeManager.getFormNodeForKey("ddlDosageForm");
+var DOSAGE_DETAIL_TXT_FN=	cFormNodeManager.getFormNodeForKey("txtDosageDetails");
+
+	
+/*
+* actionPerformed- central event handler for the overall form functionality
+*
+*
+*/
+function actionPerformed(anEvent)
+{
+	switch(anEvent.getActionCommand())
+	{
+			 				
+		case ADD_MED_INGREDIENT:
+				_addMedicinalIngredient(anEvent.getValue()); //using value to get the subform
+			break;	
+			
+		case REMOVE_MED_INGREDIENT:	
+			_removeMedicinalIngredient(anEvent.getValue());
+			cUiUtil.moveFocus();
+			break;
+		case ROUTE_ADMIN_CHANGE:	
+				_routeAdminChange(anEvent.getSource().rawValue)			 
+			break;
+		
+		case DOSAGE_FORM_CHANGE:	
+				_dosageFormChange(anEvent.getSource().rawValue)			 
+			break;	
+		
+		case NUMBER_EIGHT_DIG_ACTION:
+				cNumberUtil.digitTestYX(anEvent.getValue(),8,0);	
+			break;				
+		default:
+			throw cException.createInstance(SCRIPT_OBJECT_NAME
+				  + ".actionPerformed() - initialize Form '" 
+				  + anEvent.getActionCommand() + "'.", "UnsupportedAction");
+	}
+}
+
+function initializeHandler(){
+
+	 _routeAdminChange(ROUTE_DDL_FN.getNodeInstance().rawValue);
+	 _dosageFormChange(DOSAGE_DDL_FN.getNodeInstance().rawValue);
+
+	 updateAllCaptionsToolTips();
+	  setIngredientDeleteButtonUI();	
+}
+
+
+function updateAllCaptionsToolTips(){
+
+	 updateAllIngredientCaptions();
+		
+}
+
+
+
+
+/********* Private functions *****/
+
+function _initializeFormNodes(){
+
+	try{
+		cControllerUtil.checkFormNode(INGREDIENT_SF_FN,SCRIPT_OBJECT_NAME,"INGREDIENT_SF_FN");
+		cControllerUtil.checkFormNode(INGREDIENT_TXT_FN,SCRIPT_OBJECT_NAME,"INGREDIENT_TXT_FN");	
+		cControllerUtil.checkFormNode(INGRED_DELETE_BTN_FN,SCRIPT_OBJECT_NAME,"INGRED_DELETE_BTN_FN");
+		cControllerUtil.checkFormNode(ROUTE_DETAIL_TXT_FN,SCRIPT_OBJECT_NAME,"ROUTE_DETAIL_TXT_FN");
+		cControllerUtil.checkFormNode(ROUTE_DDL_FN,SCRIPT_OBJECT_NAME,"ROUTE_DDL_FN");
+		cControllerUtil.checkFormNode(DOSAGE_DDL_FN,SCRIPT_OBJECT_NAME,"DOSAGE_DDL_FN");
+		cControllerUtil.checkFormNode(DOSAGE_DETAIL_TXT_FN,SCRIPT_OBJECT_NAME,"DOSAGE_DETAIL_TXT_FN");	
+				 		
+	 }
+	 catch (exception)
+	{
+		cLog.critical(cResourceManager.get("error_application", SCRIPT_OBJECT_NAME+".initializeFormNodes()"), exception);
+	}
+
+}//end fn
+
+
+
+function _addMedicinalIngredient(){
+
+	var instanceMgr=INGREDIENT_SF_FN.getInstanceManager();
+	var newInstance=cGeneralUtil.addSubformInstance(instanceMgr);
+	if(newInstance){	
+		_setIngredientCaption(newInstance);
+		 setIngredientDeleteButtonUI()
+		  updateAllCaptionsToolTips();
+	}
+
+}
+
+function _removeMedicinalIngredient(sfInstance){
+
+	if(sfInstance){
+		setMedIngredCursor(sfInstance);
+		cGeneralUtil.removeSubformInstance(sfInstance);
+		 setIngredientDeleteButtonUI()
+		  updateAllCaptionsToolTips();
+	}else{
+		cLog.Warn("no subform with _removeMedicinalIngredient");
+	}
+}
+
+function setMedIngredCursor(toDeleteSfInstance){
+
+	var formNode=cFormNodeManager.getFormNodeForSom(toDeleteSfInstance.somExpression);
+	var instanceList=formNode.getNodeInstances();
+	var currIndex=toDeleteSfInstance.index;
+	if(instanceList.length&lt;2) return;
+	
+	if(instanceList.length==2){
+		//set the cursor to the previous field
+		cUiUtil.setFocus(INGREDIENT_TXT_FN.getNodeInstance(instanceList.item(0)));
+
+	}else{
+		cUiUtil.setFocus(INGRED_DELETE_BTN_FN.getNodeInstance(instanceList.item((currIndex-1))));
+		
+		//set cursor to previous delete button
+	}
+}
+
+
+function _setIngredientCaption(subFormInstance){
+    var ingredientInstance=INGREDIENT_TXT_FN.getNodeInstance(subFormInstance);
+    var deleteBtnInstance=INGRED_DELETE_BTN_FN.getNodeInstance(subFormInstance);
+    var indexText=" "+(subFormInstance.index+1);    
+    
+    var ingredMsg= INGREDIENT_TXT_FN.getLabel(ingredientInstance)+ indexText;
+      var deleteMsg=INGRED_DELETE_BTN_FN.getLabel(deleteBtnInstance) + indexText;             
+      cUiUtil.setCaption(ingredientInstance, ingredMsg);
+       cUiUtil.setCaption(deleteBtnInstance, deleteMsg);
+}
+
+function updateAllIngredientCaptions(){
+
+	var instanceList=INGREDIENT_SF_FN.getNodeInstances();
+	for(var i=0;i&lt;instanceList.length;i++){
+			_setIngredientCaption(instanceList.item(i));	
+	}
+}
+function setIngredientDeleteButtonUI(){
+		var instanceList=INGREDIENT_SF_FN.getNodeInstances();
+		if(instanceList.length===1){		
+			cUiUtil.hide(INGRED_DELETE_BTN_FN.getNodeInstance(instanceList.item(0)))
+		}else{
+		
+			cUiUtil.show(INGRED_DELETE_BTN_FN.getNodeInstance(instanceList.item(0)))
+		}
+}
+
+
+function _routeAdminChange(routeValue){
+
+	
+	var routeOtherInstance=ROUTE_DETAIL_TXT_FN.getNodeInstance();	
+	if(OTHER===routeValue){
+
+		cUiUtil.show(routeOtherInstance);
+		
+	}else{
+		 cGeneralUtil.hideAndClearNodeInstance(routeOtherInstance);
+	}
+	
+}
+function _dosageFormChange(dosageValue){
+
+	
+	var dosageOtherInstance=DOSAGE_DETAIL_TXT_FN.getNodeInstance();	
+	if(OTHER===dosageValue){
+
+		cUiUtil.show(dosageOtherInstance);
+		
+	}else{
+		 cGeneralUtil.hideAndClearNodeInstance(dosageOtherInstance);
+	}		
+}
+
+
+
+               <?templateDesigner isFragment yes?>
+               <?templateDesigner fragmentTitle DrugHandler?></script>
+         </variables>
+      </subform>
+   </subform>
+</template>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.2-c001 63.139439, 2011/06/07-10:39:26        ">
+   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <rdf:Description xmlns:lcd="http://ns.adobe.com/livecycle/designer/" xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:about="">
+         <lcd:fragmentCatalog>
+            <rdf:Seq>
+               <rdf:li rdf:parseType="Resource">
+                  <dc:title>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default">DrugHandler</rdf:li>
+                     </rdf:Alt>
+                  </dc:title>
+                  <dc:description>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default"/>
+                     </rdf:Alt>
+                  </dc:description>
+                  <dc:identifier>$template.form1.#subform.#variables.DrugHandler</dc:identifier>
+                  <lcd:fragmentRole>ScriptObject</lcd:fragmentRole>
+               </rdf:li>
+            </rdf:Seq>
+         </lcd:fragmentCatalog>
+      </rdf:Description>
+   </rdf:RDF>
+</x:xmpmeta></xdp:xdp>
