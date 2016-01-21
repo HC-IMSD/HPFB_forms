@@ -6,7 +6,7 @@
 	<!-- ****************************** -->
 	<!-- ELEMENT DECLARATIONS -->
 	<!-- ****************************** -->
-	<hpfb:element name="attestation_info" 	type="attest_content" />
+	
 	<hpfb:element name="attestation_salutation"/>
 	<hpfb:element name="attestation_given_name"/>
 	<hpfb:element name="attestation_surname"/>

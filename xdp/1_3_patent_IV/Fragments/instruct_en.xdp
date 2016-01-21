@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xfa generator="AdobeLiveCycleDesignerES_V10.0.2.20120224.1.869952" APIVersion="3.5.12002.0"?>
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/">
+<template xmlns="http://www.xfa.org/schema/xfa-template/3.0/">
+   <subform name="form1" locale="en_CA" layout="tb">
+      <pageSet>
+         <pageArea>
+            <contentArea w="203.2mm" h="249.476mm" x="6.351mm" y="16.198mm" name="contentArea"/>
+            <medium stock="default" short="612pt" long="792pt"/>
+         </pageArea>
+      </pageSet>
+      <subform>
+         <variables>
+            <script contentType="application/x-javascript" name="instruct_en">
+
+var content={
+
+	lbInstruct1:		"This form contains mandatory fields. In order to ensure you have completed all appropriate fields, please press the \"Finalize\" button at the bottom of the form before printing and signing.",
+	lbInstruct2:		"Once finalized, the fields in the form become 'locked' (i.e. fields cannot be modified). In order to modify fields after finalizing, you must press the 'Modify' button at the bottom of the form. Following modifications to the desired fields and before printing and signing, please press the 'Finalize' button again to re-validate entries.",  
+	lbInstruct3:		"The Guidance Document: Patented Medicines (Notice of Compliance) Regulations provides instructions on each field of the form. Please read it in its entirety prior to completing the form. Information for a submission already filed need only be accompanied by a copy of the letter from Health Canada requesting additional information", 
+	lbInstruct4:		"Clinical Trial Applications and Amendments must be sent directly to the applicable Directorate (see Guidance for Industry: Management of Drug Submissions for addresses). All other drug submission types are to be sent to:", 
+	lbInstruct5:		"Office of Submissions and Intellectual Property, Therapeutic Products Directorate\nHealth Canada\nFinance Building\n101 Tunney's Pasture Driveway\nAddress Locator: 0201A1\nOttawa, Ontario, Canada K1A 0K9\nFax: (613) 941-0825", 
+ 	lbInstruct6:		"Clinical Trial Applications and Amendments must be sent directly to the applicable Directorate (see Guidance for Industry: Management of Drug Submissions for addresses). All other drug submission types are to be sent to:",
+	lbInstruct7:		"Office of Submissions and Intellectual Property, Therapeutic Products Directorate\nHealth Canada\nFinance Building\n101 Tunney's Pasture Driveway\nAddress Locator: 0201A1\nOttawa, Ontario, Canada K1A 0K9\nFax: (613) 941-0825",
+	lbGuidance:			" &lt;body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\"&gt;&lt;p style=\"letter-spacing:0in\"&gt;&lt;a href=\"http://www.hc-sc.gc.ca/dhp-mps/prodpharma/applic-demande/guide-ld/patmedbrev/pmreg3_mbreg3-eng.php\" style=\"font-size:8pt\"&gt;Guidance Document&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;",
+
+}
+
+               <?templateDesigner isFragment yes?>
+               <?templateDesigner fragmentTitle instruct_en?></script>
+         </variables>
+      </subform>
+   </subform>
+</template>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.2-c001 63.139439, 2011/06/07-10:39:26        ">
+   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <rdf:Description xmlns:lcd="http://ns.adobe.com/livecycle/designer/" xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:about="">
+         <lcd:fragmentCatalog>
+            <rdf:Seq>
+               <rdf:li rdf:parseType="Resource">
+                  <dc:title>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default">instruct_en</rdf:li>
+                     </rdf:Alt>
+                  </dc:title>
+                  <dc:description>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default"/>
+                     </rdf:Alt>
+                  </dc:description>
+                  <dc:identifier>$template.form1.#subform.#variables.instruct_en</dc:identifier>
+                  <lcd:fragmentRole>ScriptObject</lcd:fragmentRole>
+               </rdf:li>
+            </rdf:Seq>
+         </lcd:fragmentCatalog>
+      </rdf:Description>
+   </rdf:RDF>
+</x:xmpmeta></xdp:xdp>

@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xfa generator="AdobeLiveCycleDesignerES_V10.0.2.20120224.1.869952" APIVersion="3.5.12002.0"?>
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/">
+<template xmlns="http://www.xfa.org/schema/xfa-template/3.0/">
+   <subform name="form1" locale="en_CA" layout="tb">
+      <pageSet>
+         <pageArea>
+            <contentArea w="203.2mm" h="249.476mm" x="6.351mm" y="16.198mm" name="contentArea"/>
+            <medium stock="default" short="612pt" long="792pt"/>
+         </pageArea>
+      </pageSet>
+      <subform w="202.184mm" layout="lr-tb" name="sfInstructionsContent">
+         <draw name="lblInstructionsHead" w="202.184mm" h="6.249mm">
+            <ui>
+               <textEdit/>
+            </ui>
+            <value>
+               <text>INSTRUCTIONS</text>
+            </value>
+            <font typeface="Myriad Pro" baselineShift="0pt" size="12pt" weight="bold"/>
+            <margin topInset="0.254mm" bottomInset="0.254mm" leftInset="0.5mm" rightInset="0.5mm"/>
+            <para spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt" vAlign="middle"/>
+            <border>
+               <edge/>
+               <corner thickness="0.175mm"/>
+               <fill>
+                  <linear>
+                     <color value="255,255,255"/>
+                  </linear>
+                  <color value="255,255,153"/>
+               </fill>
+               <corner thickness="0.175mm" presence="hidden"/>
+               <corner thickness="0.175mm" presence="hidden"/>
+               <edge presence="hidden"/>
+               <edge/>
+               <edge presence="hidden"/>
+            </border>
+            <assist role="H2"/>
+         </draw>
+         <subform y="6.249mm" w="202.184mm" minH="59.561mm" layout="lr-tb" name="sfInstructList">
+            <subform w="202.184mm" name="sfInstruct1" layout="tb">
+               <draw name="lblInstruct1" w="7.999958in" minH="5.116mm">
+                  <ui>
+                     <textEdit/>
+                  </ui>
+                  <value>
+                     <text>This form contains mandatory fields. In order to ensure you have completed all appropriate fields, please press the \"Finalize\" button at the bottom of the form before printing and signing. </text>
+                  </value>
+                  <font typeface="Myriad Pro" baselineShift="0pt" size="8pt"/>
+                  <margin topInset="0.5002mm" bottomInset="0.5002mm" leftInset="0.5mm" rightInset="0.5mm"/>
+                  <para spaceAbove="0.5pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt" vAlign="middle"/>
+                  <border>
+                     <edge presence="hidden"/>
+                     <corner thickness="0.175mm" presence="hidden"/>
+                  </border>
+               </draw>
+               <margin bottomInset="2.54mm" topInset="2.54mm"/>
+               <bind match="none"/>
+               <?templateDesigner expand 1?></subform>
+            <subform w="202.184mm" name="sfInstruct2" layout="tb">
+               <draw name="lblInstruct2" w="7.999958in" minH="8.931mm">
+                  <ui>
+                     <textEdit/>
+                  </ui>
+                  <font typeface="Myriad Pro" baselineShift="0pt" size="8pt"/>
+                  <margin topInset="0.5002mm" bottomInset="0.5002mm" leftInset="0.5mm" rightInset="0.5mm"/>
+                  <para spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt" vAlign="middle"/>
+                  <border>
+                     <edge presence="hidden"/>
+                     <corner thickness="0.175mm" presence="hidden"/>
+                  </border>
+                  <value>
+                     <text>text</text>
+                  </value>
+               </draw>
+               <margin topInset="0mm" bottomInset="2.54mm"/>
+               <bind match="none"/>
+               <?templateDesigner expand 1?></subform>
+            <subform w="202.184mm" name="sfInstruct3" layout="tb">
+               <draw name="lblInstruct3" w="7.999958in" h="11.866mm">
+                  <ui>
+                     <textEdit/>
+                  </ui>
+                  <font typeface="Myriad Pro" baselineShift="0pt" size="8pt"/>
+                  <margin topInset="0.5002mm" bottomInset="0.5002mm" leftInset="0.5mm" rightInset="0.5mm"/>
+                  <para spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt" vAlign="middle"/>
+                  <border>
+                     <edge presence="hidden"/>
+                     <corner thickness="0.175mm" presence="hidden"/>
+                  </border>
+                  <value>
+                     <text>text</text>
+                  </value>
+               </draw>
+               <margin topInset="0mm" bottomInset="0mm"/>
+               <bind match="none"/>
+               <?templateDesigner expand 1?></subform>
+            <subform w="202.184mm" name="sfInstructHumanHeading" layout="tb">
+               <draw name="lblHumanHeading" w="201.168mm" h="5.41mm">
+                  <ui>
+                     <textEdit/>
+                  </ui>
+                  <value>
+                     <text>WHERE TO SEND HUMAN DRUG SUBMISSION APPLICATIONS</text>
+                  </value>
+                  <font typeface="Myriad Pro" baselineShift="0pt" size="12pt" weight="bold"/>
+                  <margin topInset="0.5002mm" bottomInset="0.5002mm" leftInset="0.5mm" rightInset="0.5mm"/>
+                  <para spaceAbove="0.5pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt" vAlign="middle"/>
+                  <border>
+                     <edge presence="hidden"/>
+                     <corner thickness="0.175mm" presence="hidden"/>
+                     <fill>
+                        <color value="236,236,236"/>
+                     </fill>
+                  </border>
+               </draw>
+               <margin topInset="0mm" bottomInset="0mm" leftInset="0.762mm"/>
+               <bind match="none"/>
+               <?templateDesigner expand 1?></subform>
+            <subform w="202.184mm" name="sfInstruct4" layout="tb">
+               <draw name="lblInstruct4" w="7.999958in" h="12.395mm">
+                  <ui>
+                     <textEdit/>
+                  </ui>
+                  <font typeface="Myriad Pro" baselineShift="0pt" size="8pt"/>
+                  <margin topInset="0.5002mm" bottomInset="0.5002mm" leftInset="0.5mm" rightInset="0.5mm"/>
+                  <para spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt" vAlign="middle"/>
+                  <border>
+                     <edge presence="hidden"/>
+                     <corner thickness="0.175mm" presence="hidden"/>
+                  </border>
+                  <value>
+                     <text>text</text>
+                  </value>
+               </draw>
+               <margin topInset="0mm" bottomInset="0mm"/>
+               <bind match="none"/>
+               <?templateDesigner expand 1?></subform>
+            <subform w="202.184mm" name="sfInstruct5" layout="tb">
+               <draw name="lblInstruct5" w="7.999958in" h="27.953mm">
+                  <ui>
+                     <textEdit/>
+                  </ui>
+                  <font typeface="Myriad Pro" baselineShift="0pt" size="8pt"/>
+                  <margin topInset="0.5002mm" bottomInset="0.5002mm" leftInset="10.16mm" rightInset="0.5mm"/>
+                  <para spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt" vAlign="middle"/>
+                  <border>
+                     <edge presence="hidden"/>
+                     <corner thickness="0.175mm" presence="hidden"/>
+                  </border>
+                  <value>
+                     <text>text</text>
+                  </value>
+               </draw>
+               <margin topInset="0mm" bottomInset="0mm"/>
+               <bind match="none"/>
+               <?templateDesigner expand 1?></subform>
+            <subform w="201.93mm" name="sfInstructVetHeading" layout="tb">
+               <draw name="lblVetHeading" w="201.168mm" minH="4.367mm">
+                  <ui>
+                     <textEdit/>
+                  </ui>
+                  <value>
+                     <text>WHERE TO SEND VETERINARY DRUG SUBMISSION APPLICATIONS</text>
+                  </value>
+                  <font typeface="Myriad Pro" baselineShift="0pt" size="12pt" weight="bold"/>
+                  <margin topInset="0.5002mm" bottomInset="0.5002mm" leftInset="0.5mm" rightInset="0.5mm"/>
+                  <para spaceAbove="0.5pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt" vAlign="middle"/>
+                  <border>
+                     <edge presence="hidden"/>
+                     <corner thickness="0.175mm" presence="hidden"/>
+                     <fill>
+                        <color value="236,236,236"/>
+                     </fill>
+                  </border>
+               </draw>
+               <margin topInset="0mm" bottomInset="0mm" leftInset="0.762mm"/>
+               <bind match="none"/>
+               <?templateDesigner expand 1?></subform>
+            <subform w="202.184mm" name="sfInstruct6" layout="tb">
+               <draw name="lblInstruct6" w="7.999958in" h="12.395mm">
+                  <ui>
+                     <textEdit/>
+                  </ui>
+                  <font typeface="Myriad Pro" baselineShift="0pt" size="8pt"/>
+                  <margin topInset="0.5002mm" bottomInset="0.5002mm" leftInset="0.5mm" rightInset="0.5mm"/>
+                  <para spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt" vAlign="middle"/>
+                  <border>
+                     <edge presence="hidden"/>
+                     <corner thickness="0.175mm" presence="hidden"/>
+                  </border>
+                  <value>
+                     <text>text</text>
+                  </value>
+               </draw>
+               <margin topInset="0mm" bottomInset="0mm"/>
+               <bind match="none"/>
+               <?templateDesigner expand 1?></subform>
+            <subform w="202.184mm" name="sfInstruct7" layout="tb" y="3mm">
+               <draw name="lblInstruct7" w="7.999958in" h="27.953mm">
+                  <ui>
+                     <textEdit/>
+                  </ui>
+                  <font typeface="Myriad Pro" baselineShift="0pt" size="8pt"/>
+                  <margin topInset="0.5002mm" bottomInset="0.5002mm" leftInset="10.16mm" rightInset="0.5mm"/>
+                  <para spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt" vAlign="middle"/>
+                  <border>
+                     <edge presence="hidden"/>
+                     <corner thickness="0.175mm" presence="hidden"/>
+                  </border>
+                  <value>
+                     <text>text</text>
+                  </value>
+               </draw>
+               <margin topInset="0mm" bottomInset="0mm"/>
+               <bind match="none"/>
+               <?templateDesigner expand 1?></subform>
+            <bind match="none"/>
+            <?templateDesigner expand 0?></subform>
+         <border>
+            <edge/>
+            <corner thickness="0.175mm"/>
+            <edge presence="hidden"/>
+            <edge/>
+            <edge presence="hidden"/>
+            <corner thickness="0.175mm" presence="hidden"/>
+            <corner thickness="0.175mm"/>
+            <corner thickness="0.175mm" presence="hidden"/>
+         </border>
+         <margin topInset="0mm" bottomInset="2.54mm" leftInset="0mm"/>
+         <bind match="none"/>
+         <?templateDesigner expand 1?>
+         <?templateDesigner isFragment yes?>
+         <?templateDesigner fragmentTitle sfInstructionsContent?></subform>
+   </subform>
+</template>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.2-c001 63.139439, 2011/06/07-10:39:26        ">
+   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <rdf:Description xmlns:lcd="http://ns.adobe.com/livecycle/designer/" xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:about="">
+         <lcd:fragmentCatalog>
+            <rdf:Seq>
+               <rdf:li rdf:parseType="Resource">
+                  <dc:title>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default">sfInstructionsContent</rdf:li>
+                     </rdf:Alt>
+                  </dc:title>
+                  <dc:description>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default"/>
+                     </rdf:Alt>
+                  </dc:description>
+                  <dc:identifier>$template.form1.sfInstructionsContent</dc:identifier>
+                  <lcd:fragmentRole>Subform</lcd:fragmentRole>
+               </rdf:li>
+            </rdf:Seq>
+         </lcd:fragmentCatalog>
+      </rdf:Description>
+   </rdf:RDF>
+</x:xmpmeta></xdp:xdp>

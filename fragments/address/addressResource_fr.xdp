@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xfa generator="AdobeLiveCycleDesignerES_V10.0.2.20120224.1.869952" APIVersion="3.5.12002.0"?>
-<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2015-11-10T19:49:41Z" uuid="141025b2-46bc-423c-9297-5ce00025236b">
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2016-01-04T14:47:39Z" uuid="346006c3-48c5-4ab0-92c9-7fde1bb3756b">
 <template xmlns="http://www.xfa.org/schema/xfa-template/3.0/">
    <?formServer defaultPDFRenderFormat acrobat9.1static?>
    <subform name="form1" locale="en_CA" layout="tb">
@@ -15,7 +15,7 @@
             <script contentType="application/x-javascript" name="address_fr">	
 var content={
 	
-	lbAddress:		"Street et Suite et CP le cas échéant.",
+	lbAddress:		"Rue et Suite et CP le cas échéant",
 	lbCity:			"Ville",
 	lbCountry:		"Pays",
 	lbProvince:		"Province ou état",
@@ -29,9 +29,15 @@ var content={
 	lbSurname:		"Nom",
 	lbPositionTitle:"Titre du poste",
 	lbLangPref:		"Langue de préférence",
-	lbCompanyName:	"Nom de la société. Nom complet. Ne pas utiliser d'abréviations.",
+	lbCompanyName:	"Nom de la société. Nom complet. Ne pas utiliser d'abréviations",
 	lbFor:			"pour "
 }
+
+               
+               
+
+               
+               
 
                
                
@@ -49,7 +55,7 @@ var content={
    </subform>
    <?templateDesigner FormTargetVersion 30?>
    <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?>
-   <?templateDesigner Zoom 112?></template>
+   <?templateDesigner Zoom 109?></template>
 <config xmlns="http://www.xfa.org/schema/xci/3.0/">
    <agent name="designer">
       <!--  [0..n]  -->
@@ -76,14 +82,14 @@ var content={
 <x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.2-c001 63.139439, 2011/06/07-10:39:26        ">
    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
       <rdf:Description xmlns:xmp="http://ns.adobe.com/xap/1.0/" rdf:about="">
-         <xmp:MetadataDate>2015-11-10T19:49:41Z</xmp:MetadataDate>
+         <xmp:MetadataDate>2016-01-04T14:47:39Z</xmp:MetadataDate>
          <xmp:CreatorTool>Adobe LiveCycle Designer ES 10.0</xmp:CreatorTool>
       </rdf:Description>
       <rdf:Description xmlns:pdf="http://ns.adobe.com/pdf/1.3/" rdf:about="">
          <pdf:Producer>Adobe LiveCycle Designer ES 10.0</pdf:Producer>
       </rdf:Description>
       <rdf:Description xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" rdf:about="">
-         <xmpMM:DocumentID>uuid:141025b2-46bc-423c-9297-5ce00025236b</xmpMM:DocumentID>
+         <xmpMM:DocumentID>uuid:346006c3-48c5-4ab0-92c9-7fde1bb3756b</xmpMM:DocumentID>
       </rdf:Description>
       <rdf:Description xmlns:lcd="http://ns.adobe.com/livecycle/designer/" xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:about="">
          <lcd:fragmentCatalog>
