@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xfa generator="AdobeLiveCycleDesignerES_V10.0.2.20120224.1.869952" APIVersion="3.5.12002.0"?>
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/">
+<template xmlns="http://www.xfa.org/schema/xfa-template/3.0/">
+   <subform name="form1" locale="en_CA" layout="tb">
+      <pageSet>
+         <pageArea>
+            <contentArea w="203.2mm" h="249.476mm" x="6.351mm" y="16.198mm" name="contentArea"/>
+            <medium stock="default" short="612pt" long="792pt"/>
+         </pageArea>
+      </pageSet>
+      <subform>
+         <variables>
+            <script contentType="application/x-javascript" name="instruct_fr">
+var content={
+
+	lbInstruct1:		"Ce formulaire contient des champs obligatoires. Pour vous assurer que vous avez rempli les champs appropriés, cliquez sur le bouton 'Finalisation' au bas du formulaire avant de l'imprimer et de le signer",
+	lbInstruct2:		"Une fois finalisé, les champs seront verrouiller (les champs ne peuvent plus être modifié). Pour pouvoir modifier les champs après la finalisation, vous devez cliquer sur le bouton 'Modification' au bas du formulaire. Après avoir modifié les champs désirés et avant d'imprimer et de signer, cliquez sur le bouton 'Finalisation' à nouveau afin de valider les entrées.",  
+	
+	lbInstruct3:		"La ligne directrice : Règlement sur les médicaments brevetés (avis de conformité) contient des directives relatives à chaque champ du formulaire. Veuillez le lire en entier avant de remplir le formulaire. Les renseignements relatifs à une présentation déjà déposée ne doivent être accompagnées que d'une lettre de Santé Canada demandant des renseignements supplémentaires", 
+	lbInstruct4:		"es demandes et modifications d'essais cliniques doivent être envoyées directement à la Direction applicable (voir le Guide pour l'industrie: Gestion des présentations de drogues pour les adresses). Tous les autres types de présentations de médicaments doivent être envoyés à:", 
+	lbInstruct5:		"Bureau des présentations et de la propriété intellectuelle (BPPI), Direction des produits thérapeutiques\nSanté Canada\nImmeuble des finances\n101, promenade du pré Tunney\nIndice de l’adresse : 0201A1\nOttawa, Ontario, Canada K1A 0K9\nTélécopieur : 613-941-0825",	
+ 	lbInstruct6:		"Toutes les présentations de médicaments pour usage vétérinaire (y compris les présentations de drogues nouvelles de recherche pour usage vétérinaire et modifications) doivent être envoyées à l'adresse :",	
+	lbInstruct7:		"Direction des médicaments vétérinaires\nSanté Canada\nComplexe Holland Cross\n11, avenue Holland, bureau 14\nIndice de l'adresse : 3000A\nOttawa, Ontario, Canada K1A 0K9\nTélécopieur : 613-946-1125",
+	lbGuidance:			"&lt;body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\"&gt;&lt;p style=\"text-align:center;text-decoration:none;letter-spacing:0in\"&gt;&lt;a href=\"http://www.hc-sc.gc.ca/dhp-mps/prodpharma/applic-demande/guide-ld/patmedbrev/pmreg3_mbreg3-fra.php\"&gt;Ligne directrice &lt;/a&gt;&lt;/p&gt;&lt;/body&gt;",
+}
+
+               <?templateDesigner isFragment yes?>
+               <?templateDesigner fragmentTitle instruct_fr?></script>
+         </variables>
+      </subform>
+   </subform>
+</template>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.2-c001 63.139439, 2011/06/07-10:39:26        ">
+   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <rdf:Description xmlns:lcd="http://ns.adobe.com/livecycle/designer/" xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:about="">
+         <lcd:fragmentCatalog>
+            <rdf:Seq>
+               <rdf:li rdf:parseType="Resource">
+                  <dc:title>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default">instruct_fr</rdf:li>
+                     </rdf:Alt>
+                  </dc:title>
+                  <dc:description>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default"/>
+                     </rdf:Alt>
+                  </dc:description>
+                  <dc:identifier>$template.form1.#subform.#variables.instruct_fr</dc:identifier>
+                  <lcd:fragmentRole>ScriptObject</lcd:fragmentRole>
+               </rdf:li>
+            </rdf:Seq>
+         </lcd:fragmentCatalog>
+      </rdf:Description>
+   </rdf:RDF>
+</x:xmpmeta></xdp:xdp>

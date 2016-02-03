@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xfa generator="AdobeLiveCycleDesignerES_V10.0.2.20120224.1.869952" APIVersion="3.5.12002.0"?>
-<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2016-01-04T14:48:12Z" uuid="1c523c5b-4bf2-4089-a164-48e1226f7b23">
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2016-01-04T15:49:30Z" uuid="58315fb1-12d7-47dd-bb15-5182092c3fcb">
 <template xmlns="http://www.xfa.org/schema/xfa-template/3.0/">
    <?formServer defaultPDFRenderFormat acrobat9.1static?>
    <subform name="form1" locale="en_CA" layout="tb">
@@ -10,50 +10,106 @@
             <medium stock="default" short="612pt" long="792pt"/>
          </pageArea>
       </pageSet>
-      <subform>
-         <variables>
-            <script contentType="application/x-javascript" name="address_en">
+      <subform w="202.991mm" minH="14.976mm" layout="lr-tb" name="sfIngredientList">
+         <subform w="200.66mm" name="sfIngredient" layout="lr-tb">
+            <occur max="-1"/>
+            <field name="txtIngredient" w="158.183mm" minH="13.706mm">
+               <ui>
+                  <textEdit multiLine="1">
+                     <border>
+                        <edge stroke="lowered"/>
+                     </border>
+                     <margin/>
+                  </textEdit>
+               </ui>
+               <font typeface="Myriad Pro"/>
+               <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="3.81mm"/>
+               <para vAlign="middle"/>
+               <caption reserve="0.185306in" placement="top">
+                  <para vAlign="middle"/>
+                  <value>
+                     <text>Medicinal Ingedient</text>
+                  </value>
+                  <font typeface="Myriad Pro" size="8pt"/>
+               </caption>
+               <validate nullTest="error"/>
+               <value>
+                  <text maxChars="255"/>
+               </value>
+               <keep intact="contentArea"/>
+               <bind match="dataRef" ref="$.medicinal_ingredient"/>
+            </field>
+            <border>
+               <edge stroke="dashed" presence="hidden"/>
+               <corner stroke="dashed" presence="hidden" thickness="0.175mm"/>
+            </border>
+            <subform x="163.76mm" w="37.87mm" name="sfDeleteIngred" h="13.165mm">
+               <keep intact="none"/>
+               <field name="btnDeleteIng" w="37.87mm" h="6.35mm" x="0mm" y="6.258mm">
+                  <ui>
+                     <button highlight="inverted"/>
+                  </ui>
+                  <font typeface="Myriad Pro"/>
+                  <caption>
+                     <value>
+                        <text>Delete Ingredient</text>
+                     </value>
+                     <para vAlign="middle" hAlign="center"/>
+                  </caption>
+                  <border hand="right">
+                     <edge stroke="raised"/>
+                     <fill>
+                        <color value="212,208,200"/>
+                     </fill>
+                  </border>
+                  <bind match="none"/>
+                  <event activity="click" name="event__click">
+                     <script contentType="application/x-javascript">
 
-var content={
-	
-	lbAddress:		"Street and Suite and PO Box where applicable",
-	lbCity:			"City or Town",
-	lbCountry:		"Country",
-	lbProvince:		"Province or State",
-	lbTelephone:	"Telephone Number",
-	lbExtension:	"Extension",
-	lbFax:			"Fax Number",
-	lbEmail:		"Email",
-	lbSalutation:	"Salutation",
-	lbGivenName:	"Given Name",
-	lbInitials:		"Initials",
-	lbSurname:		"Surname",
-	lbPositionTitle:"Position Title",
-	lbLangPref:		"Preferred Language",
-	lbCompanyName:	"Company Name. Full Name, no Abbreviations",
-	lbFor:			"for "
 
+
+var cHandler=script.HCeForm.control.DrugHandler;
+var cActionEvent = script.core.event.ActionEvent;
+var cLog = script.core.util.Log;
+var cSystem = script.core.System;
+
+
+try{
+		// set up event object
+			var actionName = cHandler.REMOVE_MED_INGREDIENT;
+			var anActionEvent = cActionEvent.createInstance(actionName, this,this.parent.parent); //parent subform hack
+			// deploy event to controller
+			cHandler.actionPerformed(anActionEvent);
+		
 }
-
-               
-               
-
-               
-               
-
-               
-               
-
-               
-               
-
-               
-               
-
-               <?templateDesigner isFragment yes?>
-               <?templateDesigner fragmentTitle addressResource_en?></script>
-         </variables>
-      </subform>
+catch(exception)
+{
+	cLog.warn("Problem with remove ingredient::click", exception);
+}
+</script>
+                  </event>
+               </field>
+               <bind match="none"/>
+               <?templateDesigner expand 1?></subform>
+            <margin leftInset="0mm" rightInset="0mm" bottomInset="1.27mm"/>
+            <bind match="dataRef" ref="$.medicinal_ingredient_info[*]"/>
+            <?templateDesigner expand 1?></subform>
+         <margin leftInset="1.27mm" rightInset="1.27mm"/>
+         <border>
+            <edge stroke="dashed" presence="hidden"/>
+            <edge presence="hidden"/>
+            <edge presence="hidden"/>
+            <edge presence="hidden"/>
+            <corner stroke="dashed" presence="hidden"/>
+            <corner/>
+            <corner/>
+            <corner/>
+         </border>
+         <bind match="none"/>
+         <?templateDesigner expand 0?>
+         <?templateDesigner isFragment yes?>
+         <?templateDesigner fragmentTitle sfIngredientList?></subform>
+      <?renderCache.subset "Myriad Pro" 0 0 ISO-8859-1 4 56 14 00010025002A002E00420044004500460048004A004D004F00530055 DIMacdegilnrt?>
    </subform>
    <?templateDesigner FormTargetVersion 30?>
    <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?>
@@ -84,14 +140,14 @@ var content={
 <x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.2-c001 63.139439, 2011/06/07-10:39:26        ">
    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
       <rdf:Description xmlns:xmp="http://ns.adobe.com/xap/1.0/" rdf:about="">
-         <xmp:MetadataDate>2016-01-04T14:48:12Z</xmp:MetadataDate>
+         <xmp:MetadataDate>2016-01-04T15:49:30Z</xmp:MetadataDate>
          <xmp:CreatorTool>Adobe LiveCycle Designer ES 10.0</xmp:CreatorTool>
       </rdf:Description>
       <rdf:Description xmlns:pdf="http://ns.adobe.com/pdf/1.3/" rdf:about="">
          <pdf:Producer>Adobe LiveCycle Designer ES 10.0</pdf:Producer>
       </rdf:Description>
       <rdf:Description xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" rdf:about="">
-         <xmpMM:DocumentID>uuid:1c523c5b-4bf2-4089-a164-48e1226f7b23</xmpMM:DocumentID>
+         <xmpMM:DocumentID>uuid:58315fb1-12d7-47dd-bb15-5182092c3fcb</xmpMM:DocumentID>
       </rdf:Description>
       <rdf:Description xmlns:lcd="http://ns.adobe.com/livecycle/designer/" xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:about="">
          <lcd:fragmentCatalog>
@@ -99,7 +155,7 @@ var content={
                <rdf:li rdf:parseType="Resource">
                   <dc:title>
                      <rdf:Alt>
-                        <rdf:li xml:lang="x-default">addressResource_en</rdf:li>
+                        <rdf:li xml:lang="x-default">sfIngredientList</rdf:li>
                      </rdf:Alt>
                   </dc:title>
                   <dc:description>
@@ -107,8 +163,8 @@ var content={
                         <rdf:li xml:lang="x-default"/>
                      </rdf:Alt>
                   </dc:description>
-                  <dc:identifier>$template.form1.#subform.#variables.address_en</dc:identifier>
-                  <lcd:fragmentRole>ScriptObject</lcd:fragmentRole>
+                  <dc:identifier>$template.form1.sfIngredientList</dc:identifier>
+                  <lcd:fragmentRole>Subform</lcd:fragmentRole>
                </rdf:li>
             </rdf:Seq>
          </lcd:fragmentCatalog>

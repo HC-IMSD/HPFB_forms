@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xfa generator="AdobeLiveCycleDesignerES_V10.0.2.20120224.1.869952" APIVersion="3.5.12002.0"?>
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/">
+<template xmlns="http://www.xfa.org/schema/xfa-template/3.0/">
+   <subform name="form1" locale="en_CA" layout="tb">
+      <pageSet>
+         <pageArea>
+            <medium long="279.4mm" short="215.9mm" stock="letter"/>
+            <contentArea h="253.74mm" id="caMain_ID_copy1_copy1_copy1_copy1" name="caMainSig" w="203.2mm" x="6.736mm" y="13.324mm">
+               <?templateDesigner expand 1?></contentArea>
+         </pageArea>
+      </pageSet>
+      <subform>
+         <variables>
+            <script contentType="application/x-javascript" name="DateFormatDelegate">
+
+/*******************************************************************************
+ * An object that validates a date to Health Canada's standard format of ####-##-##
+ * Also validates if the date is correct 
+ *
+ * Implements FormNodeDelegateInterface.
+ */
+
+//imports
+var cConfigurationManager = script.core.util.ConfigurationManager;
+var cLog = script.core.util.Log;
+var cObjectUtil = script.core.util.ObjectUtil;
+var cResourceManager = script.core.lang.ResourceManager;
+var cTypeChecker = script.core.util.TypeChecker;
+var cUiUtil = script.core.util.UiUtil;
+var cValidationFailure = script.core.validation.ValidationFailure;
+
+
+var DATE_ERR_NOTDATE=			"not_date";
+var DATE_ERR_INVALID_MONTH=		"month_invalid";
+var DATE_ERR_INVALID_DAY_31=	"day_invalid31";
+var DATE_ERR_INVALID_DAY_30=	"day_invalid30";
+var DATE_ERR_INVALID_DAY_29=	"day_invalid29";
+var DATE_ERR_INVALID_DAY_28=	"day_invalid28";
+var DATE_VALID=					"dateValid";
+var FUTURE_DATE=				"date_future";
+var PAST_DATE=					"date_past";	
+var strSeparator 					= '-';
+
+
+/*******************************************************************************
+ * Gets a new DateFormatDelegate. Adobe does not allow object instances
+ * to be created outside of their packaging, so it must be done here.
+ * Note that this is only intended for use by FormNodeFactory. All instances
+ * should be created by that class.
+ * @return the new DateFormatDelegateinstance
+ */
+function createInstance()
+{
+	return new DateFormatDelegateClass();
+}
+
+
+
+/**
+ * Class implementation
+ */
+function DateFormatDelegateClass(somExpression)
+{
+	this.className = "DateFormatDelegate";
+	this.errorResourceAlias=null; //sets a default error message
+	this.expandedResourceAlias=null;
+	this.formNode;
+	this.validateFuture=true;
+
+	/**
+	 * Gets this node's default value, which is an internationalized value.
+	 * This returns null since this uses a picklist.
+	 * @param aNode the Adobe Node instance who's default value is required.
+	 * @return a String that contains the internationalized default value for
+	 *		   the passed Node. Null if this is not applicable.
+	 */
+    this.getDefaultValue = function(aNode)
+    {
+    	return null;
+	}
+		
+	/**
+	 * Gets the type of format validation to be applied to data entered into
+	 * this node in the UI.
+	 * @param aNode the Adobe Node instance who's value must conform to a 
+	 *		  specific format.
+	 * @return a String that contains the type of format validation to be
+	 *		   applied to data entered into this node in the UI. These must be
+	 *		   types that are supported by the currently installed 
+	 *		   FormatValidator. Null if this is not applicable.
+	 */
+    this.getFormatType = function(aNode)
+    {
+    	return  null;
+	}
+
+	/**
+	 * Gets this node's label to be displayed in the UI, which is an
+	 * internationalized value.
+	 * @param aNode the Adobe Node instance who's label is required.
+	 * @return a String that contains the internationalized UI label for the
+	 *		   passed Node. Null if this is not applicable.
+	 */
+    this.getLabel = function(aNode)
+    {
+    	return null;
+   	}
+
+	/**
+	 * Gets whether this node is mandatory (required).
+	 * @param aNode the Adobe Node instance who's mandatory setting is required.
+	 * @return a boolean - true if is mandatory*/
+	this.isMandatory = function(aNode)
+	{
+    		return null;
+	}
+		
+	/**
+	 * Gets a string that defines the pick list to be displayed in the UI for
+	 * this node.
+	 * @param aNode the Adobe Node instance who's pick list is required.
+	 * @return a String that contains the definition of the pick list to be
+	 *		   displayed in the UI for this node. The format is:
+	 *		   "displayValue1, code1, displayValue2, code2...". Null if
+	 *		   this is not applicable.
+	 */
+    this.getPickListValues = function(aNode)
+    {
+    	return null;
+	}
+		
+	/**
+	 * Gets this node's tool tip to be displayed in the UI, which is an
+	 * internationalized value. In this case it is null, since these are
+	 * dependant on the subform that the field is in (must be handled by the
+	 * FormNode itself).
+	 * @param aNode the Adobe Node instance who's tool tip is required.
+	 * @return a String that contains the internationalized UI tool tip for the
+	 *		   passed Node. Null if this is not applicable.
+	 */
+    this.getToolTip = function(aNode)
+    {
+    	return null;
+	}
+
+	/**
+	 * Sets the FormNode that is using this delegate. It is mandatory that this
+	 * is set to allow the delegate to access items in the FormNode as required.
+	 * @param aFormNode the FormNode that is using this delegate.
+	 */
+    this.setFormNode = function(aFormNode)
+    {
+    	this.formNode = aFormNode;
+	}
+	
+	/**
+	 * Sets custom error text 
+	 *
+	 * @param aFormNode the FormNode that is using this delegate.
+	 */
+	this.setErrorText = function(aliasName)
+    {
+    	
+    	this.errorResourceAlias=aliasName;
+    }
+    
+    /*
+    * Sets whether to validate if a future date
+    *true means a future date is not allowed (default)
+    *
+    */
+	this.setValidateFuture=function(futureValidationVal){
+	
+		this.validateFuture=futureValidationVal;
+	}
+
+	/**
+	 * Gets whether this delegate is used to validate node instances (e.g.
+	 * mandatory fields, etc.) as well as their child nodes.
+	 * @return a boolean -true if this should be called to perform validation.
+	 */
+	this.isUsedToValidateNodes = function()
+	{
+		return true;
+	}
+	
+	/**
+	 * Performs custom validation. This also validates all child FormNodes if
+	 * required. It may call the FormNode's _validateNode().
+	 * @param aNodeInstance (optional) the instance of Adobe Node that should
+	 *		  be validated. Required if this is below a collection of instances
+	 *		  (e.g. a repeating subform). When unspecified, this may use the
+	 *		  FormNode's getNodeInstances() to get all instances of this Node
+	 *		  to validate.
+	 * @param updateDisplay (optional) a boolean that indicates whether this
+	 *		  should automatically update the colour of the node to reflect
+	 *		  whether it passed validation. Defaults to true.
+	 * @param aValidationFailure (optional) the ValidationFailure that this
+	 *		  should append its validationFailures to. This is only used
+	 *		  internally when this is called recursively.
+	 * @return a ValidationFailure containing all failures that were
+	 *		   encountered. Returns aValidationFailure if that parameter was
+	 *		   used. Null if there were no failures.
+	 * @throws an UnexpectedDataType Exception if aNodeInstance isn't an Adobe
+	 *		   Node.
+	 */
+	this.validateNode = function(aNodeInstance, updateDisplay,
+								 aValidationFailure)
+	{
+		// It must be called to avoid being
+		// overwirtten.
+		this.formNode._validateNode(aNodeInstance, updateDisplay,
+									aValidationFailure);
+
+		if(!aNodeInstance.isNull){
+			var nodeDate=aNodeInstance.rawValue;
+			var result=_checkDateOk(nodeDate);
+			if(result===DATE_VALID &amp;&amp; this.validateFuture==true){
+				var futureResult=isFutureDate(nodeDate);
+				if(futureResult===true){
+					result=FUTURE_DATE;
+				}	
+			}
+			if(result===DATE_VALID){
+				var pastResult=_isTooFarinPast(nodeDate);
+				if(pastResult===true){
+					result=PAST_DATE;
+				}
+			}	
+	
+			if(result!==DATE_VALID){
+		
+				if(updateDisplay){
+					cUiUtil.setColour(aNodeInstance,
+									cConfigurationManager.get("colourError"));
+				}	
+				switch(result){
+				
+					case DATE_ERR_NOTDATE:
+						this.expandedResourceAlias="err_notDate";
+						break;
+					case DATE_ERR_INVALID_MONTH:
+						this.expandedResourceAlias="err_dateInvalidMonth";
+						break;	
+					case DATE_ERR_INVALID_DAY_31:
+						this.expandedResourceAlias="err_dateInvalidDay31";
+						break;	
+					case DATE_ERR_INVALID_DAY_30:
+						this.expandedResourceAlias="err_dateInvalidDay30";
+						break;
+					case DATE_ERR_INVALID_DAY_29:
+						this.expandedResourceAlias="err_dateInvalidDay29";
+						break;				
+					case DATE_ERR_INVALID_DAY_28:
+						this.expandedResourceAlias="err_dateInvalidDay28";
+						break;
+												
+					case FUTURE_DATE:	
+						this.expandedResourceAlias="err_futureDate";
+						break;
+					
+					case PAST_DATE:	
+						this.expandedResourceAlias="err_pastDate";
+						break;	
+								
+					default: //for anything else just default to not a date
+						this.expandedResourceAlias="err_notDate";
+						break;				
+				}
+				var validationText=	cResourceManager.get(this.errorResourceAlias) +" "+	cResourceManager.get(this.expandedResourceAlias);			
+				var newValidationFailure = cValidationFailure.createInstance(
+										"DateValidation",
+										validationText);
+				if (aValidationFailure != null)
+				{
+					aValidationFailure.addNestedValidationFailure(newValidationFailure);
+				}
+				else
+				{
+					aValidationFailure = newValidationFailure;
+				}					
+									
+			}else{ //field passed reset color
+				
+				if(updateDisplay) cUiUtil.resetColour(aNodeInstance);
+				
+			}	
+		
+		}//isNotNull
+				
+		return aValidationFailure;
+	}
+			
+    /**
+     * Describes this object. This is implemented in all objects since their
+     * toString() cannot be overridden!
+     * @return the description of this object.
+     */
+    this.asString = function()
+	{
+		var buffer = this.className + "[";
+		
+	    if (this.formNode != null)
+	    {
+	    	buffer += "formNode.somExpression= " + this.formNode.somExpression;
+	    }
+	    else
+	    {
+	    	buffer += "formNode= null";
+	    }
+		buffer += "]";
+		return buffer;
+	}
+
+}
+
+function _checkDateOk(value)
+{
+	if(!value) return(DATE_VALID); //does not check for empty
+		
+	var reg =/^\d{4}(\-|\/|\.)\d{2}\1\d{2}$/;
+	
+	//1) check if in proper format	
+	var check = reg.test(value); 
+	if (check!=true) return(DATE_ERR_NOTDATE); 
+		
+	//var strSeparator = '-'
+	var arrayDate = value.split(strSeparator); 
+	var intDay = parseInt(arrayDate[2],10); 
+	var intMonth = parseInt(arrayDate[1],10);
+	var intYear = parseInt(arrayDate[0]);
+    	 	
+    //check if month is valid ie 1-12
+    var maxDaysInMonth=_getMaxDayRange(arrayDate[1]);
+    
+    if(!maxDaysInMonth &amp;&amp; intMonth!==2) {
+  	  	 return(DATE_ERR_INVALID_MONTH);  	 
+    }
+ 	//month passed, check if day is valid
+ 	
+ 	if (intMonth === 2) {      //since lookup will return null
+	      maxDaysInMonth=28;
+	      if( _isLeapYear(intYear)){  
+	      		maxDaysInMonth=29;
+	      }		
+	 }     		
+	if(intDay &lt;=  maxDaysInMonth &amp;&amp; intDay != 0){
+	        	return DATE_VALID; //found in lookup table, good date
+	}else{
+	
+		return _getDayErrorType(maxDaysInMonth);
+	}
+	     
+   return(DATE_ERR_NOTDATE);
+}//end fn
+
+
+/*
+* Calculates the max number of days for a given month. Does not calculate for Febuary
+* @param month: the month to lookup. Valid values are 1-12 as strings!
+* @returns: the integer value of the max number of days, null if not found
+*/
+function _getMaxDayRange(month){
+
+	 var arrayLookup = { 	'01' : 31,'03' : 31, 
+	                      	'04' : 30,'05' : 31,
+	                      	'06' : 30,'07' : 31,
+	                      	'08' : 31,'09' : 30,
+	                      	'10' : 31,'11' : 30,'12' : 31}
+
+	return(arrayLookup[month]);
+
+}
+
+/*
+*	Determines the correct day error message
+*	@param maxDays- the max number of days allowed in a month
+*	@returns- the error message
+*
+*/
+function _getDayErrorType(maxDays){
+
+	var errorType;
+	
+	switch(maxDays){
+	
+		case 28:
+			errorType=DATE_ERR_INVALID_DAY_28;
+			break; 
+		
+		case 29:
+			errorType=DATE_ERR_INVALID_DAY_29;
+			break; 
+		
+		case 30:
+			errorType=DATE_ERR_INVALID_DAY_30;
+			break; 
+			
+		case 31:
+			errorType=DATE_ERR_INVALID_DAY_31;
+			break; 
+		
+	
+	}
+	return errorType;
+}
+
+/*
+*	Determines if a year is a leap year using the famous standard alg
+*	@param intYear- the integer year value to check
+*	@returns- true if a leap year
+*
+*/
+function _isLeapYear(intYear){
+
+	if ((intYear % 4 == 0) &amp;&amp; (intYear % 100 != 0) ||  (intYear % 400 == 0)) {
+		 // year div by 4 and ((not div by 100) or div by 400) =ok
+		 return true;
+	} 
+	return false;
+}
+
+
+
+function isFutureDate(value)
+{
+	var oToday = new Date();
+	var curYear = oToday.getFullYear();
+	var curMonth = pad(String(oToday.getMonth() + 1), 2, "0");
+	var curDay = pad(String(oToday.getDate()), 2, "0");	
+	oToday = curYear + '-' + curMonth + '-' + curDay;
+	
+	return (value &gt; oToday);
+	
+
+}//end fn
+
+
+
+
+//pads a string s, to length len, with character chr
+//padding is done in front of the string
+function pad(s, len, chr)
+{		
+	if(s.length &gt; len)
+	{
+		return s.substr(s.length - len, len);
+	}
+	else if(s.length &lt; len)
+	{
+		var tmp = "";
+		var i = 0;
+		for(i = s.length; i &lt; len; i++)
+		{
+			tmp += chr;
+		}
+		return tmp + s;
+	}
+	return s;
+}//end fn
+
+function _isTooFarinPast(value){ 
+	//var strSeparator = '-'
+	var arrayDate = value.split(strSeparator); 
+	var intYear = parseInt(arrayDate[0]);
+	var oDateNow = new Date();
+	var currYear=oDateNow.getFullYear();
+	var isTooOld=false;
+
+	var yearResult=currYear-intYear;
+	if(yearResult&gt;130 || yearResult&lt;0){
+			isTooOld=true;
+	}
+	return(isTooOld);
+}
+
+
+
+               <?templateDesigner isFragment yes?>
+               <?templateDesigner fragmentTitle DateFormatDelegate?></script>
+         </variables>
+      </subform>
+   </subform>
+</template>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.2-c001 63.139439, 2011/06/07-10:39:26        ">
+   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <rdf:Description xmlns:lcd="http://ns.adobe.com/livecycle/designer/" xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:about="">
+         <lcd:fragmentCatalog>
+            <rdf:Seq>
+               <rdf:li rdf:parseType="Resource">
+                  <dc:title>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default">DateFormatDelegate</rdf:li>
+                     </rdf:Alt>
+                  </dc:title>
+                  <dc:description>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default"/>
+                     </rdf:Alt>
+                  </dc:description>
+                  <dc:identifier>$template.form1.#subform.#variables.DateFormatDelegate</dc:identifier>
+                  <lcd:fragmentRole>ScriptObject</lcd:fragmentRole>
+               </rdf:li>
+            </rdf:Seq>
+         </lcd:fragmentCatalog>
+      </rdf:Description>
+   </rdf:RDF>
+</x:xmpmeta></xdp:xdp>

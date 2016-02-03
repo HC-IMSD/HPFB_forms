@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<hpfb:schema xmlns:hpfb="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+<hpfb:include schemaLocation="./common/address.xsd" />
+<hpfb:include schemaLocation="./common/contact.xsd" />
+<hpfb:include schemaLocation="./common/attestation.xsd" />
+<hpfb:include schemaLocation="./common/data_types.xsd" />
+	<!-- ****************************** -->
+	<!-- ELEMENT DECLARATIONS -->
+	<!-- ****************************** -->
+
+	<hpfb:element name="PATENT_LIST" type="patent_list_content"/>
+	<hpfb:element name="form_lang"/>
+	<hpfb:element name="form_version"/>
+	<hpfb:element name="patent_filing_info" type="patent_filing_content"/>
+	<hpfb:element name="patent_filing_option" />
+	<hpfb:element name="submission_number"/>
+	<hpfb:element name="related_submission"/>
+	<hpfb:element name="formulation_change"/>
+	<hpfb:element name="dosage_form_change"/>
+	<hpfb:element name="use_change"/>
+	<hpfb:element name="drug_info" type="drug_content"/>
+	<hpfb:element name="medicinal_ingredient"/>
+	<hpfb:element name="medicinal_ingredient_info" type="medicinal_ingredient_content"/>
+	<hpfb:element name="brand_name"/>
+	<hpfb:element name="drug_use"/>
+	<hpfb:element name="strength"/>
+	<hpfb:element name="dosage_form"/>
+	<hpfb:element name="dosage_form_other"/>
+	<hpfb:element name="route"/>
+	<hpfb:element name="route_other"/>
+	<hpfb:element name="din"/>
+	<hpfb:element name="ingredient_uses"/>
+	<hpfb:element name="patent_info" type="patent_content"/>
+	<hpfb:element name="patent_number"/>
+	<hpfb:element name="filing_date" type="yyyymmdd_date_content"/>
+	<hpfb:element name="granted_date" type="yyyymmdd_date_content"/>
+	<hpfb:element name="expiry_date" type="yyyymmdd_date_content"/>
+	<hpfb:element name="code_owner"/>
+	<hpfb:element name="code_exclusive"/>
+	<hpfb:element name="code_consent"/>
+	<hpfb:element name="company_name"/>
+	<hpfb:element name="service_address_info" type="service_address_content" />
+	<hpfb:element name="service_address" type="can_us_address_content" />
+	<hpfb:element name="manufact_address_info" type="manufact_address_content"/>
+	<hpfb:element name="manufact_address" type="international_address_content"/>
+	<hpfb:element name="manufact_address_sameas"/>
+	<hpfb:element name="manufact_contact_info" type="contact_nolang_content"/>
+	<hpfb:element name="attestation_info" 	type="attest_content" />
+	<hpfb:element name="hcoonly_info" type="hconly_content"/>
+	<hpfb:element name="internal_sub_number"/>
+	<hpfb:element name="filed_date" type="yyyymmdd_date_content"/>
+	<hpfb:element name="noc_date" type="yyyymmdd_date_content"/>
+	<hpfb:element name="added_date" type="yyyymmdd_date_content"/>
+	<hpfb:element name="amended_date" type="yyyymmdd_date_content"/>
+	<hpfb:element name="recieved_date" type="yyyymmdd_date_content"/>
+	<hpfb:element name="drug_id"/>
+	<hpfb:element name="subform_id"/>
+	<hpfb:element name="form_id"/>
+	<hpfb:element name="notes"/>
+
+
+	<!--Main form structure-->
+	<hpfb:complexType name="patent_list_content">
+		<hpfb:sequence>
+			<hpfb:element ref="form_lang"/>
+			<hpfb:element ref="form_version"/>
+			<hpfb:element ref="patent_filing_info"/>
+			<hpfb:element ref="drug_info"/>
+			<hpfb:element ref="patent_info"/>
+			<hpfb:element ref="service_address_info"/>
+			<hpfb:element ref="manufact_address_sameas"/>
+			<hpfb:element ref="manufact_address_info" minOccurs="0" maxOccurs="1"/>
+			<hpfb:element ref="manufact_contact_info"/>
+			<hpfb:element ref="attestation_info"/>
+			<hpfb:element ref="hcoonly_info"  minOccurs="0" maxOccurs="1"/>
+		</hpfb:sequence>
+	</hpfb:complexType>
+
+	<hpfb:complexType  name="patent_filing_content">
+		<hpfb:sequence>
+			<hpfb:element ref="patent_filing_option"/>
+			<hpfb:element ref="submission_number"/>
+			<hpfb:element  ref="related_submission"/>
+			<hpfb:element  ref="formulation_change"/>
+			<hpfb:element  ref="dosage_form_change"/>
+			<hpfb:element  ref="use_change"/>
+			</hpfb:sequence>
+	</hpfb:complexType>
+
+	<hpfb:complexType name="drug_content">
+	<hpfb:sequence>
+	<hpfb:element ref="medicinal_ingredient_info" minOccurs="1" maxOccurs="unbounded"/>
+	<hpfb:element ref="brand_name"/>
+	<hpfb:element ref="drug_use"/>
+	<hpfb:element ref="strength"/>
+	<hpfb:element ref="dosage_form"/>
+	<hpfb:element ref="dosage_form_other"/>
+	<hpfb:element ref="route"/>
+	<hpfb:element ref="route_other"/>
+	<hpfb:element ref="din"/>
+	<hpfb:element ref="ingredient_uses"/>
+	</hpfb:sequence>
+	</hpfb:complexType>
+
+	<hpfb:complexType name="medicinal_ingredient_content">	
+	<hpfb:sequence>
+		<hpfb:element  ref="medicinal_ingredient"/>
+		</hpfb:sequence>
+	</hpfb:complexType>
+
+	<hpfb:complexType name="patent_content">	
+	<hpfb:sequence>
+		<hpfb:element ref="patent_number"/>
+		<hpfb:element ref="filing_date"/>
+		<hpfb:element ref="granted_date"/>
+		<hpfb:element ref="expiry_date"/>
+		<hpfb:element ref="code_owner"/>
+		<hpfb:element ref="code_exclusive"/>
+		<hpfb:element ref="code_consent"/>
+		</hpfb:sequence>
+	</hpfb:complexType>
+
+	
+	<hpfb:complexType name="manufact_address_content">	
+	<hpfb:sequence>
+			<hpfb:element ref="company_name"/>
+			<hpfb:element ref="manufact_address"/>
+		</hpfb:sequence>
+	</hpfb:complexType>
+
+	<hpfb:complexType name="service_address_content">	
+	<hpfb:sequence>
+			<hpfb:element ref="company_name"/>
+			<hpfb:element ref="service_address"/>
+		</hpfb:sequence>
+	</hpfb:complexType>
+
+	<hpfb:complexType name="hconly_content">	
+	<hpfb:sequence>
+			<hpfb:element ref="internal_sub_number" />
+			<hpfb:element ref="filed_date" />
+			<hpfb:element ref="noc_date" />
+			<hpfb:element ref="added_date"/>
+			<hpfb:element ref="amended_date"/>
+			<hpfb:element ref="recieved_date"/>
+			<hpfb:element ref="drug_id"/>
+			<hpfb:element ref="subform_id"/>
+			<hpfb:element ref="form_id"/>
+			<hpfb:element ref="notes"/>
+		</hpfb:sequence>
+	</hpfb:complexType>
+
+	
+
+</hpfb:schema>
