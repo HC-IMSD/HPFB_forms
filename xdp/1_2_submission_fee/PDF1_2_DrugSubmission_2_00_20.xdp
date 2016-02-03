@@ -1,9 +1,6 @@
-<<<<<<< HEAD
-
-=======
 <?xml version="1.0" encoding="UTF-8"?>
 <?xfa generator="AdobeLiveCycleDesignerES_V10.0.2.20120224.1.869952" APIVersion="3.5.12002.0"?>
-<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2016-02-01T15:33:03Z" uuid="22d122bb-3579-4f3c-afac-1a22389d6006">
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2015-12-10T16:49:34Z" uuid="41e4313d-6d82-4831-be5d-2b20112e6b73">
 <template xmlns="http://www.xfa.org/schema/xfa-template/3.0/">
    <?formServer defaultPDFRenderFormat acrobat9.1dynamic?>
    <?formServer allowRenderCaching 0?>
@@ -185,10 +182,9 @@ this.rawValue=textVal;
                <font size="8pt" typeface="Myriad Pro"/>
                <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
                <para vAlign="middle" hAlign="right"/>
-               <?renderCache.bounds 239758 13006 0 0 1417 1417 0 0?>
-               <?renderCache.textRun 5 Title 0 226783 9920 0 0 0 "Myriad Pro" 0 0 8000 ISO-8859-1?></draw>
-            <?templateDesigner expand 1?></pageArea>
-         <?templateDesigner expand 1?></pageSet>
+               <?renderCache.bounds 239758 13006 0 0 0 0 0 0?></draw>
+            <?templateDesigner expand 0?></pageArea>
+         <?templateDesigner expand 0?></pageSet>
       <subform w="576pt" name="sfPage1" layout="lr-tb">
          <subform w="203.2mm" name="sfMainHeader" layout="lr-tb">
             <draw name="lblFormTitle" w="202.993mm" h="14.501mm">
@@ -202,9 +198,8 @@ this.rawValue=textVal;
                <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
                <para hAlign="center" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt" vAlign="middle"/>
                <assist role="H1"/>
-               <?renderCache.bounds 572579 38271 0 0 1417 1417 0 0?>
-               <?renderCache.textRun 37 Drug Submission/ Application Fee Form 0 146477 24552 0 0 0 "Myriad Pro" 1 0 16000 ISO-8859-1?></draw>
-            <exclGroup name="pageLanguage" layout="lr-tb" presence="hidden">
+               <?renderCache.bounds 572579 38271 0 0 0 0 0 0?></draw>
+            <exclGroup name="pageLanguage" layout="lr-tb">
                <field h="6mm" name="chkEnglish" w="23.28mm" locale="en_CA" relevant="-print">
                   <caption placement="right" reserve="16.812mm">
                      <font size="8pt" typeface="Myriad Pro"/>
@@ -258,9 +253,6 @@ this.rawValue=textVal;
                      </checkButton>
                   </ui>
                   <bind match="none"/>
-                  <value>
-                     <text xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
-                  </value>
                </field>
                <?templateDesigner itemValuesSpecified 1?>
                <event activity="change" name="event__change">
@@ -287,10 +279,10 @@ catch(exception)
                <validate scriptTest="warning"/>
                <margin leftInset="50.8mm"/>
                <?templateDesigner expand 0?>
-               <bind match="dataRef" ref="$.language"/>
+               <bind match="none"/>
             </exclGroup>
             <bind match="none"/>
-            <?templateDesigner expand 1?></subform>
+            <?templateDesigner expand 0?></subform>
          <subform y="15.42mm" w="203.307mm" layout="lr-tb" name="sfPreInstruct">
             <subform w="203.2mm" layout="lr-tb" name="sfPreInstruct1">
                <draw name="lblMandatory" w="8in" h="6.35mm" colSpan="2">
@@ -306,8 +298,7 @@ catch(exception)
                   <assist>
                      <speak disable="1"/>
                   </assist>
-                  <?renderCache.bounds 573166 15166 0 0 1417 1417 0 0?>
-                  <?renderCache.textRun 39 Asterisk (*) denotes a mandatory field. 0 1417 11000 0 0 0 "Myriad Pro" 0 0 8000 ISO-8859-1?></draw>
+                  <?renderCache.bounds 573166 15166 0 0 0 0 0 0?></draw>
                <assist role="LI"/>
                <bind match="none"/>
                <?templateDesigner expand 0?></subform>
@@ -322,8 +313,7 @@ catch(exception)
                   <font size="8pt" typeface="Myriad Pro"/>
                   <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
                   <para vAlign="middle"/>
-                  <?renderCache.bounds 573469 15166 0 0 1417 1417 0 0?>
-                  <?renderCache.textRun 52 Plus (+) denotes a validation error or missing data. 0 1417 11000 0 0 0 "Myriad Pro" 0 0 8000 ISO-8859-1?></draw>
+                  <?renderCache.bounds 573469 15166 0 0 0 0 0 0?></draw>
                <assist role="LI"/>
                <bind match="none"/>
                <?templateDesigner expand 1?></subform>
@@ -404,7 +394,7 @@ catch(exception)
                </ui>
                <font typeface="Myriad Pro"/>
                <margin topInset="0.5mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
-               <?renderCache.bounds 10137 15166 0 0 1417 1417 0 0?></draw>
+               <?renderCache.bounds 10137 15166 0 0 0 0 0 0?></draw>
             <field name="btnHideInstructions" w="31.75mm" h="6.35mm" relevant="-print">
                <ui>
                   <button highlight="inverted"/>
@@ -475,8 +465,7 @@ catch(exception)
                   </fill>
                </border>
                <assist role="H2"/>
-               <?renderCache.bounds 573166 16274 0 0 1417 720 0 0?>
-               <?renderCache.textRun 12 INSTRUCTIONS 0 1417 11857 0 0 0 "Myriad Pro" 1 0 12000 ISO-8859-1?></draw>
+               <?renderCache.bounds 573166 16274 0 0 0 0 0 0?></draw>
             <subform y="6.249mm" w="203.199mm" minH="59.561mm" layout="lr-tb" name="sfInstructList">
                <subform w="203.199mm" name="sfInstruct1" layout="tb">
                   <draw name="lblInstruct1" w="7.999958in" minH="5.116mm">
@@ -533,8 +522,7 @@ catch(exception)
                         <edge presence="hidden"/>
                         <corner thickness="0.175mm" presence="hidden"/>
                      </border>
-                     <?renderCache.bounds 573163 9540 0 0 1417 1418 0 0?>
-                     <?renderCache.textRun 47 -Save, print, sign and date the completed form; 0 1417 8438 0 0 0 "Myriad Pro" 0 0 8000 ISO-8859-1?></draw>
+                     <?renderCache.bounds 573163 9540 0 0 0 0 0 0?></draw>
                   <margin topInset="0mm" bottomInset="0mm"/>
                   <assist role="LI"/>
                   <bind match="none"/>
@@ -554,8 +542,7 @@ catch(exception)
                         <edge presence="hidden"/>
                         <corner thickness="0.175mm" presence="hidden"/>
                      </border>
-                     <?renderCache.bounds 573163 9543 0 0 1417 1418 0 0?>
-                     <?renderCache.textRun 26 -Scan the signed form, and 0 1417 8439 0 0 0 "Myriad Pro" 0 0 8000 ISO-8859-1?></draw>
+                     <?renderCache.bounds 573163 9543 0 0 0 0 0 0?></draw>
                   <margin topInset="0mm" bottomInset="0mm"/>
                   <assist role="LI"/>
                   <bind match="none"/>
@@ -575,15 +562,14 @@ catch(exception)
                         <edge presence="hidden"/>
                         <corner thickness="0.175mm" presence="hidden"/>
                      </border>
-                     <?renderCache.bounds 573163 9540 0 0 1417 1418 0 0?>
-                     <?renderCache.textRun 44 -Send to Health Canada in electronic format. 0 1417 8438 0 0 0 "Myriad Pro" 0 0 8000 ISO-8859-1?></draw>
+                     <?renderCache.bounds 573163 9540 0 0 0 0 0 0?></draw>
                   <margin topInset="0mm" bottomInset="0mm"/>
                   <assist role="LI"/>
                   <bind match="none"/>
                   <?templateDesigner expand 1?></subform>
                <assist role="UL"/>
                <bind match="none"/>
-               <?templateDesigner expand 1?></subform>
+               <?templateDesigner expand 0?></subform>
             <border>
                <edge/>
                <corner thickness="0.175mm"/>
@@ -611,8 +597,7 @@ catch(exception)
                      <edge presence="hidden"/>
                      <corner presence="hidden"/>
                   </border>
-                  <?renderCache.bounds 573163 14444 0 0 1417 1418 0 0?>
-                  <?renderCache.textRun 52 1. Manufacturer/Sponsor and Drug Product Information 0 1417 10418 0 0 0 "Myriad Pro" 1 0 12000 ISO-8859-1?></draw>
+                  <?renderCache.bounds 573163 14444 0 0 0 0 0 0?></draw>
                <field h="10.922mm" name="txtProductName" w="203.199mm">
                   <ui>
                      <textEdit hScrollPolicy="off">
@@ -673,10 +658,9 @@ catch(exception)
                      <assist role="H3">
                         <speak disable="1"/>
                      </assist>
-                     <?renderCache.bounds 573166 15166 0 0 1417 1417 0 0?>
-                     <?renderCache.textRun 36 MANUFACTURER/SPONSOR MAILING ADDRESS 0 1417 11500 0 0 0 "Myriad Pro" 1 0 10000 ISO-8859-1?></draw>
+                     <?renderCache.bounds 573166 15166 0 0 0 0 0 0?></draw>
                   <bind match="none"/>
-                  <?templateDesigner expand 0?></subform>
+                  <?templateDesigner expand 1?></subform>
                <subform layout="lr-tb" minH="28.575mm" name="sfPart1ACompanyDetail" w="203.2mm" y="12.7mm">
                   <keep intact="contentArea"/>
                   <field h="10.922mm" name="txtCompanyName" w="203.2mm">
@@ -931,8 +915,7 @@ if (xfa.event.prevText != xfa.event.newText) {
                      <value>
                         <text>MANUFACTURER/SPONSOR CONTACT</text>
                      </value>
-                     <?renderCache.bounds 573166 15166 0 0 1417 1417 0 0?>
-                     <?renderCache.textRun 28 MANUFACTURER/SPONSOR CONTACT 0 1417 11500 0 0 0 "Myriad Pro" 1 0 10000 ISO-8859-1?></draw>
+                     <?renderCache.bounds 573166 15166 0 0 0 0 0 0?></draw>
                   <bind match="none"/>
                   <?templateDesigner expand 1?></subform>
                <subform layout="lr-tb" minH="19.05mm" name="sfPart1AContactDetail" w="203.199mm">
@@ -1206,11 +1189,6 @@ if (xfa.event.prevText != xfa.event.newText) {
                   <?templateDesigner expand 0?></subform>
                <subform w="203.199mm" minH="14.222mm" layout="lr-tb" name="sfInvoiceContact">
                   <margin topInset="1.27mm" bottomInset="1.27mm" leftInset="1.27mm"/>
-                  <border>
-                     <edge/>
-                     <corner/>
-                  </border>
-                  <bind match="none"/>
                   <field name="chkBillingContact" w="112.822mm" h="6mm">
                      <ui>
                         <checkButton size="2.8222mm">
@@ -1335,9 +1313,9 @@ var cLog = script.core.util.Log;
 try
 {
 		// set up event object
-		var actionName = cFormHandler.ADD_BILLING_FORM;
+		var actionName = cFormHandler.SHOW;
 		if (this.rawValue == "0") 
-		actionName = cFormHandler.REMOVE_BILLING_FORM;
+		actionName = cFormHandler.HIDE;
 		//var actionName = cFormHandler.SHOW;
 		var anActionEvent = cActionEvent.createInstance(actionName, this);
 		// deploy event to controller
@@ -1351,6 +1329,11 @@ catch(exception)
 </script>
                      </event>
                   </field>
+                  <border>
+                     <edge/>
+                     <corner/>
+                  </border>
+                  <bind match="none"/>
                   <?templateDesigner expand 1?></subform>
                <subform name="sfPart1ABilling" w="203.2mm" layout="tb">
                   <subform w="174.1mm" h="7.945mm" name="sfBillingInstruction">
@@ -1367,10 +1350,9 @@ catch(exception)
                         <assist role="H3">
                            <speak disable="1"/>
                         </assist>
-                        <?renderCache.bounds 325673 11565 0 0 1417 1418 0 0?>
-                        <?renderCache.textRun 57 Please provide billing information in the sections below: 0 1417 7418 0 0 0 "Myriad Pro" 0 0 8000 ISO-8859-1?></draw>
+                        <?renderCache.bounds 325673 11565 0 0 0 0 0 0?></draw>
                      <bind match="none"/>
-                     <?templateDesigner expand 0?></subform>
+                     <?templateDesigner expand 1?></subform>
                   <subform name="sfBillingAddress" w="203.2mm" layout="lr-tb">
                      <draw h="6.35mm" name="lblBillingAddress" w="203.2mm">
                         <border>
@@ -1397,8 +1379,7 @@ catch(exception)
                         <assist role="H3">
                            <speak disable="1"/>
                         </assist>
-                        <?renderCache.bounds 573166 15166 0 0 1417 1417 0 0?>
-                        <?renderCache.textRun 28 BILLING COMPANY NAME/ADDRESS 0 1417 11500 0 0 0 "Myriad Pro" 1 0 10000 ISO-8859-1?></draw>
+                        <?renderCache.bounds 573166 15166 0 0 0 0 0 0?></draw>
                      <field h="10.922mm" name="txtBillingCompanyName" w="203.148mm">
                         <ui>
                            <textEdit>
@@ -1541,7 +1522,7 @@ try
 }
 catch(exception)
 {
-	cLog.warn("Problem with Billing Country selection ::change", exception);
+	cLog.warn("Problem with Manufacturer Country selection ::exit", exception);
 }
 
 if (!($.boundItem(xfa.event.newText)== "CA") &amp;&amp;  !($.boundItem(xfa.event.newText)== "US")) {
@@ -1692,8 +1673,7 @@ else {
                         <assist role="H2">
                            <speak disable="1"/>
                         </assist>
-                        <?renderCache.bounds 573164 15164 0 0 1418 1418 0 0?>
-                        <?renderCache.textRun 30 BILLING COMPANY CONTACT PERSON 0 1418 11500 0 0 0 "Myriad Pro" 1 0 10000 ISO-8859-1?></draw>
+                        <?renderCache.bounds 573164 15164 0 0 0 0 0 0?></draw>
                      <field h="10.922mm" name="ddlBillingSalutation" w="19.53mm">
                         <caption placement="top" reserve="3.175mm">
                            <para vAlign="middle"/>
@@ -2008,7 +1988,6 @@ else {
                      <corner/>
                   </border>
                   <bind match="none"/>
-                  <occur min="0"/>
                   <?templateDesigner expand 1?></subform>
                <bind match="none"/>
                <?templateDesigner expand 1?></subform>
@@ -2032,8 +2011,7 @@ else {
                <value>
                   <text>2. Submission Scope</text>
                </value>
-               <?renderCache.bounds 573163 14423 0 0 1417 10800 0 0?>
-               <?renderCache.textRun 19 2. Submission Scope 0 1417 19800 0 0 0 "Myriad Pro" 1 0 12000 ISO-8859-1?></draw>
+               <?renderCache.bounds 573163 14423 0 0 0 0 0 0?></draw>
             <draw h="6.35mm" name="lblPrimaryProduct" w="203.199mm">
                <ui>
                   <textEdit>
@@ -2059,8 +2037,7 @@ else {
                <assist role="H3">
                   <speak disable="1"/>
                </assist>
-               <?renderCache.bounds 573163 12263 0 0 1417 4320 0 0?>
-               <?renderCache.textRun 15 Primary Product 0 1417 11820 0 0 0 "Myriad Pro" 1 0 10000 ISO-8859-1?></draw>
+               <?renderCache.bounds 573163 12263 0 0 0 0 0 0?></draw>
             <subform w="203.2mm" minH="35.74mm" layout="lr-tb" name="sfDrugPrimaryProduct">
                <field name="ddlDosageForm" w="50.8mm" h="10.922mm">
                   <ui>
@@ -2293,7 +2270,7 @@ if (this.rawValue == "Other") {
                         <text> </text>
                      </value>
                      <para vAlign="middle"/>
-                     <bind match="dataRef" ref="$.dosage_other"/>
+                     <bind match="dataRef" ref="$.other"/>
                   </field>
                   <border>
                      <edge presence="hidden"/>
@@ -2355,7 +2332,7 @@ ddlDosageForm.addItem(aDosageForm[i]);
                         <text> </text>
                      </value>
                      <para vAlign="middle"/>
-                     <bind match="dataRef" ref="$.route_other"/>
+                     <bind match="none"/>
                   </field>
                   <border>
                      <edge presence="hidden"/>
@@ -2750,7 +2727,7 @@ if (this.resolveNode("$").rawValue == "Other") {
                         <text> </text>
                      </value>
                      <para vAlign="middle"/>
-                     <bind match="dataRef" ref="$.dosage_other"/>
+                     <bind match="dataRef" ref="$.other"/>
                   </field>
                   <border>
                      <edge presence="hidden"/>
@@ -2782,7 +2759,7 @@ ddlDosageForm.addItem(aDosageForm[i]);
                      <?templateDesigner expand 1?></variables>
                   <margin leftInset="0.5004mm" topInset="0.5004mm" rightInset="0.5004mm" bottomInset="0.5004mm"/>
                   <bind match="none"/>
-                  <?templateDesigner expand 1?></subform>
+                  <?templateDesigner expand 0?></subform>
                <subform w="202.336mm" minH="6.985mm" layout="tb" name="sfAddnRouteofAdmin" presence="hidden">
                   <field name="txtOther" minH="6.985mm" w="202.336mm">
                      <ui>
@@ -2814,7 +2791,7 @@ ddlDosageForm.addItem(aDosageForm[i]);
                         <text> </text>
                      </value>
                      <para vAlign="middle"/>
-                     <bind match="dataRef" ref="$.route_other"/>
+                     <bind match="none"/>
                   </field>
                   <border>
                      <edge presence="hidden"/>
@@ -2944,7 +2921,7 @@ var additionalHeadingLabel= cResourceManager.get("lbFor")+ DRUG_ADDITIONAL_LBL_F
 </script>
                </event>
                <margin bottomInset="0mm" topInset="1.27mm" leftInset="0mm"/>
-               <?templateDesigner expand 0?></subform>
+               <?templateDesigner expand 1?></subform>
             <margin topInset="0mm" bottomInset="0mm"/>
             <border>
                <edge presence="hidden"/>
@@ -2972,8 +2949,7 @@ var additionalHeadingLabel= cResourceManager.get("lbFor")+ DRUG_ADDITIONAL_LBL_F
                <assist role="H2">
                   <speak disable="1"/>
                </assist>
-               <?renderCache.bounds 573166 14423 0 0 1417 10800 0 0?>
-               <?renderCache.textRun 74 3. Fees for The Review of Drug Submissions, Supplements and Applications   0 1417 19800 0 0 0 "Myriad Pro" 1 0 12000 ISO-8859-1?></draw>
+               <?renderCache.bounds 573166 14423 0 0 0 0 0 0?></draw>
             <field name="ddlSubClass" w="145.406mm" h="10.16mm">
                <ui>
                   <choiceList>
@@ -3204,7 +3180,7 @@ DrugSubmitApplFee.sfPage1.sfReqDocumentation.sBody.btnCalcPayment.execEvent("cli
                   </assist>
                </draw>
                <bind match="none"/>
-               <?templateDesigner expand 0?></subform>
+               <?templateDesigner expand 1?></subform>
             <margin leftInset="0mm" topInset="0mm"/>
             <border>
                <edge presence="hidden"/>
@@ -3425,9 +3401,7 @@ sfMethodPayment.sPaymentBody.chkBankDraft.rawValue = null;
 sfMethodPayment.sPaymentBody.chkExistingCredit.rawValue = null;
 sfMethodPayment.sPaymentBody.chkWire.rawValue = null;
 sfMethodPayment.sPaymentBody.chkBillPaym.rawValue = null;
-sfMethodPayment.sPaymentBody.lblNote.presence = "hidden";
-sfMethodPayment.sPaymentBody.lblAdvancePaymURL.presence = "hidden";
-sfMethodPayment.sPaymentBody.lblHowToPay.presence = "hidden";
+//sfMethodPayment.sPaymentBody.lblHowToPay.presence = "hidden";
 sfMethodPayment.sPaymentBody.lblHowToPayURL.presence = "hidden";
 sfMethodPayment.presence = "hidden";
 
@@ -3451,7 +3425,7 @@ DrugSubmitApplFee.sfPage1.sfReqDocumentation.sBody.btnCalcPayment.execEvent("cli
                      <corner presence="hidden"/>
                      <corner/>
                   </border>
-                  <bind match="dataRef" ref="$.deferr_choice"/>
+                  <bind match="none"/>
                </field>
                <field name="chkFeeRem" w="139.7mm" h="11.37mm">
                   <ui>
@@ -3498,9 +3472,7 @@ sfMethodPayment.sPaymentBody.chkBankDraft.rawValue = null;
 sfMethodPayment.sPaymentBody.chkExistingCredit.rawValue = null;
 sfMethodPayment.sPaymentBody.chkWire.rawValue = null;
 sfMethodPayment.sPaymentBody.chkBillPaym.rawValue = null;
-sfMethodPayment.sPaymentBody.lblNote.presence = "hidden";
-sfMethodPayment.sPaymentBody.lblAdvancePaymURL.presence = "hidden";
-sfMethodPayment.sPaymentBody.lblHowToPay.presence = "hidden";
+//sfMethodPayment.sPaymentBody.lblHowToPay.presence = "hidden";
 sfMethodPayment.sPaymentBody.lblHowToPayURL.presence = "hidden";
 sfMethodPayment.presence = "hidden";
 
@@ -3546,10 +3518,10 @@ DrugSubmitApplFee.sfPage1.sfReqDocumentation.sBody.btnCalcPayment.execEvent("cli
                      <edge/>
                      <corner/>
                   </border>
-                  <bind match="dataRef" ref="$.remission_choice"/>
+                  <bind match="none"/>
                </field>
                <subform w="203.2mm" name="sfGrossRevenue" layout="tb">
-                  <field name="numGrossRevenue" w="125.056mm" h="10.922mm">
+                  <field name="numGrossRevenue" w="120.12mm" h="10.922mm">
                      <ui>
                         <numericEdit hScrollPolicy="off">
                            <border>
@@ -3595,8 +3567,8 @@ if( numGrossRevenue.rawValue &gt;= 0 ) {
 			app.alert( "You are not eligible for a fee remission. The submission fee is less than 10% of anticipated gross revenues." );
 		}else{
 			app.alert( "Vous n’êtes pas admissible à une remise des frais. Les frais de soumission sont inférieurs à 10 % des recettes brutes prévues." );
-		//DrugSubmitApplFee.sfPage1.sfReviewFees.sfEligibility.chkFeeRem.rawValue=0;	
-		//DrugSubmitApplFee.sfPage1.sfReviewFees.sfEligibility.chkFeeRem.execEvent("click");
+		DrugSubmitApplFee.sfPage1.sfReviewFees.sfEligibility.chkFeeRem.rawValue=0;	
+		DrugSubmitApplFee.sfPage1.sfReviewFees.sfEligibility.chkFeeRem.execEvent("click");
 		}
 	}else{	
 		sfGrossRevenue.txtFeeRem.presence = "visible";
@@ -3636,11 +3608,9 @@ if (0.1 * sfPage1.sfReviewFees.sfEligibility.sfGrossRevenue.numGrossRevenue.rawV
                         <edge/>
                         <corner/>
                      </border>
-                     <bind match="dataRef" ref="$.num_gross_rev">
-                        <picture>num{$z,zzz,zz9.99}</picture>
-                     </bind>
+                     <bind match="none"/>
                      <format>
-                        <picture>num{$z,zzz,zz9.99}</picture>
+                        <picture>num{$zzzz9.99}</picture>
                      </format>
                   </field>
                   <draw name="txtFeeRem" h="14.427mm" minW="203.2mm">
@@ -3679,9 +3649,9 @@ if (0.1 * sfPage1.sfReviewFees.sfEligibility.sfGrossRevenue.numGrossRevenue.rawV
                   <corner thickness="0.175mm"/>
                </border>
                <bind match="none"/>
-               <?templateDesigner expand 1?></subform>
+               <?templateDesigner expand 0?></subform>
             <bind match="dataRef" ref="$.review_fees"/>
-            <?templateDesigner expand 1?></subform>
+            <?templateDesigner expand 0?></subform>
          <subform w="203.2mm" name="sfReqDocumentation" layout="tb">
             <draw name="lblReqDocumentation" w="203.2mm" h="9.398mm">
                <font typeface="Myriad Pro" size="12pt" weight="bold" baselineShift="0pt"/>
@@ -3700,8 +3670,7 @@ if (0.1 * sfPage1.sfReviewFees.sfEligibility.sfGrossRevenue.numGrossRevenue.rawV
                <assist role="H2">
                   <speak disable="1"/>
                </assist>
-               <?renderCache.bounds 573166 14423 0 0 1417 10800 0 0?>
-               <?renderCache.textRun 25 4. Required Documentation 0 1417 19800 0 0 0 "Myriad Pro" 1 0 12000 ISO-8859-1?></draw>
+               <?renderCache.bounds 573166 14423 0 0 0 0 0 0?></draw>
             <subform layout="tb" name="sBody" w="203.199mm">
                <field name="chkDeferralStatement" w="201.199mm" h="6mm" presence="hidden">
                   <ui>
@@ -3867,7 +3836,7 @@ else {
                            <integer>0</integer>
                            <integer>2</integer>
                         </items>
-                        <bind match="dataRef" ref="$.sales_history_choice"/>
+                        <bind match="none"/>
                      </field>
                      <field name="chkAveSalePrice" w="83.82mm" h="9.225mm">
                         <ui>
@@ -3901,7 +3870,7 @@ else {
                            <edge presence="hidden"/>
                            <corner presence="hidden"/>
                         </border>
-                        <bind match="dataRef" ref="$.ave_saleprice_choice"/>
+                        <bind match="none"/>
                      </field>
                      <field name="chkEstMktShare" w="83.82mm" h="9.225mm">
                         <ui>
@@ -3931,7 +3900,7 @@ else {
                            <integer>0</integer>
                            <integer>2</integer>
                         </items>
-                        <bind match="dataRef" ref="$.est_mktshare_choice"/>
+                        <bind match="none"/>
                      </field>
                      <field name="chkComparison" w="83.82mm" h="9.225mm">
                         <ui>
@@ -3965,7 +3934,7 @@ else {
                            <edge presence="hidden"/>
                            <corner presence="hidden"/>
                         </border>
-                        <bind match="dataRef" ref="$.comparison_choice"/>
+                        <bind match="none"/>
                      </field>
                      <field name="chkMarketPlan" w="83.82mm" h="9.225mm">
                         <ui>
@@ -3995,7 +3964,7 @@ else {
                            <integer>0</integer>
                            <integer>2</integer>
                         </items>
-                        <bind match="dataRef" ref="$.market_plan_choice"/>
+                        <bind match="none"/>
                      </field>
                      <field name="chkOther" w="83.82mm" h="9.225mm">
                         <ui>
@@ -4039,7 +4008,7 @@ else {
                            <edge presence="hidden"/>
                            <corner presence="hidden"/>
                         </border>
-                        <bind match="dataRef" ref="$.other_choice"/>
+                        <bind match="none"/>
                      </field>
                      <subform name="sOther" layout="tb" presence="hidden" w="167.64mm">
                         <field name="txtOtherDetails" minW="167.64mm" minH="12.107mm">
@@ -4081,7 +4050,7 @@ else {
                         <corner presence="hidden"/>
                      </border>
                      <bind match="none"/>
-                     <?templateDesigner expand 0?></subform>
+                     <?templateDesigner expand 1?></subform>
                   <margin bottomInset="5.08mm" leftInset="12.7mm"/>
                   <border>
                      <edge presence="hidden"/>
@@ -4137,8 +4106,6 @@ sfMethodPayment.sPaymentBody.chkBillPaym.rawValue = null;
 if ((sfReviewFees.sfEligibility.chkFeeRem.rawValue) &amp;&amp; (sfReviewFees.sfEligibility.chkPayDefer.rawValue)){
 	lblFee.presence = "visible";
 	sfMethodPayment.presence = "visible";
-	sfMethodPayment.sPaymentBody.lblNote.presence = "visible";
-	sfMethodPayment.sPaymentBody.lblHowToPay.presence = "visible";
 	sfMethodPayment.sPaymentBody.lblHowToPayURL.presence = "visible";
 	sfMethodPayment.sPaymentBody.lblAdvancePaymURL.presence = "visible"
 	
@@ -4147,8 +4114,6 @@ if ((sfReviewFees.sfEligibility.chkFeeRem.rawValue) &amp;&amp; (sfReviewFees.sfE
 	if (sfReviewFees.sfEligibility.chkFeeRem.rawValue) {
 		lblFeeRem.presence = "visible";
 		sfMethodPayment.presence = "visible";
-		sfMethodPayment.sPaymentBody.lblNote.presence = "visible";
-		sfMethodPayment.sPaymentBody.lblHowToPay.presence = "visible";
 		sfMethodPayment.sPaymentBody.lblHowToPayURL.presence = "visible";
 		sfMethodPayment.sPaymentBody.lblAdvancePaymURL.presence = "visible";
 			
@@ -4156,8 +4121,6 @@ if ((sfReviewFees.sfEligibility.chkFeeRem.rawValue) &amp;&amp; (sfReviewFees.sfE
 		if (sfReviewFees.sfEligibility.chkPayDefer.rawValue) {
 			lblFeeDefer.presence = "visible";
 			sfMethodPayment.presence = "hidden";
-			sfMethodPayment.sPaymentBody.lblNote.presence = "hidden";
-			sfMethodPayment.sPaymentBody.lblHowToPay.presence = "hidden";
 			sfMethodPayment.sPaymentBody.lblHowToPayURL.presence = "hidden";
 			sfMethodPayment.sPaymentBody.lblAdvancePaymURL.presence = "hidden";
 		}else{
@@ -4166,8 +4129,6 @@ if ((sfReviewFees.sfEligibility.chkFeeRem.rawValue) &amp;&amp; (sfReviewFees.sfE
 				txtPaymentSchedule.presence = "visible";
 					
 				sfMethodPayment.presence = "hidden";
-				sfMethodPayment.sPaymentBody.lblNote.presence = "hidden";
-				sfMethodPayment.sPaymentBody.lblHowToPay.presence = "hidden";
 				sfMethodPayment.sPaymentBody.lblHowToPayURL.presence = "hidden";
 				sfMethodPayment.sPaymentBody.lblAdvancePaymURL.presence = "hidden";
 			}else{
@@ -4175,8 +4136,6 @@ if ((sfReviewFees.sfEligibility.chkFeeRem.rawValue) &amp;&amp; (sfReviewFees.sfE
 				sfLess10K.lblLess10KFeeAmount.rawValue = "" + sfReviewFees.numSubFee.rawValue;
 					
 				sfMethodPayment.presence = "visible";
-				sfMethodPayment.sPaymentBody.lblNote.presence = "visible";
-				sfMethodPayment.sPaymentBody.lblHowToPay.presence = "visible";
 				sfMethodPayment.sPaymentBody.lblHowToPayURL.presence = "visible";
 				sfMethodPayment.sPaymentBody.lblAdvancePaymURL.presence = "visible";
 			}
@@ -4218,12 +4177,12 @@ if ((sfReviewFees.sfEligibility.chkFeeRem.rawValue) &amp;&amp; (sfReviewFees.sfE
                   </assist>
                </draw>
                <subform w="200.66mm" name="sfLess10K" layout="lr-tb" presence="hidden">
-                  <draw name="lblLess10KHead" h="7.62mm" minW="68.375mm">
+                  <draw name="lblLess10KHead" h="12.7mm" minW="50.8mm">
                      <ui>
                         <textEdit/>
                      </ui>
                      <font typeface="Myriad Pro" baselineShift="0pt" weight="bold"/>
-                     <margin topInset="0.5002mm" bottomInset="0.254mm" leftInset="0.5002mm" rightInset="0.5002mm"/>
+                     <margin topInset="2.54mm" bottomInset="0.5mm" leftInset="6.35mm" rightInset="0mm"/>
                      <value>
                         <text>text head</text>
                      </value>
@@ -4231,25 +4190,25 @@ if ((sfReviewFees.sfEligibility.chkFeeRem.rawValue) &amp;&amp; (sfReviewFees.sfE
                         <speak disable="1"/>
                      </assist>
                   </draw>
-                  <field name="lblLess10KFeeAmount" h="7.62mm" minW="10.725mm">
-                     <ui>
-                        <numericEdit/>
-                     </ui>
-                     <font typeface="Myriad Pro" baselineShift="0pt" weight="bold"/>
-                     <margin topInset="0.5002mm" bottomInset="0.254mm" leftInset="0.5002mm" rightInset="0.5002mm"/>
-                     <assist>
-                        <speak disable="1"/>
-                     </assist>
-                     <format>
-                        <picture>num{$zzzz9.99}</picture>
-                     </format>
-                  </field>
-                  <draw name="lblLess10KTail" h="7.62mm" minW="105.623mm">
+                  <draw name="lblLess10KFeeAmount" h="12.7mm" minW="3.81mm">
                      <ui>
                         <textEdit/>
                      </ui>
                      <font typeface="Myriad Pro" baselineShift="0pt" weight="bold"/>
-                     <margin topInset="0.5002mm" bottomInset="0.254mm" leftInset="0.5002mm" rightInset="0.5mm"/>
+                     <margin topInset="2.54mm" bottomInset="0mm" leftInset="0.5002mm" rightInset="0mm"/>
+                     <value>
+                        <text>amount</text>
+                     </value>
+                     <assist role="H3">
+                        <speak disable="1"/>
+                     </assist>
+                  </draw>
+                  <draw name="lblLess10KTail" h="12.7mm" minW="63.5mm">
+                     <ui>
+                        <textEdit/>
+                     </ui>
+                     <font typeface="Myriad Pro" baselineShift="0pt" weight="bold"/>
+                     <margin topInset="2.54mm" bottomInset="0.5mm" leftInset="0mm" rightInset="0.5mm"/>
                      <value>
                         <text>text tail</text>
                      </value>
@@ -4257,7 +4216,7 @@ if ((sfReviewFees.sfEligibility.chkFeeRem.rawValue) &amp;&amp; (sfReviewFees.sfE
                         <speak disable="1"/>
                      </assist>
                   </draw>
-                  <margin leftInset="5.08mm"/>
+                  <margin leftInset="17.78mm"/>
                   <bind match="none"/>
                   <?templateDesigner expand 1?></subform>
                <draw name="lblOver10K" w="201.198mm" h="12.7mm" presence="hidden">
@@ -4284,7 +4243,7 @@ if ((sfReviewFees.sfEligibility.chkFeeRem.rawValue) &amp;&amp; (sfReviewFees.sfE
                   </ui>
                   <value>
                      <exData contentType="text/html">
-                        <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"><p style="text-decoration:none;letter-spacing:0in"><a href="http://web.hc-sc.gc.ca/dhp-mps/alt_formats/pdf/prodpharma/applic-demande/form/inv-pa-fact-eng.pdf">Payment Schedule</a></p></body>
+                        <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"><p style="letter-spacing:0in"><a href="http://www.hc-sc.gc.ca/dhp-mps/prodpharma/fees-frais/fee_frais_guide-eng.php#a2.2.3">Payment Schedule</a></p></body>
                      </exData>
                   </value>
                   <font typeface="Myriad Pro" size="8pt" baselineShift="0pt"/>
@@ -4300,7 +4259,7 @@ if ((sfReviewFees.sfEligibility.chkFeeRem.rawValue) &amp;&amp; (sfReviewFees.sfE
                </border>
                <margin leftInset="0.5002mm" topInset="0.5002mm" rightInset="0.5002mm" bottomInset="0.5002mm"/>
                <bind match="none"/>
-               <?templateDesigner expand 1?></subform>
+               <?templateDesigner expand 0?></subform>
             <border>
                <edge presence="hidden"/>
                <corner thickness="0.175mm" presence="hidden"/>
@@ -4308,13 +4267,13 @@ if ((sfReviewFees.sfEligibility.chkFeeRem.rawValue) &amp;&amp; (sfReviewFees.sfE
             <keep intact="contentArea"/>
             <bind match="dataRef" ref="$.required_docs"/>
             <?templateDesigner expand 0?></subform>
-         <subform w="203.123mm" name="sfAttestName" layout="lr-tb">
+         <subform w="203.123mm" name="sfAttestName" layout="lr-tb" presence="hidden">
             <draw name="lblCertificationHeader" w="7.996972in" h="7.548mm">
                <ui>
                   <textEdit/>
                </ui>
                <value>
-                  <text>5. CERTIFICATIONS</text>
+                  <text>5. Certifications</text>
                </value>
                <font typeface="Myriad Pro" baselineShift="0pt" weight="bold" size="12pt"/>
                <margin topInset="1.778mm" bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm"/>
@@ -4324,8 +4283,7 @@ if ((sfReviewFees.sfEligibility.chkFeeRem.rawValue) &amp;&amp; (sfReviewFees.sfE
                   <corner thickness="0.175mm" presence="hidden"/>
                </border>
                <assist role="H2"/>
-               <?renderCache.bounds 572948 14939 0 0 1417 5040 0 0?>
-               <?renderCache.textRun 17 5. CERTIFICATIONS 0 1417 14040 0 0 0 "Myriad Pro" 1 0 12000 ISO-8859-1?></draw>
+            </draw>
             <field h="11.43mm" name="ddlSalutation" w="20.32mm">
                <caption placement="top" reserve="3.175mm">
                   <para vAlign="middle"/>
@@ -4450,17 +4408,17 @@ if ((sfReviewFees.sfEligibility.chkFeeRem.rawValue) &amp;&amp; (sfReviewFees.sfE
                   <corner presence="hidden" thickness="0.175mm"/>
                   <edge presence="hidden"/>
                </border>
-               <font typeface="Myriad Pro" baselineShift="0pt" size="12pt" weight="bold"/>
+               <font typeface="Arial" baselineShift="0pt" size="12pt" weight="bold"/>
                <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="3.81mm"/>
                <para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt"/>
                <ui>
                   <textEdit/>
                </ui>
                <value>
-                  <text>6. Method of Payment</text>
+                  <text>5. Method of Payment</text>
                </value>
                <?renderCache.bounds 573166 14423 0 0 1417 10800 0 0?>
-               <?renderCache.textRun 20 6. Method of Payment 0 1417 19800 0 0 0 "Myriad Pro" 1 0 12000 ISO-8859-1?></draw>
+               <?renderCache.textRun 20 5. Method of Payment 0 1417 20275 0 0 0 "Arial" 1 0 12000 ISO-8859-1?></draw>
             <draw h="5.247mm" name="lblMethodPaymentDesc" w="203.199mm">
                <assist role="H3">
                   <speak disable="1"/>
@@ -4484,8 +4442,7 @@ if ((sfReviewFees.sfEligibility.chkFeeRem.rawValue) &amp;&amp; (sfReviewFees.sfE
                <value>
                   <text> Please check all payment methods you intend to use</text>
                </value>
-               <?renderCache.bounds 573163 12039 0 0 1417 1417 0 0?>
-               <?renderCache.textRun 51  Please check all payment methods you intend to use 0 1417 7417 0 0 0 "Myriad Pro" 0 0 8000 ISO-8859-1?></draw>
+               <?renderCache.bounds 573163 12039 0 0 0 0 0 0?></draw>
             <subform layout="lr-tb" name="sPaymentBody" w="203.2mm" y="9.87mm">
                <border>
                   <corner presence="hidden" thickness="0.175mm"/>
@@ -4596,12 +4553,12 @@ catch(exception)
 </script>
                   </event>
                </field>
-               <field h="6mm" name="chkMoneyOrder" w="42.588mm">
+               <field h="6mm" name="chkMoneyOrder" w="32.28mm">
                   <border>
                      <corner presence="hidden"/>
                      <edge presence="hidden"/>
                   </border>
-                  <caption placement="right" reserve="35.588mm">
+                  <caption placement="right" reserve="25.28mm">
                      <font typeface="Myriad Pro" size="8pt"/>
                      <para vAlign="middle"/>
                      <value>
@@ -4752,8 +4709,8 @@ catch(exception)
 </script>
                   </event>
                </field>
-               <field h="6mm" name="chkWire" w="71.392mm">
-                  <caption placement="right" reserve="64.392mm">
+               <field h="6mm" name="chkWire" w="60.877mm">
+                  <caption placement="right" reserve="53.877mm">
                      <font typeface="Myriad Pro" size="8pt"/>
                      <para vAlign="middle"/>
                      <value>
@@ -4811,12 +4768,12 @@ catch(exception)
 </script>
                   </event>
                </field>
-               <field h="6mm" name="chkBillPaym" w="73.858mm">
-                  <caption placement="right" reserve="66.858mm">
+               <field h="6mm" name="chkBillPaym" w="80.191mm">
+                  <caption placement="right" reserve="73.191mm">
                      <font typeface="Myriad Pro" size="8pt"/>
                      <para vAlign="middle"/>
                      <value>
-                        <text>Bill payment service option (preferred method) (Note1)</text>
+                        <text>Bill payment service option (preferred method)</text>
                      </value>
                   </caption>
                   <font typeface="Myriad Pro"/>
@@ -4835,7 +4792,7 @@ catch(exception)
                            <?templateDesigner StyleID apcb2?></border>
                      </checkButton>
                   </ui>
-                  <bind match="dataRef" ref="$.bill_paym_choice"/>
+                  <bind match="none"/>
                   <value>
                      <integer>0</integer>
                   </value>
@@ -4870,7 +4827,7 @@ catch(exception)
 </script>
                   </event>
                </field>
-               <draw h="10.206mm" name="lblNote" w="40.81mm">
+               <draw h="9.829mm" name="lblNote" w="179.527mm" presence="hidden">
                   <assist>
                      <speak disable="1"/>
                   </assist>
@@ -4879,70 +4836,65 @@ catch(exception)
                      <edge presence="hidden"/>
                   </border>
                   <font typeface="Myriad Pro" size="8pt" baselineShift="0pt"/>
-                  <margin bottomInset="0.5mm" leftInset="0.5002mm" rightInset="0.5mm" topInset="0.5002mm"/>
+                  <margin bottomInset="0.5mm" leftInset="0mm" rightInset="0.5mm" topInset="5.08mm"/>
                   <ui>
                      <textEdit/>
                   </ui>
                   <value>
-                     <text>Note 1 -   Please see section on </text>
+                     <text>Note 1 - Please Note: Fees of $10,000 or less must be paid at the time of filling of the submission, supplement or application.  Please complete the </text>
                   </value>
-                  <para spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt" vAlign="middle"/>
-                  <?renderCache.bounds 112847 26095 0 0 1418 1418 0 0?>
-                  <?renderCache.textRun 33 Note 1 -   Please see section on  0 1418 16465 0 0 0 "Myriad Pro" 0 0 8000 ISO-8859-1?></draw>
-               <draw h="10.16mm" name="lblHowToPayURL" w="132.605mm">
+                  <para spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt"/>
+               </draw>
+               <draw h="9.787mm" name="lblAdvancePaymURL" w="180.099mm" presence="hidden">
                   <assist>
-                     <speak priority="toolTip">Payment through a Canadian financial institution</speak>
+                     <speak priority="name">Advance Payment Details Form for Payment Without an Invoice</speak>
+                     <toolTip>Advance Payment Details Form for Payment Without an Invoice</toolTip>
+                  </assist>
+                  <font typeface="Myriad Pro" baselineShift="0pt" size="8pt"/>
+                  <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="5.08mm"/>
+                  <para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt"/>
+                  <ui>
+                     <textEdit/>
+                  </ui>
+                  <value>
+                     <exData contentType="text/html">
+                        <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"><p style="letter-spacing:0in"><a href="http://www.hc-sc.gc.ca/dhp-mps/prodpharma/applic-demande/guide-ld/costs-couts/crpay_rcfrais_for-eng.php">How to Pay Fees</a></p></body>
+                     </exData>
+                  </value>
+               </draw>
+               <draw h="7.62mm" name="lblHowToPay" w="180.285mm">
+                  <assist role="H3">
+                     <speak disable="1"/>
+                  </assist>
+                  <border>
+                     <corner presence="hidden" thickness="0.175mm"/>
+                     <edge presence="hidden"/>
+                  </border>
+                  <font typeface="Myriad Pro" size="8pt" baselineShift="0pt"/>
+                  <margin bottomInset="0.5mm" leftInset="0mm" rightInset="0.5mm" topInset="0.5002mm"/>
+                  <ui>
+                     <textEdit/>
+                  </ui>
+                  <value>
+                     <text>For detailed payment instructions, please refer to </text>
+                  </value>
+                  <para spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt" vAlign="bottom"/>
+                  <?renderCache.bounds 509627 18765 0 0 0 1418 0 0?>
+                  <?renderCache.textRun 51 For detailed payment instructions, please refer to  0 0 18183 0 0 0 "Myriad Pro" 0 0 8000 ISO-8859-1?></draw>
+               <draw h="9.648mm" name="lblHowToPayURL" w="132.605mm">
+                  <assist>
+                     <speak priority="name">Payment through a Canadian financial institution</speak>
                      <toolTip>Payment through a Canadian financial institution</toolTip>
                   </assist>
                   <font typeface="Myriad Pro" baselineShift="0pt" size="8pt"/>
                   <margin bottomInset="0.5002mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5002mm"/>
-                  <para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" vAlign="middle"/>
+                  <para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt"/>
                   <ui>
                      <textEdit/>
                   </ui>
                   <value>
                      <exData contentType="text/html">
-                        <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"><p style="letter-spacing:0in"><a href="http://www.hc-sc.gc.ca/dhp-mps/prodpharma/applic-demande/guide-ld/costs-couts/crpay_rcfrais_for-eng.php">Payment through a Canadian Financial Institution</a></p></body>
-                     </exData>
-                  </value>
-               </draw>
-               <draw h="10.16mm" name="lblHowToPay" w="145.366mm">
-                  <assist>
-                     <speak disable="1"/>
-                  </assist>
-                  <border>
-                     <corner presence="hidden" thickness="0.175mm"/>
-                     <edge presence="hidden"/>
-                  </border>
-                  <font typeface="Myriad Pro" size="8pt" baselineShift="0pt"/>
-                  <margin bottomInset="0.5mm" leftInset="0.5002mm" rightInset="0.5mm" topInset="0.5002mm"/>
-                  <ui>
-                     <textEdit/>
-                  </ui>
-                  <value>
-                     <text>Fees of $10,000 or less must be paid at the time of filling of the submission, supplement or application. Please complete the</text>
-                  </value>
-                  <para spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt" vAlign="middle"/>
-                  <?renderCache.bounds 409226 25965 0 0 1418 1418 0 0?>
-                  <?renderCache.textRun 125 Fees of $10,000 or less must be paid at the time of filling of the submission, supplement or application. Please complete the 0 1418 16400 0 0 0 "Myriad Pro" 0 0 8000 ISO-8859-1?></draw>
-               <draw h="9.787mm" name="lblAdvancePaymURL" w="96.321mm">
-                  <assist>
-                     <speak priority="toolTip">Advance Payment Details Form for Payment Without an Invoice</speak>
-                     <toolTip>Advance Payment Details Form for Payment Without an Invoice</toolTip>
-                  </assist>
-                  <font typeface="Myriad Pro" baselineShift="0pt" size="8pt" underline="1">
-                     <fill>
-                        <color value="0,0,255"/>
-                     </fill>
-                  </font>
-                  <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5002mm"/>
-                  <para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" vAlign="middle"/>
-                  <ui>
-                     <textEdit/>
-                  </ui>
-                  <value>
-                     <exData contentType="text/html">
-                        <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"><p style="letter-spacing:0in"><a href="http://web.hc-sc.gc.ca/dhp-mps/alt_formats/pdf/prodpharma/applic-demande/form/adv-pa-av-eng.pdf" style="margin-top:0pt;margin-bottom:0pt;text-valign:middle;font-family:'Myriad Pro';font-size:8pt">Advance Payment Details Form for Payment Without an Invoice</a></p></body>
+                        <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"><p style="letter-spacing:0in"><a href="http://www.hc-sc.gc.ca/dhp-mps/prodpharma/applic-demande/guide-ld/costs-couts/crpay_rcfrais_for-eng.php">How to Pay Fees</a></p></body>
                      </exData>
                   </value>
                </draw>
@@ -5119,7 +5071,7 @@ catch(exception)
 }
 </script>
                </event>
-               <bind match="dataRef" ref="$.signature_choice"/>
+               <bind match="dataRef" ref="$.attestation_info.signature_type"/>
                <?templateDesigner expand 1?></exclGroup>
             <draw name="Rectangle1" w="119.247mm" h="5.598mm">
                <value>
@@ -5244,7 +5196,7 @@ catch(exception)
 }
 </script>
                </event>
-               <bind match="dataRef" ref="$.image_signature"/>
+               <bind match="dataRef" ref="$.attestation_info.signature_image"/>
             </field>
             <draw name="Rectangle2" w="110.937mm" h="8.938mm" presence="hidden">
                <value>
@@ -5294,203 +5246,18 @@ catch(exception)
                <validate>
                   <picture>date{YYYY-MM-DD}</picture>
                </validate>
-               <bind match="dataRef" ref="$.date_signature">
+               <bind match="dataRef" ref="$.attestation_info.attestation_sign_date">
                   <picture>date{YYYY-MM-DD}</picture>
                </bind>
                <calculate override="error"/>
             </field>
             <keep intact="contentArea"/>
             <margin topInset="1.27mm" leftInset="0.508mm" bottomInset="1.27mm"/>
-            <bind match="dataRef" ref="$.certification"/>
-            <?templateDesigner expand 1?>
+            <bind match="none"/>
+            <?templateDesigner expand 0?>
          </subform>
          <margin topInset="0mm" bottomInset="0mm" leftInset="0mm" rightInset="0mm"/>
          <bind match="none"/>
-         <subform layout="lr-tb" minH="63.001mm" name="sfHCOnly" w="203.199mm">
-            <border>
-               <corner thickness="0.175mm"/>
-               <edge/>
-               <fill>
-                  <color value="212,212,212"/>
-               </fill>
-            </border>
-            <margin bottomInset="3.81mm" leftInset="12.7mm" rightInset="7.62mm" topInset="3.81mm"/>
-            <field h="10.922mm" name="txtDRSECode" w="88.9mm">
-               <border>
-                  <edge presence="hidden"/>
-               </border>
-               <caption reserve="30.8125mm">
-                  <font typeface="Myriad Pro" size="8pt"/>
-                  <para vAlign="middle"/>
-                  <value>
-                     <text>DRSE Code Number</text>
-                  </value>
-               </caption>
-               <font typeface="Myriad Pro"/>
-               <margin bottomInset="1mm" leftInset="1.0008mm" rightInset="1mm" topInset="1mm"/>
-               <para vAlign="middle"/>
-               <ui>
-                  <textEdit>
-                     <border>
-                        <edge stroke="lowered"/>
-                        <?templateDesigner StyleID aped3?></border>
-                     <margin/>
-                  </textEdit>
-               </ui>
-               <bind match="dataRef" ref="drse_code"/>
-            </field>
-            <field h="10.922mm" name="txtSAPInvoice" w="88.9mm">
-               <border>
-                  <edge presence="hidden"/>
-               </border>
-               <caption reserve="30.1325mm">
-                  <font typeface="Myriad Pro" size="8pt"/>
-                  <para vAlign="middle"/>
-                  <value>
-                     <text>SAP Invoice Number</text>
-                  </value>
-               </caption>
-               <font typeface="Myriad Pro"/>
-               <margin bottomInset="1mm" leftInset="1.0008mm" rightInset="1mm" topInset="1mm"/>
-               <para vAlign="middle"/>
-               <ui>
-                  <textEdit>
-                     <border>
-                        <edge stroke="lowered"/>
-                        <?templateDesigner StyleID aped3?></border>
-                     <margin/>
-                  </textEdit>
-               </ui>
-               <bind match="dataRef" ref="sap_invoice"/>
-            </field>
-            <field h="10.922mm" name="txtFileNumber" w="88.9mm">
-               <border>
-                  <edge presence="hidden"/>
-               </border>
-               <caption reserve="31.0335mm">
-                  <font typeface="Myriad Pro" baselineShift="0pt" size="8pt"/>
-                  <para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" vAlign="middle"/>
-                  <value>
-                     <text>File Number</text>
-                  </value>
-               </caption>
-               <font typeface="Myriad Pro"/>
-               <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
-               <para vAlign="middle"/>
-               <ui>
-                  <textEdit>
-                     <border>
-                        <edge stroke="lowered"/>
-                        <?templateDesigner StyleID aped3?></border>
-                     <margin/>
-                  </textEdit>
-               </ui>
-               <bind match="dataRef" ref="file_number"/>
-            </field>
-            <field h="10.922mm" name="txtSAPOrder" w="88.9mm">
-               <border>
-                  <edge presence="hidden"/>
-               </border>
-               <caption reserve="30.1325mm">
-                  <font typeface="Myriad Pro" baselineShift="0pt" size="8pt"/>
-                  <para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" vAlign="middle"/>
-                  <value>
-                     <text>SAP Order Number</text>
-                  </value>
-               </caption>
-               <font typeface="Myriad Pro"/>
-               <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
-               <para vAlign="middle"/>
-               <ui>
-                  <textEdit>
-                     <border>
-                        <edge stroke="lowered"/>
-                        <?templateDesigner StyleID aped3?></border>
-                     <margin/>
-                  </textEdit>
-               </ui>
-               <bind match="dataRef" ref="sap_order"/>
-            </field>
-            <field h="10.922mm" name="txtScreenedBy" w="88.9mm">
-               <border>
-                  <edge presence="hidden"/>
-               </border>
-               <caption reserve="31.0335mm">
-                  <font typeface="Myriad Pro" baselineShift="0pt" size="8pt"/>
-                  <para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" vAlign="middle"/>
-                  <value>
-                     <text>Screened By</text>
-                  </value>
-               </caption>
-               <font typeface="Myriad Pro"/>
-               <margin bottomInset="1mm" leftInset="1.0008mm" rightInset="1mm" topInset="1.0008mm"/>
-               <para vAlign="middle"/>
-               <ui>
-                  <textEdit>
-                     <border>
-                        <edge stroke="lowered"/>
-                        <?templateDesigner StyleID aped3?></border>
-                     <margin/>
-                  </textEdit>
-               </ui>
-               <validate>
-                  <picture>date{YYYY-MM-DD}</picture>
-               </validate>
-               <bind match="dataRef" ref="screened_by"/>
-            </field>
-            <field h="10.922mm" name="txtCheque" w="88.9mm">
-               <border>
-                  <edge presence="hidden"/>
-               </border>
-               <caption reserve="30.1325mm">
-                  <font typeface="Myriad Pro" baselineShift="0pt" size="8pt"/>
-                  <para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" vAlign="middle"/>
-                  <value>
-                     <text>Cheque Number</text>
-                  </value>
-               </caption>
-               <font typeface="Myriad Pro"/>
-               <margin bottomInset="1mm" leftInset="1.0008mm" rightInset="1mm" topInset="1.0008mm"/>
-               <para vAlign="middle"/>
-               <ui>
-                  <textEdit>
-                     <border>
-                        <edge stroke="lowered"/>
-                        <?templateDesigner StyleID aped3?></border>
-                     <margin/>
-                  </textEdit>
-               </ui>
-               <validate>
-                  <picture>date{YYYY-MM-DD}</picture>
-               </validate>
-               <bind match="dataRef" ref="cheque_number"/>
-            </field>
-            <field h="10.922mm" name="txtDSTSControl" w="88.9mm">
-               <border>
-                  <edge presence="hidden"/>
-               </border>
-               <caption reserve="31.263mm">
-                  <font typeface="Myriad Pro" baselineShift="0pt" size="8pt"/>
-                  <para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" vAlign="middle"/>
-                  <value>
-                     <text>DSTS Control Number</text>
-                  </value>
-               </caption>
-               <font typeface="Myriad Pro"/>
-               <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
-               <para vAlign="middle"/>
-               <ui>
-                  <textEdit>
-                     <border>
-                        <edge stroke="lowered"/>
-                        <?templateDesigner StyleID aped3?></border>
-                     <margin/>
-                  </textEdit>
-               </ui>
-               <bind match="dataRef" ref="dsts_control"/>
-            </field>
-            <occur min="0"/>
-            <?templateDesigner expand 1?></subform>
          <?templateDesigner expand 1?>
       </subform>
       <subform w="100mm" name="script" layout="tb" presence="hidden">
@@ -25835,7 +25602,7 @@ var content = {
 
 formType: 					"DrugSubmitApplFee",
 errorInd:					"+",
-formVersion: 				"2.00.28",
+formVersion: 				"2.00.15",
 CANADA:						"CA",
 USA:						"US",
 DR_SALUT: 					"dr",
@@ -25856,7 +25623,7 @@ Log_writeToFile: false,
 </script>
                   <?templateDesigner expand 1?></variables>
                <bind match="none"/>
-               <?templateDesigner expand 1?></subform>
+               <?templateDesigner expand 0?></subform>
             <subform layout="tb" name="control" w="100mm">
                <keep intact="contentArea"/>
                <variables>
@@ -25866,7 +25633,7 @@ Log_writeToFile: false,
 
 var cFormNodeManager = 		script.core.model.FormNodeManager;
 var cResourceManager = 		script.core.lang.ResourceManager;
-var cConfigManager =		script.core.util.ConfigurationManager;
+var cConfigManager			=script.core.util.ConfigurationManager
 var cException = 			script.core.util.Exception;
 var cLog = 					script.core.util.Log;
 var cUiUtil=				script.core.util.UiUtil;
@@ -25875,12 +25642,8 @@ var cAddressHandler=		script.HCeForm.control.CommonAddressHandler;
 var cSignatureHandler=		script.HCeForm.control.SignatureBlockHandler;
 var cControllerUtil = script.core.util.ControllerUtil;
 var cAddressUtil= script.HCeForm.util.AddressUtil;
-var cGeneralUtil = script.HCeForm.util.General; 
-var cHCOnlyHandler= script.HCeForm.control.HCOnlyHandler;
 //form specific
 var cAccessibility=			script.HCeForm.util.Accessibility;
-
-//var cHCOnlyHandler = script.HCeForm.util.HCOnlyHandler;
 
 var FRENCH=						cConfigManager.get("FRENCH");
 var ENGLISH=					cConfigManager.get("ENGLISH");	
@@ -25899,10 +25662,8 @@ var SHOW_INSTRUCTIONS=			"showInstructions";
 var LOCK_FORM=					"lockForm";
 var HIDE=						"hide";
 var SHOW=						"show";
-var ADD_BILLING_FORM=           "addBilling";
-var REMOVE_BILLING_FORM=           "removeBilling";
 var UNLOCK_FORM=				"unlockForm";
-var ADD_PRODUCT=				"additionalProduct";
+var ADD_PRODUCT=				"addProduct";
 // FORM Nodes
 
 //instructions
@@ -25945,19 +25706,11 @@ var DRUG_PRIMARY_SF_FN=cFormNodeManager.getFormNodeForKey("sfDrugPrimaryProduct"
 var DRUG_DOSAGE_FORM_FN=cFormNodeManager.getFormNodeForKey("ddlDosageForm");
 var DRUG_ROUTE_ADMIN_FN=cFormNodeManager.getFormNodeForKey("ddlRouteAdmin");
 var DRUG_COND_USE_FN=cFormNodeManager.getFormNodeForKey("txtCondOfUse");
-var DRUG_STRENGTH_FN=cFormNodeManager.getFormNodeForKey("txtStrength");
 var DRUG_DOSAGE_OTHER_FN=cFormNodeManager.getFormNodeForKey("txtDosageOther");
 var DRUG_ROUTE_OTHER_FN=cFormNodeManager.getFormNodeForKey("txtRouteOther");
-//var ADD_PRODUCT_FN=cFormNodeManager.getFormNodeForKey("btnAddRow");
-
+var ADD_PRODUCT_FN=cFormNodeManager.getFormNodeForKey("btnAddRow");
 var DRUG_ADDITIONAL_LBL_FN=cFormNodeManager.getFormNodeForKey("lblAdditionalProducts");
 var DRUG_ADDITIONAL_SF_FN=cFormNodeManager.getFormNodeForKey("sfDrugAdditionalProduct");
-var DRUG_ADD_DOSAGE_FORM_FN=cFormNodeManager.getFormNodeForKey("ddlAdditionalDosageForm");
-var DRUG_ADD_ROUTE_ADMIN_FN=cFormNodeManager.getFormNodeForKey("ddlAdditionalRouteAdmin");
-var DRUG_ADD_COND_USE_FN=cFormNodeManager.getFormNodeForKey("txtAdditionalCondOfUse");
-var DRUG_ADD_STRENGTH_FN=cFormNodeManager.getFormNodeForKey("txtAdditionalStrength");
-var DRUG_ADD_DOSAGE_OTHER_FN=cFormNodeManager.getFormNodeForKey("txtAdditionalDosageOther");
-var DRUG_ADD_ROUTE_OTHER_FN=cFormNodeManager.getFormNodeForKey("txtAdditionalRouteOther");
 //Review Fees
 var REVIEW_FEES_SF_FN=cFormNodeManager.getFormNodeForKey("sfReviewFees");
 var SUBMISSION_CLASS_FN=cFormNodeManager.getFormNodeForKey("ddlSubClass");
@@ -25981,7 +25734,6 @@ var EXCREDIT_CHK_FN=cFormNodeManager.getFormNodeForKey("chkExistingCredit");
 var BANK_WIRE_CHK_FN=cFormNodeManager.getFormNodeForKey("chkWire");
 var BILL_PAYM_CHK_FN=cFormNodeManager.getFormNodeForKey("chkBillPaym");
 
-var HCONLY_SF_FN= cFormNodeManager.getFormNodeForKey("sfHCOnly");
 //buttons
 var MODIFY_BTN_FN=		cFormNodeManager.getFormNodeForKey("btnModify");
 var FINALIZE_BTN_FN=	cFormNodeManager.getFormNodeForKey("btnFinalizeAndLock");
@@ -26021,40 +25773,28 @@ function actionPerformed(anEvent)
 		
 		case LOCK_FORM:
 			var errors=validateForm();
-			  			
 			if(!errors){
 					xfa.host.messageBox(cResourceManager.get("validation_pass"),cResourceManager.get("validation_title"));
 					lockForm();
-					cSignatureHandler.setSignatureBlockState();
-					cHCOnlyHandler.addHCOnlySection();  					
+					
 			}		
 			 break;
 		case UNLOCK_FORM:
 			unlockForm();
 			cAddressHandler.initialiseManufactHandler();
-			cAddressHandler.initialiseBillingHandler();
-			//cSignatureHandler.initialiseHandler();
-			cSignatureHandler.clearSignatures();
-			cHCOnlyHandler.removeHCOnlySection();
+			cSignatureHandler.initialiseHandler();
 		break;	
 				
 		case HIDE_INSTRUCTIONS:
 		case SHOW_INSTRUCTIONS:	
 				 toggleInstructionsVisiblity(anEvent.getActionCommand());
 			break;	
-		//case HIDE:
-		//case SHOW:	
-				 //toggleBillingVisiblity(anEvent.getActionCommand());
-		case REMOVE_BILLING_FORM:
-				cAddressHandler.removeBillingSection(anEvent.getActionCommand());		
-			break;			
-		case ADD_BILLING_FORM:
-				//toggleBillingVisibility(anEvent.getActionCommand());
-				cAddressHandler.addBillingSection(anEvent.getActionCommand());		 
-		break;	
+		case HIDE:
+		case SHOW:	
+				 toggleBillingVisiblity(anEvent.getActionCommand());
+			break;	
 		case ADD_PRODUCT:
-				 additionalProduct(anEvent.getActionCommand());	
-		break;		 	
+				 addProduct();		
 		default:
 			throw cException.createInstance(SCRIPT_OBJECT_NAME
 				  + ".actionPerformed() - initialize Form '" 
@@ -26075,7 +25815,7 @@ function initializeForm(){
 	
 		_updateFormLanguage();	
 		toggleInstructionsVisiblity(HIDE_INSTRUCTIONS);
-		//toggleBillingVisiblity(HIDE);
+		toggleBillingVisiblity(HIDE);
 		
 		//_initializeAttestationNameUI();
 		//initialize other controllers
@@ -26084,9 +25824,9 @@ function initializeForm(){
 		var contactHeadingLabel= cResourceManager.get("lbFor")+PART1A_CONTACT_HEADER_LBL_FN.getLabel();
 		cAddressUtil.updateAllFieldTooltips(PART1A_CONTACT_DETAILS_SF_FN.getNodeInstance(),contactHeadingLabel,LABEL_END);
 		
-		//cAddressHandler.initialiseBillingHandler();
-		//var billingHeadingLabel= cResourceManager.get("lbFor")+PART1A_BILLING_CONTACTHEADING_LBL_FN.getLabel();
-		//cAddressUtil.updateAllFieldTooltips(PART1A_BILLING_CONTACTHEADING_SF_FN.getNodeInstance(),billingHeadingLabel,LABEL_END);
+		cAddressHandler.initialiseBillingHandler();
+		var billingHeadingLabel= cResourceManager.get("lbFor")+PART1A_BILLING_CONTACTHEADING_LBL_FN.getLabel();
+		cAddressUtil.updateAllFieldTooltips(PART1A_BILLING_CONTACTHEADING_SF_FN.getNodeInstance(),billingHeadingLabel,LABEL_END);
 		
 		var primaryHeadingLabel= cResourceManager.get("lbFor")+DRUG_PRIMARY_LBL_FN.getLabel();
 		cAddressUtil.updateAllFieldTooltips(DRUG_PRIMARY_SF_FN.getNodeInstance(),primaryHeadingLabel,LABEL_END);
@@ -26098,60 +25838,26 @@ function initializeForm(){
             var symptomsRecordInstance=additionalProductsList.item(i);
             _setSymptomToolTip(symptomsRecordInstance);
 		}
-		  //lbOfCertifier
-		var certifierLabel=cResourceManager.get("lbOfCertifier");
-		cAddressUtil.updateAllFieldTooltips(ATTEST_SF_FN.getNodeInstance(),certifierLabel,LABEL_END);
-		
 		cSignatureHandler.initialiseHandler();
 }
 
-function additionalProduct(command){
+function addProduct(){
 	var additionalProductsList=DRUG_ADDITIONAL_SF_FN.getNodeInstances();
-	if(command===ADD_PRODUCT){
-		for(var i=0;i&lt;additionalProductsList.length;i++){
+        for(var i=0;i&lt;additionalProductsList.length;i++){
             var symptomsRecordInstance=additionalProductsList.item(i);
             _setSymptomToolTip(symptomsRecordInstance);
 		} 
-	}
 }
 
-function _dosageFormChange(dosageValue){
-
-	
-	var dosageOtherInstance=DOSAGE_DETAIL_TXT_FN.getNodeInstance();	
-	if(OTHER===dosageValue){
-
-		cUiUtil.show(dosageOtherInstance);
-		
-	}else{
-		 cGeneralUtil.hideAndClearNodeInstance(dosageOtherInstance);
-	}		
-}
 function _setSymptomToolTip(subFormInstance){
                // var systemInstance=SYSTEM_DDL_FN.getNodeInstance(subFormInstance);
-                var symptomInstance=DRUG_ADD_DOSAGE_FORM_FN.getNodeInstance(subFormInstance);
+                var symptomInstance=DRUG_DOSAGE_FORM_FN.getNodeInstance(subFormInstance);
                 var toolTipMsg="";
 
                var index=symptomInstance.parent.index;
-               toolTipMsg1= DRUG_ADD_DOSAGE_FORM_FN.getLabel() + " " + cResourceManager.get("lbFor") + DRUG_ADDITIONAL_LBL_FN.getLabel() +  cResourceManager.get("lbRow")+ (index +1) ;
-               toolTipMsg2= DRUG_ADD_ROUTE_ADMIN_FN.getLabel() + " " + cResourceManager.get("lbFor") + DRUG_ADDITIONAL_LBL_FN.getLabel() +  cResourceManager.get("lbRow")+ (index +1) ;
-               toolTipMsg3= DRUG_ADD_COND_USE_FN.getLabel() + " " + cResourceManager.get("lbFor") + DRUG_ADDITIONAL_LBL_FN.getLabel() +  cResourceManager.get("lbRow")+ (index +1) ;
-               toolTipMsg4= DRUG_ADD_STRENGTH_FN.getLabel() + " " + cResourceManager.get("lbFor") + DRUG_ADDITIONAL_LBL_FN.getLabel() +  cResourceManager.get("lbRow")+ (index +1) ;
-               toolTipMsg5= DRUG_ADD_DOSAGE_OTHER_FN.getLabel() + " " + cResourceManager.get("lbFor") + DRUG_ADDITIONAL_LBL_FN.getLabel() +  cResourceManager.get("lbRow")+ (index +1) ;
-               toolTipMsg6= DRUG_ADD_ROUTE_OTHER_FN.getLabel() + " " + cResourceManager.get("lbFor") + DRUG_ADDITIONAL_LBL_FN.getLabel() +  cResourceManager.get("lbRow")+ (index +1) ;
+               toolTipMsg= DRUG_DOSAGE_FORM_FN.getLabel() + " " + cResourceManager.get("lbFor") + DRUG_ADDITIONAL_LBL_FN.getLabel() +  cResourceManager.get("lbRow")+ (index +1) ;
                
-               cUiUtil.setToolTip(symptomInstance, toolTipMsg1);
-               cUiUtil.setToolTip(DRUG_ADD_ROUTE_ADMIN_FN.getNodeInstance(subFormInstance), toolTipMsg2);
-               cUiUtil.setToolTip(DRUG_ADD_COND_USE_FN.getNodeInstance(subFormInstance), toolTipMsg3);
-               cUiUtil.setToolTip(DRUG_ADD_STRENGTH_FN.getNodeInstance(subFormInstance), toolTipMsg4);
-               cUiUtil.setToolTip(DRUG_ADD_DOSAGE_OTHER_FN.getNodeInstance(subFormInstance), toolTipMsg5);
-               cUiUtil.setToolTip(DRUG_ADD_ROUTE_OTHER_FN.getNodeInstance(subFormInstance), toolTipMsg6);
-               
-               
-               //cUiUtil.setToolTip(symptomInstance, toolTipMsg);
-               
-              
-
+               cUiUtil.setToolTip(symptomInstance, toolTipMsg);
 }
 
 
@@ -26161,8 +25867,6 @@ function unlockForm(form_node){
 	}
 	form_node.unLock();
 	initializeForm();
-	cSignatureHandler.setSignatureBlockState();
-	
 }//end fn
 
 
@@ -26173,7 +25877,6 @@ function lockForm(){
 		cLog.trace("after mod button");
 		cSignatureHandler.setSignatureBlockState();	
 		cLog.trace("after signature state");
-		cLog.trace("after HCOnly state");   
 	}//end fn
 
 
@@ -26212,6 +25915,7 @@ function isFinalized(){
 }
 
 
+
 /********* Private functions *****/
 
 function _initializeFormNodes(){
@@ -26248,8 +25952,7 @@ function _initializeFormNodes(){
 		cControllerUtil.checkFormNode(DRUG_COND_USE_FN,SCRIPT_OBJECT_NAME,"DRUG_COND_USE_FN");
 		cControllerUtil.checkFormNode(DRUG_DOSAGE_OTHER_FN,SCRIPT_OBJECT_NAME,"DRUG_DOSAGE_OTHER_FN");
 		cControllerUtil.checkFormNode(DRUG_ROUTE_OTHER_FN,SCRIPT_OBJECT_NAME,"DRUG_ROUTE_OTHER_FN");
-		
-		//cControllerUtil.checkFormNode(ADD_PRODUCT_FN,SCRIPT_OBJECT_NAME,"ADD_PRODUCT_FN");
+		cControllerUtil.checkFormNode(ADD_PRODUCT_FN,SCRIPT_OBJECT_NAME,"ADD_PRODUCT_FN");
 		cControllerUtil.checkFormNode(DRUG_ADDITIONAL_LBL_FN,SCRIPT_OBJECT_NAME,"DRUG_ADDITIONAL_LBL_FN");
 		cControllerUtil.checkFormNode(DRUG_ADDITIONAL_SF_FN,SCRIPT_OBJECT_NAME,"DRUG_ADDITIONAL_SF_FN");
 		cControllerUtil.checkFormNode(DRUG_ADD_DOSAGE_FORM_FN,SCRIPT_OBJECT_NAME,"DRUG_ADD_DOSAGE_FORM_FN");
@@ -26265,7 +25968,6 @@ function _initializeFormNodes(){
 		cControllerUtil.checkFormNode(ATTEST_GIVEN_NAME_FN,SCRIPT_OBJECT_NAME,"ATTEST_GIVEN_NAME_FN");
 		cControllerUtil.checkFormNode(ATTEST_SURNAME_FN,SCRIPT_OBJECT_NAME,"ATTEST_SURNAME_FN");
 		cControllerUtil.checkFormNode(ATTEST_TITLE_FN,SCRIPT_OBJECT_NAME,"ATTEST_TITLE_FN");
-		
 		cControllerUtil.checkFormNode(PAYMENT_METHOD_SF_FN,SCRIPT_OBJECT_NAME,"PAYMENT_METHOD_SF_FN");
 		cControllerUtil.checkFormNode(CHEQUE_CHK_FN,SCRIPT_OBJECT_NAME,"CHEQUE_CHK_FN");
 		cControllerUtil.checkFormNode(CREDITCARD_CHK_FN,SCRIPT_OBJECT_NAME,"CREDITCARD_CHK_FN");
@@ -26273,8 +25975,6 @@ function _initializeFormNodes(){
 		cControllerUtil.checkFormNode(EXCREDIT_CHK_FN,SCRIPT_OBJECT_NAME,"EXCREDIT_CHK_FN");
 		cControllerUtil.checkFormNode(BANK_WIRE_CHK_FN,SCRIPT_OBJECT_NAME,"BANK_WIRE_CHK_FN");
 		cControllerUtil.checkFormNode(BILL_PAYM_CHK_FN,SCRIPT_OBJECT_NAME,"BILL_PAYM_CHK_FN");
-		
-		//cControllerUtil.checkFormNode(HCONLY_SF_FN,SCRIPT_OBJECT_NAME,"HCONLY_SF_FN");
 		cControllerUtil.checkFormNode(MODIFY_BTN_FN,SCRIPT_OBJECT_NAME,"MODIFY_BTN_FN");
 		cControllerUtil.checkFormNode(FINALIZE_BTN_FN,SCRIPT_OBJECT_NAME,"FINALIZE_BTN_FN");
 		cControllerUtil.checkFormNode(LANGUAGE_CHOICE,SCRIPT_OBJECT_NAME,"LANGUAGE_CHOICE");
@@ -26502,7 +26202,6 @@ var cException = script.core.util.Exception;
 var cConfigurationManager = script.core.util.ConfigurationManager;
 //imports, utility
 var cAddressUtil= script.HCeForm.util.AddressUtil; 
-var cGeneralUtil = script.HCeForm.util.General; 
 
 //Globals
 var LABEL_START=cConfigurationManager.get("LabelStart");
@@ -26510,10 +26209,9 @@ var LABEL_END=cConfigurationManager.get("LabelEnd");
 
 var CANADA=	cConfigurationManager.get("CANADA");
 var  USA=	cConfigurationManager.get("USA");
-//var HIDE_BILLING_FORM=			"hideBilling";
-//var SHOW_BILLING_FORM=			"showBilling";
-var ADD_BILLING_FORM=           "addBilling";
-var REMOVE_BILLING_FORM=           "removeBilling";
+var HIDE_BILLING_FORM=			"hideBilling";
+var SHOW_BILLING_FORM=			"showBilling";
+
 //Handler name
 var SCRIPT_OBJECT_NAME=					"CommonAddressHandler";
 
@@ -26583,12 +26281,9 @@ function actionPerformed(anEvent)
 			break;	
 			case INITIALISE_COUNTRY_ACTION:
 					 _setFieldReadonly(CANADA,anEvent.getSource());
-			case REMOVE_BILLING_FORM:
-				removeBillingSection(anEvent.getActionCommand());	
-			break;				
-			case ADD_BILLING_FORM:
-				//toggleBillingVisibility(anEvent.getActionCommand());
-				addBillingSection(anEvent.getActionCommand());
+			case HIDE_BILLING_FORM:					
+			case SHOW_BILLING_FORM:
+				toggleBillingVisibility(anEvent.getActionCommand());
 			break;
 			
 				
@@ -26612,11 +26307,9 @@ function initialiseManufactHandler(){
 }
 
 function initialiseBillingHandler(){
-	if((PART1A_BILLING_COUNTRY_DDL_FN.getNodeInstance()!== null)&amp;&amp;(PART1A_BILLING_COUNTRY_DDL_FN.getNodeInstance()!== null)){
-		cAddressUtil.setProvinceUIState(PART1A_BILLING_COUNTRY_DDL_FN.getNodeInstance().rawValue,PART1A_BILLING_PROVINCE_FN.getNodeInstance(),PART1A_BILLING_PROVINCE_TXT_FN.getNodeInstance());
-		var headingLabel= cResourceManager.get("lbFor")+PART1A_BILLING_CONTACTHEADING_LBL_FN.getLabel();
-		cAddressUtil.updateAllFieldTooltips(PART1A_BILLING_ADDRESSDETAILS_SF_FN.getNodeInstance(),headingLabel,LABEL_END);
-	}
+	cAddressUtil.setProvinceUIState(PART1A_BILLING_COUNTRY_DDL_FN.getNodeInstance().rawValue,PART1A_BILLING_PROVINCE_FN.getNodeInstance(),PART1A_BILLING_PROVINCE_TXT_FN.getNodeInstance());
+	var headingLabel= cResourceManager.get("lbFor")+PART1A_BILLING_CONTACTHEADING_LBL_FN.getLabel();
+	cAddressUtil.updateAllFieldTooltips(PART1A_BILLING_ADDRESSDETAILS_SF_FN.getNodeInstance(),headingLabel,LABEL_END);
 }
 /*
 * Checks to see if a form node exists. If it doesn't exist than throw an exception. Otherwise this will fail silently
@@ -26733,16 +26426,7 @@ function toggleBillingVisibility(command){
 
 }//end toggleInstructionsVisiblity
            
-function addBillingSection(command){
-
-    var instanceMgr=PART1A_BILLING_SF_FN.getInstanceManager();
-    var newInstance=cGeneralUtil.addSubformInstance(instanceMgr);
-}
-function removeBillingSection(command){
-
-    cGeneralUtil.removeSubformInstance(PART1A_BILLING_SF_FN.getNodeInstance());
-
-}              
+               
                
 </script>
                   <script contentType="application/x-javascript" name="SignatureBlockHandler">
@@ -26978,77 +26662,6 @@ function createReportInstance(visualState,instanceManager){
                
                
 </script>
-                  <script contentType="application/x-javascript" name="HCOnlyHandler">
-
-
-var cLog= 						script.core.util.Log;
-var cFormNodeManager=			script.core.model.FormNodeManager;
-var cResourceManager= 			script.core.lang.ResourceManager;
-var cException=					script.core.util.Exception;
-var cConfigManager=				script.core.util.ConfigurationManager;
-var cUiUtil=					script.core.util.UiUtil;
-var cControllerUtil = script.core.util.ControllerUtil;
-var cGeneralUtil=				script.HCeForm.util.General;
-var cFormHandler=				script.HCeForm.control.FormHandler;
-
-var SCRIPT_OBJECT_NAME="HCOnlyHandler";
-
-var DIGITAL_SIG=	cConfigManager.get("DIGITAL_SIG");
-var	IMAGE_SIG=		cConfigManager.get("IMAGE_SIG");
-
-//action Global variables
-var SIGNATURE_CHOICE_UI=  		"ui_sigtype"; 
-
-//FORM NODES
-
-var HCONLY_SF_FN= cFormNodeManager.getFormNodeForKey("sfHCOnly");
-
-_initialiseFormNodes();
-
-
-/* Action Handler
-*
-*
-*
-*/
-
-function actionPerformed(anEvent)
-{
-	switch(anEvent.getActionCommand())
-	{
-		case SIGNATURE_CHOICE_UI:
-				_setSignatureChoice(anEvent.getSource().rawValue);
-		
-			break;	
-			
-		
-					
-		default:
-			throw cException.createInstance(SCRIPT_OBJECT_NAME
-				  + ".actionPerformed() - unrecognized event '" 
-				  + anEvent.getActionCommand() + "'.", "UnsupportedAction");
-	}
-}
-
-function initialiseHandler(){
-
-		 setSignatureBlockState();
-	
-}//end fn
-
-
-function addHCOnlySection(){
-
-    var instanceMgr=HCONLY_SF_FN.getInstanceManager();
-    var newInstance=cGeneralUtil.addSubformInstance(instanceMgr);
-}
-function removeHCOnlySection(){
-
-    cGeneralUtil.removeSubformInstance(HCONLY_SF_FN.getNodeInstance());
-
-}
-
-</script>
                   <?templateDesigner expand 1?></variables>
                <bind match="none"/>
                <?templateDesigner expand 1?></subform>
@@ -27067,7 +26680,7 @@ var myVals = {
 "3": {txtSubDesc:"Submissions based only on clinical or non-clinical data for a drug that does not include a new active substance.",numSubFee: 77655},
 "4": {txtSubDesc:"Submissions based on comparative studies [for example (e.g.) clinical or non-clinical data, bioavailability, pharmacokinetic and pharmacodynamic data] with or without chemistry and manufacturing data for a drug that  does not include a new active substance.",numSubFee: 46937},
 "5": {txtSubDesc:"Submissions based only on chemistry and manufacturing data for a drug that does not include a new active substance.",numSubFee: 22192},
-//"6": {txtSubDesc:"† Abbreviated new drug submissions (ANDS) Pharma Only - Effective 2014/11/06. Fees updated as per the Departmental Performance Report filed in Parliament (November 5, 2014) in keeping with the Reduction of User Fee Clause in section 5.1 of the User Fees Act.",numSubFee: 11096},
+"6": {txtSubDesc:"† Abbreviated new drug submissions (ANDS) Pharma Only - Effective 2014/11/06. Fees updated as per the Departmental Performance Report filed in Parliament (November 5, 2014) in keeping with the Reduction of User Fee Clause in section 5.1 of the User Fees Act.",numSubFee: 11096},
 "7": {txtSubDesc:"Submissions based only on published clinical or non-clinical data for a drug that does not include a new active substance.",numSubFee: 18402},
 "8": {txtSubDesc:"Submissions based only on data that support the amendment, or removal, of the reference to the medicinal ingredient on the Prescription Drug List that is applicable to the drug in question.",numSubFee: 44685},
 "9": {txtSubDesc:"Submissions of labelling material (i.e. does not include supporting clinical or non-clinical data or chemistry and manufacturing data).",numSubFee: 2990},
@@ -27088,7 +26701,7 @@ var myVals_fr = {
 "3": {txtSubDesc:"Présentations fondées seulement sur des données cliniques ou non cliniques portant sur une drogue exempte de nouvelle substance active.",numSubFee: 77655},
 "4": {txtSubDesc:"Présentations fondées sur des études comparatives (p. ex., données cliniques ou non cliniques, données sur la biodisponibilité et sur le comportement pharmacocinétique et pharmacodynamique de la drogue) avec ou sans données sur la chimie et la fabrication d’une drogue exempte de nouvelle substance active.",numSubFee: 46937},
 "5": {txtSubDesc:"Présentations fondées seulement sur des données portant sur la chimie et la fabrication d’une drogue exempte de nouvelle substance active.",numSubFee: 22192},
-//"6": {txtSubDesc:"† Une présentation abrégée de drogue nouvelle (PADN) Pharma seulement - Date d’entrée en vigueur 2014/11/06. Les frais ont été mis à jour selon le Rapport ministériel sur le rendement déposé au Parlement (le 5 novembre 2014) en accord avec la section 5.1 de l'article Réduction des frais d'utilisation de la Loi sur les frais d’utilisation.",numSubFee: 11096},
+"6": {txtSubDesc:"† Une présentation abrégée de drogue nouvelle (PADN) Pharma seulement - Date d’entrée en vigueur 2014/11/06. Les frais ont été mis à jour selon le Rapport ministériel sur le rendement déposé au Parlement (le 5 novembre 2014) en accord avec la section 5.1 de l'article Réduction des frais d'utilisation de la Loi sur les frais d’utilisation.",numSubFee: 11096},
 "7": {txtSubDesc:"Présentations fondées seulement sur des données cliniques ou non cliniques publiées portant sur une drogue exempte de nouvelle substance active.",numSubFee: 18402},
 "8": {txtSubDesc:"Présentations fondées seulement sur des données étayant la modification ou la suppression de la mention, dans la Liste des drogues sur ordonnance, de l’ingrédient médicinal concernant la drogue en question.",numSubFee: 44685},
 "9": {txtSubDesc:"Présentations de matériel d’étiquetage (c’est-à-dire, ne comportant aucune donnée clinique ou non clinique ni de donnée sur la chimie et la fabrication).",numSubFee: 2990},
@@ -28165,8 +27778,8 @@ var cUiUtil = script.core.util.UiUtil;
 var cValidationFailure = script.core.validation.ValidationFailure;
 
 
-var NO=0;		//	cConfigurationManager.get("NO");
-var YES=1;		//cConfigurationManager.get("YES");
+var NO=			cConfigurationManager.get("NO");
+var YES=		cConfigurationManager.get("YES");
 
 /*******************************************************************************
  * Gets a new MandatoryCheckBoxDelegate. Adobe does not allow object instances
@@ -29883,11 +29496,11 @@ function createInstance()
 	return oDelegate;
 }
 </script>
-                     <?templateDesigner expand 0?></variables>
+                     <?templateDesigner expand 1?></variables>
                   <bind match="none"/>
-                  <?templateDesigner expand 1?></subform>
+                  <?templateDesigner expand 0?></subform>
                <bind match="none"/>
-               <?templateDesigner expand 1?></subform>
+               <?templateDesigner expand 0?></subform>
             <subform h="50mm" name="nodeDefinitions" w="100mm">
                <variables>
                   <script contentType="application/x-javascript" name="MasterPage1">
@@ -30596,11 +30209,11 @@ txtSubDesc: {
 	toolTipKey: "lbSubDesc_tt",	
 	labelKey: "lbSubDesc"},
 
-/*lblFeesUpdated: {
+lblFeesUpdated: {
 	somExpression: "lblFeesUpdated",
 	parentNodeKey: "sfReviewFees",
 	toolTipKey: "lbFeesUpdated_tt",
-	labelKey: "lbFeesUpdated"},*/
+	labelKey: "lbFeesUpdated"},
 
 sfLblHCReviewFees: {
 	somExpression: "sfLblHCReviewFees",
@@ -30993,69 +30606,13 @@ sfFinalizeButton: {
 		somExpression: "ddtSignedOnAttestation",
 		parentNodeKey: "sfSignatureBlock",
 		labelKey: "lbSigDate"},
-		
-sfLblHCOnly: {
-	somExpression: 	"sfLblHCOnly",
-	parentNodeKey: 	"sfPage1"},
-	
-lblHCOnly: {
-	somExpression: 	"lblHCOnly",
-	parentNodeKey: 	"sfLblHCOnly",
-	labelKey: 		"lbHCOnly"},
-
-	
-sfHCOnly: {
-	somExpression: 	"sfHCOnly",
-	parentNodeKey: 	"sfPage1"},
-
-txtDRSECode: {
-	somExpression: 	"txtDRSECode",
-	parentNodeKey: 	"sfHCOnly",
-	toolTipKey: "lbDRSECode_tt",
-	labelKey: 		"lbDRSECode"},
-
-txtSAPInvoice: {
-	somExpression: 	"txtSAPInvoice",
-	parentNodeKey: 	"sfHCOnly",
-	toolTipKey: "lbSAPInvoice_tt",
-	labelKey: 		"lbSAPInvoice"},
-
-txtFileNumber: {
-	somExpression: 	"txtFileNumber",
-	parentNodeKey: 	"sfHCOnly",
-	toolTipKey: "lbFileNumber_tt",
-	labelKey: 		"lbFileNumber"},
-
-txtSAPOrder: {
-	somExpression: 	"txtSAPOrder",
-	parentNodeKey: 	"sfHCOnly",
-	toolTipKey: "lbSAPOrder_tt",
-	labelKey: 		"lbSAPOrder"},
-
-txtScreenedBy: {
-	somExpression: 	"txtScreenedBy",
-	parentNodeKey: 	"sfHCOnly",
-	toolTipKey: "lbScreenedBy_tt",
-	labelKey: 		"lbScreenedBy"},
-
-txtCheque: {
-	somExpression: 	"txtCheque",
-	parentNodeKey: 	"sfHCOnly",
-	toolTipKey: "lbCheque_tt",
-	labelKey: 		"lbCheque"},
-
-txtDSTSControl: {
-	somExpression: 	"txtDSTSControl",
-	parentNodeKey: 	"sfHCOnly",
-	toolTipKey: "lbDSTSControl_tt",
-	labelKey: 		"lbDSTSControl"},
 	
 	
 }
 </script>
                   <?templateDesigner expand 1?></variables>
                <bind match="none"/>
-               <?templateDesigner expand 0?></subform>
+               <?templateDesigner expand 1?></subform>
             <subform layout="tb" name="resources" w="100mm">
                <variables>
                   <script contentType="application/x-javascript" name="general_en">
@@ -31068,7 +30625,6 @@ var content={
 	lbApplType:			"Application type",
 	lbOfLCText:			"of",
 	lbFor:				"for ",
-	lbOfCertifier:		"Certifier",
 	lbRow:				" Product ",
 	lbMandatory:		"Asterisk symbol (*) denotes a mandatory field.",
 	lbValidError:		"Plus symbol (+) denotes a validation error or missing data.",
@@ -31081,7 +30637,7 @@ var content={
 	lbFinalize:			"Finalize",
 	lbModify:			"Modify",
 //	lbLink:				"&lt;body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\"&gt;&lt;p style=\"tab-interval:0.5in;tab-stops:left 0.167in left 0.5in left 1in left 1.5in left 2in left 2.5in left 3.292in left 3.5in left 4in left 4.5in left 5in left 5.5in left 6in left 6.5in;color:#000000;text-decoration:none;letter-spacing:0in\"&gt;&lt;a href=\"http://www.hc-sc.gc.ca/dhp-mps/prodpharma/applic-demande/form/feef_fraisf-eng.php\" style=\"margin-top:0pt;margin-bottom:0pt;font-family:'Myriad Pro';font-size:8pt;font-weight:bold\"&gt;Guidance Document&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;",
-	lbHCOnly:			"HEALTH CANADA ONLY",
+/*	lbHCOnly:			"HEALTH CANADA ONLY",
 	lbDRSECode:			"DRSE Code Number",
 	lbSAPInvoice:		"SAP Invoice Number",
 	lbFileNumber:		"File Number",
@@ -31089,7 +30645,7 @@ var content={
 	lbScreenedBy:		"Screened By",
 	lbCheque:			"Cheque Number",
 	lbDSTSControl:		"DSTS Control Number",
-	
+	*/
 	
 	
 //	lbInstruct1:		"This form contains mandatory fields. In order to ensure you have completed all appropriate fields, please press the \"Finalize\" button at the bottom of the form before printing and signing. Fields that fail validation will be marked with a plus (+) symbol, and are highlighted in red.\n Once finalized, the fields in the form becomes \"locked\" (i.e. Fields cannot be modified). In order to modify fields after finalizing, you must press the \"Modify\" button at the bottom of the form. Following modifications to the desired fields and before printing and signing, please press the \"Finalize\" button again to re-validate entries.\n -Save, print, sign and date the completed form;\n-Scan the signed form, and\n-Send to Health Canada in electronic format.\n\n All payments must be in Canadian funds. Credit card options include: (Visa, Mastercard or American Express).Cheques, money orders or international bank drafts should be made payable to the \"Receiver General for Canada\".Cheques drawn on non-Canadian banks MUST be issued in coordination with a referenced Canadian bank (that is, referenced on cheque), otherwise they are not accepted. Payment in non-Canadian funds can result in delay in crediting your account and a risk of under payment due to confusion over unexpected interest charges and balances owing. Payments made by wire result in similar processing delays. Payment by Visa, Mastercard or American Express is the most efficient means of crediting your account.",
@@ -31112,7 +30668,6 @@ var content={
 	lbApplType:			"fr_Application type",
 	lbOfLCText:			"sur",
 	lbFor:				"pour ",
-	lbOfCertifier:		"Certifier",
 	lbRow:				" Produit ",
 	validation_title:	"Résultats de la validation",
 	lbMandatory:		"Astérisque (*)  démontre un champ obligatoire.",
@@ -31137,7 +30692,7 @@ var content={
 	//lbLockSuccess:		"Le formulaire a été validé et verrouiller contre l'édition. Il peut maintenant être imprimé et envoyé à Santé Canada. Pour pouvoir modifier le formulaire, appuyez sur le bouton Modifier.",
 	
 //	lbLink:				"&lt;body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\"&gt;&lt;p style=\"tab-interval:0.5in;tab-stops:left 0.167in left 0.5in left 1in left 1.5in left 2in left 2.5in left 3.292in left 3.5in left 4in left 4.5in left 5in left 5.5in left 6in left 6.5in;color:#000000;text-decoration:none;letter-spacing:0in\"&gt;&lt;a href=\"http://www.hc-sc.gc.ca/dhp-mps/prodpharma/applic-demande/form/feef_fraisf-fra.php\" style=\"margin-top:0pt;margin-bottom:0pt;font-family:'Myriad Pro';font-size:8pt;font-weight:bold\"&gt;Ligne directrice&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;",
-	lbHCOnly:		"RÉSERVÉ À SANTÉ CANADA",
+/*	lbHCOnly:		"RÉSERVÉ À SANTÉ CANADA",
 	lbDRSECode:		"Numéro DRSE",
 	lbSAPInvoice:	"Numéro de la facture (SAP)",
 	lbFileNumber:	"Numéro du dossier",
@@ -31145,7 +30700,7 @@ var content={
 	lbScreenedBy:	"Examen préliminaire fait par",
 	lbCheque:		"Numéro du chèque",
 	lbDSTSControl:	"Numéro de contrôle DSTS",
-	
+	*/
 	
 //	lbInstruct1:"Ce formulaire contient des champs obligatoires. Pour vous assurer que vous avez rempli les champs appropries, cliquez sur le bouton \"Finalisation\" au bas du formulaire avant de l'imprimer et de le signer.\nUne fois finalise, les champs seront verrouiller (les champs ne peuvent plus etre modifie). Pour pouvoir modifier les champs apres la finalisation, vous devez cliquer sur le bouton \"Modification\" au bas du formulaire. Apres avoir modifie les champs desires et avant d'imprimer et de signer, cliquez sur le bouton \"Finalisation\" a nouveau afin de valider les entrees.\nAlternativement:\n-Enregistrez, imprimez, signez et datez le formulaire rempli;\n-Scannez le formulaire signe et \n-Envoyer a Sante Canada en format electronique.\n\nTous les paiements doivent se faire en dollars canadiens. Les cartes de credit acceptees sont Visa, MasterCard et American Express. Les cheques, mandats ou traites bancaires internationales devraient etre libelles a l'ordre du \"receveur general du Canada\". Les cheques tires sur des banques non canadiennes DOIVENT etre emis en coordination avec une banque canadienne de reference (c'est-a-dire, une banque canadienne dont le nom figure sur le cheque), a defaut de quoi le cheque ne pourra etre accepte.Les paiements en devises non canadiennes peuvent entrainer des retards dans l'enregistrement du versement au credit de votre compte, ainsi qu'un risque de sous-paiement du aux malentendus concernant l'imposition inopinee de frais d'interet et l'apparition de soldes impayes. Les paiements effectues par virement telegraphique entrainent des retards semblables. Les paiements par carte de credit Visa, MasterCard ou American Express constituent la meilleure facon d'assurer que le paiement est porte au credit de votre compte.",
 /*	lbInstruct2:"Lorsque des exigences sont prevues a cet effet, un paiement anticipe doit etre envoye avec la presentation de drogue (moins de 10 000$) et le formulaire de frais applicable directement a:\nBureau des presentations et de la propriete intellectuelle\nDirection des produits therapeutiques\nSante Canada\n101, promenade du pre Tunney\nImmeuble des finances\nIndice de l'adresse: 021A1\nOttawa (Ontario) K1A 0K9",
@@ -31199,8 +30754,8 @@ var content={
 
 var content={
 
-	lbInstruct1:		"This form contains mandatory fields. In order to ensure you have completed all appropriate fields, please press the \"Finalize\" button at the bottom of the form before printing and signing.\n ",
-	lbInstruct2:		"Once finalized, the fields in the form becomes \"locked\" (i.e. Fields cannot be modified). In order to modify fields after finalizing, you must press the \"Modify\" button at the bottom of the form. Following modifications to the desired fields and before printing and signing, please press the \"Finalize\" button again to re-validate entries.\n\nAlternatively:",  
+	lbInstruct1:		"This form contains mandatory fields. In order to ensure you have completed all appropriate fields, please press the \"Finalize\" button at the bottom of the form before printing and signing. ",
+	lbInstruct2:		"Once finalized, the fields in the form becomes \"locked\" (i.e. Fields cannot be modified). In order to modify fields after finalizing, you must press the \"Modify\" button at the bottom of the form. Following modifications to the desired fields and before printing and signing, please press the \"Finalize\" button again to re-validate entries.Alternatively:",  
 	lbInstruct3:		"-Save, print, sign and date the completed form;", 
 	lbInstruct4:		"-Scan the signed form, and", 
 	lbInstruct5:		"-Send to Health Canada in electronic format.", 
@@ -31211,8 +30766,8 @@ var content={
 
 var content={
 
-	lbInstruct1:		"Ce formulaire contient des champs obligatoires. Pour vous assurer que vous avez rempli les champs appropries, cliquez sur le bouton \"Finalisation\" au bas du formulaire avant de l'imprimer et de le signer.\n",
-	lbInstruct2:		"Une fois finalise, les champs seront verrouiller (les champs ne peuvent plus etre modifie). Pour pouvoir modifier les champs apres la finalisation, vous devez cliquer sur le bouton \"Modification\" au bas du formulaire. Apres avoir modifie les champs desires et avant d'imprimer et de signer, cliquez sur le bouton \"Finalisation\" a nouveau afin de valider les entrees.\n\nAlternativement:",  
+	lbInstruct1:		"Ce formulaire contient des champs obligatoires. Pour vous assurer que vous avez rempli les champs appropries, cliquez sur le bouton \"Finalisation\" au bas du formulaire avant de l'imprimer et de le signer.",
+	lbInstruct2:		"Une fois finalise, les champs seront verrouiller (les champs ne peuvent plus etre modifie). Pour pouvoir modifier les champs apres la finalisation, vous devez cliquer sur le bouton \"Modification\" au bas du formulaire. Apres avoir modifie les champs desires et avant d'imprimer et de signer, cliquez sur le bouton \"Finalisation\" a nouveau afin de valider les entrees.Alternativement:",  
 	lbInstruct3:		"-Enregistrez, imprimez, signez et datez le formulaire rempli;", 
 	lbInstruct4:		"-Scannez le formulaire signe et", 
 	lbInstruct5:		"-Envoyer a Sante Canada en format electronique.", 
@@ -31384,7 +30939,7 @@ var content={
 	lbSubClass_tt:		"Submission Class",
 	lbSubFee_tt:		"Submission Fee",
 	lbSubDesc_tt:		"Submission Description",
-	//lbFeesUpdated_tt:	"† Fees updated as per the Departmental Performance Report filed in Parliament (November 5, 2014) in keeping with the Reduction of User Fee Clause in section 5.1 of the User Fees Act.",
+	lbFeesUpdated_tt:	"† Fees updated as per the Departmental Performance Report filed in Parliament (November 5, 2014) in keeping with the Reduction of User Fee Clause in section 5.1 of the User Fees Act.",
 	lbHCReviewFees_tt:	"Health Canada Corrected Submission Class",
 	lbHCSubClass_tt:	"Health Canada Corrected Submission Class - Submission Class",
 	lbHCSubFee_tt:		"Submission Fee",
@@ -31439,7 +30994,7 @@ lbHowToPayURL_tt:				"&lt;body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=
 	lbchkMoneyOrder_tt:			"The method of payment is by money order. Choice 3 of 7, at least one selection required.",
 	lbchkCreditCard_tt:			"The method of payment is by credit card (Mastercard,Visa or Amex). Choice 1 of 7, at least one selection required.",
 	lbchkExistingCredit_tt:		"The method of payment is by using existing credit. Choice 5 of 7, at least one selection required.",
-	lbchkBillPaym_tt:			"The method of payment is by using Bill Payment Service Option  (preferred method)(Note1). Choice 7 of 7, at least one selection required.",
+	lbchkBillPaym_tt:			"The method of payment is by using Bill payment service option. Choice 7 of 7, at least one selection required.",
 	
 province_tt: "Province or State",
 postalCode_tt: "Postal ZIP Code",
@@ -31560,7 +31115,7 @@ part1DrugInfo_tt:			"1. FABRICANT ou PROMOTEUR ET INFORMATION SUR LE MÉDICAMENT
 	lbSubClass_tt:		"Catégorie de la présentation",
 	lbSubFee_tt:		"Frais de présentation",
 	lbSubDesc_tt:		"Description de la présentation",
-	//lbFeesUpdated_tt:   "† Les frais ont été mis à jour selon le Rapport ministériel sur le rendement déposé au Parlement (le 5 novembre 2014) en accord avec la section 5.1 de l'article Réduction des frais d'utilisation de la Loi sur les frais d’utilisation.",
+	lbFeesUpdated_tt:   "† Les frais ont été mis à jour selon le Rapport ministériel sur le rendement déposé au Parlement (le 5 novembre 2014) en accord avec la section 5.1 de l'article Réduction des frais d'utilisation de la Loi sur les frais d’utilisation.",
 	lbHCReviewFees_tt:	"Catégorie de la présentation rectifiée par Santé Canada",
 	lbHCSubClass_tt:	"Catégorie de la présentation rectifiée par Santé Canada - Catégorie de la présentation",
 	lbHCSubFee_tt:		"Frais de présentation",
@@ -31599,13 +31154,13 @@ lbReqDocumentation_tt:		"4. DOCUMENTS REQUIS*",
 
 lbMethodPaymentHeader_tt:		"5. MODE DE PAIEMENT",
 lbMethodPaymentDesc_tt:		"Veuillez cocher tous les modes de paiement que vous comptez utiliser",
-lbchkCreditCard_tt:			"Mode de paiement Mastercard/Visa/Amex. Choix 1 de 7, au moins une sélection est requise.",
-lbchkCheque_tt:				"Mode de paiement Chèque. Choix 2 de 7, au moins une sélection est requise.",
-lbchkMoneyOrder_tt:			"Mode de paiement Mandat. Choix 3 de 7, au moins une sélection est requise.",
-lbchkBankDraft_tt:			"Mode de paiement Traite bancaire internationale. Choix 4 de 7, au moins une sélection est requise.",
-lbchkExistingCredit_tt:		"Mode de paiement Paiement au moyen d’un crédit existant. Choix 5 de 7, au moins une sélection est requise.",
-lbchkWire_tt:				"Mode de paiement Transfert bancaire (incluez la confirmation de la banque). Choix 6 de 7, au moins une sélection est requise.",
-lbchkBillPaym_tt:			"Mode de paiement Option de service de paiement de factures (méthode préférée)(Note1). Choix 7 de 7, au moins une sélection est requise.",
+lbchkCreditCard_tt:			"Mastercard/Visa/Amex. Selection 1 du 7, une selection requis.",
+lbchkCheque_tt:				"Chèque. Selection 2 du 7, une selection requis.",
+lbchkMoneyOrder_tt:			"Mandat. Selection 3 du 7, une selection requis.",
+lbchkBankDraft_tt:			"Traite bancaire internationale. Selection 4 du 7, une selection requis.",
+lbchkExistingCredit_tt:		"Paiement au moyen d’un crédit existant. Selection 5 du 7, une selection requis.",
+lbchkWire_tt:				"Transfert bancaire (incluez la confirmation de la banque). Selection 6 du 7, une selection requis.",
+lbchkBillPaym_tt:			"Option de service de paiement de factures (méthode préférée). Selection 7 du 7,une selection requis.",
 lbHowToPay_tt:				"Pour obtenir plus de détails sur la façon d’effectuer les paiements, veuillez vous reporter à",
 lbHowToPayURL_tt:			"&lt;body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\"&gt;&lt;p style=\"letter-spacing:0in\"&gt;&lt;a href=\"http://www.hc-sc.gc.ca/dhp-mps/prodpharma/applic-demande/guide-ld/costs-couts/crpay_rcfrais_for-fra.php\" style=\"margin-top:0pt;margin-bottom:0pt;font-family:'Myriad Pro';font-size:8pt\"&gt;Comment acquitter les frais&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;",
 
@@ -31667,7 +31222,7 @@ var content={
 	txtStrength: 			"Strength",
 	lblAdditionalProducts: 	"ADDITIONAL PRODUCT(S)",
 	btnAddRow: 				"Add Product",
-	btnDeleteRow: 			"Delete Product "
+	btnDeleteRow: 			"Delete Row "
 
 
 }//end var content
@@ -31754,10 +31309,9 @@ var content={
 	lbReqDocFee:					"You are applying for payment deferral and fee remission. \nPlease send only the remission processing fee of $543 with this form.",
 	lbReqDocFeeRem:				"You are applying for fee remission. Please send only the processing fee of $543 with this form.",
 	lbReqDocFeeDefer:				"You are applying for payment deferral. Please send no payment with this form.",
-	lbReqDocLess10KHead:			"The fee is less than $10,000. Please remit a payment of ",
-	lbReqDocLess10KTail:			" using the Advance Payment Details Form for Payment Without an Invoice.",	
-	lbOver10K:				"The fee is greater than $10,000, please remit no payment with this form. Payment of the fees will be required upon issuance of an invoice, for details see Payment Schedule",
-	txtPaymentSchedule:		"&lt;body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\"&gt;&lt;p style=\"letter-spacing:0in\"&gt;&lt;a href=\"http://web.hc-sc.gc.ca/dhp-mps/alt_formats/pdf/prodpharma/applic-demande/form/inv-pa-fact-eng.pdf\" style=\"margin-top:0pt;margin-bottom:0pt;font-family:'Myriad Pro';font-size:8pt\"&gt;Payment Schedule&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;"
+	lbReqDocLess10KHead:			"The fee is less than $10,000. Please remit a payment of $",
+	lbReqDocLess10KTail:			" using the Advance Payment Details Form for Payment Without an Invoice.",	lbOver10K:				"The fee is greater than $10,000, please remit no payment with this form. Payment of the fees will be required upon issuance of an invoice, for details see Payment Schedule",
+	txtPaymentSchedule:		"&lt;body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\"&gt;&lt;p style=\"letter-spacing:0in\"&gt;&lt;a href=\"http://www.hc-sc.gc.ca/dhp-mps/prodpharma/fees-frais/fee_frais_guide-eng.php#a2.2.3\" style=\"margin-top:0pt;margin-bottom:0pt;font-family:'Myriad Pro';font-size:8pt\"&gt;Payment Schedule&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;"
 
 }//end var content
 </script>
@@ -31782,8 +31336,8 @@ var content={
 	lbReqDocFeeRem:				"Vous demandez la remise des frais. Veuillez envoyer le présent formulaire accompagné uniquement des frais de traitement de remise de 543 $.",
 	lbReqDocFeeDefer:				"Vous demandez le report du paiement. Veuillez envoyer le présent formulaire sans aucun paiement.",
 	lbReqDocLess10KHead:			"Les frais sont inférieurs à 10 000 $. Veuillez joindre un paiement de ",
-	lbReqDocLess10KTail:			" utillisez le Formulaire des details du paiement a l'avance pour le paiement sans facture.",	lbOver10K:				"Étant donné que les frais sont supérieurs à 10 000 $, veuillez ne pas joindre de paiement à ce formulaire. Les frais devront être payés dès l’émission de la facture. Pour plus de détails, voir Échéanciers des paiements.",
-	txtPaymentSchedule:		"&lt;body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\"&gt;&lt;p style=\"text-decoration:none;letter-spacing:0in\"&gt;&lt;a href=\"http://web.hc-sc.gc.ca/dhp-mps/alt_formats/pdf/prodpharma/applic-demande/form/inv-pa-fact-fra.pdf\" style=\"margin-top:0pt;margin-bottom:0pt;font-family:'Myriad Pro';font-size:8pt\"&gt;Échéancier des paiements&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;"
+	lbReqDocLess10KTail:			" $ utillisez le Formulaire des details du paiement a l'avance pour le paiement sans facture.",	lbOver10K:				"Étant donné que les frais sont supérieurs à 10 000 $, veuillez ne pas joindre de paiement à ce formulaire. Les frais devront être payés dès l’émission de la facture. Pour plus de détails, voir Échéanciers des paiements.",
+	txtPaymentSchedule:		"&lt;body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\"&gt;&lt;p style=\"text-decoration:none;letter-spacing:0in\"&gt;&lt;a href=\"http://www.hc-sc.gc.ca/dhp-mps/prodpharma/fees-frais/fee_frais_guide-fra.php#a2.2.3\" style=\"margin-top:0pt;margin-bottom:0pt;font-family:'Myriad Pro';font-size:8pt\"&gt;Échéancier des paiements&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;"
 
 }//end var content
 </script>
@@ -31801,12 +31355,12 @@ lbchkExistingCredit:		"Payment using existing credit",
 lbchkWire:					"Wire (include bank confirmation)",
 lbchkBillPaym:				"Bill Payment Service Option  (preferred method)(Note1)",
 
-lbHowToPay:					"Fees of $10,000 or less must be paid at the time of filling of the submission, supplement or application. Please complete the  ",
-lbAdvancePaymURL:			"&lt;body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\"&gt;&lt;p style=\"letter-spacing:0in\"&gt;&lt;a href=\"http://web.hc-sc.gc.ca/dhp-mps/alt_formats/pdf/prodpharma/applic-demande/form/adv-pa-av-eng.pdf\" style=\"margin-top:0pt;margin-bottom:0pt;font-family:'Myriad Pro';font-size:8pt\"&gt;Advance Payment Details Form for Payment Without an Invoice&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;",
-lbNote1:					"Sponsors will be invoiced for fees of more than $10,000.",
+lbNote:					"Note 1 - Please Note: Fees of $10,000 or less must be paid at the time of filling of the submission, supplement or application.Please complete the  ",
+lbAdvancePaymURL:		"&lt;body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\"&gt;&lt;p style=\"letter-spacing:0in\"&gt;&lt;a href=\"http://www.hc-sc.gc.ca/dhp-mps/prodpharma/applic-demande/guide-ld/costs-couts/crpay_rcfrais_for-eng.php\" style=\"margin-top:0pt;margin-bottom:0pt;font-family:'Myriad Pro';font-size:8pt\"&gt;Advance Payment Details Form for Payment Without an Invoice&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;",
+lbNote1:				"Sponsors will be invoiced for fees of more than $10,000.",
 
-lbNote:						"Note 1 - Please see the section on ",
-lbHowToPayURL:				"&lt;body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\"&gt;&lt;p style=\"letter-spacing:0in\"&gt;&lt;a href=\"http://www.hc-sc.gc.ca/dhp-mps/prodpharma/applic-demande/guide-ld/costs-couts/crpay_rcfrais_for-eng.php\" style=\"margin-top:0pt;margin-bottom:0pt;font-family:'Myriad Pro';font-size:8pt\"&gt;Payment through a Canadian financial institution&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;",
+lbHowToPay:				"For detailed payment instructions, please refer to the section on Payment through a Canadian financial institution:",
+lbHowToPayURL:			"&lt;body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\"&gt;&lt;p style=\"letter-spacing:0in\"&gt;&lt;a href=\"http://www.hc-sc.gc.ca/dhp-mps/prodpharma/applic-demande/guide-ld/costs-couts/crpay_rcfrais_for-eng.php\" style=\"margin-top:0pt;margin-bottom:0pt;font-family:'Myriad Pro';font-size:8pt\"&gt;Payment through a Canadian financial institution&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;",
 /*
 bankWire: 			"BANK WIRE DETAILS",
 dateWired: 			"Date the funds were wired (YYYY-MM-DD)",
@@ -31862,10 +31416,10 @@ lbchkExistingCredit:		"Paiement au moyen d’un crédit existant",
 lbchkWire:					"Transfert bancaire (incluez la confirmation de la banque)",
 lbchkBillPaym:				"Option de service de paiement de factures (méthode préférée)(Note1)",
 
-lbHowToPay:					"Des frais de 10,000$ ou moins doivent etre soumis au moment du dépot of the submission, supplement or application. S'il vous plait remplir le ",
-lbAdvancePaymURL:			"&lt;body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\"&gt;&lt;p style=\"letter-spacing:0in\"&gt;&lt;a href=\"http://web.hc-sc.gc.ca/dhp-mps/alt_formats/pdf/prodpharma/applic-demande/form/adv-pa-av-fra.pdf\" style=\"margin-top:0pt;margin-bottom:0pt;font-family:'Myriad Pro';font-size:8pt\"&gt;Formulaire des details du paiement a l'avance pour le paiement sans facture&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;",
+lbNote:						"Note1 -Veuilles noter: des frais de 10,000$ ou moins doivent etre soumis au moment du dépot of the submission, supplement or application. S'il vous plait remplir le ",
+lbAdvancePaymURL:			"&lt;body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\"&gt;&lt;p style=\"letter-spacing:0in\"&gt;&lt;a href=\"http://www.hc-sc.gc.ca/dhp-mps/prodpharma/applic-demande/guide-ld/costs-couts/crpay_rcfrais_for-fra.php\" style=\"margin-top:0pt;margin-bottom:0pt;font-family:'Myriad Pro';font-size:8pt\"&gt;Formulaire des details du paiement a l'avance pour le paiement sans facture&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;",
 lbNote1:					"Les promoteurs seront factures pour des frais de plus de 10 000$.",
-lbNote:						"Note1 - Veuillez voir la section sur ",
+lbHowToPay:					"Pour obtenir plus de détails sur la façon d’effectuer les paiements, veuillez voir la section sur Paiement fait directement a une institution financière",
 lbHowToPayURL:				"&lt;body xmlns=\"http://www.w3.org/1999/xhtml\" xmlns:xfa=\"http://www.xfa.org/schema/xfa-data/1.0/\"&gt;&lt;p style=\"letter-spacing:0in\"&gt;&lt;a href=\"http://www.hc-sc.gc.ca/dhp-mps/prodpharma/applic-demande/guide-ld/costs-couts/crpay_rcfrais_for-fra.php\" style=\"margin-top:0pt;margin-bottom:0pt;font-family:'Myriad Pro';font-size:8pt\"&gt;Paiement fait directement a une institution financière&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;",
 /*
 bankWire: 			"DÉTAILS VIREMENT TÉLÉGRAPHIQUE",
@@ -31919,7 +31473,7 @@ var content={
 				["3","Clinical or non-clinical data only"],
 				["4","Comparative studies"],
 				["5","Chemistry and manufacturing data only"],
-				//["6","Chemistry and manufacturing data only - ANDS only"],
+				["6","Chemistry and manufacturing data only - ANDS only"],
 				["7","Published data only"],
 				["8","Switch status from prescription drug to non-prescription drug"],
 				["9","Labelling only"],
@@ -32058,7 +31612,7 @@ var content={
 			["3","Données cliniques ou non cliniques seulement"],
 			["4","Études comparatives"],
 			["5","Données sur la chimie et la fabrication seulement"],
-			//["6","Données sur la chimie et la fabrication seulement - PADN Pharma seulement"],
+			["6","Données sur la chimie et la fabrication seulement - PADN Pharma seulement"],
 			["7","Données publiées seulement"],
 			["8","Déclassement d’une drogue sur ordonnance pour en faire une drogue en vente libre"],
 			["9","Étiquetage seulement"],
@@ -32311,7 +31865,7 @@ var content={
 
 var content={
 	error_application:			"There was a problem with the application",
-	validation_pass:			"Le formulaire a été validé et verrouiller contre l'édition. Il peut maintenant être imprimé et envoyé à Santé Canada. ",
+	validation_pass:			"Le formulaire a été validé et verrouiller contre l'édition. Il peut maintenant être imprimé et envoyé à Santé Canada. Pour pouvoir modifier le formulaire, appuyez sur le bouton Modifier.",
 	//lbLockSuccess:			"Le formulaire a été validé et verrouiller contre l'édition. Il peut maintenant être imprimé et envoyé à Santé Canada. Pour pouvoir modifier le formulaire, appuyez sur le bouton Modifier.",
 	message_saveAs: 			"Ce formulaire a eu un problème.",
 	error_NumberRange:			"fr_This value is out of the specified range",
@@ -32347,7 +31901,7 @@ var content={
 	error_otherFaxNumError:		" le numéro de télécopie est incorrecte. Utilisez le format général de 1-888-888-8888 ou 888-888-8888.",
 }
 </script>
-                  <?templateDesigner expand 1?></variables>
+                  <?templateDesigner expand 0?></variables>
                <bind match="none"/>
                <?templateDesigner expand 1?></subform>
             <subform h="50mm" name="util" w="100mm">
@@ -32819,12 +32373,12 @@ function walk(oNode, func, param1)
          <?templateDesigner expand 1?></subform>
       <proto/>
       <desc>
-         <text name="version">$Revision No: 2.00$</text>
+         <text name="version"> 2.00</text>
          <text name="title">Drug Submission - Application Fee Form</text>
          <text name="creator">Bianca Andreescu</text>
-         <text name="created">$Date: 2015-07-21$</text>
-         <text name="department">Health Canada-Sante Canada</text>
-         <text name="issued">$revision date:2015-12-31$</text>
+         <text name="created">2015-07-21</text>
+         <text name="department">Health Canada</text>
+         <text name="issued">2015</text>
       </desc>
       <margin leftInset="0mm" topInset="0mm" bottomInset="0mm"/>
       <event activity="initialize" name="event__initialize">
@@ -32873,8 +32427,9 @@ catch(exception)
       </event>
       <?templateDesigner Hyphenation excludeInitialCap:1, excludeAllCaps:1, wordCharCnt:7, remainCharCnt:3, pushCharCnt:3?>
       <?templateDesigner expand 1?>
-      <?renderCache.subset "Myriad Pro" 0 0 ISO-8859-1 4 256 64 00010003000500060009000A000B000C000D000E000F0010001100120016001B001C00220023002400250026002700280029002A002D002E002F00300031003300340035003600370038003B00420043004400450046004700480049004A004C004D004E004F0050005100520053005400550056005700580059005A005B0068 "$%()*+,-./015:;ABCDEFGHILMNOPRSTUVWZabcdefghiklmnopqrstuvwxyz'?>
-      <?renderCache.subset "Myriad Pro" 1 0 ISO-8859-1 4 208 52 00010009000A000D000F00100012001300140015001600170022002300240025002600270028002A002D002E002F003000310033003400350036003A00420043004400450046004700480049004A004D004E004F005000510052005300540055005600570058005A (),./123456ABCDEFGILMNOPRSTUYabcdefghilmnopqrstuvwy?>
+      <?renderCache.subset "Arial" 1 0 ISO-8859-1 4 60 15 000300110018003000330044004700480049004B0050005100520057005C .5MPadefhmnoty?>
+      <?renderCache.subset "Myriad Pro" 0 0 ISO-8859-1 4 252 64 0001000300060009000A000B000C000D000E000F001000110012001B001C00220023002400250026002700280029002A002D002E002F00300031003300340035003600370038003B00420043004400450046004700480049004A004C004D004E004F0050005100520053005400550056005700580059005A005B006800CE "%()*+,-./01:;ABCDEFGHILMNOPRSTUVWZabcdefghiklmnopqrstuvwxyz'ç?>
+      <?renderCache.subset "Myriad Pro" 1 0 ISO-8859-1 4 200 50 00010009000A000D000F001000120013001400150022002300240025002600270028002A002D002E002F003000310033003400350036003A00420043004400450046004700480049004A004D004E004F005000510052005300540055005600570058005A (),./1234ABCDEFGILMNOPRSTUYabcdefghilmnopqrstuvwy?>
    </subform>
    <?templateDesigner DefaultPreviewDynamic 1?>
    <?originalXFAVersion http://www.xfa.org/schema/xfa-template/2.8/?>
@@ -32894,9 +32449,9 @@ catch(exception)
    <?templateDesigner DefaultCaptionFontSettings face:Myriad Pro;size:10;weight:normal;style:normal?>
    <?templateDesigner DefaultValueFontSettings face:Myriad Pro;size:10;weight:normal;style:normal?>
    <?templateDesigner ValidationMessaging noMessages?>
-   <?templateDesigner SavePDFWithLog 0?>
    <?templateDesigner FormTargetVersion 30?>
-   <?templateDesigner Zoom 127?>
+   <?templateDesigner Zoom 125?>
+   <?templateDesigner SavePDFWithLog 0?>
    <?templateDesigner SaveTaggedPDF 0?>
    <?templateDesigner SavePDFWithEmbeddedFonts 0?>
    <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?></template>
@@ -33187,11 +32742,13 @@ catch(exception)
             <sponsor_email/>
          </sponsor_contact>
          <billing_address>
-            <street_address/>
-            <city/>
-            <province_lov/>
-            <country/>
-            <postal_code/>
+            <billing_companyname/>
+            <billing_street/>
+            <billing_city/>
+            <billing_country/>
+            <billing_province_state/>
+            <billing_txtprovince/>
+            <billing_postal_code/>
          </billing_address>
          <billing_contact>
             <billing_Salutation/>
@@ -33211,36 +32768,25 @@ catch(exception)
                <route/>
                <condition/>
                <strength/>
-               <dosage_other/>
-               <route_other/>
+               <other/>
             </primary_product_details>
             <additional_product_details dd:minOccur="0" dd:maxOccur="10">
                <dosage/>
                <route/>
                <condition/>
                <strength/>
-               <dosage_other/>
-               <route_other/>
+               <other/>
             </additional_product_details>
          </submission_scope>
          <review_fees>
             <submission_class/>
             <submission_fee/>
             <sub_description/>
-            <deferr_choice/>
-            <remission_choice/>
-            <num_gross_rev/>
          </review_fees>
          <required_docs>
             <deferral_stat_choice/>
             <rev_stat_choice/>
             <app_fee_choice/>
-            <sales_history_choice/>
-            <ave_saleprice_choice/>
-            <est_mktshare_choice/>
-            <comparison_choice/>
-            <market_plan_choice/>
-            <other_choice/>
          </required_docs>
          <payment_method>
             <credit_card_choice/>
@@ -33249,43 +32795,24 @@ catch(exception)
             <bank_draft_choice/>
             <existing_credit_choice/>
             <bank_wire_choice/>
-            <bill_paym_choice/>
          </payment_method>
          <certification>
-            <salutation/>
-            <given_name/>
-            <surname/>
+            <certified_amount/>
+            <signing_official/>
+            <signature_choice/>
+            <image_signature/>
+            <date_signature/>
          </certification>
-         <attestation_info>
-            <attestation_salutation/>
-            <attestation_given_name/>
-            <attestation_surname/>
-            <attestation_title/>
-            <signature_type/>
-            <signature_image/>
-            <attestation_sign_date/>
-         </attestation_info>
-         <hconly>
-            <drse_code/>
-            <sap_invoice/>
-            <file_number/>
-            <sap_order/>
-            <screened_by/>
-            <cheque_number/>
-            <dsts_control/>
-         </hconly>
       </DrugSubmitApplFee>
    </dd:dataDescription>
 </xfa:datasets>
 <connectionSet xmlns="http://www.xfa.org/schema/xfa-connection-set/2.8/">
    <xsdConnection name="DataConnection" dataDescription="DrugSubmitApplFee">
-      <uri>..\..\xml_schema\DrugSubmitApplFee.xsd</uri>
+      <uri>..\..\..\NHPOSworkspace\EREVIEW\HPFB_forms\xml_schema\DrugSubmitApplFee.xsd</uri>
       <rootElement>DrugSubmitApplFee</rootElement>
-      <?templateDesigner fileDigest shaHash="ZGBeHHWWgxRti0gnjK82o++jnCE="?></xsdConnection>
+      <?templateDesigner fileDigest shaHash="aaljGx7QVcQXQeh3n7Ts04In3/w="?></xsdConnection>
 </connectionSet>
 <hpfb:schema xmlns:hpfb="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" id="XFASchemaXSD">
-   <hpfb:include schemaLocation="#XFAXSDReference"/>
-   <hpfb:include schemaLocation="#XFAXSDReference1"/>
    <!-- ****************************** -->
    <!-- ELEMENT DECLARATIONS  VERSION 1.0-->
    <!-- ****************************** -->
@@ -33319,7 +32846,7 @@ catch(exception)
    <hpfb:element name="sponsor_email" type="char_1_2000_Content"/>
    <!-- Billing address content -->
    <hpfb:element name="billing_companyname" type="char_1_2000_Content"/>
-   <hpfb:element name="billing_address" type="can_us_address_content"/>
+   <hpfb:element name="billing_address" type="billing_address_content"/>
    <hpfb:element name="billing_street" type="char_1_2000_Content"/>
    <hpfb:element name="billing_city" type="char_1_2000_Content"/>
    <hpfb:element name="billing_country" type="char_1_2000_Content"/>
@@ -33346,7 +32873,6 @@ catch(exception)
    <hpfb:element name="existing_credit_choice" type="YES_NO_Content"/>
    <hpfb:element name="bank_wire_choice" type="YES_NO_Content"/>
    <hpfb:element name="money_order_choice" type="YES_NO_Content"/>
-   <hpfb:element name="bill_paym_choice" type="YES_NO_Content"/>
    <!-- Submission Scope content -->
    <hpfb:element name="submission_scope" type="submission_scope_content"/>
    <hpfb:element name="primary_product_details" type="product_details_content"/>
@@ -33355,54 +32881,24 @@ catch(exception)
    <hpfb:element name="route" type="char_1_2000_Content"/>
    <hpfb:element name="condition" type="char_1_2000_Content"/>
    <hpfb:element name="strength" type="char_1_2000_Content"/>
-   <hpfb:element name="dosage_other" type="char_1_2000_Content"/>
-   <hpfb:element name="route_other" type="char_1_2000_Content"/>
+   <hpfb:element name="other" type="char_1_2000_Content"/>
    <!-- review fees and details-->
    <hpfb:element name="review_fees" type="review_fees_content"/>
    <hpfb:element name="submission_class" type="char_1_2000_Content"/>
    <hpfb:element name="submission_fee" type="number_content_0_10_b"/>
    <hpfb:element name="sub_description" type="char_1_2000_Content"/>
-   <hpfb:element name="deferr_choice" type="YES_NO_Content"/>
-   <hpfb:element name="remission_choice" type="YES_NO_Content"/>
-   <hpfb:element name="num_gross_rev" type="number_content_0_10_b"/>
    <!-- required documents and details-->
    <hpfb:element name="required_docs" type="required_docs_content"/>
    <hpfb:element name="deferral_stat_choice" type="YES_NO_Content"/>
    <hpfb:element name="rev_stat_choice" type="YES_NO_Content"/>
    <hpfb:element name="app_fee_choice" type="YES_NO_Content"/>
-   <hpfb:element name="sales_history_choice" type="YES_NO_Content"/>
-   <hpfb:element name="ave_saleprice_choice" type="YES_NO_Content"/>
-   <hpfb:element name="est_mktshare_choice" type="YES_NO_Content"/>
-   <hpfb:element name="comparison_choice" type="YES_NO_Content"/>
-   <hpfb:element name="market_plan_choice" type="YES_NO_Content"/>
-   <hpfb:element name="other_choice" type="YES_NO_Content"/>
    <!-- certification and details-->
    <hpfb:element name="certification" type="certification_content"/>
-   <hpfb:element name="salutation" type="char_1_2000_Content"/>
-   <hpfb:element name="given_name" type="char_1_2000_Content"/>
-   <hpfb:element name="surname" type="char_1_2000_Content"/>
-   <!-- signature block and details-->
+   <hpfb:element name="certified_amount" type="number_content_0_10_b"/>
+   <hpfb:element name="signing_official" type="char_1_2000_Content"/>
    <hpfb:element name="signature_choice" type="signatureType_content"/>
    <hpfb:element name="image_signature"/>
    <hpfb:element name="date_signature" type="yyyymmdd_date_Content"/>
-   <!-- attestation and details-->
-   <hpfb:element name="attestation_info" type="attest_content"/>
-   <hpfb:element name="attestation_salutation"/>
-   <hpfb:element name="attestation_given_name"/>
-   <hpfb:element name="attestation_surname"/>
-   <hpfb:element name="attestation_title"/>
-   <hpfb:element name="signature_type"/>
-   <hpfb:element name="signature_image"/>
-   <hpfb:element name="attestation_sign_date" type="yyyymmdd_date_content"/>
-   <!-- HC Only section and details-->
-   <hpfb:element name="hconly" type="hconly_content"/>
-   <hpfb:element name="drse_code" type="number_content_0_10_b"/>
-   <hpfb:element name="sap_invoice" type="number_content_0_10_b"/>
-   <hpfb:element name="file_number" type="number_content_0_10_b"/>
-   <hpfb:element name="sap_order" type="number_content_0_10_b"/>
-   <hpfb:element name="screened_by" type="char_1_2000_Content"/>
-   <hpfb:element name="cheque_number" type="number_content_0_10_b"/>
-   <hpfb:element name="dsts_control" type="number_content_0_10_b"/>
    <!-- ****************************** -->
    <!-- ELEMENT TYPE DECLARATIONS -->
    <!-- ****************************** -->
@@ -33421,8 +32917,6 @@ catch(exception)
          <hpfb:element ref="required_docs"/>
          <hpfb:element ref="payment_method"/>
          <hpfb:element ref="certification"/>
-         <hpfb:element ref="attestation_info"/>
-         <hpfb:element ref="hconly"/>
       </hpfb:sequence>
    </hpfb:complexType>
    <hpfb:complexType name="product_content">
@@ -33493,8 +32987,7 @@ catch(exception)
          <hpfb:element ref="route"/>
          <hpfb:element ref="condition"/>
          <hpfb:element ref="strength"/>
-         <hpfb:element ref="dosage_other"/>
-         <hpfb:element ref="route_other"/>
+         <hpfb:element ref="other"/>
       </hpfb:sequence>
    </hpfb:complexType>
    <hpfb:complexType name="review_fees_content">
@@ -33502,9 +32995,6 @@ catch(exception)
          <hpfb:element ref="submission_class"/>
          <hpfb:element ref="submission_fee"/>
          <hpfb:element ref="sub_description"/>
-         <hpfb:element ref="deferr_choice"/>
-         <hpfb:element ref="remission_choice"/>
-         <hpfb:element ref="num_gross_rev"/>
       </hpfb:sequence>
    </hpfb:complexType>
    <hpfb:complexType name="required_docs_content">
@@ -33512,12 +33002,6 @@ catch(exception)
          <hpfb:element ref="deferral_stat_choice"/>
          <hpfb:element ref="rev_stat_choice"/>
          <hpfb:element ref="app_fee_choice"/>
-         <hpfb:element ref="sales_history_choice"/>
-         <hpfb:element ref="ave_saleprice_choice"/>
-         <hpfb:element ref="est_mktshare_choice"/>
-         <hpfb:element ref="comparison_choice"/>
-         <hpfb:element ref="market_plan_choice"/>
-         <hpfb:element ref="other_choice"/>
       </hpfb:sequence>
    </hpfb:complexType>
    <hpfb:complexType name="payment_method_content">
@@ -33528,43 +33012,15 @@ catch(exception)
          <hpfb:element ref="bank_draft_choice"/>
          <hpfb:element ref="existing_credit_choice"/>
          <hpfb:element ref="bank_wire_choice"/>
-         <hpfb:element ref="bill_paym_choice"/>
-      </hpfb:sequence>
-   </hpfb:complexType>
-   <hpfb:complexType name="attest_content">
-      <hpfb:sequence>
-         <hpfb:element ref="attestation_salutation"/>
-         <hpfb:element ref="attestation_given_name"/>
-         <hpfb:element ref="attestation_surname"/>
-         <hpfb:element ref="attestation_title"/>
-         <hpfb:element ref="signature_type"/>
-         <hpfb:element ref="signature_image"/>
-         <hpfb:element ref="attestation_sign_date"/>
       </hpfb:sequence>
    </hpfb:complexType>
    <hpfb:complexType name="certification_content">
       <hpfb:sequence>
-         <hpfb:element ref="salutation"/>
-         <hpfb:element ref="given_name"/>
-         <hpfb:element ref="surname"/>
-      </hpfb:sequence>
-   </hpfb:complexType>
-   <hpfb:complexType name="signature_content">
-      <hpfb:sequence>
+         <hpfb:element ref="certified_amount"/>
+         <hpfb:element ref="signing_official"/>
          <hpfb:element ref="signature_choice"/>
          <hpfb:element ref="image_signature"/>
          <hpfb:element ref="date_signature"/>
-      </hpfb:sequence>
-   </hpfb:complexType>
-   <hpfb:complexType name="hconly_content">
-      <hpfb:sequence>
-         <hpfb:element ref="drse_code"/>
-         <hpfb:element ref="sap_invoice"/>
-         <hpfb:element ref="file_number"/>
-         <hpfb:element ref="sap_order"/>
-         <hpfb:element ref="screened_by"/>
-         <hpfb:element ref="cheque_number"/>
-         <hpfb:element ref="dsts_control"/>
       </hpfb:sequence>
    </hpfb:complexType>
    <hpfb:simpleType name="char_1_2000_Content">
@@ -33656,97 +33112,29 @@ catch(exception)
       </hpfb:restriction>
    </hpfb:simpleType>
 </hpfb:schema>
-<hpfb:schema xmlns:hpfb="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" id="XFAXSDReference">
-   <!-- ****************************** -->
-   <!-- ELEMENT DECLARATIONS -->
-   <!-- ****************************** -->
-   <hpfb:element name="street_address"/>
-   <hpfb:element name="city"/>
-   <hpfb:element name="province_lov"/>
-   <hpfb:element name="province_text"/>
-   <hpfb:element name="country"/>
-   <hpfb:element name="postal_code"/>
-   <hpfb:element name="canada_us_address" type="can_us_address_content"/>
-   <!-- ****************************** -->
-   <!-- ELEMENT TYPE DECLARATIONS -->
-   <!-- ****************************** -->
-   <!-- main xml structure-->
-   <hpfb:complexType name="international_address_content">
-      <hpfb:sequence>
-         <hpfb:element ref="street_address"/>
-         <hpfb:element ref="city"/>
-         <hpfb:element ref="province_lov"/>
-         <hpfb:element ref="province_text"/>
-         <hpfb:element ref="country"/>
-         <hpfb:element ref="postal_code"/>
-      </hpfb:sequence>
-   </hpfb:complexType>
-   <hpfb:complexType name="can_us_address_content">
-      <hpfb:sequence>
-         <hpfb:element ref="street_address"/>
-         <hpfb:element ref="city"/>
-         <hpfb:element ref="province_lov"/>
-         <hpfb:element ref="country"/>
-         <hpfb:element ref="postal_code"/>
-      </hpfb:sequence>
-   </hpfb:complexType>
-</hpfb:schema>
-<hpfb:schema xmlns:hpfb="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" id="XFAXSDReference1">
-   <!-- ****************************** -->
-   <!-- ELEMENT DECLARATIONS -->
-   <!-- ****************************** -->
-   <hpfb:element name="salutation"/>
-   <hpfb:element name="given_name"/>
-   <hpfb:element name="initials"/>
-   <hpfb:element name="surname"/>
-   <hpfb:element name="job_title"/>
-   <hpfb:element name="language_correspondance"/>
-   <hpfb:element name="phone_num"/>
-   <hpfb:element name="phone_ext"/>
-   <hpfb:element name="fax_num"/>
-   <hpfb:element name="email"/>
-   <!-- ****************************** -->
-   <!-- ELEMENT TYPE DECLARATIONS -->
-   <!-- ****************************** -->
-   <!-- main xml structure-->
-   <hpfb:complexType name="contact_content">
-      <hpfb:sequence>
-         <hpfb:element ref="salutation"/>
-         <hpfb:element ref="given_name"/>
-         <hpfb:element ref="initials"/>
-         <hpfb:element ref="surname"/>
-         <hpfb:element ref="job_title"/>
-         <hpfb:element ref="language_correspondance"/>
-         <hpfb:element ref="phone_num"/>
-         <hpfb:element ref="phone_ext"/>
-         <hpfb:element ref="fax_num"/>
-         <hpfb:element ref="email"/>
-      </hpfb:sequence>
-   </hpfb:complexType>
-</hpfb:schema>
 <x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.2-c001 63.139439, 2011/06/07-10:39:26        ">
    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
       <rdf:Description xmlns:xmp="http://ns.adobe.com/xap/1.0/" rdf:about="">
-         <xmp:MetadataDate>2016-02-01T15:33:03Z</xmp:MetadataDate>
+         <xmp:MetadataDate>2015-12-10T16:49:34Z</xmp:MetadataDate>
          <xmp:CreatorTool>Adobe LiveCycle Designer ES 10.0</xmp:CreatorTool>
       </rdf:Description>
       <rdf:Description xmlns:pdf="http://ns.adobe.com/pdf/1.3/" rdf:about="">
          <pdf:Producer>Adobe LiveCycle Designer ES 10.0</pdf:Producer>
       </rdf:Description>
       <rdf:Description xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" rdf:about="">
-         <xmpMM:DocumentID>uuid:22d122bb-3579-4f3c-afac-1a22389d6006</xmpMM:DocumentID>
-         <xmpMM:InstanceID>uuid:a935ea97-6712-4fdd-8271-fb61097b8816</xmpMM:InstanceID>
+         <xmpMM:DocumentID>uuid:41e4313d-6d82-4831-be5d-2b20112e6b73</xmpMM:DocumentID>
+         <xmpMM:InstanceID>uuid:bbbf1ce2-cef9-45b0-bb56-fadfd729ac0b</xmpMM:InstanceID>
       </rdf:Description>
       <rdf:Description xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:about="">
          <dc:format>application/pdf</dc:format>
          <dc:date>
             <rdf:Seq>
                <rdf:li rdf:parseType="Resource">
-                  <rdf:value>$Date: 2015-07-21$</rdf:value>
+                  <rdf:value>2015-07-21</rdf:value>
                   <dc:element-refinement>dc:created</dc:element-refinement>
                </rdf:li>
                <rdf:li rdf:parseType="Resource">
-                  <rdf:value>$revision date:2015-12-31$</rdf:value>
+                  <rdf:value>2015</rdf:value>
                   <dc:element-refinement>dc:issued</dc:element-refinement>
                </rdf:li>
             </rdf:Seq>
@@ -33764,11 +33152,11 @@ catch(exception)
       </rdf:Description>
       <rdf:Description xmlns:desc="http://ns.adobe.com/xfa/promoted-desc/" rdf:about="">
          <desc:version rdf:parseType="Resource">
-            <rdf:value>$Revision No: 2.00$</rdf:value>
+            <rdf:value> 2.00</rdf:value>
             <desc:ref>/template/subform[1]</desc:ref>
          </desc:version>
          <desc:department rdf:parseType="Resource">
-            <rdf:value>Health Canada-Sante Canada</rdf:value>
+            <rdf:value>Health Canada</rdf:value>
             <desc:ref>/template/subform[1]</desc:ref>
          </desc:department>
       </rdf:Description>
@@ -33777,4 +33165,3 @@ catch(exception)
 <xfdf xmlns="http://ns.adobe.com/xfdf/" xml:space="preserve">
    <annots/>
 </xfdf></xdp:xdp>
->>>>>>> hpfbForms_branch
