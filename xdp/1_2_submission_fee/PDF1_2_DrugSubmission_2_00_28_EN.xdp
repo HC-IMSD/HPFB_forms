@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+
+=======
 <?xml version="1.0" encoding="UTF-8"?>
 <?xfa generator="AdobeLiveCycleDesignerES_V10.0.2.20120224.1.869952" APIVersion="3.5.12002.0"?>
 <xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2016-02-01T15:33:03Z" uuid="22d122bb-3579-4f3c-afac-1a22389d6006">
@@ -33774,3 +33777,4 @@ catch(exception)
 <xfdf xmlns="http://ns.adobe.com/xfdf/" xml:space="preserve">
    <annots/>
 </xfdf></xdp:xdp>
+>>>>>>> hpfbForms_branch
