@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xfa generator="AdobeLiveCycleDesignerES_V10.0.2.20120224.1.869952" APIVersion="3.5.12002.0"?>
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/">
+<template xmlns="http://www.xfa.org/schema/xfa-template/3.0/">
+   <subform name="form1" locale="en_CA" layout="tb">
+      <pageSet>
+         <pageArea>
+            <medium long="279.4mm" short="215.9mm" stock="letter"/>
+            <contentArea h="253.74mm" id="caMain_ID_copy1_copy1_copy1_copy1" name="caMainSig" w="203.2mm" x="6.736mm" y="13.324mm">
+               <?templateDesigner expand 1?></contentArea>
+         </pageArea>
+      </pageSet>
+      <subform>
+         <variables>
+            <script contentType="application/x-javascript" name="NumberFormat">
+
+/************************************************************************************************
+Function-  digitTestYX- based on a user event, evaluates a string to see if the changes conform
+						to an (Y,X) decimal number where X is the number of digits
+						to the right of the decimal and Y is the
+						total number of digits. Examples: 12345678901234 or 1234567.12345
+						'Y' denotes the max number of digits, and X the max number decimal values
+Parameters: aEvent- the event from which to evaluate the changes the user wants to make
+Returns: 	 null
+Created:		Jan 1, 2007
+Last Modified:
+Creator: 		D. Kilty, PMRA, Health Canada
+*************************************************************************************************/
+function digitTestYX(aEvent,numDigits,numDec)
+{
+
+	checkIfDecimal(aEvent) //gets rid of letters
+	//handles the case of integer
+	if(aEvent.change==='.' &amp;&amp; numDec===0){
+		aEvent.change="";
+		return;
+	}
+	var decIndex=aEvent.fullText.indexOf('.')
+	if(aEvent.change &amp;&amp; aEvent.fullText.length&gt;numDigits)//14 characters
+	{
+		var index=aEvent.fullText.indexOf('.')
+		if (index==-1)//no decimal case
+		{
+			if(aEvent.change.length==aEvent.fullText.length) //cut and paste option 15 digits
+			{
+				aEvent.change=aEvent.change.substr(0,numDigits);
+			}
+			else
+			{
+				aEvent.change="";
+			}
+		}
+	}
+		if(decIndex&gt;-1 &amp;&amp; aEvent.fullText.length&gt;1) //check for X digits
+	{
+		var rghtdec=(aEvent.fullText).substr(decIndex+1,aEvent.fullText.length)
+		if(rghtdec.length&gt;numDec)
+		{
+			if(aEvent.change.length==aEvent.fullText.length) //cut and paste case
+			{
+				var diff=(rghtdec.length)-numDec
+				aEvent.change=(aEvent.change).substr(0,(aEvent.change.length)-diff)
+			}
+			else
+			{
+				aEvent.change=""; 
+			}
+		}	
+	}	
+
+}// end fn
+
+
+/************************************************************************************************
+Function-  checkIfDecimal- based on a user event, evaluates a string to see if the changes conform
+						to a decimal number. If not, do not allow the user to make the change (ie typed value)
+Parameters: aEvent- the event from which to evaluate the changes the user wants to make
+Returns: 	null
+Created:		Jan 1, 2007
+Last Modified:
+Creator: 		D. Kilty, PMRA, Health Canada
+*************************************************************************************************/
+function checkIfDecimal(aEvent)
+{
+
+	for(var i=0;i&lt;aEvent.change.length;i++)
+	{
+		if ( (aEvent.change).charCodeAt(i)!=46 &amp;&amp; ((aEvent.change).charCodeAt(i)&lt;48 || (aEvent.change).charCodeAt(i)&gt;57))
+		//if ( ((aEvent.change).charCodeAt(i)!=46 || (aEvent.change).charCodeAt(i)!=46) &amp;&amp; ((aEvent.change).charCodeAt(i)&lt;48 || (aEvent.change).charCodeAt(i)&gt;57))
+		{
+			var temp=aEvent.change.substr(0,i);
+				var temp=temp;
+				temp=temp+aEvent.change.substr(i+1,aEvent.change.length)
+				aEvent.change=temp;
+				if(i&gt;1)i=i-2;
+				else i=i-1;
+		}	
+	}
+	//check for multiple '.'
+	var decIndex=aEvent.fullText.indexOf('.')
+	var decLastIndex=aEvent.fullText.lastIndexOf('.')
+	var chgeIndex=aEvent.change.indexOf('.')
+	if(decIndex&gt;-1 &amp;&amp; chgeIndex&gt;-1 &amp;&amp; decIndex!=decLastIndex)
+	{
+		aEvent.change=""; //if both found don't add a second period
+	}
+	else if(decIndex==0 &amp;&amp; chgeIndex==0) //'.' is the first value
+	{
+		var temp=(aEvent.change).substr(1,aEvent.change.length);
+		aEvent.change="0."+temp;	
+	}
+}//end fn
+
+
+
+/* Checks an event value. If it is not a digit don't allow it to be typed
+*
+*/
+
+function formatEventToNumber(anEvent){
+	if (anEvent.change &amp;&amp; anEvent.change.length==1){
+					
+		if(checkIfDigit(anEvent)===false){
+				anEvent.change="";
+		}		
+			
+	}//endif
+}
+
+/*
+* Checks if a digit is a number
+*	@param anEvent- an adobe event object
+*	@returns true if a digit
+*/
+function checkIfDigit(anEvent){
+	var regExpress=/^[0-9]/;
+	return(regExpress.test(anEvent.change));
+}
+
+/*
+* Checks if a date in the future
+* @param oField- the adobe field to process
+* @returns true if the date is in the future
+*/
+function isFutureDate(oField)
+{
+	var oToday = new Date();
+	var curYear = oToday.getFullYear();
+	var curMonth =pad(String(oToday.getMonth() + 1), 2, "0");
+	var curDay = pad(String(oToday.getDate()), 2, "0");	
+	oToday = curYear + '-' + curMonth + '-' + curDay;
+	
+	return (oField.rawValue &gt; oToday);
+	
+
+}//end fn
+
+
+
+
+//pads a string s, to length len, with character chr
+//padding is done in front of the string
+function pad(s, len, chr)
+{		
+	if(s.length &gt; len)
+	{
+		return s.substr(s.length - len, len);
+	}
+	else if(s.length &lt; len)
+	{
+		var tmp = "";
+		var i = 0;
+		for(i = s.length; i &lt; len; i++)
+		{
+			tmp += chr;
+		}
+		return tmp + s;
+	}
+	return s;
+}//end fn
+
+
+function allowNumberWithExponents(event)
+/* Unicode conversions
+	'e'=101
+	'-' =45
+	'.'=46
+	'9'=57
+	'0'=48
+	'E'=69
+*/
+
+{
+	
+	if (((event.change).charCodeAt(0)&lt;48 &amp;&amp; ((event.change).charCodeAt(0)!=46 &amp;
+				 (event.change).charCodeAt(0)!=45)) 
+		|((event.change).charCodeAt(0)&gt;57 &amp;&amp;((event.change).charCodeAt(0)!=69 &amp; (event.change).charCodeAt(0)!=101)))            
+	event.change="";
+}
+
+
+function allowDateFormatDigits(event)
+{
+	
+	if (((event.change).charCodeAt(0)&lt;48 &amp;&amp; ((event.change).charCodeAt(0)!=45)) 
+		||((event.change).charCodeAt(0)&gt;57)){             
+		event.change="";
+	}
+}
+
+
+/************************************************************************************************
+Function-  checkIfIntegerOrDecimal- based on a user event, evaluates a string to see if the changes conform
+						to an integer or a decimal. If not, do not allow the user to make the change (ie typed value)
+Parameters: aEvent- the event from which to evaluate the changes the user wants to make
+Returns: 	 null
+Created:		Jan 1, 2007
+Last Modified:
+Creator: 		C. Senack, ADS, Health Canada
+*************************************************************************************************/
+function checkIfIntegerOrDecimal(aEvent)
+{
+
+	for(var i=0;i&lt;aEvent.change.length;i++)
+	{
+	
+		if ( (aEvent.change).charCodeAt(i)&lt;48 || (aEvent.change).charCodeAt(i)&gt;57 ) //0-9 or a decimal only
+		{
+			if((aEvent.change).charCodeAt(i)!=46)
+			{
+				var temp=aEvent.change.substr(0,i);
+				var temp=temp;
+				temp=temp+aEvent.change.substr(i+1,aEvent.change.length)
+				aEvent.change=temp;
+				if(i&gt;1)i=i-2;
+				else i=i-1;
+			}
+		}	
+	}
+}
+
+
+/************************************************************************************************
+Function- isOlderDate -						
+Parameters- 			
+Returns: null
+Created: Jan 1, 2007
+Last Modified:
+Creator: D. Kilty, PMRA, Health Canada
+*************************************************************************************************/
+function isOlderDate(src,tocmp)
+{
+	if(tocmp &amp;&amp; src)
+	{			
+		var selYr=tocmp.substr(0,4);
+		var selMth=tocmp.substr(0,7);
+		selMth=selMth.substr(5,7);
+		var selDy=tocmp.substr(8);
+			
+		var srcYr=src.substr(0,4);
+		var srcMth=src.substr(0,7);
+		srcMth=srcMth.substr(5,7);
+		var srcDy=src.substr(8);		
+		
+		if(srcYr&gt;selYr)
+		{
+			return(0);
+					}
+		else if(srcYr==selYr)
+		{
+			if(srcMth&gt;selMth)
+			{
+				return(0);
+							}
+			else if(srcMth==selMth)
+			{
+				if(srcDy&gt;selDy || srcDy===selDy)
+				{
+					return(0);
+					
+				}//if
+			}//elseif
+		}//elseif
+	}//if
+
+	return(1);
+
+}
+
+/************************************************************************************************
+Function-  checkIfSubNum = based on a user event, evaluates a string to see if the changes conform
+						to a submission number. If not, do not allow the user to make the change (ie typed value)
+						a submission is of the form ####-#####, the value to the right can be 4 or 5 digits 
+Parameters: aEvent- the event from which to evaluate the changes the user wants to make
+Returns: 	 null
+Created:		Jan 1, 2007
+Last Modified:
+Creator: 		D. Kilty, PMRA, Health Canada
+*************************************************************************************************/
+function checkIfSubNum(aEvent)
+{
+
+	for(var i=0;i&lt;aEvent.change.length;i++)
+	{
+		if ( (aEvent.change).charCodeAt(i)!=45 &amp;&amp;((aEvent.change).charCodeAt(i)&lt;48 || (aEvent.change).charCodeAt(i)&gt;57))
+		{
+			var temp=aEvent.change.substr(0,i);
+				var temp=temp;
+				temp=temp+aEvent.change.substr(i+1,aEvent.change.length)
+				aEvent.change=temp;
+				if(i&gt;1)i=i-2;
+				else i=i-1;
+		}
+	
+	}
+}
+
+
+
+
+               <?templateDesigner isFragment yes?>
+               <?templateDesigner fragmentTitle NumberFormat?></script>
+         </variables>
+      </subform>
+   </subform>
+</template>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.2-c001 63.139439, 2011/06/07-10:39:26        ">
+   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <rdf:Description xmlns:lcd="http://ns.adobe.com/livecycle/designer/" xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:about="">
+         <lcd:fragmentCatalog>
+            <rdf:Seq>
+               <rdf:li rdf:parseType="Resource">
+                  <dc:title>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default">NumberFormat</rdf:li>
+                     </rdf:Alt>
+                  </dc:title>
+                  <dc:description>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default"/>
+                     </rdf:Alt>
+                  </dc:description>
+                  <dc:identifier>$template.form1.#subform.#variables.NumberFormat</dc:identifier>
+                  <lcd:fragmentRole>ScriptObject</lcd:fragmentRole>
+               </rdf:li>
+            </rdf:Seq>
+         </lcd:fragmentCatalog>
+      </rdf:Description>
+   </rdf:RDF>
+</x:xmpmeta></xdp:xdp>
