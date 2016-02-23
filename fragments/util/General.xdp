@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xfa generator="AdobeLiveCycleDesignerES_V10.0.2.20120224.1.869952" APIVersion="3.5.12002.0"?>
-<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2015-11-24T18:31:28Z" uuid="06a45e2f-7bd5-4981-b254-31473b5b4ec4">
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2016-02-12T20:05:09Z" uuid="357f25a6-02a0-41cf-a69a-032237015071">
 <template xmlns="http://www.xfa.org/schema/xfa-template/3.0/">
    <?formServer defaultPDFRenderFormat acrobat9.1static?>
    <subform name="form1" locale="en_CA" layout="tb">
@@ -138,10 +138,47 @@ function pad(s, len, chr)
 	return s;
 }//end fn
 
+/*
+* Given the name (label) of a adobe field, returns an instance of the field as the parent of the source field
+*@param parentName- string of the name of the field to search for. Recommended usage &lt;FormNode&gt;.getSomExpression()	
+*@param srcAdobeNode- the adobe node instance. Starting point to search up the tree
+*returns- the adobe instance of of the given parent name
+*/
+function getParentInstance(parentName,srcAdobeNode){
 
+	var originalSom=srcAdobeNode.somExpression;
+	//1) find the start index of the parent name
+	var parentIndex=originalSom.indexOf(parentName);
+	if(parentIndex&lt;0) return null;
+	//2) remove all the text before the target
+	var shortened=originalSom.substring(parentIndex,originalSom.length-1);
+	//3)find the first dot index after the target
+	var dotIndex=shortened.indexOf(".");
+	var endIndex=parentIndex+dotIndex;
+	//4)get the complete SOM of the target
+	var targetSom=originalSom.substring(0,endIndex);
+	return(xfa.form.resolveNode(targetSom));
+
+}
+/*
+* Convenience function, returns the index number of the desired parent
+*@param parentName- string of the name of the field to search for	
+*@param srcAdobeNode- the adobe node instance. Starting point to search up the tree
+* returns the index of the instance with the parent name. Returns -1 if an instance was not found
+*/
+function getParentIndex(parentName,srcAdobeNode){
+
+		var result=	 getParentInstance(parentName,srcAdobeNode)
+		if(result) return result.index;
+		return -1;
+}
                
                
                
+               
+               
+               
+
                
                
                
@@ -153,8 +190,8 @@ function pad(s, len, chr)
       </subform>
    </subform>
    <?templateDesigner FormTargetVersion 30?>
-   <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?>
-   <?templateDesigner Zoom 116?></template>
+   <?templateDesigner Zoom 135?>
+   <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?></template>
 <config xmlns="http://www.xfa.org/schema/xci/3.0/">
    <agent name="designer">
       <!--  [0..n]  -->
@@ -181,14 +218,14 @@ function pad(s, len, chr)
 <x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.2-c001 63.139439, 2011/06/07-10:39:26        ">
    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
       <rdf:Description xmlns:xmp="http://ns.adobe.com/xap/1.0/" rdf:about="">
-         <xmp:MetadataDate>2015-11-24T18:31:28Z</xmp:MetadataDate>
+         <xmp:MetadataDate>2016-02-12T20:05:09Z</xmp:MetadataDate>
          <xmp:CreatorTool>Adobe LiveCycle Designer ES 10.0</xmp:CreatorTool>
       </rdf:Description>
       <rdf:Description xmlns:pdf="http://ns.adobe.com/pdf/1.3/" rdf:about="">
          <pdf:Producer>Adobe LiveCycle Designer ES 10.0</pdf:Producer>
       </rdf:Description>
       <rdf:Description xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" rdf:about="">
-         <xmpMM:DocumentID>uuid:06a45e2f-7bd5-4981-b254-31473b5b4ec4</xmpMM:DocumentID>
+         <xmpMM:DocumentID>uuid:357f25a6-02a0-41cf-a69a-032237015071</xmpMM:DocumentID>
       </rdf:Description>
       <rdf:Description xmlns:lcd="http://ns.adobe.com/livecycle/designer/" xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:about="">
          <lcd:fragmentCatalog>
