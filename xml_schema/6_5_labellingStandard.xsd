@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<hpfb:schema xmlns:hpfb="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+	<!-- ****************************** -->
+	<!-- ELEMENT DECLARATIONS -->
+	<!-- ****************************** -->
+
+	<hpfb:element name="LABELCHECKLIST" type="label_checklist_content"/>
+	<hpfb:element name="form_lang"/>
+	<hpfb:element name="form_version"/>
+	<hpfb:element name="coverLetter"/>
+	<hpfb:element name="dinCertification"/>
+	<hpfb:element name="cat4Certification"/>
+	<hpfb:element name="feeForm"/>
+	<hpfb:element name="hc3011"/>
+	<hpfb:element name="thirdPartyAuth"/>
+	<hpfb:element name="proposedLabel"/>
+	<hpfb:element name="proposedPackageInsert"/>
+	<hpfb:element name="cat4AnimalTissue"/>
+	<hpfb:element name="labelAnimalTissue"/>
+
+	<!--Main form structure-->
+	<hpfb:complexType name="label_checklist_content">
+		<hpfb:sequence>
+			<hpfb:element ref="form_lang"/>
+			<hpfb:element ref="form_version"/>
+			<hpfb:element ref="coverLetter"/>
+			<hpfb:element ref="dinCertification"/>
+			<hpfb:element ref="cat4Certification"/>
+			<hpfb:element ref="feeForm"/>
+			<hpfb:element ref="hc3011"/>
+			<hpfb:element ref="thirdPartyAuth"/>
+			<hpfb:element ref="proposedLabel"/>
+			<hpfb:element ref="proposedPackageInsert"/>
+			<hpfb:element ref="cat4AnimalTissue"/>
+			<hpfb:element ref="labelAnimalTissue"/>
+		</hpfb:sequence>
+	</hpfb:complexType>
+
+</hpfb:schema>
