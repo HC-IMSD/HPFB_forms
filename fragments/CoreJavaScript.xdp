@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xfa generator="AdobeLiveCycleDesignerES_V10.0.2.20120224.1.869952" APIVersion="3.5.12002.0"?>
-<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2015-11-09T19:06:47Z" uuid="4e7538fe-5c6d-4d71-9b21-57c858dc67fb">
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2016-02-17T16:10:24Z" uuid="49e73350-1df1-43eb-911a-1a2c63465877">
 <template xmlns="http://www.xfa.org/schema/xfa-template/3.0/">
    <?formServer defaultPDFRenderFormat acrobat9.1static?>
    <?formServer allowRenderCaching 0?>
@@ -4226,7 +4226,7 @@ function getLanguage()
 var Log = script.core.util.Log;
 
 var content = { //Required to wrap entries
-core_version: "2.2",
+core_version: "2.3",
 colourError: "230,125,125", 
 colourReadOnly: "245,245,245",
 defaultLanguage: "en",
@@ -4255,6 +4255,10 @@ provinceNodeName: "ddlProvince", //Used by HandlerUtil
 version 2.1
 French states updated the order alphabeticallly
 
+Version 2.3 Feb 2016
+Added an index to form node getName functionality
+This allows unique valdiation for errors per subforn
+Changed resource labels, removed slash and added 'or'
 */
 </script>
                <?templateDesigner expand 1?></variables>
@@ -5324,6 +5328,7 @@ var cTypeChecker = script.core.util.TypeChecker;
 var cTypeEnforcer = script.core.util.TypeEnforcer;
 var cUiUtil = script.core.util.UiUtil; 
 var cValidationFailure = script.core.validation.ValidationFailure;
+var cNodeUtil=		 		script.core.util.NodeUtil;
 
 /**
  * Gets a new FormNode. Adobe does not allow object instances to be created
@@ -5657,7 +5662,7 @@ function FormNodeClass(key)
     this.getName = function(aNode)
     {
     	var label = this.getLabel(aNode);
-    	
+    	var toAdd="";
     	if (label != null)
     	{
     		return label;
@@ -5668,8 +5673,11 @@ function FormNodeClass(key)
     	{
     		return cResourceManager.get(this.key);
     	}
-    	//cLog.info("&gt;&gt;&gt; key: " + this.key);
-    	return this.key;
+    	//if there is no label and has index property, add index to name (ie a subform)
+    	if(aNode &amp;&amp;  cNodeUtil.hasProperty(aNode,"index")){
+        	 	toAdd="_"+aNode.index;
+    	 }
+    	return (this.key)+toAdd;
 	}
 		
 	/**
@@ -8488,12 +8496,12 @@ yes: "Yes",
 
 //==============================================================================
 //===== Geographic Items =======================================================
-city: "City/Town",
+city: "City or Town",
 country: "Country",
 postalCode: "Postal Code",
-postalZipCode: "Postal/ZIP Code",
+postalZipCode: "Postal or ZIP Code",
 province: "Province",
-provinceState: "Province/State",
+provinceState: "Province or State",
 state: "State",
 zipCode: "ZIP Code",
 //===== Geographic Items =======================================================
@@ -8580,9 +8588,9 @@ yes: "Oui",
 city: "Ville",
 country: "Pays",
 postalCode: "Code postal",
-postalZipCode: "Code postal/code de zone",
+postalZipCode: "Code postal ou code de zone",
 province: "Province",
-provinceState: "Province/état",
+provinceState: "Province ou état",
 state: "État",
 zipCode: "Code de zone",
 //===== Geographic Items =======================================================
@@ -20364,7 +20372,7 @@ function compress(byteArray) {
    <?templateDesigner SavePDFWithEmbeddedFonts 1?>
    <?templateDesigner FormTargetVersion 30?>
    <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?>
-   <?templateDesigner Zoom 100?></template>
+   <?templateDesigner Zoom 120?></template>
 <config xmlns="http://www.xfa.org/schema/xci/3.0/">
    <agent name="designer">
       <!--  [0..n]  -->
@@ -20402,14 +20410,14 @@ function compress(byteArray) {
 <x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 4.2.1-c041 52.337767, 2008/04/13-15:41:00        ">
    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
       <rdf:Description xmlns:xmp="http://ns.adobe.com/xap/1.0/" rdf:about="">
-         <xmp:MetadataDate>2015-11-09T19:06:47Z</xmp:MetadataDate>
+         <xmp:MetadataDate>2016-02-17T16:10:24Z</xmp:MetadataDate>
          <xmp:CreatorTool>Adobe LiveCycle Designer ES 10.0</xmp:CreatorTool>
       </rdf:Description>
       <rdf:Description xmlns:pdf="http://ns.adobe.com/pdf/1.3/" rdf:about="">
          <pdf:Producer>Adobe LiveCycle Designer ES 10.0</pdf:Producer>
       </rdf:Description>
       <rdf:Description xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" rdf:about="">
-         <xmpMM:DocumentID>uuid:4e7538fe-5c6d-4d71-9b21-57c858dc67fb</xmpMM:DocumentID>
+         <xmpMM:DocumentID>uuid:49e73350-1df1-43eb-911a-1a2c63465877</xmpMM:DocumentID>
       </rdf:Description>
       <rdf:Description xmlns:lcd="http://ns.adobe.com/livecycle/designer/" xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:about="">
          <lcd:fragmentCatalog>
