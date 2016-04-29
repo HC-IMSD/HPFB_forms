@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<hpfb:schema xmlns:hpfb="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+<!--    <hpfb:include schemaLocation="./common/contact.xsd"/>     -->
+    <hpfb:include schemaLocation="./common/attestation.xsd"/>
+    <hpfb:include schemaLocation="./common/data_types.xsd"/>
+	<!-- ****************************** -->
+	<!-- ELEMENT DECLARATIONS -->
+	<!-- ****************************** -->
+
+	<hpfb:element name="DINSC" type="din_submissiion_cert_content"/>
+	<hpfb:element name="form_lang"/>
+	<hpfb:element name="form_version"/>
+	<hpfb:element name="drug_product_name"/>
+	<hpfb:element name="responsible_officer_info" type="responsible_officer_content"/>
+	<hpfb:element name="officer_salutation"/>
+	<hpfb:element name="officer_given_name"/>
+	<hpfb:element name="officer_surname"/>
+	<hpfb:element name="officer_position_title"/>
+	<hpfb:element name="company_name"/>
+	<hpfb:element name="attestation_info" type="attest_content"/>
+
+	<!--Main form structure-->
+	<hpfb:complexType name="din_submissiion_cert_content">
+                <hpfb:sequence>
+			<hpfb:element ref="form_lang"/>
+			<hpfb:element ref="form_version"/>
+			<hpfb:element ref="drug_product_name"/>
+			<hpfb:element ref="responsible_officer_info"/>
+			<hpfb:element ref="attestation_info"/>
+
+		</hpfb:sequence>
+	</hpfb:complexType>
+
+	<hpfb:complexType name="responsible_officer_content">
+                <hpfb:sequence>
+                        <hpfb:element ref="officer_salutation"/>
+               	        <hpfb:element ref="officer_given_name"/>
+               	        <hpfb:element ref="officer_surname"/>
+                        <hpfb:element ref="officer_position_title"/>
+                        <hpfb:element ref="company_name"/>
+                 </hpfb:sequence>
+        </hpfb:complexType>
+
+</hpfb:schema>
+
+
+

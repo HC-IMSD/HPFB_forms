@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<hpfb:schema xmlns:hpfb="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+<!--    <hpfb:include schemaLocation="./common/contact.xsd"/>     -->
+    <hpfb:include schemaLocation="./common/attestation.xsd"/>
+    <hpfb:include schemaLocation="./common/data_types.xsd"/>
+	<!-- ****************************** -->
+	<!-- ELEMENT DECLARATIONS -->
+	<!-- ****************************** -->
+
+	<hpfb:element name="ACCF" type="manufacturer_changes_content"/>
+	<hpfb:element name="form_lang"/>
+	<hpfb:element name="form_version"/>
+	<hpfb:element name="reason_for_submission_info" type="reason_for_submission_content"/>
+	<hpfb:element name="reason_for_submission"/>
+	<hpfb:element name="merger_dins"/>
+	<hpfb:element name="license_dins"/>
+        <hpfb:element name="existing_din"/>
+	<hpfb:element name="certification_info" type="certification_content"/>
+	<hpfb:element name="submitted_product_name"/>
+	<hpfb:element name="submitted_manufacturer_name"/>
+	<hpfb:element name="current_product_and_manufacturer_name"/>
+	<hpfb:element name="current_din"/>
+	<hpfb:element name="further_certify"/>
+	<hpfb:element name="authorized_official_info" type="authorized_official_content"/>
+	<hpfb:element name="official_salutation"/>
+	<hpfb:element name="official_given_name"/>
+	<hpfb:element name="official_surname"/>
+	<hpfb:element name="official_position_title"/>
+	<hpfb:element name="company_name"/>
+	<hpfb:element name="company_phone_number"/>
+	<hpfb:element name="hconly_info" type="hconly_content"/>
+	<hpfb:element name="hconly_submission_number"/>
+	<hpfb:element name="hconly_filing_date" type="yyyymmdd_date_content"/>
+	<hpfb:element name="hconly_signature"/>
+	<hpfb:element name="attestation_info" type="attest_content"/>
+
+	<!--Main form structure-->
+	<hpfb:complexType name="manufacturer_changes_content">
+                <hpfb:sequence>
+			<hpfb:element ref="form_lang"/>
+			<hpfb:element ref="form_version"/>
+			<hpfb:element ref="reason_for_submission_info"/>
+			<hpfb:element ref="certification_info"/>
+			<hpfb:element ref="authorized_official_info"/>
+			<hpfb:element ref="hconly_info"/>
+			<hpfb:element ref="attestation_info"/>
+
+		</hpfb:sequence>
+	</hpfb:complexType>
+
+	
+	<hpfb:complexType name="reason_for_submission_content">
+		<hpfb:sequence>
+			<hpfb:element ref="reason_for_submission"/>
+			<hpfb:element ref="merger_dins"/>
+			<hpfb:element ref="license_dins"/>
+			<hpfb:element ref="existing_din" minOccurs="0" maxOccurs="5"/>
+		</hpfb:sequence>
+	</hpfb:complexType>
+
+        	<hpfb:complexType name="certification_content">
+		<hpfb:sequence>
+			<hpfb:element ref="submitted_product_name"/>
+			<hpfb:element ref="submitted_manufacturer_name"/>
+			<hpfb:element ref="current_product_and_manufacturer_name"/>
+			<hpfb:element ref="current_din" minOccurs="0" maxOccurs="5"/>
+			<hpfb:element ref="further_certify"/>
+		</hpfb:sequence>
+	</hpfb:complexType>
+
+	<hpfb:complexType name="authorized_official_content">
+                <hpfb:sequence>
+                        <hpfb:element ref="official_salutation"/>
+               	        <hpfb:element ref="official_given_name"/>
+                        <hpfb:element ref="official_surname"/>
+                        <hpfb:element ref="official_position_title"/>
+                        <hpfb:element ref="company_name"/>
+	                <hpfb:element ref="company_phone_number"/>
+                 </hpfb:sequence>
+        </hpfb:complexType>
+
+	<hpfb:complexType name="hconly_content">
+                 <hpfb:sequence>
+			<hpfb:element ref="hconly_submission_number"/>
+			<hpfb:element ref="hconly_filing_date"/>
+			<hpfb:element ref="hconly_signature"/>
+		</hpfb:sequence>
+	</hpfb:complexType>
+
+</hpfb:schema>
+
+
+
+
