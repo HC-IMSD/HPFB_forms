@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xfa generator="AdobeLiveCycleDesignerES_V10.0.2.20120224.1.869952" APIVersion="3.5.12002.0"?>
-<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2016-02-22T15:23:24Z" uuid="13aa69c7-008f-464d-9685-0272261b2d43">
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2016-03-22T15:17:40Z" uuid="515d3e1e-73fc-406e-a9a7-183a4bf807ca">
 <template xmlns="http://www.xfa.org/schema/xfa-template/3.0/">
    <?formServer defaultPDFRenderFormat acrobat9.1static?>
    <subform name="form1" locale="en_CA" layout="tb">
@@ -12,7 +12,7 @@
       </pageSet>
       <subform>
          <variables>
-            <script contentType="application/x-javascript" name="EmailFormatDelegate">
+            <script contentType="application/x-javascript" name="FieldLengthDelegate">
 //
 /*******************************************************************************
  * An object that responds to information requests sent to an email FormNode.
@@ -26,12 +26,12 @@ var cResourceManager = 		script.core.lang.ResourceManager;
 var cConfigurationManager = script.core.util.ConfigurationManager;
 var cUiUtil = 						script.core.util.UiUtil;
 var cValidationFailure = 			script.core.validation.ValidationFailure;
-var cGeneralUtil=			script.HCeForm.util.General;
 
-var _EMAIL_FORMAT_TYPE = "email";
+
+
 
 /*******************************************************************************
- * Gets a new EmailDelegate. Adobe does not allow object instances to be
+ * Gets a new FieldLengthDelegate. Adobe does not allow object instances to be
  * created outside of their packaging, so it must be done here.
  * Note that this is only intended for use by FormNodeFactory. All instances
  * should be created by that class.
@@ -39,61 +39,39 @@ var _EMAIL_FORMAT_TYPE = "email";
  */
 function createInstance()
 {
-	return new EmailFormatDelegateClass();
+	return new FieldLengthDelegateClass();
 }
 
 /**
  * Class implementation
  */
-function EmailFormatDelegateClass(somExpression)
+function FieldLengthDelegateClass(somExpression)
 {
-	this.className = "EmailFormatDelegate";
+	this.className = "FieldLengthDelegate";
 	this.errorResourceAlias="";
-	this.formNode;
-	this.base_errorAlias="error_emailFormat";
-	this.errorRootAlias=null;
-	this.nodeAlias=null;
-	
-	
-	/*
-	* this is the resource file alias for the text that identifies the subform the field is on
-	* For example: "For trial site". The delegate adds the index of the subform
-	* This text is optional, it isn't needed if you have only one instance of a specific postal code
-	*/
-	this.setErrorRootText=function(aliasName){
-	
-		this.errorRootAlias=aliasName;
-	}
-	
-	/* Optional -sets the string alias to the name of the root node (ie the field name)
-	**
-	*/
-	this.setNodeAlias = function(bar)
-	{
-		this.nodeAlias=bar;
-	}
-	
-	/*
-	* this is the resource file alias for the text that identifies the subform the field is on
-	* For example: "For trial site". The delegate adds the index of the subform
-	* This text is optional, it isn't needed if you have only one instance of a specific postal code
-	*/
-	this.setErrorRootText=function(aliasName){
-	
-		this.errorRootAlias=aliasName;
-	}	
-	
+	this.fieldLength=6;
+	this.formNode;	
 	/**
 	 * Sets custom error text 
 	 *
-	 * @param aFormNode the FormNode that is using this delegate.
+	 * @param aliasName the resource alias to search for. Will be converted to localized text
 	 */
 	this.setErrorText = function(aliasName)
     {    	
     	this.errorResourceAlias=aliasName;
     }
 	
-
+		/**
+		 * Sets the field length to check for. If this value is not set
+		 * use the maximum length of the field
+		 * @param fldLength- the length to check for
+		 */
+		this.setFieldLength = function(fldSize)
+	    {    	
+	    	this.fieldLength=fldSize;
+	    }
+	
+	
 	/**
 	 * Gets this node's default value, which is an internationalized value.
 	 * This returns null since this uses a picklist.
@@ -204,28 +182,35 @@ function EmailFormatDelegateClass(somExpression)
 									aValidationFailure);
 		
 		if(!aNodeInstance.isNull){
-		
-			var regExpress=/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-			var resourceError=cResourceManager.get(this.base_errorAlias);
+				var temp=""+aNodeInstance.rawValue //force to a string
+				var fldLength=temp.length;
+				if(this.fieldLength!=fldLength){
+				
+					//error
+					this.createError(aNodeInstance,updateDisplay,aValidationFailure)
+				
+				}else{
+				cUiUtil.resetColour(aNodeInstance); //In case it previously failed
+			}		
 			
-			if(!regExpress.test(aNodeInstance.rawValue)){
-				if(updateDisplay===true){
+		}			
+		return aValidationFailure;
+	}
+	
+	this.createError=function(aNodeInstance,updateDisplay,aValidationFailure)	{
+	
+		if(updateDisplay===true){
 					cUiUtil.setColour(aNodeInstance,
 										cConfigurationManager.get("colourError"))
-				}						
-				var errorMsg=cResourceManager.get(this.errorResourceAlias)+resourceError;	
-				if(this.errorRootAlias &amp;&amp; this.nodeAlias){
-					var errorPart1msg=cResourceManager.get(this.errorRootAlias);
-					var rootIndex= (cGeneralUtil.getParentIndex(this.nodeAlias,aNodeInstance))+1;
-					if(rootIndex&gt;=0){
-					errorPart1msg=errorPart1msg+" "+rootIndex+", ";
-					}
-					errorMsg=errorPart1msg+" "+errorMsg;
-					validationType="PostalCodeValidation_"+rootIndex;
 				}
-									
+				var errorMsg="";						
+				if(this.errorResourceAlias){
+					errorMsg=cResourceManager.get(this.errorResourceAlias);
+				}else{
+					errorMsg=aNodeInstance.caption.value.text.value;
+				}						
 				var newValidationFailure = cValidationFailure.createInstance(
-										"EmailValidation",errorMsg);
+										"fieldLengthValidation",errorMsg);
 				if (aValidationFailure != null)
 				{
 					aValidationFailure.addNestedValidationFailure(newValidationFailure);
@@ -233,13 +218,9 @@ function EmailFormatDelegateClass(somExpression)
 				else
 				{
 					aValidationFailure = newValidationFailure;
-				}						
-			}else{
-				cUiUtil.resetColour(aNodeInstance); //In case it previously failed
-			}
-		}			
-		return aValidationFailure;
+				}				
 	}
+	
 			
     /**
      * Describes this object. This is implemented in all objects since their
@@ -282,20 +263,19 @@ function EmailFormatDelegateClass(somExpression)
                
                
                
-
                
+
                
                
 
                <?templateDesigner isFragment yes?>
-               <?templateDesigner fragmentTitle EmailFormatDelegate?>
-               <?templateDesigner fragmentDescription Validaties the format of an email address?></script>
+               <?templateDesigner fragmentTitle FieldLengthDelegate?></script>
          </variables>
       </subform>
    </subform>
    <?templateDesigner FormTargetVersion 30?>
-   <?templateDesigner Zoom 145?>
-   <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?></template>
+   <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?>
+   <?templateDesigner Zoom 139?></template>
 <config xmlns="http://www.xfa.org/schema/xci/3.0/">
    <agent name="designer">
       <!--  [0..n]  -->
@@ -322,14 +302,14 @@ function EmailFormatDelegateClass(somExpression)
 <x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.2-c001 63.139439, 2011/06/07-10:39:26        ">
    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
       <rdf:Description xmlns:xmp="http://ns.adobe.com/xap/1.0/" rdf:about="">
-         <xmp:MetadataDate>2016-02-22T15:23:24Z</xmp:MetadataDate>
+         <xmp:MetadataDate>2016-03-22T15:17:40Z</xmp:MetadataDate>
          <xmp:CreatorTool>Adobe LiveCycle Designer ES 10.0</xmp:CreatorTool>
       </rdf:Description>
       <rdf:Description xmlns:pdf="http://ns.adobe.com/pdf/1.3/" rdf:about="">
          <pdf:Producer>Adobe LiveCycle Designer ES 10.0</pdf:Producer>
       </rdf:Description>
       <rdf:Description xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" rdf:about="">
-         <xmpMM:DocumentID>uuid:13aa69c7-008f-464d-9685-0272261b2d43</xmpMM:DocumentID>
+         <xmpMM:DocumentID>uuid:515d3e1e-73fc-406e-a9a7-183a4bf807ca</xmpMM:DocumentID>
       </rdf:Description>
       <rdf:Description xmlns:lcd="http://ns.adobe.com/livecycle/designer/" xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:about="">
          <lcd:fragmentCatalog>
@@ -337,15 +317,15 @@ function EmailFormatDelegateClass(somExpression)
                <rdf:li rdf:parseType="Resource">
                   <dc:title>
                      <rdf:Alt>
-                        <rdf:li xml:lang="x-default">EmailFormatDelegate</rdf:li>
+                        <rdf:li xml:lang="x-default">FieldLengthDelegate</rdf:li>
                      </rdf:Alt>
                   </dc:title>
                   <dc:description>
                      <rdf:Alt>
-                        <rdf:li xml:lang="x-default">Validaties the format of an email address</rdf:li>
+                        <rdf:li xml:lang="x-default"/>
                      </rdf:Alt>
                   </dc:description>
-                  <dc:identifier>$template.form1.#subform.#variables.EmailFormatDelegate</dc:identifier>
+                  <dc:identifier>$template.form1.#subform.#variables.FieldLengthDelegate</dc:identifier>
                   <lcd:fragmentRole>ScriptObject</lcd:fragmentRole>
                </rdf:li>
             </rdf:Seq>
