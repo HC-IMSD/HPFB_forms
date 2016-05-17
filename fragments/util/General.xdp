@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xfa generator="AdobeLiveCycleDesignerES_V10.0.2.20120224.1.869952" APIVersion="3.5.12002.0"?>
-<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2016-02-12T20:05:09Z" uuid="357f25a6-02a0-41cf-a69a-032237015071">
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2016-02-29T19:23:51Z" uuid="2c34282b-189d-42b1-98e8-44dc7166460a">
 <template xmlns="http://www.xfa.org/schema/xfa-template/3.0/">
    <?formServer defaultPDFRenderFormat acrobat9.1static?>
    <subform name="form1" locale="en_CA" layout="tb">
@@ -76,6 +76,9 @@ function removeSubformInstance(sfInstance){
 
 	var fieldFormNode=			cFormNodeManager.getFormNodeForSom(sfInstance.somExpression);
 	var instanceManager=		fieldFormNode.getInstanceManager();
+	cLog.trace("Instance Manager "+instanceManager);
+	cLog.trace("Instance Manager count "+instanceManager.count);
+	cLog.trace("Instance Manager min "+instanceManager.min);
 	return(removeSpecificSubformInstance(instanceManager,sfInstance));
 
 }
@@ -183,6 +186,10 @@ function getParentIndex(parentName,srcAdobeNode){
                
                
 
+               
+               
+               
+
                <?templateDesigner isFragment yes?>
                <?templateDesigner fragmentTitle GeneralUtil?>
                <?templateDesigner fragmentDescription Contains general UI utilitites?></script>
@@ -190,7 +197,7 @@ function getParentIndex(parentName,srcAdobeNode){
       </subform>
    </subform>
    <?templateDesigner FormTargetVersion 30?>
-   <?templateDesigner Zoom 135?>
+   <?templateDesigner Zoom 136?>
    <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?></template>
 <config xmlns="http://www.xfa.org/schema/xci/3.0/">
    <agent name="designer">
@@ -218,14 +225,14 @@ function getParentIndex(parentName,srcAdobeNode){
 <x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.2-c001 63.139439, 2011/06/07-10:39:26        ">
    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
       <rdf:Description xmlns:xmp="http://ns.adobe.com/xap/1.0/" rdf:about="">
-         <xmp:MetadataDate>2016-02-12T20:05:09Z</xmp:MetadataDate>
+         <xmp:MetadataDate>2016-02-29T19:23:51Z</xmp:MetadataDate>
          <xmp:CreatorTool>Adobe LiveCycle Designer ES 10.0</xmp:CreatorTool>
       </rdf:Description>
       <rdf:Description xmlns:pdf="http://ns.adobe.com/pdf/1.3/" rdf:about="">
          <pdf:Producer>Adobe LiveCycle Designer ES 10.0</pdf:Producer>
       </rdf:Description>
       <rdf:Description xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" rdf:about="">
-         <xmpMM:DocumentID>uuid:357f25a6-02a0-41cf-a69a-032237015071</xmpMM:DocumentID>
+         <xmpMM:DocumentID>uuid:2c34282b-189d-42b1-98e8-44dc7166460a</xmpMM:DocumentID>
       </rdf:Description>
       <rdf:Description xmlns:lcd="http://ns.adobe.com/livecycle/designer/" xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:about="">
          <lcd:fragmentCatalog>
