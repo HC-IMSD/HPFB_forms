@@ -6,8 +6,8 @@
 	<!-- ****************************** -->
 
 	<hpfb:element name="LABELCHECKLIST" type="label_checklist_content"/>
-	<hpfb:element name="form_lang"/>
-	<hpfb:element name="form_version"/>
+	<hpfb:element name="language"/>
+	<hpfb:element name="version"/>
 	<hpfb:element name="coverLetter"/>
 	<hpfb:element name="dinCertification"/>
 	<hpfb:element name="cat4Certification"/>

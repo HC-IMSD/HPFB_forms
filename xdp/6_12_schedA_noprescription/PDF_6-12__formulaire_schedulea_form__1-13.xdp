@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xfa generator="AdobeLiveCycleDesignerES_V10.0.2.20120224.1.869952" APIVersion="3.5.12002.0"?>
-<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2015-08-17T15:32:10Z" uuid="4b07630e-3664-4090-922f-56de7e5f609d">
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2016-04-29T14:28:59Z" uuid="4c130318-2c7f-4c56-825f-428532825bab">
 <template xmlns="http://www.xfa.org/schema/xfa-template/3.0/">
    <?formServer defaultPDFRenderFormat acrobat9.1dynamic?>
    <?formServer allowRenderCaching 0?>
    <?formServer formModel client?>
-   <subform name="HCeForm" layout="tb" locale="en_CA" restoreState="auto">
+   <subform name="QIU" layout="tb" locale="en_CA" restoreState="auto">
       <pageSet>
          <pageArea name="Page1" id="Page1">
             <contentArea w="203.2mm" h="249.476mm" x="6.351mm" y="16.198mm" name="contentArea"/>
@@ -926,7 +926,7 @@ this.rawValue = HCeForm.desc.version.value.replace(/\$/g, "");
                <bind match="none"/>
             </field>
             <?templateDesigner expand 1?></pageArea>
-         <?templateDesigner expand 1?></pageSet>
+         <?templateDesigner expand 0?></pageSet>
       <subform w="576pt" name="sfPage1" layout="lr-tb">
          <subform w="203.2mm" h="34.805mm" name="sfMainHeader">
             <draw name="lblFormTitle" w="193.675mm" h="22.731mm" y="2.386mm" x="4.762mm">
@@ -1053,7 +1053,9 @@ catch(exception)
                   <speak disable="1"/>
                </assist>
                <?templateDesigner expand 1?></exclGroup>
-            <?templateDesigner expand 1?></subform>
+            <?templateDesigner expand 1?>
+            <bind match="none"/>
+         </subform>
          <field name="lblMandatory" w="202.83mm" h="12.7mm" colSpan="2" access="protected">
             <ui>
                <textEdit>
@@ -1205,13 +1207,17 @@ this.fillColor ="212,208,200";
                   <edge/>
                   <corner thickness="0.175mm"/>
                </border>
-               <?templateDesigner expand 1?></subform>
+               <?templateDesigner expand 1?>
+               <bind match="none"/>
+            </subform>
             <border>
                <edge presence="hidden"/>
                <corner presence="hidden" thickness="0.175mm"/>
             </border>
             <margin bottomInset="5.08mm"/>
-            <?templateDesigner expand 1?></subform>
+            <?templateDesigner expand 1?>
+            <bind match="none"/>
+         </subform>
          <subform w="201.767mm" name="sfHCInstruction" layout="tb" presence="hidden">
             <draw name="lblHCInstruction" w="202.692mm" minH="30.012mm">
                <ui>
@@ -1235,7 +1241,9 @@ this.fillColor ="212,208,200";
                <edge presence="hidden"/>
                <corner thickness="0.175mm" presence="hidden"/>
             </border>
-            <?templateDesigner expand 1?></subform>
+            <?templateDesigner expand 1?>
+            <bind match="none"/>
+         </subform>
          <subform w="203.037mm" name="sfPartA" layout="lr-tb">
             <border>
                <edge presence="hidden"/>
@@ -1311,6 +1319,7 @@ this.fillColor ="212,208,200";
 this.resolveNode("script.validation.#variables.formValidation").isFilled(this);
 </script>
                </event>
+               <bind match="none"/>
             </field>
             <field name="txtProduct" w="202.692mm" h="13.883mm">
                <ui>
@@ -1343,6 +1352,7 @@ this.resolveNode("script.validation.#variables.formValidation").isFilled(this);
 this.resolveNode("script.validation.#variables.formValidation").isFilled(this);
 </script>
                </event>
+               <bind match="none"/>
             </field>
             <field name="txtDIN" w="202.692mm" h="9.463mm">
                <ui>
@@ -1377,8 +1387,11 @@ this.resolveNode("script.validation.#variables.formValidation").isFilled(this);
 this.resolveNode("script.validation.#variables.formValidation").isNumericValid(this,8);
 </script>
                </event>
+               <bind match="none"/>
             </field>
-            <?templateDesigner expand 1?></subform>
+            <?templateDesigner expand 1?>
+            <bind match="none"/>
+         </subform>
          <subform w="203.037mm" name="sfPartB" layout="tb">
             <draw name="lblPartB" w="202.692mm" h="7.974mm">
                <ui>
@@ -1424,6 +1437,7 @@ this.resolveNode("script.validation.#variables.formValidation").isNumericValid(t
                <assist>
                   <speak disable="1"/>
                </assist>
+               <bind match="none"/>
             </field>
             <subform name="Table1" layout="table" columnWidths="94.1414mm 108.517mm">
                <border>
@@ -1464,6 +1478,7 @@ this.resolveNode("script.validation.#variables.formValidation").isNumericValid(t
                         <edge/>
                         <corner thickness="0.1778mm"/>
                      </border>
+                     <bind match="dataRef" ref="$.schedule_a_info.alcoholism"/>
                   </field>
                   <field name="chkBox2" w="108.682mm" h="8.216mm">
                      <ui>
@@ -1497,11 +1512,14 @@ this.resolveNode("script.validation.#variables.formValidation").isNumericValid(t
                         <edge/>
                         <corner thickness="0.1778mm"/>
                      </border>
+                     <bind match="dataRef" ref="$.schedule_a_info.gangrene"/>
                   </field>
                   <border>
                      <edge presence="hidden"/>
                   </border>
-                  <?templateDesigner expand 1?></subform>
+                  <?templateDesigner expand 1?>
+                  <bind match="none"/>
+               </subform>
                <subform layout="row" name="rowRow2" x="0.003mm" y="0.002mm">
                   <assist role="TR"/>
                   <field name="chkBox3" w="94.333mm" h="6.798mm">
@@ -1536,6 +1554,7 @@ this.resolveNode("script.validation.#variables.formValidation").isNumericValid(t
                         <edge/>
                         <corner thickness="0.1778mm"/>
                      </border>
+                     <bind match="dataRef" ref="$.schedule_a_info.anxiety"/>
                   </field>
                   <field name="chkBox4" w="108.682mm" h="6.798mm">
                      <ui>
@@ -1569,11 +1588,14 @@ this.resolveNode("script.validation.#variables.formValidation").isNumericValid(t
                         <edge/>
                         <corner thickness="0.1778mm"/>
                      </border>
+                     <bind match="dataRef" ref="$.schedule_a_info.glaucoma"/>
                   </field>
                   <border>
                      <edge presence="hidden"/>
                   </border>
-                  <?templateDesigner expand 1?></subform>
+                  <?templateDesigner expand 1?>
+                  <bind match="none"/>
+               </subform>
                <?templateDesigner Assist false?>
                <subform layout="row" name="rowRow3" x="0.003mm" y="0.002mm">
                   <assist role="TR"/>
@@ -1609,6 +1631,7 @@ this.resolveNode("script.validation.#variables.formValidation").isNumericValid(t
                         <edge/>
                         <corner thickness="0.1778mm"/>
                      </border>
+                     <bind match="none"/>
                   </field>
                   <field name="chkBox6" w="108.682mm" h="8.216mm">
                      <ui>
@@ -1642,8 +1665,11 @@ this.resolveNode("script.validation.#variables.formValidation").isNumericValid(t
                         <edge/>
                         <corner thickness="0.1778mm"/>
                      </border>
+                     <bind match="none"/>
                   </field>
-                  <?templateDesigner expand 1?></subform>
+                  <?templateDesigner expand 1?>
+                  <bind match="none"/>
+               </subform>
                <subform layout="row" name="rowRow4" x="0.003mm" y="0.002mm">
                   <assist role="TR"/>
                   <field name="chkBox7" w="94.333mm" h="8.216mm" x="0.001mm">
@@ -1678,6 +1704,7 @@ this.resolveNode("script.validation.#variables.formValidation").isNumericValid(t
                         <edge/>
                         <corner thickness="0.1778mm"/>
                      </border>
+                     <bind match="none"/>
                   </field>
                   <field name="chkBox8" w="108.682mm" h="8.216mm">
                      <ui>
@@ -1711,8 +1738,11 @@ this.resolveNode("script.validation.#variables.formValidation").isNumericValid(t
                         <edge/>
                         <corner thickness="0.1778mm"/>
                      </border>
+                     <bind match="none"/>
                   </field>
-                  <?templateDesigner expand 1?></subform>
+                  <?templateDesigner expand 1?>
+                  <bind match="none"/>
+               </subform>
                <subform layout="row" name="rowRow5" x="0.003mm" y="0.002mm">
                   <assist role="TR"/>
                   <field name="chkBox9" w="94.333mm" h="7.003mm" x="0.001mm" y="0mm">
@@ -1747,6 +1777,7 @@ this.resolveNode("script.validation.#variables.formValidation").isNumericValid(t
                         <edge/>
                         <corner thickness="0.1778mm"/>
                      </border>
+                     <bind match="none"/>
                   </field>
                   <field name="chkBox10" w="108.682mm" h="7.003mm">
                      <ui>
@@ -1780,8 +1811,11 @@ this.resolveNode("script.validation.#variables.formValidation").isNumericValid(t
                         <edge/>
                         <corner thickness="0.1778mm"/>
                      </border>
+                     <bind match="none"/>
                   </field>
-                  <?templateDesigner expand 1?></subform>
+                  <?templateDesigner expand 1?>
+                  <bind match="none"/>
+               </subform>
                <subform layout="row" name="rowRow6" x="0.003mm" y="0.002mm">
                   <assist role="TR"/>
                   <field name="chkBox11" w="94.333mm" h="8.216mm" x="0.002mm" y="0mm">
@@ -1816,6 +1850,7 @@ this.resolveNode("script.validation.#variables.formValidation").isNumericValid(t
                         <edge/>
                         <corner thickness="0.1778mm"/>
                      </border>
+                     <bind match="none"/>
                   </field>
                   <field name="chkBox12" w="108.682mm" h="8.216mm" y="0mm">
                      <ui>
@@ -1849,8 +1884,11 @@ this.resolveNode("script.validation.#variables.formValidation").isNumericValid(t
                         <edge/>
                         <corner thickness="0.1778mm"/>
                      </border>
+                     <bind match="none"/>
                   </field>
-                  <?templateDesigner expand 1?></subform>
+                  <?templateDesigner expand 1?>
+                  <bind match="none"/>
+               </subform>
                <subform layout="row" name="rowRow7" x="0.003mm" y="0.002mm">
                   <assist role="TR"/>
                   <field name="chkBox13" w="94.333mm" h="7.787mm" x="0.001mm" y="0mm">
@@ -1885,6 +1923,7 @@ this.resolveNode("script.validation.#variables.formValidation").isNumericValid(t
                         <edge/>
                         <corner thickness="0.1778mm"/>
                      </border>
+                     <bind match="none"/>
                   </field>
                   <field name="chkBox14" w="108.682mm" h="7.787mm" y="0mm">
                      <ui>
@@ -1918,8 +1957,11 @@ this.resolveNode("script.validation.#variables.formValidation").isNumericValid(t
                         <edge/>
                         <corner thickness="0.1778mm"/>
                      </border>
+                     <bind match="none"/>
                   </field>
-                  <?templateDesigner expand 1?></subform>
+                  <?templateDesigner expand 1?>
+                  <bind match="none"/>
+               </subform>
                <subform layout="row" name="rowRow8" x="0.003mm" y="0.002mm">
                   <assist role="TR"/>
                   <field name="chkBox15" w="94.333mm" h="8.216mm" x="0.001mm">
@@ -1954,6 +1996,7 @@ this.resolveNode("script.validation.#variables.formValidation").isNumericValid(t
                         <edge/>
                         <corner thickness="0.1778mm"/>
                      </border>
+                     <bind match="none"/>
                   </field>
                   <field name="chkBox16" w="108.682mm" h="8.216mm">
                      <ui>
@@ -1987,8 +2030,11 @@ this.resolveNode("script.validation.#variables.formValidation").isNumericValid(t
                         <edge/>
                         <corner thickness="0.1778mm"/>
                      </border>
+                     <bind match="none"/>
                   </field>
-                  <?templateDesigner expand 1?></subform>
+                  <?templateDesigner expand 1?>
+                  <bind match="none"/>
+               </subform>
                <subform layout="row" name="rowRow9" x="0.003mm" y="0.002mm">
                   <assist role="TR"/>
                   <field name="chkBox17" w="94.333mm" h="8.216mm">
@@ -2023,6 +2069,7 @@ this.resolveNode("script.validation.#variables.formValidation").isNumericValid(t
                         <edge/>
                         <corner thickness="0.1778mm"/>
                      </border>
+                     <bind match="none"/>
                   </field>
                   <field name="chkBox18" w="108.682mm" h="8.216mm">
                      <ui>
@@ -2056,8 +2103,11 @@ this.resolveNode("script.validation.#variables.formValidation").isNumericValid(t
                         <edge/>
                         <corner thickness="0.1778mm"/>
                      </border>
+                     <bind match="none"/>
                   </field>
-                  <?templateDesigner expand 1?></subform>
+                  <?templateDesigner expand 1?>
+                  <bind match="none"/>
+               </subform>
                <subform layout="row" name="rowRow10" x="0.003mm" y="0.002mm">
                   <assist role="TR"/>
                   <field name="chkBox19" w="94.333mm" h="8.216mm" x="0.001mm" y="0mm">
@@ -2092,6 +2142,7 @@ this.resolveNode("script.validation.#variables.formValidation").isNumericValid(t
                         <edge/>
                         <corner thickness="0.1778mm"/>
                      </border>
+                     <bind match="none"/>
                   </field>
                   <field name="chkBox20" w="108.682mm" h="8.216mm">
                      <ui>
@@ -2125,8 +2176,11 @@ this.resolveNode("script.validation.#variables.formValidation").isNumericValid(t
                         <edge/>
                         <corner thickness="0.1778mm"/>
                      </border>
+                     <bind match="none"/>
                   </field>
-                  <?templateDesigner expand 1?></subform>
+                  <?templateDesigner expand 1?>
+                  <bind match="none"/>
+               </subform>
                <subform layout="row" name="rowRow11" x="0.003mm" y="0.002mm">
                   <assist role="TR"/>
                   <field name="chkBox21" w="94.333mm" h="8.562mm" x="0.001mm" y="0mm">
@@ -2161,6 +2215,7 @@ this.resolveNode("script.validation.#variables.formValidation").isNumericValid(t
                         <edge/>
                         <corner thickness="0.1778mm"/>
                      </border>
+                     <bind match="none"/>
                   </field>
                   <field name="chkBox22" w="108.682mm" h="8.562mm">
                      <ui>
@@ -2194,8 +2249,11 @@ this.resolveNode("script.validation.#variables.formValidation").isNumericValid(t
                         <edge/>
                         <corner thickness="0.1778mm"/>
                      </border>
+                     <bind match="none"/>
                   </field>
-                  <?templateDesigner expand 1?></subform>
+                  <?templateDesigner expand 1?>
+                  <bind match="none"/>
+               </subform>
                <subform layout="row" name="rowRow12" x="0.003mm" y="0.002mm">
                   <assist role="TR"/>
                   <field name="chkBox23" w="94.333mm" h="8.216mm" x="0.001mm" y="0mm">
@@ -2230,6 +2288,7 @@ this.resolveNode("script.validation.#variables.formValidation").isNumericValid(t
                         <edge/>
                         <corner thickness="0.1778mm"/>
                      </border>
+                     <bind match="none"/>
                   </field>
                   <field name="chkBox24" w="108.682mm" h="8.216mm" y="0mm">
                      <ui>
@@ -2263,8 +2322,11 @@ this.resolveNode("script.validation.#variables.formValidation").isNumericValid(t
                         <edge/>
                         <corner thickness="0.1778mm"/>
                      </border>
+                     <bind match="none"/>
                   </field>
-                  <?templateDesigner expand 1?></subform>
+                  <?templateDesigner expand 1?>
+                  <bind match="none"/>
+               </subform>
                <subform layout="row" name="rowRow13" x="0.003mm" y="0.002mm">
                   <assist role="TR"/>
                   <field name="chkBox25" w="94.333mm" h="8.216mm" x="0.001mm" y="0mm">
@@ -2299,6 +2361,7 @@ this.resolveNode("script.validation.#variables.formValidation").isNumericValid(t
                         <edge/>
                         <corner thickness="0.1778mm"/>
                      </border>
+                     <bind match="none"/>
                   </field>
                   <field name="chkBox26" w="108.682mm" h="8.216mm" y="0mm">
                      <ui>
@@ -2332,8 +2395,11 @@ this.resolveNode("script.validation.#variables.formValidation").isNumericValid(t
                         <edge/>
                         <corner thickness="0.1778mm"/>
                      </border>
+                     <bind match="none"/>
                   </field>
-                  <?templateDesigner expand 1?></subform>
+                  <?templateDesigner expand 1?>
+                  <bind match="none"/>
+               </subform>
                <subform layout="row" name="rowRow14" x="0.003mm" y="0.002mm">
                   <assist role="TR"/>
                   <field name="chkBox27" w="94.333mm" h="8.216mm" x="0.001mm">
@@ -2368,6 +2434,7 @@ this.resolveNode("script.validation.#variables.formValidation").isNumericValid(t
                         <edge/>
                         <corner thickness="0.1778mm"/>
                      </border>
+                     <bind match="none"/>
                   </field>
                   <field name="chkBox28" w="108.682mm" h="8.216mm">
                      <ui>
@@ -2401,8 +2468,11 @@ this.resolveNode("script.validation.#variables.formValidation").isNumericValid(t
                         <edge/>
                         <corner thickness="0.1778mm"/>
                      </border>
+                     <bind match="none"/>
                   </field>
-                  <?templateDesigner expand 1?></subform>
+                  <?templateDesigner expand 1?>
+                  <bind match="none"/>
+               </subform>
                <subform layout="row" name="rowRow15" x="0.003mm" y="0.002mm">
                   <assist role="TR"/>
                   <field name="chkBox29" w="94.333mm" h="8.216mm" x="0.001mm">
@@ -2437,6 +2507,7 @@ this.resolveNode("script.validation.#variables.formValidation").isNumericValid(t
                         <edge/>
                         <corner thickness="0.1778mm"/>
                      </border>
+                     <bind match="none"/>
                   </field>
                   <draw h="8.2162mm" name="lblBlank">
                      <ui>
@@ -2452,9 +2523,15 @@ this.resolveNode("script.validation.#variables.formValidation").isNumericValid(t
                         <corner thickness="0.1778mm"/>
                      </border>
                   </draw>
-                  <?templateDesigner expand 1?></subform>
-               <?templateDesigner expand 1?></subform>
-            <?templateDesigner expand 1?></subform>
+                  <?templateDesigner expand 1?>
+                  <bind match="none"/>
+               </subform>
+               <?templateDesigner expand 1?>
+               <bind match="none"/>
+            </subform>
+            <?templateDesigner expand 1?>
+            <bind match="none"/>
+         </subform>
          <margin topInset="0mm" bottomInset="0mm" leftInset="0mm" rightInset="0mm"/>
          <subform name="sfAuthSignOfficial" layout="lr-tb" w="203.107mm">
             <subform w="203.2mm" layout="lr-tb" name="sfHeader">
@@ -2557,6 +2634,7 @@ this.resolveNode("script.validation.#variables.formValidation").isNumericValid(t
 this.resolveNode("script.validation.#variables.formValidation").isFilled(this);
 </script>
                   </event>
+                  <bind match="none"/>
                </field>
                <field h="11.43mm" name="txtGivenNameAttestation" w="50.8mm">
                   <border>
@@ -2587,6 +2665,7 @@ this.resolveNode("script.validation.#variables.formValidation").isFilled(this);
 this.resolveNode("script.validation.#variables.formValidation").isFilled(this);
 </script>
                   </event>
+                  <bind match="none"/>
                </field>
                <field h="11.43mm" name="txtSurnameAttestation" w="50.8mm">
                   <border>
@@ -2617,6 +2696,7 @@ this.resolveNode("script.validation.#variables.formValidation").isFilled(this);
 this.resolveNode("script.validation.#variables.formValidation").isFilled(this);
 </script>
                   </event>
+                  <bind match="none"/>
                </field>
                <field h="11.43mm" name="txtTitleAttestation" w="75.692mm">
                   <border>
@@ -2647,6 +2727,7 @@ this.resolveNode("script.validation.#variables.formValidation").isFilled(this);
 this.resolveNode("script.validation.#variables.formValidation").isFilled(this);
 </script>
                   </event>
+                  <bind match="none"/>
                </field>
                <field name="sigSignatureAttestation" w="114.848mm" h="8.939mm" presence="inactive">
                   <ui>
@@ -2707,7 +2788,7 @@ this.resolveNode("script.validation.#variables.formValidation").isFilled(this);
                   <validate>
                      <picture>date{YYYY-MM-DD}</picture>
                   </validate>
-                  <bind>
+                  <bind match="none">
                      <picture>date{YYYY-MM-DD}</picture>
                   </bind>
                   <event activity="exit" name="event__exit">
@@ -2891,8 +2972,10 @@ if (this.rawValue !== null) {
 }
 </script>
                            </event>
+                           <bind match="none"/>
                         </field>
                         <?templateDesigner expand 1?>
+                        <bind match="none"/>
                      </subform>
                      <field access="protected" h="9mm" name="dateSignedField" w="101.6mm">
                         <caption reserve="25.4mm">
@@ -2920,8 +3003,11 @@ if (this.rawValue !== null) {
                         <value>
                            <date/>
                         </value>
-                        <?templateDesigner expand 1?></field>
+                        <?templateDesigner expand 1?>
+                        <bind match="none"/>
+                     </field>
                      <?templateDesigner expand 1?>
+                     <bind match="none"/>
                   </subform>
                   <subform layout="tb" name="sfSignatureRBG" w="47.625mm">
                      <exclGroup layout="tb" name="signatureRBG">
@@ -2990,8 +3076,12 @@ AttestationModule.initDsig();
                            </event>
                         </field>
                         <?templateDesigner itemValuesSpecified 1?>
-                        <?templateDesigner expand 1?></exclGroup>
-                     <?templateDesigner expand 1?></subform>
+                        <?templateDesigner expand 1?>
+                        <bind match="none"/>
+                     </exclGroup>
+                     <?templateDesigner expand 1?>
+                     <bind match="none"/>
+                  </subform>
                   <field presence="hidden" access="readOnly" h="6mm" name="isSigned" w="7mm">
                      <font typeface="Myriad Pro"/>
                      <items>
@@ -3012,8 +3102,10 @@ AttestationModule.initDsig();
                      <value>
                         <integer>0</integer>
                      </value>
+                     <bind match="none"/>
                   </field>
                   <?templateDesigner expand 1?>
+                  <bind match="none"/>
                </subform>
                <field name="txtCompany" w="202.692mm" h="20.887mm">
                   <ui>
@@ -3039,8 +3131,10 @@ AttestationModule.initDsig();
                      <edge/>
                      <corner thickness="0.175mm"/>
                   </border>
+                  <bind match="none"/>
                </field>
                <?templateDesigner expand 1?>
+               <bind match="none"/>
             </subform>
             <border>
                <edge presence="hidden"/>
@@ -3101,6 +3195,7 @@ AttestationModule.initDsig();
                      <assist>
                         <toolTip>	Where applicable, state the number of volumes contained in the drug submission. Indicate the number of original volumes, followed by the number of duplicate copies.</toolTip>
                      </assist>
+                     <bind match="none"/>
                   </field>
                   <field name="ddtSignedOn" w="107.656mm" h="6.985mm">
                      <ui>
@@ -3133,7 +3228,7 @@ AttestationModule.initDsig();
                         <edge/>
                         <corner thickness="0.175mm"/>
                      </border>
-                     <bind>
+                     <bind match="none">
                         <picture>date{YYYY-MM-DD}</picture>
                      </bind>
                      <validate>
@@ -3174,7 +3269,9 @@ AttestationModule.initDsig();
                         <corner thickness="0.175mm"/>
                      </border>
                   </field>
-                  <?templateDesigner expand 1?></subform>
+                  <?templateDesigner expand 1?>
+                  <bind match="none"/>
+               </subform>
                <margin topInset="5.08mm"/>
                <field name="btnFinalizeAndLock" w="28.575mm" h="6.35mm" y="0.453mm" x="1.28mm" relevant="-print">
                   <ui>
@@ -3324,18 +3421,22 @@ this.fillColor ="212,208,200";
 </script>
                   </event>
                </field>
-               <?templateDesigner expand 1?></subform>
+               <?templateDesigner expand 1?>
+               <bind match="none"/>
+            </subform>
             <?templateDesigner expand 1?>
+            <bind match="none"/>
          </subform>
+         <bind match="none"/>
          <?templateDesigner expand 1?>
       </subform>
       <subform w="100mm" name="script" layout="tb" presence="hidden">
          <bind match="none"/>
-         <subform usehref="..\..\..\Users\hcuser\Desktop\eForms\Fragments\CoreJavaScript.xdp#som($template.form1.core)">
+         <subform usehref="..\..\fragments\CoreJavaScript.xdp#som($template.script.core)">
             <?templateDesigner expand 0?>
             <bind/>
          </subform>
-         <subform usehref="..\..\..\Users\hcuser\Desktop\eForms\Fragments\InfrastructureDomainJavaScript.xdp#som($template.script.infrastructureDomain)">
+         <subform usehref="..\..\..\Users\hcuser\Desktop\eForms\Fragments\InfrastructureDomainJavaScript.xdp#som($template.script.core)">
             <?templateDesigner expand 0?>
             <bind/>
          </subform>
@@ -3516,8 +3617,12 @@ function _rebaCountryChanged(province_formNode,postal_formNode){
 
 </script>
                   <?templateDesigner expand 1?></variables>
-               <?templateDesigner expand 1?></subform>
-            <?templateDesigner expand 0?></subform>
+               <?templateDesigner expand 1?>
+               <bind match="none"/>
+            </subform>
+            <?templateDesigner expand 0?>
+            <bind match="none"/>
+         </subform>
          <subform h="50mm" name="HCeForm" w="100mm">
             <subform layout="tb" name="config" w="100mm">
                <keep intact="contentArea"/>
@@ -3880,7 +3985,9 @@ function _initialize(){
 }//end _initialize
 </script>
                   <?templateDesigner expand 1?></variables>
-               <?templateDesigner expand 1?></subform>
+               <?templateDesigner expand 1?>
+               <bind match="none"/>
+            </subform>
             <subform h="50mm" name="nodeDefinitions" w="100mm">
                <variables>
                   <script contentType="application/x-javascript" name="Genaral">	
@@ -4574,7 +4681,9 @@ txtCompany: {
 		}
 </script>
                   <?templateDesigner expand 1?></variables>
-               <?templateDesigner expand 1?></subform>
+               <?templateDesigner expand 1?>
+               <bind match="none"/>
+            </subform>
             <subform h="50mm" name="resources" w="100mm">
                <variables>
                   <script contentType="application/x-javascript" name="general_en">
@@ -4938,7 +5047,9 @@ salutationList:[
 }
 </script>
                   <?templateDesigner expand 1?></variables>
-               <?templateDesigner expand 1?></subform>
+               <?templateDesigner expand 1?>
+               <bind match="none"/>
+            </subform>
             <subform h="50mm" name="util" w="100mm">
                <variables>
                   <script contentType="application/x-javascript" name="General">
@@ -4978,8 +5089,11 @@ function removeSpecificSubformInstance(instanceManager,sfInstance){
 
 </script>
                   <?templateDesigner expand 1?></variables>
-               <?templateDesigner expand 1?></subform>
-            <?templateDesigner expand 1?></subform>
+               <?templateDesigner expand 1?>
+               <bind match="none"/>
+            </subform>
+            <bind match="none"/>
+            <?templateDesigner expand 0?></subform>
          <subform w="100mm" h="50mm" name="validation">
             <variables>
                <script contentType="application/x-javascript" name="formValidation">
@@ -5432,6 +5546,7 @@ app.alert("validate ok");
 }
 </script>
                <?templateDesigner expand 1?></variables>
+            <bind match="none"/>
             <?templateDesigner expand 1?></subform>
          <variables>
             <script contentType="application/x-javascript" name="nodeDefinition">
@@ -5540,7 +5655,7 @@ function testForRoot(oNode) {
     return false;
 }
 </script>
-            <script usehref="..\..\..\Users\hcuser\Desktop\eForms\Fragments\Accessibility.xdp#som($template.form1.script.#variables.Accessibility)"/>
+            <script usehref="..\..\fragments\Accessibility.xdp#som($template.form1.#subform.#variables.Accessibility)"/>
             <?templateDesigner expand 1?></variables>
          <?templateDesigner expand 1?></subform>
       <variables>
@@ -5609,7 +5724,7 @@ cPart2GeneralHandler.serializeModels();
    <?templateDesigner SaveTaggedPDF 0?>
    <?templateDesigner SavePDFWithEmbeddedFonts 0?>
    <?templateDesigner FormTargetVersion 30?>
-   <?templateDesigner Zoom 139?>
+   <?templateDesigner Zoom 133?>
    <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?></template>
 <config xmlns="http://www.xfa.org/schema/xci/3.0/">
    <agent name="designer">
@@ -5632,7 +5747,16 @@ cPart2GeneralHandler.serializeModels();
          <version>1.7</version>
          <adobeExtensionLevel>5</adobeExtensionLevel>
       </pdf>
-      <common/>
+      <common>
+         <data>
+            <xsl>
+               <uri/>
+            </xsl>
+            <outputXSL>
+               <uri/>
+            </outputXSL>
+         </data>
+      </common>
       <script>
          <runScripts>server</runScripts>
       </script>
@@ -5857,18 +5981,76 @@ cPart2GeneralHandler.serializeModels();
 </localeSet>
 <xfa:datasets xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/">
    <xfa:data xfa:dataNode="dataGroup"/>
+   <dd:dataDescription xmlns:dd="http://ns.adobe.com/data-description/" dd:name="QIU">
+      <QIU>
+         <form_lang/>
+         <form_version/>
+         <drug_product_info>
+            <manufacturer/>
+            <product_name/>
+            <product_din/>
+         </drug_product_info>
+         <schedule_a_info>
+            <alcoholism/>
+            <anxiety/>
+            <respiratory/>
+            <arthritis/>
+            <psychotic/>
+            <addiction/>
+            <appendicitis/>
+            <arteriosclerosis/>
+            <asthma/>
+            <cancer/>
+            <heart_failure/>
+            <convulsions/>
+            <dementia/>
+            <depression/>
+            <diabetes/>
+            <gangrene/>
+            <glaucoma/>
+            <bleeding/>
+            <hepatitis/>
+            <hypertension/>
+            <pregnancy_nausea/>
+            <obesity/>
+            <rheumatic_fever/>
+            <septicemia/>
+            <s_t_disease/>
+            <hernia/>
+            <thrombotic/>
+            <thyroid_disease/>
+            <ulcer/>
+         </schedule_a_info>
+         <authorized_official_info>
+            <official_salutation/>
+            <official_given_name/>
+            <official_surname/>
+            <official_position_title/>
+            <company_name/>
+         </authorized_official_info>
+         <attestation_info>
+            <attestation_salutation/>
+            <attestation_given_name/>
+            <attestation_surname/>
+            <attestation_title/>
+            <signature_type/>
+            <signature_image/>
+            <attestation_sign_date/>
+         </attestation_info>
+      </QIU>
+   </dd:dataDescription>
 </xfa:datasets>
 <x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.2-c001 63.139439, 2011/06/07-10:39:26        ">
    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
       <rdf:Description xmlns:xmp="http://ns.adobe.com/xap/1.0/" rdf:about="">
-         <xmp:MetadataDate>2015-08-17T15:32:10Z</xmp:MetadataDate>
+         <xmp:MetadataDate>2016-04-29T14:28:59Z</xmp:MetadataDate>
          <xmp:CreatorTool>Adobe LiveCycle Designer ES 10.0</xmp:CreatorTool>
       </rdf:Description>
       <rdf:Description xmlns:pdf="http://ns.adobe.com/pdf/1.3/" rdf:about="">
          <pdf:Producer>Adobe LiveCycle Designer ES 10.0</pdf:Producer>
       </rdf:Description>
       <rdf:Description xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" rdf:about="">
-         <xmpMM:DocumentID>uuid:4b07630e-3664-4090-922f-56de7e5f609d</xmpMM:DocumentID>
+         <xmpMM:DocumentID>uuid:4c130318-2c7f-4c56-825f-428532825bab</xmpMM:DocumentID>
          <xmpMM:InstanceID>uuid:8fc1e37d-9bec-45c4-8a8a-edbac3fd10be</xmpMM:InstanceID>
       </rdf:Description>
       <rdf:Description xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:about="">
@@ -5910,4 +6092,158 @@ cPart2GeneralHandler.serializeModels();
 </x:xmpmeta>
 <xfdf xmlns="http://ns.adobe.com/xfdf/" xml:space="preserve">
    <annots/>
-</xfdf></xdp:xdp>
+</xfdf>
+<connectionSet xmlns="http://www.xfa.org/schema/xfa-connection-set/2.8/">
+   <xsdConnection name="DataConnection" dataDescription="QIU">
+      <uri>..\..\xml_schema\6-12_Scedule-A.xsd</uri>
+      <rootElement>QIU</rootElement>
+      <?templateDesigner fileDigest shaHash="9cp7afUu9luV0CZp+jU4QMddIww="?></xsdConnection>
+</connectionSet>
+<hpfb:schema xmlns:hpfb="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" id="XFASchemaXSD">
+   <!--    <hpfb:include schemaLocation="./common/contact.xsd"/>     -->
+   <hpfb:include schemaLocation="#XFAXSDReference"/>
+   <hpfb:include schemaLocation="#XFAXSDReference1"/>
+   <!-- ****************************** -->
+   <!-- ELEMENT DECLARATIONS -->
+   <!-- ****************************** -->
+   <hpfb:element name="QIU" type="schedule_a_form_content"/>
+   <hpfb:element name="form_lang"/>
+   <hpfb:element name="form_version"/>
+   <hpfb:element name="drug_product_info" type="drug_product_content"/>
+   <hpfb:element name="manufacturer"/>
+   <hpfb:element name="product_name"/>
+   <hpfb:element name="product_din"/>
+   <hpfb:element name="schedule_a_info" type="schedule_a_content"/>
+   <hpfb:element name="alcoholism"/>
+   <hpfb:element name="anxiety"/>
+   <hpfb:element name="respiratory"/>
+   <hpfb:element name="arthritis"/>
+   <hpfb:element name="psychotic"/>
+   <hpfb:element name="addiction"/>
+   <hpfb:element name="appendicitis"/>
+   <hpfb:element name="arteriosclerosis"/>
+   <hpfb:element name="asthma"/>
+   <hpfb:element name="cancer"/>
+   <hpfb:element name="heart_failure"/>
+   <hpfb:element name="convulsions"/>
+   <hpfb:element name="dementia"/>
+   <hpfb:element name="depression"/>
+   <hpfb:element name="diabetes"/>
+   <hpfb:element name="gangrene"/>
+   <hpfb:element name="glaucoma"/>
+   <hpfb:element name="bleeding"/>
+   <hpfb:element name="hepatitis"/>
+   <hpfb:element name="hypertension"/>
+   <hpfb:element name="pregnancy_nausea"/>
+   <hpfb:element name="obesity"/>
+   <hpfb:element name="rheumatic_fever"/>
+   <hpfb:element name="septicemia"/>
+   <hpfb:element name="s_t_disease"/>
+   <hpfb:element name="hernia"/>
+   <hpfb:element name="thrombotic"/>
+   <hpfb:element name="thyroid_disease"/>
+   <hpfb:element name="ulcer"/>
+   <hpfb:element name="authorized_official_info" type="authorized_official_content"/>
+   <hpfb:element name="official_salutation"/>
+   <hpfb:element name="official_given_name"/>
+   <hpfb:element name="official_surname"/>
+   <hpfb:element name="official_position_title"/>
+   <hpfb:element name="company_name"/>
+   <hpfb:element name="attestation_info" type="attest_content"/>
+   <!--Main form structure-->
+   <hpfb:complexType name="schedule_a_form_content">
+      <hpfb:sequence>
+         <hpfb:element ref="form_lang"/>
+         <hpfb:element ref="form_version"/>
+         <hpfb:element ref="drug_product_info"/>
+         <hpfb:element ref="schedule_a_info"/>
+         <hpfb:element ref="authorized_official_info"/>
+         <hpfb:element ref="attestation_info"/>
+      </hpfb:sequence>
+   </hpfb:complexType>
+   <hpfb:complexType name="drug_product_content">
+      <hpfb:sequence>
+         <hpfb:element ref="manufacturer"/>
+         <hpfb:element ref="product_name"/>
+         <hpfb:element ref="product_din"/>
+      </hpfb:sequence>
+   </hpfb:complexType>
+   <hpfb:complexType name="schedule_a_content">
+      <hpfb:sequence>
+         <hpfb:element ref="alcoholism"/>
+         <hpfb:element ref="anxiety"/>
+         <hpfb:element ref="respiratory"/>
+         <hpfb:element ref="arthritis"/>
+         <hpfb:element ref="psychotic"/>
+         <hpfb:element ref="addiction"/>
+         <hpfb:element ref="appendicitis"/>
+         <hpfb:element ref="arteriosclerosis"/>
+         <hpfb:element ref="asthma"/>
+         <hpfb:element ref="cancer"/>
+         <hpfb:element ref="heart_failure"/>
+         <hpfb:element ref="convulsions"/>
+         <hpfb:element ref="dementia"/>
+         <hpfb:element ref="depression"/>
+         <hpfb:element ref="diabetes"/>
+         <hpfb:element ref="gangrene"/>
+         <hpfb:element ref="glaucoma"/>
+         <hpfb:element ref="bleeding"/>
+         <hpfb:element ref="hepatitis"/>
+         <hpfb:element ref="hypertension"/>
+         <hpfb:element ref="pregnancy_nausea"/>
+         <hpfb:element ref="obesity"/>
+         <hpfb:element ref="rheumatic_fever"/>
+         <hpfb:element ref="septicemia"/>
+         <hpfb:element ref="s_t_disease"/>
+         <hpfb:element ref="hernia"/>
+         <hpfb:element ref="thrombotic"/>
+         <hpfb:element ref="thyroid_disease"/>
+         <hpfb:element ref="ulcer"/>
+      </hpfb:sequence>
+   </hpfb:complexType>
+   <hpfb:complexType name="authorized_official_content">
+      <hpfb:sequence>
+         <hpfb:element ref="official_salutation"/>
+         <hpfb:element ref="official_given_name"/>
+         <hpfb:element ref="official_surname"/>
+         <hpfb:element ref="official_position_title"/>
+         <hpfb:element ref="company_name"/>
+      </hpfb:sequence>
+   </hpfb:complexType>
+</hpfb:schema>
+<hpfb:schema xmlns:hpfb="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" id="XFAXSDReference">
+   <hpfb:include schemaLocation="#XFAXSDReference1"/>
+   <!-- ****************************** -->
+   <!-- ELEMENT DECLARATIONS -->
+   <!-- ****************************** -->
+   <hpfb:element name="attestation_info" type="attest_content"/>
+   <hpfb:element name="attestation_salutation"/>
+   <hpfb:element name="attestation_given_name"/>
+   <hpfb:element name="attestation_surname"/>
+   <hpfb:element name="attestation_title"/>
+   <hpfb:element name="signature_type"/>
+   <hpfb:element name="signature_image"/>
+   <hpfb:element name="attestation_sign_date" type="yyyymmdd_date_content"/>
+   <!-- ****************************** -->
+   <!-- ELEMENT TYPE DECLARATIONS -->
+   <!-- ****************************** -->
+   <!-- main xml structure-->
+   <hpfb:complexType name="attest_content">
+      <hpfb:sequence>
+         <hpfb:element ref="attestation_salutation"/>
+         <hpfb:element ref="attestation_given_name"/>
+         <hpfb:element ref="attestation_surname"/>
+         <hpfb:element ref="attestation_title"/>
+         <hpfb:element ref="signature_type"/>
+         <hpfb:element ref="signature_image"/>
+         <hpfb:element ref="attestation_sign_date"/>
+      </hpfb:sequence>
+   </hpfb:complexType>
+</hpfb:schema>
+<hpfb:schema xmlns:hpfb="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" id="XFAXSDReference1">
+   <hpfb:simpleType name="yyyymmdd_date_content">
+      <hpfb:restriction base="hpfb:date">
+         <hpfb:pattern value="[0-9]{4}-[0-9]{2}-[0-9]{2}"/>
+      </hpfb:restriction>
+   </hpfb:simpleType>
+</hpfb:schema></xdp:xdp>
