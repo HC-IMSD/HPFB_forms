@@ -1,0 +1,124 @@
+
+**************Version 22*****************
+-Resulted from ADR 1479
+-Updated the Telephone and Facsimile objects to also accept international numbers using patterns
+Display
+text{'+1 ('999') '999-9999}|text{'+'99 999 999 9999}|text{'+'99 999 999 999}
+
+Validation
+text{9999999999}|text{999999999999}|text{99999999999}
+
+**************Version 23*****************
+Modified FormScripts.ProvinceStateHandler to be generic. Accepts oSub as opposed to oAuth as second parameter.
+
+**********Version 24*********************
+Updated CERTIFICATIONS subforms
+Updated AUthorization subform with ner Province, State, Postal Zip code objects and moved handler to Core scripts
+Updated Export XML code in the FinalBlock fragment.
+
+
+***************Version 25********************
+Modified Instructions buttons to handle showing and hiding of  new CustomInstructions subform.
+Added CustomInstructions subform for form Specific instructions.
+
+
+****************Version 26******************
+Added handler to contact all objects tool tip (section hearder - obj caption).
+Set all object tooltip properties to CustomText.
+
+***************Version 27**********ALL FORMS SHOULD GET TO THIS LEVEL********
+Modified Instructions framgment and CustomInstructions subform:
+Moved Alternatively text and 3 bullets, Save, Scan, send to the Custominstructions as it doe not always apply to all forms.
+
+***************Version 28*************
+Core script - Removed period at the end of tooltips
+UTIL script - Changed error message to include today
+FormScripts and UTIL unLockAllforms function - Added afterUnlockHandler() function - to reapply readOnly to readOnly field since the unlockall form function unlocks everything
+UTIL scripts - Removed setting focus after Country isselected from DDL
+Modified FinalBlock fragments so to lock reset button and Modify button when Image signed PDFis signed.
+Core .hideButtonsOnLockedForm() same as above
+
+Core resetData() - Removed code which sets focus to Instructions after reset.
+
+
+**********************Version 29*****************
+
+Updated to resolve Digital signatures that were being invalidated after signing.
+1) Embedded Finalblocks (eng and Fra) in Master
+2) Configured Digtal signature to use the HCObjects collection in both in Eng and Fra subforms in master template. Configured the HCObjects Collection to include:
+	-Clear buttons (btnClear) in all Master pages (there should be 4 buttons)
+	-Only the InstructionsButtons subform should be selected under Instructions subform.
+
+
+Under English and French subforms in Master:	
+	-Wrapper which should have all your data input elements should be selected
+	
+	-For the FinalBlock subform under Wrapper, only signatureOption radio button, DigitalIamge subform should be selected.
+	-Final and Modify subforms should be selectected under FinalizeModify subform.
+	-Language setter
+
+------
+Added: Core.isDigSig()
+Added Core.displaySignedMsg() which is called from the PostSign event of the dital signature object. It closes the form after signing.
+Added: Core.GetVerboseFieldName(oNode)
+Added: Core. GetFQSOMExp(oField)
+
+
+Updated the following to call Core.isDigSig: 
+Core.setmandatoryMessages
+Core.setCaptionlessMandatoryMessage
+Core.setHeadinglessMandatoryMessage
+Core.checkDigImageType
+Core. hideButtonsOnLockedForm()
+
+Commented out Core.signingButtonHandler() from the Signature button preSign Event.
+Removed all Salutations in both English and French Certifications and Authority subforms
+
+Change the FinalBlock by changing the subforms initial counts to 0.
+Modifed Core.resetFormData
+
+Screen Readers do not read text in browse mode when the HC logo is a fragment so I embedded the Hc canada logo.
+
+**********************Version 30********************
+Unsigned objects were updated when form is opened resulting in digitally signed forms to report  in ornage that the form is signed but that there were unsigned changes in the document.
+
+
+Added scripts to the events in the following objects in template under the master pages (landscape and portrait E and F):
+Page count
+currnet pag
+version
+version dates
+
+Code adde:
+if (Core.isDigSig() == false)
+
+***************************December 2nd, 2020*******************************
+Updated both the English and French INSTRUCTIONS shared fragment with the following text:
+
+It is recommended to download this form from the Health Canada website and use either Adobe Acrobat or Adobe Reader to fill out the form. Note that the form may not work properly when viewed within the web browser or 3rd party viewers.
+
+
+
+Il est recommandé de télécharger ce formulaire à partir du site Web de Santé Canada et d'utiliser Adobe Acrobat ou Adobe Reader pour remplir le formulaire. Veuillez noter que le formulaire peut ne pas fonctionner correctement lorsqu'il est affiché dans le navigateur Web ou dans des logiciels de visualisation tiers.
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
