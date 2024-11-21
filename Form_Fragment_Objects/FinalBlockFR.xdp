@@ -1,0 +1,799 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xfa generator="AdobeLiveCycleDesignerES_V10.0.2.20120224.1.869952" APIVersion="3.5.12002.0"?>
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2020-08-05T17:26:26Z" uuid="796b1c88-4c41-4759-b6f6-46653a771f92">
+<template xmlns="http://www.xfa.org/schema/xfa-template/3.0/">
+   <?formServer defaultPDFRenderFormat acrobat9.1static?>
+   <?formServer allowRenderCaching 0?>
+   <?formServer formModel both?>
+   <subform name="form1" locale="fr_CA" layout="tb">
+      <pageSet>
+         <pageArea>
+            <contentArea x="12.7mm" y="15.24mm" w="190.5mm" h="243.84mm"/>
+            <medium stock="letter" short="215.9mm" long="279.4mm"/>
+            <?templateDesigner expand 1?></pageArea>
+         <?templateDesigner expand 1?></pageSet>
+      <subform w="190.5mm" layout="tb" name="FinalBlock" locale="fr_CA">
+         <subform w="190.5mm" layout="tb" name="SignatureBlock">
+            <traversal>
+               <traverse ref="FinalizeModify[0]"/>
+               <traverse operation="first" ref="SignatureOption[0]"/>
+            </traversal>
+            <subform w="189.992mm" layout="lr-tb" name="SignatureOption" locale="fr_CA">
+               <traversal>
+                  <traverse operation="first" ref="signatureOption[0]"/>
+                  <traverse ref="DigitalImage[0]"/>
+               </traversal>
+               <exclGroup name="signatureOption" layout="lr-tb">
+                  <?templateDesigner itemValuesSpecified 1?>
+                  <field w="38.1mm" h="7.62mm" name="DigitalID" locale="fr_CA">
+                     <ui>
+                        <checkButton shape="round" size="3.175mm">
+                           <border>
+                              <?templateDesigner StyleID apcb4?>
+                              <edge/>
+                              <fill/>
+                           </border>
+                        </checkButton>
+                     </ui>
+                     <font typeface="Myriad Pro"/>
+                     <margin leftInset="1mm" rightInset="1mm"/>
+                     <para vAlign="middle"/>
+                     <caption placement="right" reserve="32.1mm">
+                        <para vAlign="middle"/>
+                        <value>
+                           <text>Identification électronique</text>
+                        </value>
+                        <font typeface="Myriad Pro" size="8pt"/>
+                     </caption>
+                     <value>
+                        <text xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:nil="true"/>
+                     </value>
+                     <items>
+                        <text>DIG_SIG</text>
+                     </items>
+                  </field>
+                  <field w="29.972mm" h="7.62mm" name="DigitalImage" locale="fr_CA">
+                     <ui>
+                        <checkButton shape="round" size="3.175mm">
+                           <border>
+                              <?templateDesigner StyleID apcb4?>
+                              <edge/>
+                              <fill/>
+                           </border>
+                        </checkButton>
+                     </ui>
+                     <font typeface="Myriad Pro"/>
+                     <margin leftInset="1mm" rightInset="1mm"/>
+                     <para vAlign="middle"/>
+                     <caption placement="right" reserve="24.131mm">
+                        <para vAlign="middle"/>
+                        <value>
+                           <text>Image de signature</text>
+                        </value>
+                        <font typeface="Myriad Pro" size="8pt"/>
+                     </caption>
+                     <items>
+                        <text>IMG_SIG</text>
+                     </items>
+                  </field>
+                  <traversal>
+                     <traverse ref="DigitalImage[0]"/>
+                  </traversal>
+                  <event activity="change" name="event__change">
+                     <script contentType="application/x-javascript">
+//Show the appropriate signing obtion based on radio button selection 
+//_FinalizeModify.setInstances(0);
+if (this.rawValue == "DIG_SIG"){
+	_DigitalSignature.setInstances(1);
+	_DigImgText.setInstances(1);
+	_DigitalImage.setInstances(0);
+}else{
+	_DigImgText.setInstances(1);
+	_DigitalImage.setInstances(1);
+	_DigitalSignature.setInstances(0);	
+}
+
+</script>
+                  </event>
+                  <?templateDesigner expand 1?></exclGroup>
+               <keep intact="contentArea"/>
+               <margin topInset="2.54mm" bottomInset="2.54mm"/>
+               <border>
+                  <edge presence="hidden"/>
+                  <corner/>
+                  <corner/>
+                  <corner presence="hidden"/>
+                  <corner/>
+               </border>
+               <subform w="133.604mm" layout="tb" name="DigImgText" locale="fr_CA">
+                  <keep intact="contentArea"/>
+                  <occur min="0"/>
+                  <draw minH="7.62mm" w="131.569mm" locale="fr_CA" name="lblTextMsg">
+                     <font typeface="Myriad Pro" baselineShift="0pt"/>
+                     <para vAlign="middle" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt"/>
+                     <value>
+                        <exData contentType="text/html">
+                           <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"><p style="font-size:8pt;text-decoration:none;letter-spacing:0in">Cliquez dans le champ de signature pour ajouter l’image de la signature ou la signature numérique</p></body>
+                        </exData>
+                     </value>
+                     <ui>
+                        <textEdit/>
+                     </ui>
+                     <margin leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm" bottomInset="0.5mm"/>
+                     <assist>
+                        <toolTip>Cliquez dans le champ de signature pour ajouter l’image de la signature ou la signature numérique</toolTip>
+                        <speak>Cliquez dans le champ de signature pour ajouter l’image de la signature ou la signature numérique</speak>
+                     </assist>
+                  </draw>
+                  <traversal>
+                     <traverse operation="first" ref="lblTextMsg[0]"/>
+                  </traversal>
+                  <?templateDesigner expand 1?></subform>
+               <?templateDesigner expand 1?></subform>
+            <subform y="6mm" w="189.992mm" layout="lr-tb" name="DigitalSignature" locale="fr_CA">
+               <occur min="0"/>
+               <traversal>
+                  <traverse ref="DigitalImage[0]"/>
+                  <traverse operation="first" ref="digSignature[0]"/>
+               </traversal>
+               <field name="digSignature" w="190.5mm" h="15.878mm" locale="fr_CA">
+                  <ui>
+                     <signature type="PDF1.6">
+                        <border>
+                           <?templateDesigner StyleID aped3?>
+                           <edge presence="hidden"/>
+                           <edge presence="hidden"/>
+                           <edge/>
+                           <edge presence="hidden"/>
+                        </border>
+                        <margin/>
+                        <filter>
+                           <handler>Adobe.PPKLite</handler>
+                        </filter>
+                        <!--manifest action="include" use="#347b45a1-ef3d-49e1-bad8-83bc4888aaf6"/-->
+                        <manifest action="all"/>
+                     </signature>
+                  </ui>
+                  <font typeface="Myriad Pro" size="8pt"/>
+                  <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+                  <para vAlign="middle"/>
+                  <caption reserve="3.175mm" placement="bottom">
+                     <para vAlign="middle" marginLeft="0pt" hAlign="center"/>
+                     <value>
+                        <text>Signature</text>
+                     </value>
+                  </caption>
+                  <bind match="none"/>
+                  <border>
+                     <edge presence="hidden"/>
+                     <corner thickness="0.175mm" presence="hidden"/>
+                  </border>
+                  <event activity="preSign" name="event__preSign">
+                     <script contentType="application/x-javascript">
+Core.signingButtonHandler();
+</script>
+                  </event>
+                  <assist>
+                     <toolTip>Cliquez dans le champ de signature pour ajouter la signature numérique.</toolTip>
+                     <speak>Cliquez dans le champ de signature pour ajouter la signature numérique.</speak>
+                  </assist>
+               </field>
+               <keep intact="contentArea"/>
+               <?templateDesigner expand 0?></subform>
+            <subform y="14.939mm" w="190.5mm" layout="lr-tb" name="DigitalImage" locale="fr_CA">
+               <field name="imgSignature" w="111.125mm" h="15.874mm" locale="fr_CA">
+                  <ui>
+                     <imageEdit data="embed"/>
+                  </ui>
+                  <caption reserve="3.175mm" placement="bottom">
+                     <font size="8pt" typeface="Myriad Pro" baselineShift="0pt"/>
+                     <para vAlign="middle" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt" hAlign="center"/>
+                     <value>
+                        <text>Signature</text>
+                     </value>
+                  </caption>
+                  <border>
+                     <edge presence="hidden"/>
+                     <corner thickness="0.175mm" presence="hidden"/>
+                     <edge/>
+                     <edge/>
+                     <edge presence="hidden"/>
+                     <corner thickness="0.175mm"/>
+                     <corner thickness="0.175mm"/>
+                     <corner thickness="0.175mm" presence="hidden"/>
+                  </border>
+                  <desc>
+                     <text name="embeddedHref">Unknown Embedded URI</text>
+                  </desc>
+                  <margin leftInset="1.0008mm" topInset="1.0008mm" rightInset="1.0008mm" bottomInset="1.0008mm"/>
+                  <traversal>
+                     <traverse ref="signDate[0]"/>
+                  </traversal>
+                  <event activity="click" name="event__click">
+                     <script contentType="application/x-javascript">if (this.rawValue !== null) {
+	 	
+	signDate.rawValue = Util.getCurrentDate();
+	
+	app.execMenuItem("SaveAs");
+	Util.lockAllFields(xfa.form.resolveNode("#subform"));
+	//June 11th, 2020 User is able to use the keyborad on the modify Instructions, and reset button so it's being locked here
+	//Instructions.access = "protected";
+	//Instructions.access = "protected";
+	FinalizeModify.Modify.access = "protected";
+	//var oWrapper = _EN.count &gt; 0 ? xfa.form.resolveNode("HC.EN.Wrapper") : xfa.form.resolveNode("HC.FR.Wrapper");
+	if ( _EN.count &gt; 0){
+		if (xfa.resolveNode("#pageSet.ENPortrait1") != null)
+			xfa.resolveNode("#pageSet.ENPortrait1.btnClear").access = "protected";
+		if (xfa.resolveNode("#pageSet.ENLandscape1") != null)
+			xfa.resolveNode("#pageSet.ENLandscape1.btnClear").access = "protected";
+	}else{
+		if (xfa.resolveNode("#pageSet.FRPortrait1") != null)
+			xfa.resolveNode("#pageSet.FRPortrait1.btnClear").access = "protected";
+		if (xfa.resolveNode("#pageSet.FRLandscape1") != null)
+			xfa.resolveNode("#pageSet.FRLandscape1.btnClear").access = "protected";
+	}
+}else{
+	FinalizeModify.access = "protected";
+}
+</script>
+                  </event>
+                  <event activity="ready" ref="$layout" name="event__layout_ready">
+                     <script contentType="application/x-javascript">Core.checkDigImageType(this);
+
+</script>
+                  </event>
+                  <assist>
+                     <toolTip>Cliquez dans le champ de signature pour ajouter la signature d'image.</toolTip>
+                     <speak>Cliquez dans le champ de signature pour ajouter la signature d'image.</speak>
+                  </assist>
+               </field>
+               <field name="signDate" w="79.375mm" h="15.877mm" access="readOnly" locale="fr_CA">
+                  <ui>
+                     <dateTimeEdit hScrollPolicy="off">
+                        <border presence="hidden">
+                           <?templateDesigner StyleID aped2?></border>
+                        <margin/>
+                     </dateTimeEdit>
+                     <picture>date{YYYY-MM-DD}</picture>
+                  </ui>
+                  <font typeface="Myriad Pro"/>
+                  <margin topInset="1.0008mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+                  <para vAlign="middle" hAlign="center"/>
+                  <value>
+                     <date/>
+                  </value>
+                  <caption reserve="3.175mm" placement="bottom">
+                     <para vAlign="middle" hAlign="center"/>
+                     <value>
+                        <text>Date (AAAA-MM-JJ)</text>
+                     </value>
+                     <font typeface="Myriad Pro" size="8pt"/>
+                  </caption>
+                  <format>
+                     <picture>date{YYYY-MM-DD}</picture>
+                  </format>
+                  <border>
+                     <edge presence="hidden"/>
+                     <corner thickness="0.175mm" presence="hidden"/>
+                     <edge presence="hidden"/>
+                     <edge/>
+                     <edge presence="hidden"/>
+                     <corner thickness="0.175mm" presence="hidden"/>
+                     <corner thickness="0.175mm"/>
+                     <corner thickness="0.175mm" presence="hidden"/>
+                  </border>
+                  <validate>
+                     <picture>date{YYYY-MM-DD}</picture>
+                  </validate>
+                  <bind>
+                     <picture>date{YYYY-MM-DD}</picture>
+                  </bind>
+                  <calculate override="error"/>
+                  <traversal>
+                     <traverse ref="FinalizeModify[0]"/>
+                  </traversal>
+               </field>
+               <traversal>
+                  <traverse operation="first" ref="imgSignature[0]"/>
+               </traversal>
+               <occur min="0"/>
+               <border>
+                  <edge presence="hidden"/>
+                  <corner/>
+                  <corner/>
+                  <corner presence="hidden"/>
+                  <corner/>
+               </border>
+               <keep intact="contentArea"/>
+               <calculate>
+                  <script contentType="application/x-javascript">
+if (signDate.rawValue !== null){
+	FinalizeModify.access = "protected";
+	imgSignature.access = "protected";
+}
+</script>
+               </calculate>
+               <?templateDesigner expand 1?></subform>
+            <occur min="0"/>
+            <border>
+               <edge presence="hidden"/>
+               <corner presence="hidden"/>
+               <corner/>
+               <corner/>
+               <corner/>
+            </border>
+            <keep intact="contentArea"/>
+            <?templateDesigner expand 1?></subform>
+         <subform w="190.5mm" name="FinalizeModify" layout="lr-tb" locale="fr_CA">
+            <margin topInset="1.27mm" bottomInset="1.27mm"/>
+            <subform w="30.48mm" minH="6.35mm" layout="lr-tb" name="Final" locale="fr_CA">
+               <field name="btnFinalizeAndLock" w="28.575mm" h="6.35mm" relevant="-print" locale="fr_CA">
+                  <ui>
+                     <button highlight="inverted"/>
+                  </ui>
+                  <font typeface="Myriad Pro"/>
+                  <caption>
+                     <value>
+                        <text>Finaliser</text>
+                     </value>
+                     <para vAlign="middle" hAlign="center" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt"/>
+                     <font typeface="Myriad Pro" baselineShift="0pt" size="8pt"/>
+                  </caption>
+                  <border hand="right">
+                     <edge>
+                        <color value="192,192,192"/>
+                     </edge>
+                     <fill>
+                        <color value="192,192,192"/>
+                        <linear type="toTop">
+                           <color value="255,255,255"/>
+                        </linear>
+                     </fill>
+                     <corner thickness="0.175mm">
+                        <color value="192,192,192"/>
+                     </corner>
+                  </border>
+                  <bind match="none"/>
+                  <event activity="click" name="event__click">
+                     <script contentType="application/x-javascript">//
+var bValid = true;
+bValid = Core.execValidateForm();
+
+if (bValid){	
+	//Show Validation Success Msg
+	Core.showSuccessValidateMsg();
+	//Hide Instructions buttons so they don't appear in signed form
+	Instructions._InstructionButtons.setInstances(0);
+	
+	//Lockform	
+	Util.lockAllFields(xfa.form.resolveNode("#subform"));
+	
+	//show Modify button
+	_Modify.setInstances(1);
+		
+	//Show Signatureblock
+	_SignatureBlock.setInstances(1);
+	
+	//set focus
+	xfa.host.setFocus(SignatureBlock.SignatureOption.signatureOption);
+	
+	//Hide Finalize button
+	_Final.setInstances(0);
+	
+	
+
+	
+	
+}
+
+</script>
+                  </event>
+                  <traversal>
+                     <traverse ref="Modify[0]"/>
+                  </traversal>
+               </field>
+               <traversal>
+                  <traverse operation="first" ref="btnFinalizeAndLock[0]"/>
+                  <traverse ref="Modify[0]"/>
+               </traversal>
+               <occur min="0" initial="1"/>
+               <margin leftInset="0mm"/>
+               <keep intact="contentArea"/>
+               <?templateDesigner expand 1?></subform>
+            <subform x="28.575mm" w="30.48mm" minH="6.35mm" layout="lr-tb" name="Modify" locale="fr_CA">
+               <traversal>
+                  <traverse operation="first" ref="btnModify[0]"/>
+               </traversal>
+               <field name="btnModify" w="28.575mm" h="6.35mm" relevant="-print" locale="fr_CA">
+                  <ui>
+                     <button highlight="inverted"/>
+                  </ui>
+                  <font typeface="Myriad Pro"/>
+                  <caption>
+                     <value>
+                        <text>Modifier</text>
+                     </value>
+                     <para vAlign="middle" hAlign="center" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt"/>
+                     <font typeface="Myriad Pro" baselineShift="0pt" size="8pt"/>
+                  </caption>
+                  <border hand="right">
+                     <edge>
+                        <color value="192,192,192"/>
+                     </edge>
+                     <fill>
+                        <color value="192,192,192"/>
+                        <linear type="toTop">
+                           <color value="255,255,255"/>
+                        </linear>
+                     </fill>
+                     <corner thickness="0.175mm">
+                        <color value="192,192,192"/>
+                     </corner>
+                  </border>
+                  <bind match="none"/>
+                  <event activity="click" name="event__click">
+                     <script contentType="application/x-javascript">//Hide Signatureblock
+_SignatureBlock.setInstances(0);
+//Unlock form
+Util.unLockAllFields(xfa.form.resolveNode("#subform"));
+
+//Show Instructions buttons so they don't appear in signed form
+Instructions._InstructionButtons.setInstances(1);
+//Show Finalize button
+_Final.setInstances(1);
+
+//Set Focus on first field on form
+
+//This has to be last hide Modify button
+_Modify.setInstances(0);
+</script>
+                  </event>
+               </field>
+               <margin leftInset="0mm"/>
+               <occur min="0"/>
+               <keep intact="contentArea"/>
+               <?templateDesigner expand 1?></subform>
+            <bind match="none"/>
+            <traversal>
+               <traverse operation="first" ref="Final[0]"/>
+               <traverse ref="SignatureBlock[0].DigitalSignature[0]"/>
+            </traversal>
+            <occur min="0" initial="1"/>
+            <keep intact="contentArea"/>
+            <subform w="100mm" name="SaveFormXML" layout="tb" presence="hidden" locale="fr_CA">
+               <keep intact="contentArea"/>
+               <field name="btnSaveXML" w="33.02mm" h="6.35mm" relevant="-print" locale="fr_CA">
+                  <ui>
+                     <button highlight="inverted"/>
+                  </ui>
+                  <font typeface="Myriad Pro"/>
+                  <caption>
+                     <value>
+                        <text>Exporter des données XML</text>
+                     </value>
+                     <para vAlign="middle" hAlign="center" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt"/>
+                     <font typeface="Myriad Pro" baselineShift="0pt" size="8pt"/>
+                  </caption>
+                  <border hand="right">
+                     <edge>
+                        <color value="192,192,192"/>
+                     </edge>
+                     <fill>
+                        <color value="192,192,192"/>
+                        <linear type="toTop">
+                           <color value="255,255,255"/>
+                        </linear>
+                     </fill>
+                     <corner thickness="0.175mm">
+                        <color value="192,192,192"/>
+                     </corner>
+                  </border>
+                  <bind match="none"/>
+                  <event activity="click" name="event__click">
+                     <script contentType="application/x-javascript">
+try {
+	//var sXML = xfa.form.saveXML("pretty");
+	xfa.host.exportData("",0);
+	xfa.form.recalculate(true);
+}catch(error){
+	//canceled -do nothing
+}
+</script>
+                  </event>
+                  <traversal>
+                     <traverse ref="SignatureBlock[0].DigitalSignature[0]"/>
+                  </traversal>
+               </field>
+               <?templateDesigner expand 1?></subform>
+            <?templateDesigner expand 1?></subform>
+         <traversal>
+            <traverse ref="SignatureBlock[0]"/>
+            <traverse operation="first" ref="SignatureBlock[0]"/>
+         </traversal>
+         <keep intact="contentArea"/>
+         <?templateDesigner expand 1?>
+         <?templateDesigner isFragment yes?>
+         <?templateDesigner fragmentTitle FinalBlockFR?></subform>
+      <?templateDesigner Hyphenation excludeInitialCap:1, excludeAllCaps:1, wordCharCnt:7, remainCharCnt:3, pushCharCnt:3?>
+      <?templateDesigner expand 1?>
+      <?renderCache.subset "Myriad Pro" 0 0 ISO-8859-1 4 136 37 000100080009000A000E0022002400250027002A002B002E00340042004400450046004700480049004A004B004D004E004F0050005100520053005400550056005B00CF ’()-ACDFIJMSacdefghijlmnopqrstuzé?></subform>
+   <?originalXFAVersion http://www.xfa.org/schema/xfa-template/3.0/?>
+   <?templateDesigner DefaultLanguage JavaScript?>
+   <?templateDesigner DefaultRunAt client?>
+   <?PDFPrintOptions embedViewerPrefs 0?>
+   <?PDFPrintOptions embedPrintOnFormOpen 0?>
+   <?PDFPrintOptions scalingPrefs 0?>
+   <?PDFPrintOptions enforceScalingPrefs 0?>
+   <?PDFPrintOptions paperSource 0?>
+   <?PDFPrintOptions duplexMode 0?>
+   <?templateDesigner DefaultPreviewType interactive?>
+   <?templateDesigner DefaultPreviewPagination simplex?>
+   <?templateDesigner XDPPreviewFormat 19?>
+   <?templateDesigner DefaultCaptionFontSettings face:Myriad Pro;size:10;weight:normal;style:normal?>
+   <?templateDesigner DefaultValueFontSettings face:Myriad Pro;size:10;weight:normal;style:normal?>
+   <?templateDesigner FormTargetVersion 30?>
+   <?templateDesigner Zoom 74?>
+   <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?></template>
+<config xmlns="http://www.xfa.org/schema/xci/3.0/">
+   <agent name="designer">
+      <!--  [0..n]  -->
+      <destination>pdf</destination>
+      <pdf>
+         <!--  [0..n]  -->
+         <fontInfo/>
+      </pdf>
+   </agent>
+   <present>
+      <!--  [0..n]  -->
+      <destination>pdf</destination>
+      <pdf>
+         <!--  [0..n]  -->
+         <fontInfo/>
+         <version>1.7</version>
+         <adobeExtensionLevel>5</adobeExtensionLevel>
+      </pdf>
+      <xdp>
+         <packets>*</packets>
+      </xdp>
+   </present>
+</config>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.2-c001 63.139439, 2011/06/07-10:39:26        ">
+   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <rdf:Description xmlns:xmp="http://ns.adobe.com/xap/1.0/" rdf:about="">
+         <xmp:MetadataDate>2020-08-05T17:26:26Z</xmp:MetadataDate>
+         <xmp:CreatorTool>Adobe LiveCycle Designer ES 10.5</xmp:CreatorTool>
+      </rdf:Description>
+      <rdf:Description xmlns:pdf="http://ns.adobe.com/pdf/1.3/" rdf:about="">
+         <pdf:Producer>Adobe LiveCycle Designer ES 10.5</pdf:Producer>
+      </rdf:Description>
+      <rdf:Description xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" rdf:about="">
+         <xmpMM:DocumentID>uuid:796b1c88-4c41-4759-b6f6-46653a771f92</xmpMM:DocumentID>
+      </rdf:Description>
+      <rdf:Description xmlns:lcd="http://ns.adobe.com/livecycle/designer/" xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:about="">
+         <lcd:fragmentCatalog>
+            <rdf:Seq>
+               <rdf:li rdf:parseType="Resource">
+                  <dc:title>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default">FinalBlockFR</rdf:li>
+                     </rdf:Alt>
+                  </dc:title>
+                  <dc:description>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default"/>
+                     </rdf:Alt>
+                  </dc:description>
+                  <dc:identifier>$template.form1.FinalBlock</dc:identifier>
+                  <lcd:fragmentRole>Subform</lcd:fragmentRole>
+               </rdf:li>
+            </rdf:Seq>
+         </lcd:fragmentCatalog>
+      </rdf:Description>
+   </rdf:RDF>
+</x:xmpmeta>
+<localeSet xmlns="http://www.xfa.org/schema/xfa-locale-set/2.7/">
+   <locale name="en_US" desc="English (United States)">
+      <calendarSymbols name="gregorian">
+         <monthNames>
+            <month>January</month>
+            <month>February</month>
+            <month>March</month>
+            <month>April</month>
+            <month>May</month>
+            <month>June</month>
+            <month>July</month>
+            <month>August</month>
+            <month>September</month>
+            <month>October</month>
+            <month>November</month>
+            <month>December</month>
+         </monthNames>
+         <monthNames abbr="1">
+            <month>Jan</month>
+            <month>Feb</month>
+            <month>Mar</month>
+            <month>Apr</month>
+            <month>May</month>
+            <month>Jun</month>
+            <month>Jul</month>
+            <month>Aug</month>
+            <month>Sep</month>
+            <month>Oct</month>
+            <month>Nov</month>
+            <month>Dec</month>
+         </monthNames>
+         <dayNames>
+            <day>Sunday</day>
+            <day>Monday</day>
+            <day>Tuesday</day>
+            <day>Wednesday</day>
+            <day>Thursday</day>
+            <day>Friday</day>
+            <day>Saturday</day>
+         </dayNames>
+         <dayNames abbr="1">
+            <day>Sun</day>
+            <day>Mon</day>
+            <day>Tue</day>
+            <day>Wed</day>
+            <day>Thu</day>
+            <day>Fri</day>
+            <day>Sat</day>
+         </dayNames>
+         <meridiemNames>
+            <meridiem>AM</meridiem>
+            <meridiem>PM</meridiem>
+         </meridiemNames>
+         <eraNames>
+            <era>BC</era>
+            <era>AD</era>
+         </eraNames>
+      </calendarSymbols>
+      <datePatterns>
+         <datePattern name="full">EEEE, MMMM D, YYYY</datePattern>
+         <datePattern name="long">MMMM D, YYYY</datePattern>
+         <datePattern name="med">MMM D, YYYY</datePattern>
+         <datePattern name="short">M/D/YY</datePattern>
+      </datePatterns>
+      <timePatterns>
+         <timePattern name="full">h:MM:SS A Z</timePattern>
+         <timePattern name="long">h:MM:SS A Z</timePattern>
+         <timePattern name="med">h:MM:SS A</timePattern>
+         <timePattern name="short">h:MM A</timePattern>
+      </timePatterns>
+      <dateTimeSymbols>GyMdkHmsSEDFwWahKzZ</dateTimeSymbols>
+      <numberPatterns>
+         <numberPattern name="numeric">z,zz9.zzz</numberPattern>
+         <numberPattern name="currency">$z,zz9.99|($z,zz9.99)</numberPattern>
+         <numberPattern name="percent">z,zz9%</numberPattern>
+      </numberPatterns>
+      <numberSymbols>
+         <numberSymbol name="decimal">.</numberSymbol>
+         <numberSymbol name="grouping">,</numberSymbol>
+         <numberSymbol name="percent">%</numberSymbol>
+         <numberSymbol name="minus">-</numberSymbol>
+         <numberSymbol name="zero">0</numberSymbol>
+      </numberSymbols>
+      <currencySymbols>
+         <currencySymbol name="symbol">$</currencySymbol>
+         <currencySymbol name="isoname">USD</currencySymbol>
+         <currencySymbol name="decimal">.</currencySymbol>
+      </currencySymbols>
+      <typefaces>
+         <typeface name="Myriad Pro"/>
+         <typeface name="Minion Pro"/>
+         <typeface name="Courier Std"/>
+         <typeface name="Adobe Pi Std"/>
+         <typeface name="Adobe Hebrew"/>
+         <typeface name="Adobe Arabic"/>
+         <typeface name="Adobe Thai"/>
+         <typeface name="Kozuka Gothic Pro-VI M"/>
+         <typeface name="Kozuka Mincho Pro-VI R"/>
+         <typeface name="Adobe Ming Std L"/>
+         <typeface name="Adobe Song Std L"/>
+         <typeface name="Adobe Myungjo Std M"/>
+      </typefaces>
+   </locale>
+   <locale name="fr_CA" desc="French (Canada)">
+      <calendarSymbols name="gregorian">
+         <monthNames>
+            <month>janvier</month>
+            <month>février</month>
+            <month>mars</month>
+            <month>avril</month>
+            <month>mai</month>
+            <month>juin</month>
+            <month>juillet</month>
+            <month>août</month>
+            <month>septembre</month>
+            <month>octobre</month>
+            <month>novembre</month>
+            <month>décembre</month>
+         </monthNames>
+         <monthNames abbr="1">
+            <month>janv.</month>
+            <month>févr.</month>
+            <month>mars</month>
+            <month>avr.</month>
+            <month>mai</month>
+            <month>juin</month>
+            <month>juil.</month>
+            <month>août</month>
+            <month>sept.</month>
+            <month>oct.</month>
+            <month>nov.</month>
+            <month>déc.</month>
+         </monthNames>
+         <dayNames>
+            <day>dimanche</day>
+            <day>lundi</day>
+            <day>mardi</day>
+            <day>mercredi</day>
+            <day>jeudi</day>
+            <day>vendredi</day>
+            <day>samedi</day>
+         </dayNames>
+         <dayNames abbr="1">
+            <day>dim.</day>
+            <day>lun.</day>
+            <day>mar.</day>
+            <day>mer.</day>
+            <day>jeu.</day>
+            <day>ven.</day>
+            <day>sam.</day>
+         </dayNames>
+         <meridiemNames>
+            <meridiem>AM</meridiem>
+            <meridiem>PM</meridiem>
+         </meridiemNames>
+         <eraNames>
+            <era>av. J.-C.</era>
+            <era>ap. J.-C.</era>
+         </eraNames>
+      </calendarSymbols>
+      <datePatterns>
+         <datePattern name="full">EEEE D MMMM YYYY</datePattern>
+         <datePattern name="long">D MMMM YYYY</datePattern>
+         <datePattern name="med">YY-MM-DD</datePattern>
+         <datePattern name="short">YY-MM-DD</datePattern>
+      </datePatterns>
+      <timePatterns>
+         <timePattern name="full">HH' h 'MM' min 'SS' s 'Z</timePattern>
+         <timePattern name="long">HH:MM:SS Z</timePattern>
+         <timePattern name="med">HH:MM:SS</timePattern>
+         <timePattern name="short">HH:MM</timePattern>
+      </timePatterns>
+      <dateTimeSymbols>GaMjkHmsSEDFwWxhKzZ</dateTimeSymbols>
+      <numberPatterns>
+         <numberPattern name="numeric">z,zz9.zzz</numberPattern>
+         <numberPattern name="currency">z,zz9.99 $|(z,zz9.99$)</numberPattern>
+         <numberPattern name="percent">z,zz9%</numberPattern>
+      </numberPatterns>
+      <numberSymbols>
+         <numberSymbol name="decimal">,</numberSymbol>
+         <numberSymbol name="grouping"> </numberSymbol>
+         <numberSymbol name="percent">%</numberSymbol>
+         <numberSymbol name="minus">-</numberSymbol>
+         <numberSymbol name="zero">0</numberSymbol>
+      </numberSymbols>
+      <currencySymbols>
+         <currencySymbol name="symbol">$</currencySymbol>
+         <currencySymbol name="isoname">CAD</currencySymbol>
+         <currencySymbol name="decimal">,</currencySymbol>
+      </currencySymbols>
+      <typefaces>
+         <typeface name="Myriad Pro"/>
+         <typeface name="Minion Pro"/>
+         <typeface name="Courier Std"/>
+         <typeface name="Adobe Pi Std"/>
+         <typeface name="Adobe Hebrew"/>
+         <typeface name="Adobe Arabic"/>
+         <typeface name="Adobe Thai"/>
+         <typeface name="Kozuka Gothic Pro-VI M"/>
+         <typeface name="Kozuka Mincho Pro-VI R"/>
+         <typeface name="Adobe Ming Std L"/>
+         <typeface name="Adobe Song Std L"/>
+         <typeface name="Adobe Myungjo Std M"/>
+      </typefaces>
+   </locale>
+</localeSet></xdp:xdp>
