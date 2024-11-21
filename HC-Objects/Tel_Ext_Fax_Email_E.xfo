@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xfa generator="AdobeLiveCycleDesignerES_V10.5.0.20120807.1.873223" APIVersion="3.6.12219.0"?>
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/">
+<template xmlns="http://www.xfa.org/schema/xfa-template/3.3/">
+   <subform>
+      <pageSet>
+         <pageArea name="snippet">
+            <desc>
+               <text name="name">Tel_Ext_Fax_Email_E</text>
+            </desc>
+            <subform w="190.5mm" minH="41.91mm" layout="lr-tb">
+               <field name="txtTelNo" w="69.088mm" h="15.24mm" locale="en_CA">
+                  <ui>
+                     <textEdit hScrollPolicy="off">
+                        <border presence="hidden">
+                           <?templateDesigner StyleID aped0?></border>
+                        <margin/>
+                     </textEdit>
+                     <picture>text{9999999999}</picture>
+                  </ui>
+                  <font typeface="Myriad Pro"/>
+                  <margin bottomInset="1.0008mm" leftInset="1.0008mm" rightInset="1.0008mm" topInset="1.0008mm"/>
+                  <format>
+                     <picture>text{'+1 ('999') '999-9999}|text{'+'99 999 999 9999}|text{'+'99 999 999 999}</picture>
+                  </format>
+                  <border>
+                     <edge/>
+                     <corner thickness="0.1778mm"/>
+                     <corner/>
+                     <corner/>
+                     <corner/>
+                  </border>
+                  <para marginLeft="0pt" vAlign="middle" marginRight="0pt"/>
+                  <caption placement="top" reserve="6.35mm">
+                     <value>
+                        <text>Telephone Number (e.g. 2223334444 or 441312223333)</text>
+                     </value>
+                     <font typeface="Myriad Pro" size="8pt"/>
+                     <para vAlign="middle" marginLeft="0pt" marginRight="0pt"/>
+                  </caption>
+                  <assist>
+                     <toolTip>***Header*** - Telephone Number (e.g. 2223334444 or 441312223333)</toolTip>
+                     <speak priority="toolTip"/>
+                  </assist>
+                  <validate>
+                     <picture>text{9999999999}|text{999999999999}|text{99999999999}</picture>
+                     <message>
+                        <text name="formatTest">Please enter a valid telephone number. e.g  enter (222) 333-4444 as 2223334444 or +44 131 222 3333 as 441312223333.</text>
+                     </message>
+                  </validate>
+                  <event activity="exit" name="event__exit">
+                     <script contentType="application/x-javascript">//Set focus if there is an error
+if (this.errorText != "")
+	xfa.host.setFocus(this);
+
+</script>
+                  </event>
+               </field>
+               <field h="15.24mm" name="txtExtension" w="26.162mm">
+                  <border>
+                     <corner thickness="0.175mm"/>
+                     <edge/>
+                  </border>
+                  <caption placement="top" reserve="6.35mm">
+                     <font typeface="Myriad Pro" baselineShift="0pt" size="8pt"/>
+                     <para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" vAlign="middle"/>
+                     <value>
+                        <text>Extension (Optional)</text>
+                     </value>
+                  </caption>
+                  <font typeface="Myriad Pro"/>
+                  <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                  <para vAlign="middle"/>
+                  <ui>
+                     <textEdit hScrollPolicy="off">
+                        <border presence="hidden">
+                           <?templateDesigner StyleID aped3?></border>
+                        <margin/>
+                     </textEdit>
+                  </ui>
+                  <assist>
+                     <toolTip>***Header*** - Extension (Optional)</toolTip>
+                  </assist>
+               </field>
+               <field name="txtFaxNo" w="95.25mm" h="15.24mm" locale="en_CA">
+                  <ui>
+                     <textEdit hScrollPolicy="off">
+                        <border presence="hidden">
+                           <?templateDesigner StyleID aped0?></border>
+                        <margin/>
+                     </textEdit>
+                     <picture>text{9999999999}</picture>
+                  </ui>
+                  <font typeface="Myriad Pro"/>
+                  <margin bottomInset="1.0008mm" leftInset="1.0008mm" rightInset="1.0008mm" topInset="1.0008mm"/>
+                  <format>
+                     <picture>text{'+1 ('999') '999-9999}|text{'+'99 999 999 9999}|text{'+'99 999 999 999}</picture>
+                  </format>
+                  <border>
+                     <edge/>
+                     <corner thickness="0.175mm"/>
+                  </border>
+                  <para marginLeft="0pt" vAlign="middle" marginRight="0pt"/>
+                  <caption placement="top" reserve="6.35mm">
+                     <value>
+                        <text>Facsimile Number (Optional) (e.g. 2223334444 or 441312223333)</text>
+                     </value>
+                     <font typeface="Myriad Pro" size="8pt" baselineShift="0pt"/>
+                     <para vAlign="middle" marginLeft="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginRight="0pt"/>
+                  </caption>
+                  <assist>
+                     <toolTip>***Header*** - Facsimile Number (Optional) (e.g. 2223334444 or 441312223333)</toolTip>
+                     <speak priority="toolTip"/>
+                  </assist>
+                  <validate>
+                     <picture>text{9999999999}|text{999999999999}|text{99999999999}</picture>
+                     <message>
+                        <text name="formatTest">Please enter a valid facsimile number. e.g  enter (222) 333-4444 as 2223334444 or +44 131 222 3333 as 441312223333.</text>
+                     </message>
+                  </validate>
+                  <event activity="exit" name="event__exit">
+                     <script contentType="application/x-javascript">//Set focus if there is an error
+if (this.errorText != "")
+	xfa.host.setFocus(this);
+
+</script>
+                  </event>
+               </field>
+               <field name="txtEmail" w="190.5mm" h="11.43mm">
+                  <caption placement="top" reserve="3.175mm">
+                     <font size="8pt" typeface="Myriad Pro"/>
+                     <para marginLeft="0pt" vAlign="middle" marginRight="0pt"/>
+                     <value>
+                        <text>Email Address (e.g. a@a.a)</text>
+                     </value>
+                  </caption>
+                  <ui>
+                     <textEdit hScrollPolicy="off">
+                        <border presence="hidden">
+                           <?templateDesigner StyleID aped0?></border>
+                        <margin/>
+                     </textEdit>
+                  </ui>
+                  <font typeface="Myriad Pro"/>
+                  <margin topInset="1.0008mm" bottomInset="1.0008mm" leftInset="1.0008mm" rightInset="1.0008mm"/>
+                  <para vAlign="middle" marginLeft="0pt" marginRight="0pt"/>
+                  <validate>
+                     <script contentType="application/x-javascript">// Validate the email address.
+
+var r = new RegExp(); // Create a new Regular Expression Object.
+    r.compile("^[a-z0-9_\\-\\.]+\\@[a-z0-9_\\-\\.]+\\.[a-z]{1,3}$","i");// Set the regular expression to look for
+																		// an email address in general form.
+
+r.test(this.rawValue); 	// Test the rawValue of the current object to see
+						// if it fits the general form of an email address.
+</script>
+                     <message>
+                        <text name="scriptTest">Enter a valid email address in format "a@a.a".</text>
+                     </message>
+                  </validate>
+                  <border>
+                     <edge/>
+                     <corner/>
+                  </border>
+                  <keep intact="contentArea"/>
+                  <assist>
+                     <toolTip>***Header*** - Email Address (e.g. a@a.a)</toolTip>
+                  </assist>
+               </field>
+               <?templateDesigner expand 1?></subform>
+         </pageArea>
+      </pageSet>
+   </subform>
+</template></xdp:xdp>

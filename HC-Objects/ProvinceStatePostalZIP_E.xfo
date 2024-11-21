@@ -1,0 +1,877 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xfa generator="AdobeLiveCycleDesignerES_V10.5.0.20120807.1.873223" APIVersion="3.6.12219.0"?>
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/">
+<template xmlns="http://www.xfa.org/schema/xfa-template/3.3/">
+   <subform>
+      <pageSet>
+         <pageArea name="snippet">
+            <desc>
+               <text name="name">ProvinceStatePostalZIP_E</text>
+               <text name="description">Ensure Core.provinceStateHandler() exists.</text>
+            </desc>
+            <field h="15.24mm" name="txtZipCode" w="50.8mm" locale="fr_CA" y="30.48mm">
+               <border>
+                  <corner thickness="0.1753mm"/>
+                  <edge/>
+                  <edge presence="hidden"/>
+                  <edge/>
+                  <edge presence="hidden"/>
+                  <corner thickness="0.1753mm" presence="hidden"/>
+                  <corner thickness="0.1753mm"/>
+                  <corner thickness="0.1753mm" presence="hidden"/>
+               </border>
+               <caption placement="top" reserve="6.35mm">
+                  <font typeface="Myriad Pro" baselineShift="0pt" size="8pt"/>
+                  <para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" vAlign="middle"/>
+                  <value>
+                     <text>ZIP Code (e.g. 99999 or 999999999)</text>
+                  </value>
+               </caption>
+               <font typeface="Myriad Pro"/>
+               <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+               <para vAlign="middle"/>
+               <ui>
+                  <textEdit hScrollPolicy="off">
+                     <border presence="hidden">
+                        <?templateDesigner StyleID aped3?></border>
+                     <margin/>
+                  </textEdit>
+               </ui>
+               <validate scriptTest="warning" formatTest="error">
+                  <picture>text{999999999}|text{99999}</picture>
+                  <message>
+                     <text name="formatTest">Enter a valid ZIP Code in format "99999" or "99999-9999".</text>
+                  </message>
+               </validate>
+               <format>
+                  <picture>text{99999-9999}|text{99999}</picture>
+               </format>
+               <assist>
+                  <toolTip>***Header*** - ZIP Code (e.g. 99999 or 999999999)</toolTip>
+               </assist>
+            </field>
+            <field h="15.24mm" name="txtPostalCode" w="50.8mm" locale="fr_CA" x="114.3mm" y="15.24mm">
+               <border>
+                  <corner thickness="0.1753mm"/>
+                  <edge/>
+                  <edge presence="hidden"/>
+                  <edge/>
+                  <edge presence="hidden"/>
+                  <corner thickness="0.1753mm" presence="hidden"/>
+                  <corner thickness="0.1753mm"/>
+                  <corner thickness="0.1753mm" presence="hidden"/>
+               </border>
+               <caption placement="top" reserve="6.35mm">
+                  <font typeface="Myriad Pro" baselineShift="0pt" size="8pt"/>
+                  <para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" vAlign="middle"/>
+                  <value>
+                     <text>Postal Code (e.g. A9A9A9)</text>
+                  </value>
+               </caption>
+               <font typeface="Myriad Pro"/>
+               <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+               <para vAlign="middle"/>
+               <ui>
+                  <textEdit hScrollPolicy="off">
+                     <border presence="hidden">
+                        <?templateDesigner StyleID aped3?></border>
+                     <margin/>
+                  </textEdit>
+               </ui>
+               <validate scriptTest="warning" formatTest="error">
+                  <picture>text{A9A 9A9}|text{A9A9A9}|text{A9A-9A9}</picture>
+                  <message>
+                     <text name="formatTest">Enter a valid Postal Code in format "A9A9A9" </text>
+                  </message>
+               </validate>
+               <format>
+                  <picture>text{A9A 9A9}</picture>
+               </format>
+               <event activity="change" name="event__change">
+                  <script contentType="application/x-javascript">xfa.event.change = xfa.event.change.toUpperCase();
+
+</script>
+               </event>
+               <assist>
+                  <toolTip>***Header*** - Postal Code (e.g. A9A9A9)</toolTip>
+               </assist>
+            </field>
+            <field h="15.24mm" name="txtPostalZip" w="50.8mm" locale="fr_CA" x="63.5mm" y="15.24mm">
+               <border>
+                  <corner thickness="0.1753mm"/>
+                  <edge/>
+                  <edge presence="hidden"/>
+                  <edge/>
+                  <edge presence="hidden"/>
+                  <corner thickness="0.1753mm" presence="hidden"/>
+                  <corner thickness="0.1753mm"/>
+                  <corner thickness="0.1753mm" presence="hidden"/>
+               </border>
+               <caption placement="top" reserve="6.35mm">
+                  <font typeface="Myriad Pro" baselineShift="0pt" size="8pt"/>
+                  <para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" vAlign="middle"/>
+                  <value>
+                     <text>Postal/Zip Code (Optional)</text>
+                  </value>
+               </caption>
+               <font typeface="Myriad Pro"/>
+               <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+               <para vAlign="middle"/>
+               <ui>
+                  <textEdit hScrollPolicy="off">
+                     <border presence="hidden">
+                        <?templateDesigner StyleID aped3?></border>
+                     <margin/>
+                  </textEdit>
+               </ui>
+               <assist>
+                  <toolTip>***Header*** - Postal/Zip Code (Optional)</toolTip>
+               </assist>
+            </field>
+            <field h="15.24mm" name="provinceStateRegion" w="63.5mm" locale="fr_CA" y="15.24mm">
+               <border>
+                  <corner thickness="0.1753mm"/>
+                  <edge/>
+               </border>
+               <caption placement="top" reserve="6.35mm">
+                  <font typeface="Myriad Pro" baselineShift="0pt" size="8pt"/>
+                  <para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" vAlign="middle"/>
+                  <value>
+                     <text>Province/State/Region (Optional)</text>
+                  </value>
+               </caption>
+               <font typeface="Myriad Pro"/>
+               <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+               <para vAlign="middle"/>
+               <ui>
+                  <textEdit hScrollPolicy="off">
+                     <border presence="hidden">
+                        <?templateDesigner StyleID aped3?></border>
+                     <margin/>
+                  </textEdit>
+               </ui>
+               <assist>
+                  <toolTip>***Header*** - Province/State/Region (Optional)</toolTip>
+               </assist>
+            </field>
+            <field name="state" w="63.5mm" h="15.24mm" locale="fr_CA" x="139.7mm">
+               <ui>
+                  <choiceList>
+                     <border presence="hidden">
+                        <?templateDesigner StyleID aped0?>
+                        <edge/>
+                     </border>
+                     <margin/>
+                  </choiceList>
+               </ui>
+               <font typeface="Myriad Pro"/>
+               <margin topInset="1.0008mm" bottomInset="1.0008mm" leftInset="1.0008mm" rightInset="1.0008mm"/>
+               <para vAlign="middle"/>
+               <items>
+                  <text>Alabama</text>
+                  <text>Alaska</text>
+                  <text>Arizona</text>
+                  <text>Arkansas</text>
+                  <text>California</text>
+                  <text>Colorado</text>
+                  <text>Connecticut</text>
+                  <text>Delaware</text>
+                  <text>District of Columbia</text>
+                  <text>Florida</text>
+                  <text>Georgia</text>
+                  <text>Hawaii</text>
+                  <text>Idaho</text>
+                  <text>Illinois</text>
+                  <text>Indiana</text>
+                  <text>Iowa</text>
+                  <text>Kansas</text>
+                  <text>Kentucky</text>
+                  <text>Louisiana</text>
+                  <text>Maine</text>
+                  <text>Maryland</text>
+                  <text>Massachusetts</text>
+                  <text>Michigan</text>
+                  <text>Minnesota</text>
+                  <text>Mississippi</text>
+                  <text>Missouri</text>
+                  <text>Montana</text>
+                  <text>Nebraska</text>
+                  <text>Nevada</text>
+                  <text>New Hampshire</text>
+                  <text>New Jersey</text>
+                  <text>New Mexico</text>
+                  <text>New York</text>
+                  <text>North Carolina</text>
+                  <text>North Dakota</text>
+                  <text>Ohio</text>
+                  <text>Oklahoma</text>
+                  <text>Oregon</text>
+                  <text>Pennsylvania</text>
+                  <text>Rhode Island</text>
+                  <text>South Carolina</text>
+                  <text>South Dakota</text>
+                  <text>Tennessee</text>
+                  <text>Texas</text>
+                  <text>Utah</text>
+                  <text>Vermont</text>
+                  <text>Virginia</text>
+                  <text>Washington</text>
+                  <text>West Virginia</text>
+                  <text>Wisconsin</text>
+                  <text>Wyoming</text>
+               </items>
+               <items save="1" presence="hidden">
+                  <text>AL</text>
+                  <text>AK</text>
+                  <text>AZ</text>
+                  <text>AR</text>
+                  <text>CA</text>
+                  <text>CO</text>
+                  <text>CT</text>
+                  <text>DE</text>
+                  <text>DC</text>
+                  <text>FL</text>
+                  <text>GA</text>
+                  <text>HI</text>
+                  <text>ID</text>
+                  <text>IL</text>
+                  <text>IN</text>
+                  <text>IA</text>
+                  <text>KS</text>
+                  <text>KY</text>
+                  <text>LA</text>
+                  <text>ME</text>
+                  <text>MD</text>
+                  <text>MA</text>
+                  <text>MI</text>
+                  <text>MN</text>
+                  <text>MS</text>
+                  <text>MO</text>
+                  <text>MT</text>
+                  <text>NE</text>
+                  <text>NV</text>
+                  <text>NH</text>
+                  <text>NJ</text>
+                  <text>NM</text>
+                  <text>NY</text>
+                  <text>NC</text>
+                  <text>ND</text>
+                  <text>OH</text>
+                  <text>OK</text>
+                  <text>OR</text>
+                  <text>PA</text>
+                  <text>RI</text>
+                  <text>SC</text>
+                  <text>SD</text>
+                  <text>TN</text>
+                  <text>TX</text>
+                  <text>UT</text>
+                  <text>VT</text>
+                  <text>VA</text>
+                  <text>WA</text>
+                  <text>WV</text>
+                  <text>WI</text>
+                  <text>WY</text>
+               </items>
+               <caption placement="top" reserve="6.35mm">
+                  <value>
+                     <text>State</text>
+                  </value>
+                  <font typeface="Myriad Pro" size="8pt"/>
+                  <para vAlign="middle"/>
+               </caption>
+               <border>
+                  <edge/>
+                  <corner/>
+               </border>
+               <assist>
+                  <toolTip>***Header*** - State</toolTip>
+               </assist>
+            </field>
+            <field name="province" w="63.5mm" h="15.24mm" locale="fr_CA" x="76.2mm">
+               <ui>
+                  <choiceList>
+                     <border presence="hidden">
+                        <?templateDesigner StyleID aped0?>
+                        <edge/>
+                     </border>
+                     <margin/>
+                  </choiceList>
+               </ui>
+               <font typeface="Myriad Pro"/>
+               <margin topInset="1.0008mm" bottomInset="1.0008mm" leftInset="1.0008mm" rightInset="1.0008mm"/>
+               <para vAlign="middle"/>
+               <caption placement="top" reserve="6.35mm">
+                  <value>
+                     <text>Province</text>
+                  </value>
+                  <font typeface="Myriad Pro" size="8pt"/>
+                  <para vAlign="middle"/>
+               </caption>
+               <border>
+                  <edge/>
+                  <corner/>
+               </border>
+               <items>
+                  <text>Alberta</text>
+                  <text>British Columbia</text>
+                  <text>Manitoba</text>
+                  <text>New Brunswick</text>
+                  <text>Newfoundland and Labrador</text>
+                  <text>Northwest Territories</text>
+                  <text>Nova Scotia</text>
+                  <text>Nunavut</text>
+                  <text>Ontario</text>
+                  <text>Prince Edward Island</text>
+                  <text>Quebec</text>
+                  <text>Saskatchewan</text>
+                  <text>Yukon</text>
+               </items>
+               <items save="1" presence="hidden">
+                  <text>AB</text>
+                  <text>BC</text>
+                  <text>MB</text>
+                  <text>NB</text>
+                  <text>NL</text>
+                  <text>NT</text>
+                  <text>NS</text>
+                  <text>NU</text>
+                  <text>ON</text>
+                  <text>PE</text>
+                  <text>QC</text>
+                  <text>SK</text>
+                  <text>YT</text>
+               </items>
+               <assist>
+                  <toolTip>***Header*** - Province</toolTip>
+               </assist>
+            </field>
+            <field name="ddlCountry" w="76.2mm" h="15.24mm" locale="fr_CA">
+               <ui>
+                  <choiceList>
+                     <border presence="hidden">
+                        <?templateDesigner StyleID aped0?>
+                        <edge/>
+                     </border>
+                     <margin/>
+                  </choiceList>
+               </ui>
+               <font typeface="Myriad Pro"/>
+               <margin topInset="1.0008mm" bottomInset="1.0008mm" leftInset="1.0008mm" rightInset="1.0008mm"/>
+               <para vAlign="middle"/>
+               <items>
+                  <text>Canada</text>
+                  <text>United States</text>
+                  <text>Afghanistan</text>
+                  <text>Åland Islands</text>
+                  <text>Albania</text>
+                  <text>Algeria</text>
+                  <text>American Samoa</text>
+                  <text>Andorra</text>
+                  <text>Angola</text>
+                  <text>Anguilla</text>
+                  <text>Antarctica</text>
+                  <text>Antigua and Barbuda</text>
+                  <text>Argentina</text>
+                  <text>Armenia</text>
+                  <text>Aruba</text>
+                  <text>Australia</text>
+                  <text>Austria</text>
+                  <text>Azerbaijan</text>
+                  <text>Bahamas</text>
+                  <text>Bahrain</text>
+                  <text>Bangladesh</text>
+                  <text>Barbados</text>
+                  <text>Belarus</text>
+                  <text>Belgium</text>
+                  <text>Belize</text>
+                  <text>Benin</text>
+                  <text>Bermuda</text>
+                  <text>Bhutan</text>
+                  <text>Bolivia</text>
+                  <text>Bosnia and Herzegowina</text>
+                  <text>Bostswana</text>
+                  <text>Bouvet Island</text>
+                  <text>Brazil</text>
+                  <text>British Indian Ocean Territory</text>
+                  <text>Brunei Darussalam</text>
+                  <text>Bulgaria</text>
+                  <text>Burkina Faso</text>
+                  <text>Burundi</text>
+                  <text>Cambodia</text>
+                  <text>Cameroon</text>
+                  <text>Cape Verde</text>
+                  <text>Cayman Islands</text>
+                  <text>Central African Republic</text>
+                  <text>Chad</text>
+                  <text>Chile</text>
+                  <text>China</text>
+                  <text>Christmas Island</text>
+                  <text>Cocos (Keeling) Islands</text>
+                  <text>Colombia</text>
+                  <text>Comoros</text>
+                  <text>Congo</text>
+                  <text>Congo, the Democratic Republic of the</text>
+                  <text>Cook Islands</text>
+                  <text>Costa Rica</text>
+                  <text>Cote d'lvoire</text>
+                  <text>Croatia (Hrvatska)</text>
+                  <text>Cuba</text>
+                  <text>Cyprus</text>
+                  <text>Czech Republic</text>
+                  <text>Denmark</text>
+                  <text>Djibouti</text>
+                  <text>Dominica</text>
+                  <text>Dominican Republic</text>
+                  <text>East Timor</text>
+                  <text>Ecuador</text>
+                  <text>Egypt</text>
+                  <text>El Salvador</text>
+                  <text>Equatorial Guinea</text>
+                  <text>Eritrea</text>
+                  <text>Estonia</text>
+                  <text>Ethiopia</text>
+                  <text>Falkland Islands (Malvinas)</text>
+                  <text>Faroe Islands</text>
+                  <text>Fiji</text>
+                  <text>Finland</text>
+                  <text>France</text>
+                  <text>France, Metropolitan</text>
+                  <text>French Guiana</text>
+                  <text>French Polynesia</text>
+                  <text>French Southern Territories</text>
+                  <text>Gabon</text>
+                  <text>Gambia</text>
+                  <text>Georgia</text>
+                  <text>Germany</text>
+                  <text>Ghana</text>
+                  <text>Gibraltar</text>
+                  <text>Greece</text>
+                  <text>Greenland</text>
+                  <text>Grenada</text>
+                  <text>Guadeloupe</text>
+                  <text>Guam</text>
+                  <text>Guatemala</text>
+                  <text>Guinea</text>
+                  <text>Guinea-Bissau</text>
+                  <text>Guyana</text>
+                  <text>Haiti</text>
+                  <text>Heard and McDonald Islands</text>
+                  <text>Holy See (Vatican City State)</text>
+                  <text>Honduras</text>
+                  <text>Hong Kong</text>
+                  <text>Hungary</text>
+                  <text>Iceland</text>
+                  <text>India</text>
+                  <text>Indonesia</text>
+                  <text>Iran (Islamic Republic of)</text>
+                  <text>Iraq</text>
+                  <text>Ireland</text>
+                  <text>Israel</text>
+                  <text>Italy</text>
+                  <text>Jamaica</text>
+                  <text>Japan</text>
+                  <text>Jordan</text>
+                  <text>Kazakhstan</text>
+                  <text>Kenya</text>
+                  <text>Kiribati</text>
+                  <text>Korea, Democratic People's Republic of</text>
+                  <text>Korea, Republic of</text>
+                  <text>Kuwait</text>
+                  <text>Kyrgyzstan</text>
+                  <text>Lao People's Democratic Republic</text>
+                  <text>Latvia</text>
+                  <text>Lebanon</text>
+                  <text>Lesotho</text>
+                  <text>Liberia</text>
+                  <text>Libyan Arab Jamahiriya</text>
+                  <text>Liechtenstein</text>
+                  <text>Lithuania</text>
+                  <text>Luxembourg</text>
+                  <text>Macau</text>
+                  <text>Macedonia, The Former Yugoslav Republic of</text>
+                  <text>Madagascar</text>
+                  <text>Malawi</text>
+                  <text>Malaysia</text>
+                  <text>Maldives</text>
+                  <text>Mali</text>
+                  <text>Malta</text>
+                  <text>Marshall Islands</text>
+                  <text>Martinique</text>
+                  <text>Mauritania</text>
+                  <text>Mauritius</text>
+                  <text>Mayotte</text>
+                  <text>Mexico</text>
+                  <text>Micronesia, Federated States of</text>
+                  <text>Moldova, Republic of</text>
+                  <text>Monaco</text>
+                  <text>Mongolia</text>
+                  <text>Montserrat</text>
+                  <text>Morocco</text>
+                  <text>Mozambique</text>
+                  <text>Myanmar</text>
+                  <text>Namibia</text>
+                  <text>Nauru</text>
+                  <text>Nepal</text>
+                  <text>Netherlands</text>
+                  <text>Netherlands Antilles</text>
+                  <text>New Caledonia</text>
+                  <text>New Zealand</text>
+                  <text>Nicaragua</text>
+                  <text>Niger</text>
+                  <text>Nigeria</text>
+                  <text>Niue</text>
+                  <text>Norfolk Island</text>
+                  <text>Northern Mariana Islands</text>
+                  <text>Norway</text>
+                  <text>Oman</text>
+                  <text>Pakistan</text>
+                  <text>Palau</text>
+                  <text>Panama</text>
+                  <text>Papua New Guinea</text>
+                  <text>Paraguay</text>
+                  <text>Peru</text>
+                  <text>Philippines</text>
+                  <text>Pitcairn</text>
+                  <text>Poland</text>
+                  <text>Portugal</text>
+                  <text>Puerto Ricco</text>
+                  <text>Qatar</text>
+                  <text>Reunion</text>
+                  <text>Romania</text>
+                  <text>Russian Federation</text>
+                  <text>Rwanda</text>
+                  <text>Saint Kitts and Nevis</text>
+                  <text>Saint Lucia</text>
+                  <text>Saint Vincent and the Grenadines</text>
+                  <text>Samoa</text>
+                  <text>San Marino</text>
+                  <text>Sao Tome and Principe</text>
+                  <text>Saudi Arabia</text>
+                  <text>Senegal</text>
+                  <text>Seychelles</text>
+                  <text>Sierra Leone</text>
+                  <text>Singapore</text>
+                  <text>Slovakia (Slovak Republic)</text>
+                  <text>Slovenia</text>
+                  <text>Solomon Islands</text>
+                  <text>Somalia</text>
+                  <text>South Africa</text>
+                  <text>South Georgia and the South Sandwich Islands</text>
+                  <text>Spain</text>
+                  <text>Sri Lanka</text>
+                  <text>St. Helena</text>
+                  <text>St. Pierre and Miquelon</text>
+                  <text>Sudan</text>
+                  <text>Suriname</text>
+                  <text>Svalbard and Jan Mayen Islands</text>
+                  <text>Swaziland</text>
+                  <text>Sweden</text>
+                  <text>Switzerland</text>
+                  <text>Syrian Arab Republic</text>
+                  <text>Taiwan, Province of China</text>
+                  <text>Tajikistan</text>
+                  <text>Tanzania, United Republic of</text>
+                  <text>Thailand</text>
+                  <text>Togo</text>
+                  <text>Tokelau</text>
+                  <text>Tonga</text>
+                  <text>Trinidad and Tobago</text>
+                  <text>Tunisia</text>
+                  <text>Turkey</text>
+                  <text>Turkmenistan</text>
+                  <text>Turks and Caicos Islands</text>
+                  <text>Tuvalu</text>
+                  <text>Uganda</text>
+                  <text>Ukraine</text>
+                  <text>United Arab Emirates</text>
+                  <text>United Kingdom</text>
+                  <text>United States Minor Outlying Islands</text>
+                  <text>Uruguay</text>
+                  <text>Uzbekistan</text>
+                  <text>Vanuatu</text>
+                  <text>Venezuela</text>
+                  <text>Viet Nam</text>
+                  <text>Virgin Islands (British)</text>
+                  <text>Virgin Islands (U.S.)</text>
+                  <text>Wallis and Futuna Islands</text>
+                  <text>Western Sahara</text>
+                  <text>Yemen</text>
+                  <text>Yugoslavia</text>
+                  <text>Zambia</text>
+                  <text>Zimbabwe</text>
+               </items>
+               <items save="1" presence="hidden">
+                  <text>CA</text>
+                  <text>US</text>
+                  <text>AF</text>
+                  <text>AX</text>
+                  <text>AL</text>
+                  <text>DZ</text>
+                  <text>AS</text>
+                  <text>AD</text>
+                  <text>AO</text>
+                  <text>AI</text>
+                  <text>AQ</text>
+                  <text>AG</text>
+                  <text>AR</text>
+                  <text>AM</text>
+                  <text>AW</text>
+                  <text>AU</text>
+                  <text>AT</text>
+                  <text>AZ</text>
+                  <text>BS</text>
+                  <text>BH</text>
+                  <text>BD</text>
+                  <text>BB</text>
+                  <text>BY</text>
+                  <text>BE</text>
+                  <text>BZ</text>
+                  <text>BJ</text>
+                  <text>BM</text>
+                  <text>BT</text>
+                  <text>BO</text>
+                  <text>BA</text>
+                  <text>BW</text>
+                  <text>BV</text>
+                  <text>BR</text>
+                  <text>IO</text>
+                  <text>BN</text>
+                  <text>BG</text>
+                  <text>BF</text>
+                  <text>BI</text>
+                  <text>KH</text>
+                  <text>CM</text>
+                  <text>CV</text>
+                  <text>KY</text>
+                  <text>CF</text>
+                  <text>TD</text>
+                  <text>CL</text>
+                  <text>CN</text>
+                  <text>CX</text>
+                  <text>CC</text>
+                  <text>CO</text>
+                  <text>KM</text>
+                  <text>CG</text>
+                  <text>CD</text>
+                  <text>CK</text>
+                  <text>CR</text>
+                  <text>CI</text>
+                  <text>HR</text>
+                  <text>CU</text>
+                  <text>CY</text>
+                  <text>CZ</text>
+                  <text>DK</text>
+                  <text>DJ</text>
+                  <text>DM</text>
+                  <text>DO</text>
+                  <text>TP</text>
+                  <text>EC</text>
+                  <text>EG</text>
+                  <text>SV</text>
+                  <text>GQ</text>
+                  <text>ER</text>
+                  <text>EE</text>
+                  <text>ET</text>
+                  <text>FK</text>
+                  <text>FO</text>
+                  <text>FJ</text>
+                  <text>FI</text>
+                  <text>FR</text>
+                  <text>FX</text>
+                  <text>GF</text>
+                  <text>PF</text>
+                  <text>TF</text>
+                  <text>GA</text>
+                  <text>GM</text>
+                  <text>GE</text>
+                  <text>DE</text>
+                  <text>GH</text>
+                  <text>GI</text>
+                  <text>GR</text>
+                  <text>GL</text>
+                  <text>GD</text>
+                  <text>GP</text>
+                  <text>GU</text>
+                  <text>GT</text>
+                  <text>GN</text>
+                  <text>GW</text>
+                  <text>GY</text>
+                  <text>HT</text>
+                  <text>HM</text>
+                  <text>VA</text>
+                  <text>HN</text>
+                  <text>HK</text>
+                  <text>HU</text>
+                  <text>IS</text>
+                  <text>IN</text>
+                  <text>ID</text>
+                  <text>IR</text>
+                  <text>IQ</text>
+                  <text>IE</text>
+                  <text>IL</text>
+                  <text>IT</text>
+                  <text>JM</text>
+                  <text>JP</text>
+                  <text>JO</text>
+                  <text>KZ</text>
+                  <text>KE</text>
+                  <text>KI</text>
+                  <text>KP</text>
+                  <text>KR</text>
+                  <text>KW</text>
+                  <text>KG</text>
+                  <text>LA</text>
+                  <text>LV</text>
+                  <text>LB</text>
+                  <text>LS</text>
+                  <text>LR</text>
+                  <text>LY</text>
+                  <text>LI</text>
+                  <text>LT</text>
+                  <text>LU</text>
+                  <text>MO</text>
+                  <text>MK</text>
+                  <text>MG</text>
+                  <text>MW</text>
+                  <text>MY</text>
+                  <text>MV</text>
+                  <text>ML</text>
+                  <text>MT</text>
+                  <text>MH</text>
+                  <text>MQ</text>
+                  <text>MR</text>
+                  <text>MU</text>
+                  <text>YT</text>
+                  <text>MX</text>
+                  <text>FM</text>
+                  <text>MD</text>
+                  <text>MC</text>
+                  <text>MN</text>
+                  <text>MS</text>
+                  <text>MA</text>
+                  <text>MZ</text>
+                  <text>MM</text>
+                  <text>NA</text>
+                  <text>NR</text>
+                  <text>NP</text>
+                  <text>NL</text>
+                  <text>AN</text>
+                  <text>NC</text>
+                  <text>NZ</text>
+                  <text>NI</text>
+                  <text>NE</text>
+                  <text>NG</text>
+                  <text>NU</text>
+                  <text>NF</text>
+                  <text>MP</text>
+                  <text>NO</text>
+                  <text>OM</text>
+                  <text>PK</text>
+                  <text>PW</text>
+                  <text>PA</text>
+                  <text>PG</text>
+                  <text>PY</text>
+                  <text>PE</text>
+                  <text>PH</text>
+                  <text>PN</text>
+                  <text>PL</text>
+                  <text>PT</text>
+                  <text>PR</text>
+                  <text>QA</text>
+                  <text>RE</text>
+                  <text>RO</text>
+                  <text>RU</text>
+                  <text>RW</text>
+                  <text>KN</text>
+                  <text>LC</text>
+                  <text>VC</text>
+                  <text>WS</text>
+                  <text>SM</text>
+                  <text>ST</text>
+                  <text>SA</text>
+                  <text>SN</text>
+                  <text>SC</text>
+                  <text>SL</text>
+                  <text>SG</text>
+                  <text>SK</text>
+                  <text>SI</text>
+                  <text>SB</text>
+                  <text>SO</text>
+                  <text>ZA</text>
+                  <text>GS</text>
+                  <text>ES</text>
+                  <text>LK</text>
+                  <text>SH</text>
+                  <text>PM</text>
+                  <text>SD</text>
+                  <text>SR</text>
+                  <text>SJ</text>
+                  <text>SZ</text>
+                  <text>SE</text>
+                  <text>CH</text>
+                  <text>SY</text>
+                  <text>TW</text>
+                  <text>TJ</text>
+                  <text>TZ</text>
+                  <text>TH</text>
+                  <text>TG</text>
+                  <text>TK</text>
+                  <text>TO</text>
+                  <text>TT</text>
+                  <text>TN</text>
+                  <text>TR</text>
+                  <text>TM</text>
+                  <text>TC</text>
+                  <text>TV</text>
+                  <text>UG</text>
+                  <text>UA</text>
+                  <text>AE</text>
+                  <text>GB</text>
+                  <text>UM</text>
+                  <text>UY</text>
+                  <text>UZ</text>
+                  <text>VU</text>
+                  <text>VE</text>
+                  <text>VN</text>
+                  <text>VG</text>
+                  <text>VI</text>
+                  <text>WF</text>
+                  <text>EH</text>
+                  <text>YE</text>
+                  <text>YU</text>
+                  <text>ZM</text>
+                  <text>ZW</text>
+               </items>
+               <caption placement="top" reserve="6.35mm">
+                  <value>
+                     <text>Country</text>
+                  </value>
+                  <font typeface="Myriad Pro" size="8pt"/>
+                  <para vAlign="middle"/>
+               </caption>
+               <border>
+                  <edge/>
+                  <corner/>
+               </border>
+               <validate scriptTest="warning"/>
+               <event activity="exit" name="event__exit">
+                  <script contentType="application/x-javascript">//var oAuth = this.parent;
+//Util.provinceStateHandler(this,oAuth);
+
+</script>
+               </event>
+               <event activity="change" name="event__change">
+                  <script contentType="application/x-javascript">var oSub = this.parent;
+Util.provinceStateHandler(this,oSub);
+
+</script>
+               </event>
+               <assist>
+                  <toolTip>***Header*** - Country</toolTip>
+               </assist>
+            </field>
+         </pageArea>
+      </pageSet>
+   </subform>
+</template></xdp:xdp>

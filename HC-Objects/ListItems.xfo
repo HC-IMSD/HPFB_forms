@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xfa generator="AdobeLiveCycleDesignerES_V10.5.0.20120807.1.873223" APIVersion="3.6.12219.0"?>
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/">
+<template xmlns="http://www.xfa.org/schema/xfa-template/3.3/">
+   <subform>
+      <pageSet>
+         <pageArea name="snippet">
+            <desc>
+               <text name="name">ListItems</text>
+            </desc>
+            <subform layout="lr-tb" name="List1" w="190.5mm">
+               <keep intact="contentArea"/>
+               <bind match="none"/>
+               <subform w="190.5mm" layout="lr-tb" name="Item1">
+                  <draw colSpan="2" h="7.62mm" name="lblItem1" w="190.5mm">
+                     <assist>
+                        <speak priority="toolTip"/>
+                     </assist>
+                     <font typeface="Myriad Pro" baselineShift="0pt" size="8pt"/>
+                     <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                     <para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="-5.04pt" vAlign="middle"/>
+                     <ui>
+                        <textEdit>
+                           <margin/>
+                        </textEdit>
+                     </ui>
+                     <value>
+                        <text>	1.  Item</text>
+                     </value>
+                  </draw>
+                  <assist role="LI"/>
+                  <?templateDesigner expand 1?></subform>
+               <assist role="UL"/>
+               <subform y="7.62mm" w="190.5mm" layout="lr-tb" name="Item2">
+                  <draw colSpan="2" h="7.62mm" name="lblItem2" w="190.5mm">
+                     <assist>
+                        <speak priority="toolTip"/>
+                     </assist>
+                     <font typeface="Myriad Pro" baselineShift="0pt" size="8pt"/>
+                     <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                     <para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" vAlign="middle"/>
+                     <ui>
+                        <textEdit>
+                           <margin/>
+                        </textEdit>
+                     </ui>
+                     <value>
+                        <exData contentType="text/html">
+                           <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"><p style="text-indent:-5.04pt;letter-spacing:0in"><span style="xfa-tab-count:1">         </span>2.<span style="xfa-spacerun:yes">  </span>Item</p></body>
+                        </exData>
+                     </value>
+                  </draw>
+                  <assist role="LI"/>
+                  <?templateDesigner expand 1?></subform>
+               <?templateDesigner expand 1?></subform>
+         </pageArea>
+      </pageSet>
+   </subform>
+</template></xdp:xdp>

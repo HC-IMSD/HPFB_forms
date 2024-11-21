@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xfa generator="AdobeLiveCycleDesignerES_V10.5.0.20120807.1.873223" APIVersion="3.6.12219.0"?>
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/">
+<template xmlns="http://www.xfa.org/schema/xfa-template/3.3/">
+   <subform>
+      <pageSet>
+         <pageArea name="snippet">
+            <desc>
+               <text name="name">Cetifications-Attestations_F</text>
+            </desc>
+            <subform w="190.5mm" name="Certifications" layout="lr-tb" locale="fr_CA">
+               <draw h="7.62mm" name="lblCertificationHeader" w="190.5mm" locale="fr_CA">
+                  <assist role="H2"/>
+                  <border>
+                     <corner/>
+                     <edge/>
+                     <edge presence="hidden"/>
+                     <edge/>
+                     <edge presence="hidden"/>
+                     <fill>
+                        <color value="255,255,153"/>
+                        <linear>
+                           <color value="255,255,255"/>
+                        </linear>
+                     </fill>
+                  </border>
+                  <font typeface="Myriad Pro" size="12pt" weight="bold"/>
+                  <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                  <para vAlign="middle"/>
+                  <ui>
+                     <textEdit>
+                        <margin/>
+                     </textEdit>
+                  </ui>
+                  <value>
+                     <text> Attestations</text>
+                  </value>
+               </draw>
+               <draw name="lblCert" w="190.5mm" h="8.89mm" locale="fr_CA">
+                  <ui>
+                     <textEdit/>
+                  </ui>
+                  <font typeface="Myriad Pro" baselineShift="0pt" size="8pt"/>
+                  <margin topInset="2.54mm" bottomInset="0.5mm" leftInset="1.27mm" rightInset="0.5mm"/>
+                  <assist>
+                     <speak disable="1"/>
+                  </assist>
+                  <keep next="contentArea"/>
+                  <value>
+                     <text>Je, soussigné, certifie que :</text>
+                  </value>
+                  <border>
+                     <edge/>
+                     <corner thickness="0.175mm"/>
+                     <edge/>
+                     <edge presence="hidden"/>
+                     <edge/>
+                     <corner thickness="0.175mm"/>
+                     <corner thickness="0.175mm" presence="hidden"/>
+                     <corner thickness="0.175mm"/>
+                  </border>
+               </draw>
+               <subform y="16.51mm" w="190.5mm" layout="lr-tb" name="List">
+                  <subform layout="lr-tb" name="Cert1" w="190.5mm">
+                     <keep intact="contentArea"/>
+                     <bind match="none"/>
+                     <draw colSpan="2" h="7.62mm" name="lblCert1" w="190.5mm" locale="fr_CA">
+                        <assist>
+                           <speak priority="toolTip"/>
+                        </assist>
+                        <font typeface="Myriad Pro" baselineShift="0pt" size="8pt"/>
+                        <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                        <para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="-5.04pt" vAlign="middle"/>
+                        <ui>
+                           <textEdit>
+                              <margin/>
+                           </textEdit>
+                        </ui>
+                        <value>
+                           <exData contentType="text/html">
+                              <body xmlns="http://www.w3.org/1999/xhtml" xmlns:xfa="http://www.xfa.org/schema/xfa-data/1.0/"><p style="text-decoration:none;letter-spacing:0in"><span style="xfa-tab-count:1">         </span>1.<span style="xfa-spacerun:yes">  </span><span style="text-decoration:none">Les informations et le matériel inclus dans ce formulaire sont exacts et complets.</span></p></body>
+                           </exData>
+                        </value>
+                     </draw>
+                     <assist role="LI"/>
+                     <?templateDesigner expand 1?></subform>
+                  <subform layout="lr-tb" name="Cert2" w="190.5mm">
+                     <keep intact="contentArea"/>
+                     <bind match="none"/>
+                     <draw colSpan="2" h="7.62mm" name="lblCert2" w="190.5mm" locale="fr_CA">
+                        <assist>
+                           <speak priority="toolTip"/>
+                        </assist>
+                        <font typeface="Myriad Pro" baselineShift="0pt" size="8pt"/>
+                        <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                        <para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="-5.04pt" vAlign="middle"/>
+                        <ui>
+                           <textEdit>
+                              <margin/>
+                           </textEdit>
+                        </ui>
+                        <value>
+                           <text>	2.  Aucune information n'est fausse ou trompeuse et aucune omission n'a pu être faite qui pourrait affecter son exactitude et son exhaustivité.	</text>
+                        </value>
+                     </draw>
+                     <assist role="LI"/>
+                     <?templateDesigner expand 1?></subform>
+                  <assist role="UL"/>
+                  <keep intact="contentArea"/>
+                  <?templateDesigner expand 1?></subform>
+               <keep intact="contentArea"/>
+               <event activity="initialize" name="event__initialize">
+                  <script contentType="application/x-javascript">// Specify the mandatory error message.
+
+var sHeading = lblCertificationHeader.value.text.value;
+var oFields = this.resolveNodes("#field[*]");
+Core.setMandatoryMessage(oFields, sHeading);
+
+
+</script>
+               </event>
+               <field h="11.43mm" name="ddlSalutation" w="38.1mm" locale="fr_CA">
+                  <caption placement="top" reserve="3.175mm">
+                     <para vAlign="middle" lineHeight="16.8pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt"/>
+                     <value>
+                        <text>Appel</text>
+                     </value>
+                     <font typeface="Myriad Pro" size="8pt" baselineShift="0pt"/>
+                  </caption>
+                  <font typeface="Myriad Pro"/>
+                  <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                  <para vAlign="middle"/>
+                  <ui>
+                     <choiceList>
+                        <border presence="hidden">
+                           <?templateDesigner StyleID aped3?></border>
+                        <margin/>
+                     </choiceList>
+                  </ui>
+                  <border>
+                     <edge/>
+                     <corner thickness="0.175mm"/>
+                  </border>
+                  <items>
+                     <text>M.</text>
+                     <text>Mme</text>
+                     <text>Mlle</text>
+                     <text>Dr.</text>
+                  </items>
+                  <items save="1" presence="hidden">
+                     <text>M.</text>
+                     <text>MME</text>
+                     <text>MLLE</text>
+                     <text>DR</text>
+                  </items>
+                  <assist>
+                     <toolTip> Attestations - Appel</toolTip>
+                     <speak priority="toolTip"/>
+                  </assist>
+               </field>
+               <field h="11.43mm" name="txtGivenName" w="76.2mm" locale="fr_CA">
+                  <border>
+                     <corner thickness="0.175mm"/>
+                     <edge/>
+                  </border>
+                  <caption placement="top" reserve="3.175mm">
+                     <font typeface="Myriad Pro" baselineShift="0pt" size="8pt"/>
+                     <para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" vAlign="middle"/>
+                     <value>
+                        <text>Prénom</text>
+                     </value>
+                  </caption>
+                  <font typeface="Myriad Pro"/>
+                  <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                  <para vAlign="middle"/>
+                  <ui>
+                     <textEdit hScrollPolicy="off">
+                        <border presence="hidden">
+                           <?templateDesigner StyleID aped3?></border>
+                        <margin/>
+                     </textEdit>
+                  </ui>
+                  <assist>
+                     <toolTip> Attestations - Prénom</toolTip>
+                     <speak priority="toolTip"/>
+                  </assist>
+               </field>
+               <field h="11.43mm" name="txtSurname" w="76.2mm" locale="fr_CA">
+                  <border>
+                     <corner thickness="0.175mm"/>
+                     <edge/>
+                  </border>
+                  <caption placement="top" reserve="3.175mm">
+                     <font typeface="Myriad Pro" baselineShift="0pt" size="8pt"/>
+                     <para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" vAlign="middle"/>
+                     <value>
+                        <text>Nom de famille</text>
+                     </value>
+                  </caption>
+                  <font typeface="Myriad Pro"/>
+                  <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                  <para vAlign="middle"/>
+                  <ui>
+                     <textEdit hScrollPolicy="off">
+                        <border presence="hidden">
+                           <?templateDesigner StyleID aped3?></border>
+                        <margin/>
+                     </textEdit>
+                  </ui>
+                  <assist>
+                     <toolTip> Attestations - Nom de famille</toolTip>
+                     <speak priority="toolTip"/>
+                  </assist>
+               </field>
+               <field h="11.43mm" name="txtTitle" w="190.5mm" locale="fr_CA">
+                  <border>
+                     <corner thickness="0.175mm"/>
+                     <edge/>
+                  </border>
+                  <caption placement="top" reserve="3.175mm">
+                     <font typeface="Myriad Pro" baselineShift="0pt" size="8pt"/>
+                     <para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" vAlign="middle"/>
+                     <value>
+                        <text>Titre du poste</text>
+                     </value>
+                  </caption>
+                  <font typeface="Myriad Pro"/>
+                  <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+                  <para vAlign="middle"/>
+                  <ui>
+                     <textEdit hScrollPolicy="off">
+                        <border presence="hidden">
+                           <?templateDesigner StyleID aped3?></border>
+                        <margin/>
+                     </textEdit>
+                  </ui>
+                  <assist>
+                     <toolTip> Attestations - Titre du poste</toolTip>
+                     <speak priority="toolTip"/>
+                  </assist>
+               </field>
+               <border>
+                  <edge/>
+                  <corner/>
+               </border>
+               <?templateDesigner expand 1?></subform>
+         </pageArea>
+      </pageSet>
+   </subform>
+</template></xdp:xdp>

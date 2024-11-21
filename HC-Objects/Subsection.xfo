@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xfa generator="AdobeLiveCycleDesignerES_V10.5.0.20120807.1.873223" APIVersion="3.6.12219.0"?>
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/">
+<template xmlns="http://www.xfa.org/schema/xfa-template/3.3/">
+   <subform>
+      <pageSet>
+         <pageArea name="snippet">
+            <desc>
+               <text name="name">Subsection</text>
+            </desc>
+            <subform w="190.5mm" layout="tb" name="SubSection">
+               <draw h="7.62mm" name="lblHeader" w="190.5mm">
+                  <assist role="H3"/>
+                  <border>
+                     <corner/>
+                     <edge/>
+                     <edge presence="hidden"/>
+                     <edge/>
+                     <edge presence="hidden"/>
+                  </border>
+                  <font typeface="Myriad Pro" weight="bold"/>
+                  <margin bottomInset="0.5mm" leftInset="0.5mm" rightInset="0.5mm" topInset="0.5mm"/>
+                  <para vAlign="middle"/>
+                  <ui>
+                     <textEdit>
+                        <margin/>
+                     </textEdit>
+                  </ui>
+                  <value>
+                     <text>Subsection Title</text>
+                  </value>
+               </draw>
+               <keep intact="contentArea"/>
+               <traversal>
+                  <traverse operation="first" ref="lblHeader[0]"/>
+               </traversal>
+               <?templateDesigner expand 1?></subform>
+         </pageArea>
+      </pageSet>
+   </subform>
+</template></xdp:xdp>

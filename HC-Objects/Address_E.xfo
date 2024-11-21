@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xfa generator="AdobeLiveCycleDesignerES_V10.5.0.20120807.1.873223" APIVersion="3.6.12219.0"?>
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/">
+<template xmlns="http://www.xfa.org/schema/xfa-template/3.3/">
+   <subform>
+      <pageSet>
+         <pageArea name="snippet">
+            <desc>
+               <text name="name">Address_E</text>
+            </desc>
+            <field name="txtAddress" w="190.5mm" h="11.43mm" locale="fr_CA">
+               <ui>
+                  <textEdit hScrollPolicy="off">
+                     <border presence="hidden">
+                        <?templateDesigner StyleID aped0?></border>
+                     <margin/>
+                  </textEdit>
+               </ui>
+               <font typeface="Myriad Pro"/>
+               <margin bottomInset="1.0008mm" leftInset="1.0008mm" rightInset="1.0008mm" topInset="1.0008mm"/>
+               <border>
+                  <edge/>
+                  <corner/>
+               </border>
+               <caption placement="top" reserve="3.175mm">
+                  <value>
+                     <text>Address (Street/Suite/P.O. Box)</text>
+                  </value>
+                  <font baselineShift="0pt" size="8pt" typeface="Myriad Pro"/>
+                  <para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" vAlign="middle"/>
+               </caption>
+               <para marginLeft="0pt" vAlign="middle" marginRight="0pt"/>
+               <assist>
+                  <toolTip>***Header*** - Address (Street/Suite/P.O. Box)</toolTip>
+               </assist>
+            </field>
+         </pageArea>
+      </pageSet>
+   </subform>
+</template></xdp:xdp>

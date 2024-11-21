@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xfa generator="AdobeLiveCycleDesignerES_V10.5.0.20120807.1.873223" APIVersion="3.6.12219.0"?>
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/">
+<template xmlns="http://www.xfa.org/schema/xfa-template/3.3/">
+   <subform>
+      <pageSet>
+         <pageArea name="snippet">
+            <desc>
+               <text name="name">Position_Title_F</text>
+            </desc>
+            <field h="11.43mm" name="txtTitle" w="190.5mm">
+               <border>
+                  <corner thickness="0.175mm"/>
+                  <edge/>
+               </border>
+               <caption placement="top" reserve="3.175mm">
+                  <font typeface="Myriad Pro" baselineShift="0pt" size="8pt"/>
+                  <para marginLeft="0pt" marginRight="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" vAlign="middle"/>
+                  <value>
+                     <text>Titre du poste</text>
+                  </value>
+               </caption>
+               <font typeface="Myriad Pro"/>
+               <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+               <para vAlign="middle"/>
+               <ui>
+                  <textEdit hScrollPolicy="off">
+                     <border presence="hidden">
+                        <?templateDesigner StyleID aped3?></border>
+                     <margin/>
+                  </textEdit>
+               </ui>
+               <assist>
+                  <toolTip>***Header*** - Titre du poste</toolTip>
+               </assist>
+            </field>
+         </pageArea>
+      </pageSet>
+   </subform>
+</template></xdp:xdp>

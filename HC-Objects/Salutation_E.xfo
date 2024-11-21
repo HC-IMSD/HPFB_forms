@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xfa generator="AdobeLiveCycleDesignerES_V10.5.0.20120807.1.873223" APIVersion="3.6.12219.0"?>
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/">
+<template xmlns="http://www.xfa.org/schema/xfa-template/3.3/">
+   <subform>
+      <pageSet>
+         <pageArea name="snippet">
+            <desc>
+               <text name="name">Salutation_E</text>
+            </desc>
+            <field h="11.43mm" name="ddlSalutation" w="38.1mm" locale="en_CA">
+               <caption placement="top" reserve="3.175mm">
+                  <para vAlign="middle">
+                     <hyphenation/>
+                  </para>
+                  <value>
+                     <text>Salutation</text>
+                  </value>
+                  <font typeface="Myriad Pro" size="8pt"/>
+               </caption>
+               <font typeface="Myriad Pro"/>
+               <margin bottomInset="1mm" leftInset="1mm" rightInset="1mm" topInset="1mm"/>
+               <para vAlign="middle"/>
+               <ui>
+                  <choiceList>
+                     <border presence="hidden">
+                        <?templateDesigner StyleID aped3?></border>
+                     <margin/>
+                  </choiceList>
+               </ui>
+               <border>
+                  <edge/>
+                  <corner thickness="0.175mm"/>
+               </border>
+               <items>
+                  <text>Mr.</text>
+                  <text>Mrs.</text>
+                  <text>Miss/Ms.</text>
+                  <text>Dr.</text>
+               </items>
+               <items save="1" presence="hidden">
+                  <text>MR</text>
+                  <text>MRS</text>
+                  <text>MISS</text>
+                  <text>DR</text>
+               </items>
+            </field>
+         </pageArea>
+      </pageSet>
+   </subform>
+</template></xdp:xdp>

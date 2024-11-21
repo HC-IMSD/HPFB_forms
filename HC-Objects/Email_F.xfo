@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xfa generator="AdobeLiveCycleDesignerES_V10.5.0.20120807.1.873223" APIVersion="3.6.12219.0"?>
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/">
+<template xmlns="http://www.xfa.org/schema/xfa-template/3.3/">
+   <subform>
+      <pageSet>
+         <pageArea name="snippet">
+            <desc>
+               <text name="name">Email_F</text>
+            </desc>
+            <field name="txtEmail" w="190.5mm" h="11.43mm" locale="fr_CA">
+               <caption placement="top" reserve="3.175mm">
+                  <font size="8pt" typeface="Myriad Pro"/>
+                  <para marginLeft="0pt" vAlign="middle" marginRight="0pt"/>
+                  <value>
+                     <text>Adresse courriel</text>
+                  </value>
+               </caption>
+               <ui>
+                  <textEdit hScrollPolicy="off">
+                     <border presence="hidden">
+                        <?templateDesigner StyleID aped0?></border>
+                     <margin/>
+                  </textEdit>
+               </ui>
+               <font typeface="Myriad Pro"/>
+               <margin topInset="1.0008mm" bottomInset="1.0008mm" leftInset="1.0008mm" rightInset="1.0008mm"/>
+               <para vAlign="middle" marginLeft="0pt" marginRight="0pt"/>
+               <validate>
+                  <script contentType="application/x-javascript">// Validate the email address.
+
+var r = new RegExp(); // Create a new Regular Expression Object.
+    r.compile("^[a-z0-9_\\-\\.]+\\@[a-z0-9_\\-\\.]+\\.[a-z]{1,3}$","i");// Set the regular expression to look for
+																		// an email address in general form.
+
+r.test(this.rawValue); 	// Test the rawValue of the current object to see
+						// if it fits the general form of an email address.
+</script>
+                  <message>
+                     <text name="scriptTest">Entrez une adresse courriel en format « a@a.a ».</text>
+                  </message>
+               </validate>
+               <border>
+                  <edge/>
+                  <corner/>
+               </border>
+               <keep intact="contentArea"/>
+               <assist>
+                  <toolTip>Chercheur qualifié - Adresse courriel</toolTip>
+                  <speak priority="toolTip"/>
+               </assist>
+            </field>
+         </pageArea>
+      </pageSet>
+   </subform>
+</template></xdp:xdp>

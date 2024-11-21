@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xfa generator="AdobeLiveCycleDesignerES_V10.5.0.20120807.1.873223" APIVersion="3.6.12219.0"?>
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/">
+<template xmlns="http://www.xfa.org/schema/xfa-template/3.3/">
+   <subform>
+      <pageSet>
+         <pageArea name="snippet">
+            <desc>
+               <text name="name">Button</text>
+            </desc>
+            <field name="btnFinalizeAndLock" w="28.575mm" h="6.35mm" relevant="-print">
+               <ui>
+                  <button highlight="inverted"/>
+               </ui>
+               <font typeface="Myriad Pro"/>
+               <caption>
+                  <value>
+                     <text>Button</text>
+                  </value>
+                  <para vAlign="middle" hAlign="center" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginLeft="0pt" marginRight="0pt"/>
+                  <font typeface="Myriad Pro" baselineShift="0pt" size="8pt"/>
+               </caption>
+               <border hand="right">
+                  <edge>
+                     <color value="192,192,192"/>
+                  </edge>
+                  <fill>
+                     <color value="192,192,192"/>
+                     <linear type="toTop">
+                        <color value="255,255,255"/>
+                     </linear>
+                  </fill>
+                  <corner thickness="0.175mm">
+                     <color value="192,192,192"/>
+                  </corner>
+               </border>
+               <bind match="none"/>
+               <traversal>
+                  <traverse ref="Modify[0]"/>
+               </traversal>
+            </field>
+         </pageArea>
+      </pageSet>
+   </subform>
+</template></xdp:xdp>

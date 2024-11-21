@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xfa generator="AdobeLiveCycleDesignerES_V10.5.0.20120807.1.873223" APIVersion="3.6.12219.0"?>
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/">
+<template xmlns="http://www.xfa.org/schema/xfa-template/3.3/">
+   <subform>
+      <pageSet>
+         <pageArea name="snippet">
+            <desc>
+               <text name="name">Date_F</text>
+            </desc>
+            <field name="fldDate" w="63.5mm" h="11.43mm" locale="fr_CA">
+               <ui>
+                  <dateTimeEdit>
+                     <border presence="hidden"/>
+                     <margin/>
+                  </dateTimeEdit>
+                  <picture>date{YYYY-MM-DD}</picture>
+               </ui>
+               <font typeface="Myriad Pro"/>
+               <margin topInset="1mm" bottomInset="1mm" leftInset="1mm" rightInset="1mm"/>
+               <para vAlign="middle"/>
+               <value>
+                  <date/>
+               </value>
+               <caption reserve="3.175mm" placement="top">
+                  <font size="8pt" typeface="Myriad Pro"/>
+                  <para vAlign="middle"/>
+                  <value>
+                     <text>Date  (AAAA-MM-JJ)</text>
+                  </value>
+               </caption>
+               <border>
+                  <edge/>
+                  <corner thickness="0.175mm"/>
+               </border>
+               <format>
+                  <picture>date{YYYY-MM-DD}</picture>
+               </format>
+               <validate>
+                  <script contentType="application/x-javascript">r=/\d{4}-\d{2}-\d{2}/;
+r.test(this.rawValue);
+
+</script>
+                  <picture>date{YYYY-MM-DD}</picture>
+                  <message>
+                     <text name="formatTest"/>
+                  </message>
+               </validate>
+               <event activity="exit" name="event__exit">
+                  <script contentType="application/x-javascript">
+var bResult = Util.isDateValid(this);
+if (!bResult){
+	this.rawValue = "";
+	this.validate;
+	xfa.host.setFocus(this);
+}
+	
+</script>
+               </event>
+            </field>
+         </pageArea>
+      </pageSet>
+   </subform>
+</template></xdp:xdp>

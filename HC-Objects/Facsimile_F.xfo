@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xfa generator="AdobeLiveCycleDesignerES_V10.5.0.20120807.1.873223" APIVersion="3.6.12219.0"?>
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/">
+<template xmlns="http://www.xfa.org/schema/xfa-template/3.3/">
+   <subform>
+      <pageSet>
+         <pageArea name="snippet">
+            <desc>
+               <text name="name">Facsimile_F</text>
+            </desc>
+            <field name="txtFaxNo" w="95.25mm" h="15.24mm" locale="fr_CA">
+               <ui>
+                  <textEdit hScrollPolicy="off">
+                     <border presence="hidden">
+                        <?templateDesigner StyleID aped0?></border>
+                     <margin/>
+                  </textEdit>
+                  <picture>text{9999999999}</picture>
+               </ui>
+               <font typeface="Myriad Pro"/>
+               <margin bottomInset="1.0008mm" leftInset="1.0008mm" rightInset="1.0008mm" topInset="1.0008mm"/>
+               <format>
+                  <picture>text{'+1 ('999') '999-9999}|text{'+'99 999 999 9999}|text{'+'99 999 999 999}</picture>
+               </format>
+               <border>
+                  <edge/>
+                  <corner thickness="0.175mm"/>
+               </border>
+               <para marginLeft="0pt" vAlign="middle" marginRight="0pt"/>
+               <caption placement="top" reserve="6.35mm">
+                  <value>
+                     <text>Numéro de télécopieur (facultatif) (par exemple 2223334444 ou 441312223333)</text>
+                  </value>
+                  <font typeface="Myriad Pro" size="8pt" baselineShift="0pt"/>
+                  <para vAlign="middle" marginLeft="0pt" spaceAbove="0pt" spaceBelow="0pt" textIndent="0pt" marginRight="0pt"/>
+               </caption>
+               <assist>
+                  <toolTip>***Header*** - Numéro de télécopieur (facultatif) (par exemple 2223334444 ou 441312223333)</toolTip>
+                  <speak priority="toolTip"/>
+               </assist>
+               <validate>
+                  <picture>text{9999999999}|text{999999999999}|text{99999999999}</picture>
+                  <message>
+                     <text name="formatTest">Veuillez saisir un numéro de télécopieur valide. par exemple, entrez (222) 333-4444 comme 2223334444 ou +44131222 3333 comme 441312223333.</text>
+                  </message>
+               </validate>
+               <event activity="exit" name="event__exit">
+                  <script contentType="application/x-javascript">//Set focus if there is an error
+if (this.errorText != "")
+	xfa.host.setFocus(this);
+
+</script>
+               </event>
+            </field>
+         </pageArea>
+      </pageSet>
+   </subform>
+</template></xdp:xdp>
