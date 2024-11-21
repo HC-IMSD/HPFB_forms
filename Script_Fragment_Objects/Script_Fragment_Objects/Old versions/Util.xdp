@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xfa generator="AdobeLiveCycleDesignerES_V10.5.0.20120807.1.873223" APIVersion="3.6.12219.0"?>
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2020-06-11T23:51:32Z" uuid="419e3357-3260-4b1f-8801-21e870ba0420">
+<template xmlns="http://www.xfa.org/schema/xfa-template/3.0/">
+   <?formServer defaultPDFRenderFormat acrobat9.1static?>
+   <subform name="form1" locale="en_US" layout="tb">
+      <pageSet>
+         <pageArea>
+            <contentArea x="12.7mm" y="15.24mm" w="190.5mm" h="243.84mm"/>
+            <medium stock="letter" short="215.9mm" long="279.4mm"/>
+         </pageArea>
+      </pageSet>
+      <subform>
+         <variables>
+            <script contentType="application/x-javascript" name="Util">
+
+/** Returns the form's language i.e. 'en or 'fr'. */
+function getFormLanguage()
+{
+
+	var sLanguage = LanguageSetter.rbLanguage.rawValue;
+	return sLanguage;
+}
+
+
+/** Returns the form's date from the Form Properties page. */
+function getFormDate()
+{
+	return xfa.form.resolveNode("#subform").desc.issued.value;
+}
+
+/** Returns the form's version from the custom formNo variable in the Form Properties page.*/
+function getFormVersion()
+{
+	return event.target.info.formNo;
+	
+} 
+
+/** Utility function returning an array of fields in the from (excludes barcodes and buttons). */
+function getFormFields()
+{
+	// Build a list of fields.
+	var oFormFields = new Array();
+	var nPages = xfa.layout.pageCount();
+	
+	for (var i = 0; i &lt; nPages; i++)
+	{
+		var oFields = xfa.layout.pageContent(i, "field");
+		var nLen = oFields.length;
+		for (var j = 0; j &lt; nLen; j++)
+		{
+			var oField = oFields.item(j);
+			
+			// Skip over barcodes and buttons (generic).
+			var sUIClassName = oField.resolveNode("#ui").oneOfChild.className;
+			if (sUIClassName == "barcode" || sUIClassName == "button" || oField.presence == "hidden") 
+				continue;	
+			
+			// Is it a radio button?
+			if (oField.parent.className == "exclGroup")
+			{
+				// Add the parent to the list if it hasn't been done already.
+				oField = oField.parent;
+				var nIndex = oFormFields.length - 1;
+				if (oField == oFormFields[nIndex])
+					continue;
+			}
+						
+			oFormFields.push(oField);	
+		} 
+	}
+	
+	return oFormFields;
+}  
+
+/*************************************************************************************
+Function: lockAllFields
+Description: This function will lock all fields.
+IN: The parent subform. It could also be an element that contains subform like form1
+OUT : nothing
+**************************************************************************************/
+function lockAllFields(myParentObject){
+
+	var allChildElements;
+	var intNumElements;
+	var currentElement;
+	var j;
+	
+	//Get all the child nodes of the parent element
+	allChildElements = myParentObject.nodes;
+
+	//Total number of element in the object
+	intNumElements = allChildElements.length;
+	
+	//Loop through all the child elements
+	for(j=0; j&lt; intNumElements;j++){
+		currentElement = allChildElements.item(j);
+		//If the element is another subform we'll recusively call the function again
+		if(allChildElements.item(j).className == "subform"){
+			lockAllFields(currentElement);
+		}
+		//If the objects are fields and they are set to protected
+		else if(currentElement.className == "field"){	
+			//currentElement.access = "protected";
+			currentElement.access = "readOnly";
+			
+		}
+			//Check for exclusion groups - Radio Buttons
+			else if(currentElement.className == "exclGroup"){
+			for(k=0; k&lt; currentElement.nodes.length;k++){
+				if(currentElement.nodes.item(k).className == "field"){
+					//set the access for the radio buttons individually
+					//currentElement.access = "protected";
+					currentElement.access = "readOnly";
+				}			
+			}
+		}	
+	}
+}
+
+/*************************************************************************************
+Function: unLockAllFields
+Description: This function will lock all fields.
+IN: The parent subform. It could also be an element that contains subform like form1
+OUT : nothing
+**************************************************************************************/
+function unLockAllFields(myParentObject){
+
+	var allChildElements;
+	var intNumElements;
+	var currentElement;
+	var j;
+	
+	//Get all the child nodes of the parent element
+	allChildElements = myParentObject.nodes;
+
+	//Total number of element in the object
+	intNumElements = allChildElements.length;
+	
+	//Loop through all the child elements
+	for(j=0; j&lt; intNumElements;j++){
+		currentElement = allChildElements.item(j);
+		//If the element is another subform we'll recusively call the function again
+		if(allChildElements.item(j).className == "subform"){
+			unLockAllFields(currentElement);
+		}
+		//If the objects are fields we unlock them
+		else if(currentElement.className == "field"){			
+			//currentElement.access = "protected";
+			currentElement.access = "open";
+		
+		}
+			//Check for exclusion groups - Radio Buttons
+			else if(currentElement.className == "exclGroup"){
+			for(k=0; k&lt; currentElement.nodes.length;k++){
+				if(currentElement.nodes.item(k).className == "field"){
+					//set the access for the radio buttons individually
+					//currentElement.access = "protected";
+					currentElement.access = "open";
+				}			
+			}
+		}	
+	}
+	//June 11th, 2020 - do not unlock readOnly and protecte fields
+	try {
+	   FormScripts.afterUnlockHandler();
+  	}
+  	catch(exception) {
+    	console.println(exception + ". Funtion missing in Framework. Use Framework version 28 and above.");
+  	}
+	
+}
+
+/** Utility function getting today's date and formatting it as per yyyy-mm-dd format. */
+function getCurrentDate()
+{	
+	var oNow = new Date();
+	var sDay = pad(oNow.getDate());
+	var sMonth = pad(oNow.getMonth() + 1);
+	return oNow.getFullYear() + "-" + sMonth + "-" + sDay;
+}
+
+
+/** Utility method 0-padding a single digit string. */
+function pad(nValue)
+{
+	var sValue = new String(nValue);
+	if (sValue.length == 1)
+		sValue = "0" + sValue;
+	
+	return sValue;	
+}
+
+//May 13th, 2020 - Date validation functions
+function isDateValid(dateField) 
+{	
+	if (dateField.errorText != "")			
+		return false;	
+		
+    
+	var language = getFormLanguage();
+	//console.println(language);
+	if (dateField.rawValue != null &amp;&amp; dateField.rawValue != "") {
+		//var reg = /(?:19|20\d{2})\-(?:0[1-9]|1[0-2])\-(?:0[1-9]|[12][0-9]|3[01])/;
+		// var reg =  /(?:19\d{2}|20\d{2})\-(?:0[1-9]|1[0-2])\-(?:0[1-9]|[12][0-9]|3[01])/;
+		var reg = /(\d{4})\-(?:0[1-9]|1[0-2])\-(?:0[1-9]|[12][0-9]|3[01])/;
+		
+		var myDate = dateField.rawValue;
+		if (myDate.length == 8) {
+			var y = myDate.substr(0, 4);
+			var m = myDate.substr(4, 2);
+			var d = myDate.substr(6, 2);
+			myDate = y + "-" + m + "-" + d;
+			dateField.rawValue = myDate;
+		}
+		
+		if (reg.test(myDate) == false) {
+			if (language == "en") {
+				xfa.host.messageBox("Please enter valid date. (ex. YYYY-MM-DD)","Invalid Date" ,3)
+				//app.alert("Please enter valid date. (ex. YYYY-MM-DD)");
+				dateField.rawValue = "";				
+			} else {
+				xfa.host.messageBox("Veuillez entrer une date valide. (ex. AAAA-MM-JJ)","Invalid Date" ,3)
+				//app.alert("Veuillez entrer une date valide. (ex. AAAA-MM-JJ)");
+				dateField.rawValue = "";				
+			}			
+			
+			return false;
+		} else {
+			
+			var year = dateField.rawValue.split("-")[0];
+			var month = dateField.rawValue.split("-")[1];
+			var day = dateField.rawValue.split("-")[2];
+			
+			var daysInMonth = readDaysInMonth(month - 1, year);
+			if (day &gt; readDaysInMonth(month - 1, year)) {				
+				
+				if (language == "en") {
+					xfa.host.messageBox("Please enter valid date. (ex. YYYY-MM-DD)","Invalid Date" ,3)
+					//app.alert("Please enter valid date. (ex. YYYY-MM-DD)");
+					dateField.rawValue = "";
+					
+				} else {
+					xfa.host.messageBox("Veuillez entrer une date valide. (ex. AAAA-MM-JJ)","Invalid Date" ,3)
+					//app.alert("Veuillez entrer une date valide. (ex. AAAA-MM-JJ)");
+					dateField.rawValue = "";
+					
+				}
+				return false;
+			} else {				
+				
+			}
+		}
+		
+		var year = dateField.rawValue.split("-")[0];
+		var month = dateField.rawValue.split("-")[1];
+		var day = dateField.rawValue.split("-")[2];
+		var givenDate = new Date(year, month - 1, day);
+		var todayDate = new Date();
+		
+		if (givenDate.valueOf() &gt;= todayDate.valueOf()) {
+		if (language == "en") {
+			//app.alert("The date must be earlier than today.");
+			xfa.host.messageBox("The date must be today or earlier than today.","Invalid Date" ,3)
+			dateField.rawValue = "";
+			
+		} else {		
+			xfa.host.messageBox("La date doit être aujourd'hui ou antérieure à aujourd'hui","Date invalide" ,3)
+			//app.alert("La date doit être avant aujourd 'hui");
+			dateField.rawValue = "";
+			
+		}
+		
+		
+		return false;
+		} 
+	}
+	
+	return true;
+}
+
+
+ function isLeapYear(year) {
+     return ((year % 4 == 0) &amp;&amp; (year % 100 != 0 || year % 400 == 0));
+ }
+
+ function readDaysInMonth(month, year) {
+     if (month == 1 &amp;&amp; isLeapYear(year) == true) return 29;
+     else return [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][month];
+ }
+               
+ //May 13th, 2020 - 
+ //Core Country province, state, region handler postal-zip code handler
+function provinceStateHandler(oCountry,oSub)
+{
+	var sCountry = oCountry.boundItem(xfa.event.newText);
+	//console.println(oSub.parent.name);
+	//var sCountry = oCountry.rawValue;
+	
+	switch(sCountry) {
+	case "CA":
+		oSub._Province.setInstances(1);
+		oSub._State.setInstances(0);
+		oSub._ProvinceState.setInstances(0);
+		oSub._PostalZip.setInstances(0);
+		oSub._ZipCode.setInstances(0);
+		oSub._PostalCode.setInstances(1);
+								
+					   
+		break;
+	case "US":   
+		oSub._Province.setInstances(0);
+		oSub._State.setInstances(1);
+		oSub._ProvinceState.setInstances(0);
+		oSub._PostalZip.setInstances(0);
+		oSub._ZipCode.setInstances(1);
+		oSub._PostalCode.setInstances(0);
+		
+				
+		break;		
+	default:   
+		oSub._Province.setInstances(0);
+		oSub._State.setInstances(0);
+		oSub._ProvinceState.setInstances(1);
+		oSub._PostalZip.setInstances(1);
+		oSub._ZipCode.setInstances(0);
+		oSub._PostalCode.setInstances(0);		
+		
+	}	
+
+}              
+
+               
+               
+
+               
+               
+
+               
+               
+
+               
+               
+
+               
+               
+
+               
+               
+
+               
+               
+
+               
+               
+
+               
+               
+
+               <?templateDesigner isFragment yes?>
+               <?templateDesigner fragmentTitle Util?></script>
+         </variables>
+      </subform>
+   </subform>
+   <?templateDesigner FormTargetVersion 30?>
+   <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?>
+   <?templateDesigner Zoom 101?></template>
+<config xmlns="http://www.xfa.org/schema/xci/3.0/">
+   <agent name="designer">
+      <!--  [0..n]  -->
+      <destination>pdf</destination>
+      <pdf>
+         <!--  [0..n]  -->
+         <fontInfo/>
+      </pdf>
+   </agent>
+   <present>
+      <!--  [0..n]  -->
+      <destination>pdf</destination>
+      <pdf>
+         <!--  [0..n]  -->
+         <fontInfo/>
+         <version>1.7</version>
+         <adobeExtensionLevel>5</adobeExtensionLevel>
+      </pdf>
+      <xdp>
+         <packets>*</packets>
+      </xdp>
+   </present>
+</config>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.2-c001 63.139439, 2011/06/07-10:39:26        ">
+   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <rdf:Description xmlns:xmp="http://ns.adobe.com/xap/1.0/" rdf:about="">
+         <xmp:MetadataDate>2020-06-11T23:51:32Z</xmp:MetadataDate>
+         <xmp:CreatorTool>Adobe LiveCycle Designer ES 10.5</xmp:CreatorTool>
+      </rdf:Description>
+      <rdf:Description xmlns:pdf="http://ns.adobe.com/pdf/1.3/" rdf:about="">
+         <pdf:Producer>Adobe LiveCycle Designer ES 10.5</pdf:Producer>
+      </rdf:Description>
+      <rdf:Description xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" rdf:about="">
+         <xmpMM:DocumentID>uuid:419e3357-3260-4b1f-8801-21e870ba0420</xmpMM:DocumentID>
+      </rdf:Description>
+      <rdf:Description xmlns:lcd="http://ns.adobe.com/livecycle/designer/" xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:about="">
+         <lcd:fragmentCatalog>
+            <rdf:Seq>
+               <rdf:li rdf:parseType="Resource">
+                  <dc:title>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default">Util</rdf:li>
+                     </rdf:Alt>
+                  </dc:title>
+                  <dc:description>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default"/>
+                     </rdf:Alt>
+                  </dc:description>
+                  <dc:identifier>$template.form1.#subform.#variables.Util</dc:identifier>
+                  <lcd:fragmentRole>ScriptObject</lcd:fragmentRole>
+               </rdf:li>
+            </rdf:Seq>
+         </lcd:fragmentCatalog>
+      </rdf:Description>
+   </rdf:RDF>
+</x:xmpmeta>
+<localeSet xmlns="http://www.xfa.org/schema/xfa-locale-set/2.7/">
+   <locale name="en_US" desc="English (United States)">
+      <calendarSymbols name="gregorian">
+         <monthNames>
+            <month>January</month>
+            <month>February</month>
+            <month>March</month>
+            <month>April</month>
+            <month>May</month>
+            <month>June</month>
+            <month>July</month>
+            <month>August</month>
+            <month>September</month>
+            <month>October</month>
+            <month>November</month>
+            <month>December</month>
+         </monthNames>
+         <monthNames abbr="1">
+            <month>Jan</month>
+            <month>Feb</month>
+            <month>Mar</month>
+            <month>Apr</month>
+            <month>May</month>
+            <month>Jun</month>
+            <month>Jul</month>
+            <month>Aug</month>
+            <month>Sep</month>
+            <month>Oct</month>
+            <month>Nov</month>
+            <month>Dec</month>
+         </monthNames>
+         <dayNames>
+            <day>Sunday</day>
+            <day>Monday</day>
+            <day>Tuesday</day>
+            <day>Wednesday</day>
+            <day>Thursday</day>
+            <day>Friday</day>
+            <day>Saturday</day>
+         </dayNames>
+         <dayNames abbr="1">
+            <day>Sun</day>
+            <day>Mon</day>
+            <day>Tue</day>
+            <day>Wed</day>
+            <day>Thu</day>
+            <day>Fri</day>
+            <day>Sat</day>
+         </dayNames>
+         <meridiemNames>
+            <meridiem>AM</meridiem>
+            <meridiem>PM</meridiem>
+         </meridiemNames>
+         <eraNames>
+            <era>BC</era>
+            <era>AD</era>
+         </eraNames>
+      </calendarSymbols>
+      <datePatterns>
+         <datePattern name="full">EEEE, MMMM D, YYYY</datePattern>
+         <datePattern name="long">MMMM D, YYYY</datePattern>
+         <datePattern name="med">MMM D, YYYY</datePattern>
+         <datePattern name="short">M/D/YY</datePattern>
+      </datePatterns>
+      <timePatterns>
+         <timePattern name="full">h:MM:SS A Z</timePattern>
+         <timePattern name="long">h:MM:SS A Z</timePattern>
+         <timePattern name="med">h:MM:SS A</timePattern>
+         <timePattern name="short">h:MM A</timePattern>
+      </timePatterns>
+      <dateTimeSymbols>GyMdkHmsSEDFwWahKzZ</dateTimeSymbols>
+      <numberPatterns>
+         <numberPattern name="numeric">z,zz9.zzz</numberPattern>
+         <numberPattern name="currency">$z,zz9.99|($z,zz9.99)</numberPattern>
+         <numberPattern name="percent">z,zz9%</numberPattern>
+      </numberPatterns>
+      <numberSymbols>
+         <numberSymbol name="decimal">.</numberSymbol>
+         <numberSymbol name="grouping">,</numberSymbol>
+         <numberSymbol name="percent">%</numberSymbol>
+         <numberSymbol name="minus">-</numberSymbol>
+         <numberSymbol name="zero">0</numberSymbol>
+      </numberSymbols>
+      <currencySymbols>
+         <currencySymbol name="symbol">$</currencySymbol>
+         <currencySymbol name="isoname">USD</currencySymbol>
+         <currencySymbol name="decimal">.</currencySymbol>
+      </currencySymbols>
+      <typefaces>
+         <typeface name="Myriad Pro"/>
+         <typeface name="Minion Pro"/>
+         <typeface name="Courier Std"/>
+         <typeface name="Adobe Pi Std"/>
+         <typeface name="Adobe Hebrew"/>
+         <typeface name="Adobe Arabic"/>
+         <typeface name="Adobe Thai"/>
+         <typeface name="Kozuka Gothic Pro-VI M"/>
+         <typeface name="Kozuka Mincho Pro-VI R"/>
+         <typeface name="Adobe Ming Std L"/>
+         <typeface name="Adobe Song Std L"/>
+         <typeface name="Adobe Myungjo Std M"/>
+      </typefaces>
+   </locale>
+</localeSet></xdp:xdp>

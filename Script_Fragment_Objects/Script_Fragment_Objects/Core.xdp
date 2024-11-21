@@ -1,0 +1,943 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xfa generator="AdobeLiveCycleDesignerES_V10.0.2.20120224.1.869952" APIVersion="3.5.12002.0"?>
+<xdp:xdp xmlns:xdp="http://ns.adobe.com/xdp/" timeStamp="2020-11-13T21:50:40Z" uuid="502b68e9-11fe-4f44-b691-2944058d18f9">
+<template xmlns="http://www.xfa.org/schema/xfa-template/3.0/">
+   <?formServer defaultPDFRenderFormat acrobat9.1static?>
+   <subform name="form1" locale="en_US" layout="tb">
+      <pageSet>
+         <pageArea>
+            <contentArea x="12.7mm" y="15.24mm" w="190.5mm" h="243.84mm"/>
+            <medium stock="letter" short="215.9mm" long="279.4mm"/>
+         </pageArea>
+      </pageSet>
+      <subform>
+         <variables>
+            <script contentType="application/x-javascript" name="Core">
+/** Document ready handler. */
+function initializeDocument()
+{
+    //console.println("initializeDocument");
+	// Which language should be displayed?
+	var sLanguage = Util.getFormLanguage();
+	//console.println(sLanguage);
+	// The form is opened for the first time. Just show the content.
+	sLanguage == "en" ? _EN.setInstances(1) : _FR.setInstances(1);	
+	hideButtonsOnLockedForm(sLanguage);
+}
+
+function hideButtonsOnLockedForm()
+{
+//	console.println("hideButtonsOnLockedForm");
+	//August 4th, 2020 - Added due to DIGital signature being invalidated
+	if (isDigSig())
+		return;
+	_EN.count &gt; 0 ? xfa.form.resolveNode("HC.EN.Wrapper.FinalBlock.FinalizeModify")._Final.setInstances(1): xfa.form.resolveNode("HC.FR.Wrapper.FinalBlock.FinalizeModify")._Final.setInstances(1);
+	var oSignatureBlock = _EN.count &gt; 0 ? xfa.form.resolveNode("HC.EN.Wrapper.FinalBlock.SignatureBlock") : xfa.form.resolveNode("HC.FR.Wrapper.FinalBlock.SignatureBlock");
+	if (oSignatureBlock != null){
+		if (_EN.count &gt; 0){
+			
+			if (xfa.form.resolveNode("HC.EN.Wrapper.FinalBlock.SignatureBlock.SignatureOption.signatureOption").rawValue == "IMG_SIG")
+			{
+				if (xfa.form.resolveNode("HC.EN.Wrapper.FinalBlock.SignatureBlock.DigitalImage.signDate").rawValue != null)
+				{
+					xfa.form.resolveNode("HC.EN.Wrapper.FinalBlock.FinalizeModify")._Modify.setInstances(0);
+					xfa.form.resolveNode("HC.EN.Wrapper.FinalBlock.FinalizeModify")._Final.setInstances(0);
+					Util.lockAllFields(xfa.form.resolveNode("#subform"));
+					
+					//June 11th, 2020 - 
+					xfa.form.resolveNode("HC.EN.Wrapper.FinalBlock.SignatureBlock.DigitalImage.imgSignature").access = "readOnly";
+					xfa.form.resolveNode("HC.EN.Wrapper.FinalBlock.FinalizeModify").access = "protected";
+					xfa.form.resolveNode("HC.EN.Instructions.InstructionButtons").access = "protected";
+					
+					
+					//Ensure users can export the data after its signed
+					//Util.unLockAllFields(xfa.form.resolveNode("HC.EN.Wrapper.FinalBlock.FinalizeModify.FormXML"));
+				//June 11th, 2020						
+				//}else if(checkSignature() != 0)
+				//{
+					
+					//xfa.form.resolveNode("HC.EN.Instructions.InstructionButtons").access = "protected";			
+					//xfa.form.resolveNode("HC.EN.Wrapper.FinalBlock.Finalize.FinalizeModify").access = "protected";
+					//xfa.form.resolveNode("HC.EN.Wrapper.FinalBlock.SignatureBlock.DigitalImage.imgSignature").access = "readOnly";
+				}
+			}
+		}else{//French
+			
+			if (xfa.form.resolveNode("HC.FR.Wrapper.FinalBlock.SignatureBlock.SignatureOption.signatureOption").rawValue == "IMG_SIG"){
+				if (xfa.form.resolveNode("HC.FR.Wrapper.FinalBlock.SignatureBlock.DigitalImage.signDate").rawValue != null){
+					xfa.form.resolveNode("HC.FR.Wrapper.FinalBlock.FinalizeModify")._Modify.setInstances(0);
+					xfa.form.resolveNode("HC.FR.Wrapper.FinalBlock.FinalizeModify")._Final.setInstances(0);
+					Util.lockAllFields(xfa.form.resolveNode("#subform"));
+					//June 11th, 2020 - 
+					xfa.form.resolveNode("HC.FR.Wrapper.FinalBlock.SignatureBlock.DigitalImage.imgSignature").access = "readOnly";
+					xfa.form.resolveNode("HC.FR.Wrapper.FinalBlock.FinalizeModify").access = "protected";
+					xfa.form.resolveNode("HC.FR.Instructions.InstructionButtons").access = "protected";
+					
+					//Ensure users can export the data after its signed
+					//Util.unLockAllFields(xfa.form.resolveNode("HC.FR.Wrapper.FinalBlock.FinalizeModify.FormXML"));
+				//June 11th, 2020						
+				//}else if(checkSignature() != 0)
+				//{	
+					//xfa.form.resolveNode("HC.FR.Instructions.InstructionButtons").access = "protected";			
+					//xfa.form.resolveNode("HC.FR.Wrapper.FinalBlock.FinalizeModify").access = "protected";
+					//xfa.form.resolveNode("HC.FR.Wrapper.FinalBlock.SignatureBlock.DigitalImage.imgSignature").access = "readOnly";
+				}
+							
+			}
+		}
+			
+	}
+}
+
+/** Validates the form. Called from FinalizeAndLock button Clik event */
+function execValidateForm()
+{
+	//console.println("execValidateForm");
+	// Finalize the form validation including business rules,
+	// mandatory fields, attachements, etc. This function is
+	// called during the submission operation.
+	var bValid = true;	
+	////var language = Util.getFormLanguage();
+
+	// Let the form do its validation first. Use when setting captionless mandatoires etc
+	
+	bValid = validateForm();	
+			
+	//Force form validation - Use when not doing captionless mandatories . For this to work, the target version needs to change to 9.0 and up from 10.1 and above		
+	//if (bValid){				
+	//	bValid = xfa.form.execValidate();				
+	//}	
+	/**
+	if (!bValid){
+		setCaption();
+	}
+	*/
+	//This setFocusOnFailedObject must be the last validation before the return.
+	if (!bValid){
+		setFocusOnFailedObject();
+	}
+
+	return bValid;
+	
+}
+
+//===================================================================
+
+/** Validates the form. Returns true when valid, false otherwise. Called from ExecValidateForm function */
+function validateForm()
+{
+	//console.println("validateForm");
+	// Set the mandatory properties.
+	// The mandatory propery isn't set at the object level since it generates 
+	// warnings at unexpected time. 
+	// A bug was logged with Adobe (LCDTN8). Turn off the mandatory setting 
+	// as it may trigger unwanted warnings as user fixes the form. 
+	
+	var oFields = Util.getFormFields();	
+	resetMandatoryFields(oFields);
+	setMandatoryFields(oFields);
+	
+	// Warn the user if there are any invalid fields.
+	var bValid = xfa.form.resolveNode("#subform").execValidate();	
+
+	// Also, we don't want the to be sent with 
+	// mandatory fields so the next user (if any) won't stumble on warning
+	// messages
+	//Removed June 19th, 2020.
+	//if (bValid)
+	//	resetMandatoryFields(oFields);
+
+	return bValid;
+}
+
+
+/** 
+ * Utility function reseting the mandatory property of the form fields. 
+ * @param oFields is an array of fields displayed in this form. 
+ */
+function resetMandatoryFields(oFields)
+{
+	//console.println("resetMandatoryFields");	
+	// Now disable the mandatory property.
+	var bMandatory = false;
+	setMandatory(oFields, bMandatory);
+}
+
+
+/** 
+ * Utility function reseting the mandatory property of the form fields.
+ * @param oFields is an array of fields displayed in this form. 
+ */
+function setMandatoryFields(oFields)
+{
+	//console.println("setMandatoryFields");	
+	// Now disable the mandatory property.
+	var bMandatory = true;
+	setMandatory(oFields, bMandatory);
+}
+
+
+/** 
+ * Sets the mandatory property of the given fields.
+ * @param oMandatoryFields an array storing the list of mandatory fields.
+ * @param bMandatory true if the mandatory property is enabled, false otherwise.
+ */
+function setMandatory(oFields, bMandatory)
+{	
+	//console.println("setMandatory");
+	var oOptionalFields = FormScripts.getOptionalFields();
+	var nLen = oFields.length;
+	
+	for (var i = 0; i &lt; nLen; i++)
+	{
+		// Filter out optional fields when enabling the mandatory property.
+		var oField = oFields[i];
+		if (bMandatory)
+		{
+			var bOptional = isOptional(oOptionalFields, oField);
+			if (bOptional)
+				continue;
+		}
+				
+		oField.mandatory = bMandatory ? "error" : "disabled";
+		
+		
+	}	
+	
+	// Udpate the layout as it's not always showing the invalid appearance.
+	xfa.layout.relayout();	
+}  
+
+
+/** 
+ * Returns true if the given field is optional.
+ * @param oOptionalFields an array storing the list of optional fields.
+ * @param oField reference to the field.
+ */
+function isOptional(oOptionalFields, oField)
+{
+	//console.println("isOptional");
+	var bIsOptional = false;
+	var nLen = oOptionalFields.length;
+	for (var i = 0; i &lt; nLen; i++)
+	{		
+		if (oField == oOptionalFields[i])
+		{	
+			bIsOptional = true;
+			break;
+		}	
+	}
+	
+	return bIsOptional;
+}
+         
+
+/** Global variables holding the generic mandatory messages. */
+var sDefaultMandatoryEN = "The following field must contain a value: ";
+var sDefaultMandatoryFR = "Le champ suivant doit contenir une valeur : ";
+
+/**
+ * Set the mandatory mandatory of the given fields. 
+ * @param oFields is a nodelist of fields.
+ * @param sHeading is the section's heading text.
+ */
+function setMandatoryMessage(oFields, sHeading)
+{
+	//console.println("setMandatoryMessage");
+	//August 4th, 2020 - Added due to DIGital signature being invalidated
+	if (isDigSig())
+		return;
+		
+	var nLen = oFields.length;
+	for (var i = 0; i &lt; nLen; i++)
+	{
+	 	// Skip over barcodes, radio buttons, buttons and floating fields.
+	 	var oField = oFields.item(i);
+		var sUIClassName = oField.resolveNode("#ui").oneOfChild.className;
+		if (sUIClassName == "barcode" || sUIClassName == "button" || sUIClassName == "checkButton" || oField.presence == "hidden") 
+			continue;	
+			
+		// Radio buttons will be set separately.
+		if (oField.parent.className == "exclGroup")
+			continue;
+
+		// Skip over rich text	
+		var oCaption = oField.resolveNode("#caption.#value.#text");
+		if (oCaption)
+		{
+			var sCaption = oCaption.value;
+			var sGenericMessage = Util.getFormLanguage() == "en" ? sDefaultMandatoryEN : sDefaultMandatoryFR;
+			var sMessage = "- " + sHeading + " -\n" + sGenericMessage + sCaption + ".";
+			//var sMessage = sGenericMessage + sCaption + ".";
+			oField.mandatoryMessage = cleanupString(sMessage);
+		}
+	}
+}
+                           
+
+/**
+ * Sets the mandatory message of the given field (fields without caption or rich text caption).
+ * @param oField field reference.
+ * @param sHeading is the section's heading text.
+ * @param sCaption is the text related to the field.
+ */
+function setCaptionlessMandatoryMessage(oField, sHeading, sCaption)
+{
+	//console.println("setCaptionlessMandatoryMessage");
+	//August 4th, 2020 - Added due to DIGital signature being invalidated
+	if (isDigSig())
+		return;
+	
+	var sGenericMessage = Util.getFormLanguage() == "en" ? sDefaultMandatoryEN : sDefaultMandatoryFR;
+	var sMessage = "- " + sHeading + " -\n" + sGenericMessage + sCaption + ".";   
+	oField.mandatoryMessage = cleanupString(sMessage);
+}
+ 
+ 
+/**
+ * Sets the mandatory message of the given field (field doesn't have a section heading to display).
+ * @param oField field reference.
+ * @param sCaption is the text related to the field.
+ */
+function setHeadinglessMandatoryMessage(oField, sCaption)
+{
+	//console.println("setHeadinglessMandatoryMessage");
+	//August 4th, 2020 - Added due to DIGital signature being invalidated
+	if (isDigSig())
+		return;
+		
+	var sGenericMessage = Util.getFormLanguage() == "en_CA" ? sDefaultMandatoryEN : sDefaultMandatoryFR;
+	var sMessage = sGenericMessage + sCaption + ".";   
+	oField.mandatoryMessage = cleanupString(sMessage);
+}
+
+//August 4th, 2020 - Used as flag to prevent certain scripts from firing when Digtal signature is visible (Part of fix for Digital Sig invalidating bug)
+//Returns flag which indicates if DIG sig is visible
+function isDigSig()
+{
+	//console.println("isDigSig");
+	var oRoot = _EN.count &gt; 0 ? xfa.form.resolveNode("HC.EN"):xfa.form.resolveNode("HC.FR")
+	
+	var bIsDigSigVisible = false
+	var oFinalBlock = oRoot.resolveNode("Wrapper.FinalBlock");
+	
+	var oSigBlock = oRoot.resolveNode("Wrapper.FinalBlock.SignatureBlock");
+	if (oSigBlock != null)	
+		bIsDigSigVisible= oSigBlock.resolveNode("DigitalSignature") == null ? false : true;
+	
+	//console.println(bIsDigSigVisible);
+	return bIsDigSigVisible;
+}
+
+
+/** Remove unwanted characters from the text. */
+function cleanupString(sText)
+{
+	//console.println("cleanupString");
+	// Some string may end up with '..' or a '?.'
+	var sTemp1 = sText.replace("..", ".");
+	var sTemp2 = sTemp1.replace("?.", "?");	
+	var sTemp3 = sTemp2.replace(" :.", ".");	
+	var sClean = sTemp3.replace(":.", ".");	
+	return sClean;
+} 
+
+/*********************************************************
+Set the focus on the first object that failed validation
+**********************************************************/
+function setFocusOnFailedObject()
+{
+	//console.println("setFocusOnFailedObject");
+	var oFields = Util.getFormFields();
+	var nLen = oFields.length;
+	for (var i = 0; i &lt; nLen; i++)
+	{
+		if (oFields[i].errorText != "")
+		{
+			xfa.host.setFocus(oFields[i]);
+			return;
+		}		
+	}
+}  
+
+function showSuccessValidateMsg()
+{
+	//console.println("showSuccessValidateMsg");
+	var sLanguage = Util.getFormLanguage();
+	var sEnTitle = "Validation Successful";			
+	var sFrTitle = "Validation réussie";
+	var sTitle = sLanguage == "en" ? sEnTitle : sFrTitle ;
+	var sENMsg = "This form is now validated and locked from editing. Please sign the form before submitting to Health Canada. \n\nIn order to modify fields after finalizing, you must press the Modify button at the bottom of the form.";
+	var sFRMsg = "Le formulaire a été validé et verrouillé contre l’édition. Il peut maintenant être imprimé et envoyé à Santé Canada \n\nPour pouvoir modifier le formulaire, appuyez sur le bouton « Modifier »";	
+	var sFirstMsg = Util.getFormLanguage() == "en" ? sENMsg : sFRMsg;
+	
+	var sEnSaveMsg ="\n\nWe strongly encourage you to save the form at this point. Once the form is digitally signed, you will not be able to correct it and you will need to re-input all the information again. Please proceed to signing the form after saving it.";
+	var sFrSaveMsg ="\n\nNous vous encourageons fortement à sauvegardé le formulaire à ce point-ci. Une fois que le formulaire est signé électroniquement, vous serez incapable de le corriger et vous aurez à entrer à nouveau toutes l’information. Veuillez procéder à la signature du formulaire une fois que vous l’avez sauvegardé.";
+	var sSecondMsg = Util.getFormLanguage() == "en" ? sEnSaveMsg: sFrSaveMsg;
+	
+	var sMessage = sFirstMsg + sSecondMsg;
+	//var sMessage = Util.getFormLanguage() == "en" ? sFirstMsg + sSecondMsg  : sFRMsg;
+	xfa.host.messageBox(sMessage,sTitle ,3) 
+}
+
+/** Checks to see if the form is signed, if its not signed then unlock some sections.
+The user has the ability to clear the signature so this will ensure that once they do that they can edit the form.
+Called from the Signature objects change event
+*/
+function checkSignature()
+{
+	//console.println("checkSignature");
+	/** signatureValidate() function return codes
+	0: cleared??
+	1: not signed...
+	2: invalid signature...
+	3: valid but identity of signer cannot be verified...
+	4: valid signature...
+	Any Other: error -- unexpected status code
+	
+	if its not 0 that means it signed
+	*/
+	//var status = false;
+	var oDigSig = _EN.count &gt; 0 ? event.target.getField("HC.EN.Wrapper.FinalBlock.SignatureBlock.DigitalSignature.digSignature") : event.target.getField("HC.FR.Wrapper.FinalBlock.SignatureBlock.DigitalSignature.digSignature");
+	if (oDigSig != null){
+		var status = oDigSig.signatureValidate();
+		//console.println(status);
+		status = parseInt(status);
+		//console.println(status);
+		return status;
+		//If the form is not signed Show Modify button
+	//	console.println(status);
+	//	if (status != 3 || status != 4)
+	//	{
+	}			
+
+}
+//Handles showing and hiding of buttons during signing.
+//Called from digSignature::preSign
+function signingButtonHandler()
+{
+	//console.println("signingButtonHandler");
+	
+	if (_EN.count &gt; 0 ){//English
+	                          //EN.Wrapper.FinalBlock.FinalizeModify
+		xfa.form.resolveNode("HC.EN.Wrapper.FinalBlock")._FinalizeModify.setInstances(0);
+		//xfa.form.resolveNode("HC.EN.Wrapper.FinalBlock.FinalizeModify")._Modify.setInstances(1);
+		//xfa.form.resolveNode("HC.EN.Wrapper.FinalBlock.FinalizeModify")._Final.setInstances(0);
+		
+	}else{//French
+		xfa.form.resolveNode("HC.FR.Wrapper.FinalBlock")._FinalizeModify.setInstances(0);
+		//xfa.form.resolveNode("HC.FR.Wrapper.FinalBlock.FinalizeModify")._Modify.setInstances(1);
+		//xfa.form.resolveNode("HC.FR.Wrapper.FinalBlock.FinalizeModify")._Final.setInstances(0);
+	}			
+	
+}
+
+function checkDigImageType(oImgSig)
+{
+	//console.println("checkDigImageType");
+	//August 4th, 2020 - Added due to DIGital signature being invalidated
+	
+	if (isDigSig())
+		return;
+		
+	if(oImgSig.rawValue !=null){
+		var img = oImgSig.value.resolveNode("#image").contentType;
+		
+		var imgType = img.substr(img.length -3).toLowerCase();
+		
+		
+		var imgFormatSplit = img.split("/");
+		var imgFormat = imgFormatSplit[imgFormatSplit.length - 1].toLowerCase();
+		
+		if (imgFormat != "tif" &amp;&amp; imgFormat != "gif" &amp;&amp; imgFormat != "jpg" &amp;&amp; imgFormat != "png" &amp;&amp; imgFormat != "jpeg") {
+			var sEnTitle = "Incorrect Image File Type";			
+			var sFrTitle = "Type de fichier image incorrect";
+			var sTitle = Util.getFormLanguage() == "en" ? sEnTitle : sFrTitle ;
+			var sENMsg = "Please insert one of the following supported image file types: \n\n'tif', 'gif', 'jpg', 'png', 'jpeg'";
+			var sFRMsg = "Veuillez insérer l'un des types de fichiers d'image pris en charge suivants: 'tif', 'gif', 'jpg', 'png', 'jpeg'";	
+			var sMessage = Util.getFormLanguage() == "en" ? sENMsg : sFRMsg;
+			xfa.host.messageBox(sMessage,sTitle ,3)
+				
+			oImgSig.rawValue = null;
+		}
+	}
+}
+
+function resetFormData()
+{
+	//console.println("resetFormData");
+	var sLanguage = _EN.count &gt; 0 ? "en" : "fr";
+	var sEnTitle = "Reset Form";			
+	var sFrTitle = "Réinitialiser";
+	var sTitle = sLanguage == "en" ? sEnTitle : sFrTitle ;
+	var sENMsg = "Do you wish to erase all data?";
+	var sFRMsg = "Voulez-vous effacer toutes les données?";	
+	var sMessage = sLanguage == "en" ? sENMsg : sFRMsg;
+	var sSignedMsgEN = "Form is signed and cannot be reset.";
+	var sSignedMsgFR = "Le formulaire est signé et ne peut pas être réinitialisé.";
+	var sSignedMessage =  sLanguage == "en" ? sSignedMsgEN : sSignedMsgFR;
+	
+	//Workaround with imaged signed forms -  if the form is signed with an image, we need to prevent the reset from firing
+	var oSignatureBlock = _EN.count &gt; 0 ? xfa.form.resolveNode("HC.EN.Wrapper.FinalBlock.SignatureBlock") : xfa.form.resolveNode("HC.FR.Wrapper.FinalBlock.SignatureBlock");
+	//console.println(oSignatureBlock);
+	if (oSignatureBlock != null){
+		if (_EN.count &gt; 0){
+			if (xfa.form.resolveNode("HC.EN.Wrapper.FinalBlock.SignatureBlock.SignatureOption.signatureOption").rawValue == "IMG_SIG")
+			{
+				if (xfa.form.resolveNode("HC.EN.Wrapper.FinalBlock.SignatureBlock.DigitalImage.signDate").rawValue != null)
+				{
+					xfa.host.messageBox(sSignedMessage,sTitle,3);
+					return;
+				}else{
+					var sResponse=xfa.host.messageBox(sMessage,sTitle,2,2);
+					if (sResponse=="4"){		
+						xfa.form.resolveNode("HC")._EN.setInstances(0);
+						xfa.form.resolveNode("HC")._EN.setInstances(1);	
+					}
+				}			
+			}
+		}else{
+			if (xfa.form.resolveNode("HC.FR.Wrapper.FinalBlock.SignatureBlock.SignatureOption.signatureOption").rawValue == "IMG_SIG")
+			{
+				if (xfa.form.resolveNode("HC.FR.Wrapper.FinalBlock.SignatureBlock.DigitalImage.signDate").rawValue != null)
+				{
+					xfa.host.messageBox(sSignedMessage,sTitle,3);
+					return;
+				}else{
+					var sResponse=xfa.host.messageBox(sMessage,sTitle,2,2);
+					if (sResponse=="4"){		
+						xfa.form.resolveNode("HC")._FR.setInstances(0);
+						xfa.form.resolveNode("HC")._FR.setInstances(1);	
+					}
+				}			
+			}
+		}
+			
+	}else{//Unsigned form allow reset to fire		
+		if (_EN.count &gt; 0){
+			
+			var sResponse=xfa.host.messageBox(sMessage,sTitle,2,2);
+			if (sResponse=="4"){		
+				xfa.form.resolveNode("HC")._EN.setInstances(0);
+				xfa.form.resolveNode("HC")._EN.setInstances(1);
+				//Added August 11th, 2020
+				if (xfa.form.resolveNode("HC.EN.Wrapper.FinalBlock.FinalizeModify") != null)
+					xfa.form.resolveNode("HC.EN.Wrapper.FinalBlock.FinalizeModify")._Final.setInstances(1);
+									
+				//May 15th, 2020 - Set the focus to the next object - 
+				//Removed on June 18th, 2020
+				//xfa.host.setFocus(xfa.form.resolveNode("HC.EN.Instructions.InstructionButtons.View.btnViewInstructions"));
+				
+			}
+		}else{
+			var sResponse=xfa.host.messageBox(sMessage,sTitle,2,2);
+			if (sResponse=="4"){		
+				xfa.form.resolveNode("HC")._FR.setInstances(0);
+				xfa.form.resolveNode("HC")._FR.setInstances(1);
+				//Added August 11th, 2020
+				if (xfa.form.resolveNode("HC.FR.Wrapper.FinalBlock.FinalizeModify") != null)
+					xfa.form.resolveNode("HC.FR.Wrapper.FinalBlock.FinalizeModify")._Final.setInstances(1);
+				
+				//May 15th, 2020 - Set the focus to the next object
+				//Removed on June 18th, 2020
+				//xfa.host.setFocus(xfa.form.resolveNode("HC.FR.Instructions.InstructionButtons.View.btnViewInstructions"));
+				
+			}
+		}
+	
+	}	
+}
+
+
+/**
+	if (_EN.count &gt; 0 ){
+		
+	}else{
+	}
+/*
+
+
+/**
+// Set Plus Sign in caption
+function setCaption()
+{
+	var oFields = Util.getFormFields();
+	var nLen = oFields.length;
+	var plus = "+";
+	for (var i = 0; i &lt; nLen; i++)
+	{
+		if (oFields[i].errorText != "")
+		{
+			//console.println("Change caption for " + oFields[i].name);
+			var oField = oFields[i];
+			var sUIClassName = oField.resolveNode("#ui").oneOfChild.className;
+			if (sUIClassName == "barcode" || sUIClassName == "button" || sUIClassName == "checkButton" || oField.presence == "hidden") 
+				continue;	
+			
+			// Radio buttons will be set separately.
+			if (oField.parent.className == "exclGroup")
+				continue;
+
+			//Set plus sign
+			oFields[i].caption.value.text.value += plus;
+			
+		}		
+	}
+	setFocusOnFailedObject();
+}
+*/              
+ 
+ /**
+ * Set the tootltip of the given fields. (section name - fieldname)
+ * @param oFields is a nodelist of fields.
+ * @param sHeading is the section's heading text.
+ * Objects tootltips must be set to Custom Text for this to work
+ */
+function setTooltip(oFields, sHeading)
+{
+	/*JUNE 19, 2020 - Removing because execValidate function bug clears coded tooltips after mandatory failure is satisfied 
+	Workaround is to set the header and label in each objects tooltip property
+	var nLen = oFields.length;
+	for (var i = 0; i &lt; nLen; i++)
+	{
+	 	// Skip over barcodes, radio buttons, buttons and floating fields.
+	 	var oField = oFields.item(i);
+		var sUIClassName = oField.resolveNode("#ui").oneOfChild.className;
+		if (sUIClassName == "barcode" || sUIClassName == "button" || sUIClassName == "checkButton" || oField.presence == "hidden") 
+			continue;	
+			
+		// Radio buttons will be set separately.
+		if (oField.parent.className == "exclGroup")
+			continue;
+
+		// Skip over rich text	
+		var oCaption = oField.resolveNode("#caption.#value.#text");
+		if (oCaption)
+		{
+			var sCaption = oCaption.value;			
+			var sTooltip = sHeading + " - " + sCaption;			
+
+			oField.assist.toolTip.value = Core.cleanupString(sTooltip);
+			 
+		}
+	}*/
+	//June 19th,2020 - Return nothing to do aforementioned bug
+	return;
+}
+                           
+
+/**
+ * Sets the tooltip of given field (fields without caption (e.g. radio buttons or rich text caption). (section name - fieldname)
+ * @param oField field reference.
+ * @param sHeading is the section's heading text.
+ * @param sCaption is the text related to the field.
+ */
+function setCaptionlesstoolTip(oField, sHeading, sCaption)
+{
+	//console.println("setCaptionlesstoolTip");
+	//var sGenericMessage = Util.getFormLanguage() == "en" ? sDefaultMandatoryEN : sDefaultMandatoryFR;
+	var sTooltip = sHeading + " - " + sCaption;   
+	oField.assist.toolTip.value = Core.cleanupString(sTooltip);
+}      
+
+//August 5th, 2020 - Diaplay Post Digital sign message due to digsig being invalidated by dynamic content.
+function displaySignedMsg(oDigSig)
+{
+	var digSig = event.target.getField(GetFQSOMExp(oDigSig));
+	var status = digSig.signatureValidate();
+	
+	//console.println(status);
+	//if Signed
+	if (status != 0)
+	{
+		var sEnTitle = "Digitally Signed";			
+		var sFrTitle = "Signé électroniquement";
+		var sTitle = Util.getFormLanguage() == "en" ? sEnTitle : sFrTitle ;
+		var sENMsg = "This signed form has been saved and will now be closed.\nReview and validate the form and signature by re-opening it from the saved location.";
+		var sFRMsg = "Ce formulaire signé a été enregistré et va maintenant être fermé.\nExaminez et validez le formulaire et la signature en les rouvrant à partir de l'emplacement enregistré.";
+		var sMessage = Util.getFormLanguage() == "en" ? sENMsg : sFRMsg;
+		xfa.host.messageBox(sMessage,sTitle ,3)
+		event.target.closeDoc();
+	}else{
+	
+		if (_EN.count &gt; 0 ){//English		    
+			xfa.form.resolveNode("HC.EN.Wrapper.FinalBlock")._FinalizeModify.setInstances(1);
+			xfa.form.resolveNode("HC.EN.Wrapper.FinalBlock.FinalizeModify")._Modify.setInstances(1);
+			xfa.form.resolveNode("HC.EN.Wrapper.FinalBlock.FinalizeModify")._Final.setInstances(0);		
+		}else{//French
+			xfa.form.resolveNode("HC.FR.Wrapper.FinalBlock")._FinalizeModify.setInstances(1);
+			xfa.form.resolveNode("HC.FR.Wrapper.FinalBlock.FinalizeModify")._Modify.setInstances(1);
+			xfa.form.resolveNode("HC.FR.Wrapper.FinalBlock.FinalizeModify")._Final.setInstances(0);
+		}	
+	
+	}
+} 
+
+//
+// Script below obtained from: http://forms.stefcameron.com/2006/06/14/acroform-field-name-generator/
+//
+
+// Returns the fully-qualified name for the specified object.
+//  This means the name always specifies the index.
+//  Therefore, if the name is specified, it's "name[index]".
+//  If the name isn't specified, it's "#className[index]".
+function GetVerboseFieldName(oNode)
+{
+  // Unnamed nodes have default names which their class name
+  //  ("subform", "field", etc.) with a "#" prefix.
+  //  Unfortunately, oNode.name won't return this if the node
+  //  doesn't have a specific name. It'll just return an empty
+  //  string. Also, oNode.index will be undefined. If it weren't
+  //  for oNode.index being undefined in this case, we could've
+  //  done something like
+  //  SOM = "#" + oNode.className + "[" + oNode.index + "]"
+
+  //  but we'll have to use the somExpression property instead
+  //  and extract the name out of it because this will return
+  //  the "#" name with the correct index.
+  // Since somExpression returns the name and index for the
+  //  object in all cases (whether the name is specified or
+  //  not), we can use the following syntax in all cases:
+
+  var nPos = oNode.somExpression.lastIndexOf(".");
+
+  // If the field has a name, check to see if it has any periods in its name.
+  // If that's the case, they'll be escaped with backslashes and we need to
+  //  look for another period.
+  if (oNode.name != null &amp;&amp; oNode.name.length &gt; 0)
+  {
+    while (nPos &gt; 0)
+    {
+      if (oNode.somExpression.charAt(nPos - 1) == "\\\\")
+      {
+        // we found an escaped period, keep looking
+        nPos = oNode.somExpression.lastIndexOf(".", nPos - 1);
+      }
+      else
+      {
+        // stop looking since we have an unescaped period
+        break;
+      }
+    }
+  }
+
+  if (nPos &gt;= 0)
+  {
+    // get everything after the last "." to the end
+    return oNode.somExpression.substr(nPos + 1);
+  }
+  else
+  {
+    // in this case, the SOM expression is a single name (unlikely
+    //  but theoretically possible)
+    return oNode.somExpression;
+  }
+}
+
+// Returns the Fully-Qualified SOM Expression for the specified field.
+function GetFQSOMExp(oField)
+{
+  var sFQFieldName = GetVerboseFieldName(oField);
+  var oParentNode = oField.parent;
+
+  // The absolute root of the XFA Object Model is the xfa object
+  //  which contains a single form object, which then contains
+  //  what the Hierarchy palette shows as being the "root
+  //  subform" ("form1" by default). So we stop when we reach
+  //  xfa.form.
+  while (oParentNode != xfa.form)
+  {
+    sFQFieldName = GetVerboseFieldName(oParentNode) +
+      "." + sFQFieldName;
+    oParentNode = oParentNode.parent;
+  }
+
+  return sFQFieldName;
+}
+               
+               
+
+               
+               
+
+               
+               
+
+               
+               
+
+               
+               
+
+               
+               
+
+               <?templateDesigner isFragment yes?>
+               <?templateDesigner fragmentTitle Core?></script>
+         </variables>
+      </subform>
+   </subform>
+   <?templateDesigner FormTargetVersion 30?>
+   <?templateDesigner Zoom 81?>
+   <?templateDesigner Rulers horizontal:1, vertical:1, guidelines:1, crosshairs:0?></template>
+<config xmlns="http://www.xfa.org/schema/xci/3.0/">
+   <agent name="designer">
+      <!--  [0..n]  -->
+      <destination>pdf</destination>
+      <pdf>
+         <!--  [0..n]  -->
+         <fontInfo/>
+      </pdf>
+   </agent>
+   <present>
+      <!--  [0..n]  -->
+      <destination>pdf</destination>
+      <pdf>
+         <!--  [0..n]  -->
+         <fontInfo/>
+         <version>1.7</version>
+         <adobeExtensionLevel>5</adobeExtensionLevel>
+      </pdf>
+      <xdp>
+         <packets>*</packets>
+      </xdp>
+   </present>
+</config>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.2-c001 63.139439, 2011/06/07-10:39:26        ">
+   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <rdf:Description xmlns:xmp="http://ns.adobe.com/xap/1.0/" rdf:about="">
+         <xmp:MetadataDate>2020-11-13T21:50:40Z</xmp:MetadataDate>
+         <xmp:CreatorTool>Adobe LiveCycle Designer ES 10.0</xmp:CreatorTool>
+      </rdf:Description>
+      <rdf:Description xmlns:pdf="http://ns.adobe.com/pdf/1.3/" rdf:about="">
+         <pdf:Producer>Adobe LiveCycle Designer ES 10.0</pdf:Producer>
+      </rdf:Description>
+      <rdf:Description xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/" rdf:about="">
+         <xmpMM:DocumentID>uuid:502b68e9-11fe-4f44-b691-2944058d18f9</xmpMM:DocumentID>
+      </rdf:Description>
+      <rdf:Description xmlns:lcd="http://ns.adobe.com/livecycle/designer/" xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:about="">
+         <lcd:fragmentCatalog>
+            <rdf:Seq>
+               <rdf:li rdf:parseType="Resource">
+                  <dc:title>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default">Core</rdf:li>
+                     </rdf:Alt>
+                  </dc:title>
+                  <dc:description>
+                     <rdf:Alt>
+                        <rdf:li xml:lang="x-default"/>
+                     </rdf:Alt>
+                  </dc:description>
+                  <dc:identifier>$template.form1.#subform.#variables.Core</dc:identifier>
+                  <lcd:fragmentRole>ScriptObject</lcd:fragmentRole>
+               </rdf:li>
+            </rdf:Seq>
+         </lcd:fragmentCatalog>
+      </rdf:Description>
+   </rdf:RDF>
+</x:xmpmeta>
+<localeSet xmlns="http://www.xfa.org/schema/xfa-locale-set/2.7/">
+   <locale name="en_US" desc="English (United States)">
+      <calendarSymbols name="gregorian">
+         <monthNames>
+            <month>January</month>
+            <month>February</month>
+            <month>March</month>
+            <month>April</month>
+            <month>May</month>
+            <month>June</month>
+            <month>July</month>
+            <month>August</month>
+            <month>September</month>
+            <month>October</month>
+            <month>November</month>
+            <month>December</month>
+         </monthNames>
+         <monthNames abbr="1">
+            <month>Jan</month>
+            <month>Feb</month>
+            <month>Mar</month>
+            <month>Apr</month>
+            <month>May</month>
+            <month>Jun</month>
+            <month>Jul</month>
+            <month>Aug</month>
+            <month>Sep</month>
+            <month>Oct</month>
+            <month>Nov</month>
+            <month>Dec</month>
+         </monthNames>
+         <dayNames>
+            <day>Sunday</day>
+            <day>Monday</day>
+            <day>Tuesday</day>
+            <day>Wednesday</day>
+            <day>Thursday</day>
+            <day>Friday</day>
+            <day>Saturday</day>
+         </dayNames>
+         <dayNames abbr="1">
+            <day>Sun</day>
+            <day>Mon</day>
+            <day>Tue</day>
+            <day>Wed</day>
+            <day>Thu</day>
+            <day>Fri</day>
+            <day>Sat</day>
+         </dayNames>
+         <meridiemNames>
+            <meridiem>AM</meridiem>
+            <meridiem>PM</meridiem>
+         </meridiemNames>
+         <eraNames>
+            <era>BC</era>
+            <era>AD</era>
+         </eraNames>
+      </calendarSymbols>
+      <datePatterns>
+         <datePattern name="full">EEEE, MMMM D, YYYY</datePattern>
+         <datePattern name="long">MMMM D, YYYY</datePattern>
+         <datePattern name="med">MMM D, YYYY</datePattern>
+         <datePattern name="short">M/D/YY</datePattern>
+      </datePatterns>
+      <timePatterns>
+         <timePattern name="full">h:MM:SS A Z</timePattern>
+         <timePattern name="long">h:MM:SS A Z</timePattern>
+         <timePattern name="med">h:MM:SS A</timePattern>
+         <timePattern name="short">h:MM A</timePattern>
+      </timePatterns>
+      <dateTimeSymbols>GyMdkHmsSEDFwWahKzZ</dateTimeSymbols>
+      <numberPatterns>
+         <numberPattern name="numeric">z,zz9.zzz</numberPattern>
+         <numberPattern name="currency">$z,zz9.99|($z,zz9.99)</numberPattern>
+         <numberPattern name="percent">z,zz9%</numberPattern>
+      </numberPatterns>
+      <numberSymbols>
+         <numberSymbol name="decimal">.</numberSymbol>
+         <numberSymbol name="grouping">,</numberSymbol>
+         <numberSymbol name="percent">%</numberSymbol>
+         <numberSymbol name="minus">-</numberSymbol>
+         <numberSymbol name="zero">0</numberSymbol>
+      </numberSymbols>
+      <currencySymbols>
+         <currencySymbol name="symbol">$</currencySymbol>
+         <currencySymbol name="isoname">USD</currencySymbol>
+         <currencySymbol name="decimal">.</currencySymbol>
+      </currencySymbols>
+      <typefaces>
+         <typeface name="Myriad Pro"/>
+         <typeface name="Minion Pro"/>
+         <typeface name="Courier Std"/>
+         <typeface name="Adobe Pi Std"/>
+         <typeface name="Adobe Hebrew"/>
+         <typeface name="Adobe Arabic"/>
+         <typeface name="Adobe Thai"/>
+         <typeface name="Kozuka Gothic Pro-VI M"/>
+         <typeface name="Kozuka Mincho Pro-VI R"/>
+         <typeface name="Adobe Ming Std L"/>
+         <typeface name="Adobe Song Std L"/>
+         <typeface name="Adobe Myungjo Std M"/>
+      </typefaces>
+   </locale>
+</localeSet></xdp:xdp>
