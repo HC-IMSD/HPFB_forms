@@ -1,0 +1,1 @@
+These image files are referenced by the form model and are wcag 2.0 compliant.
